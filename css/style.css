@@ -21,6 +21,9 @@ ul,label{
 	margin:0;
 	padding:0;
 }
+ul {
+  padding-left: 20px;
+}
 body a:hover{
 	text-decoration:none;
 }
@@ -908,8 +911,8 @@ ul.footer-grid-list li span{
     display: inline-block;
 }
 .panel_text {
-    font-size: 14px;
-    color: #999;
+    font-size: 16px;
+    color: #000;
     line-height: 1.8em;
 }
 .about-grids-left h4 {
