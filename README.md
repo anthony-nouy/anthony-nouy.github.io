@@ -1,3 +1,2 @@
-# anthony-nouy.github.io
-Personal web page
+# Homepage of Anthony Nouy
 # anthony-nouy.github.io
