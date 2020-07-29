@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.approximation.learning package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.approximation.tensor_approximation package" href="tensap.approximation.tensor_approximation.html" />
+    <link rel="prev" title="tensap.approximation.integration package" href="tensap.approximation.integration.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-approximation-learning-package">
+<h1>tensap.approximation.learning package<a class="headerlink" href="#tensap-approximation-learning-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.approximation.learning.learning">
+<span id="tensap-approximation-learning-learning-module"></span><h2>tensap.approximation.learning.learning module<a class="headerlink" href="#module-tensap.approximation.learning.learning" title="Permalink to this headline">¶</a></h2>
+<p>Module learning.</p>
+<dl class="py class">
+<dt id="tensap.approximation.learning.learning.Learning">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.learning.</code><code class="sig-name descname">Learning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loss</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.learning.Learning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>linear_model</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>risk_estimation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.learning.Learning.linear_model">
+<em class="property">static </em><code class="sig-name descname">linear_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loss_function</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.learning.Learning.linear_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.learning.Learning.risk_estimation">
+<code class="sig-name descname">risk_estimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.learning.Learning.risk_estimation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.learning.linear_model_learning">
+<span id="tensap-approximation-learning-linear-model-learning-module"></span><h2>tensap.approximation.learning.linear_model_learning module<a class="headerlink" href="#module-tensap.approximation.learning.linear_model_learning" title="Permalink to this headline">¶</a></h2>
+<p>Module linear_model_learning.</p>
+<dl class="py class">
+<dt id="tensap.approximation.learning.linear_model_learning.LinearModelLearning">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.linear_model_learning.</code><code class="sig-name descname">LinearModelLearning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loss</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.linear_model_learning.LinearModelLearning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.learning.learning.Learning" title="tensap.approximation.learning.learning.Learning"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.learning.learning.Learning</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>initialize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>linear_model</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>risk_estimation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.linear_model_learning.LinearModelLearning.initialize">
+<code class="sig-name descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.linear_model_learning.LinearModelLearning.initialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.learning.linear_model_learning_custom_loss">
+<span id="tensap-approximation-learning-linear-model-learning-custom-loss-module"></span><h2>tensap.approximation.learning.linear_model_learning_custom_loss module<a class="headerlink" href="#module-tensap.approximation.learning.linear_model_learning_custom_loss" title="Permalink to this headline">¶</a></h2>
+<p>Module linear_model_learning_custom_loss.</p>
+<dl class="py class">
+<dt id="tensap.approximation.learning.linear_model_learning_custom_loss.LinearModelLearningCustomLoss">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.linear_model_learning_custom_loss.</code><code class="sig-name descname">LinearModelLearningCustomLoss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">custom_loss</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.linear_model_learning_custom_loss.LinearModelLearningCustomLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.learning.linear_model_learning.LinearModelLearning" title="tensap.approximation.learning.linear_model_learning.LinearModelLearning"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.learning.linear_model_learning.LinearModelLearning</span></code></a></p>
+<p>Class LinearModelLearningCustomLoss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>optimizer</strong><span class="classifier">tensorflow.keras.optimizers.Optimizer</span></dt><dd><p>The optimizer used to solve the learning problem. The default is Adam.</p>
+</dd>
+<dt><strong>initial_guess</strong><span class="classifier">numpy.ndarray or tensorflow.Tensor</span></dt><dd><p>The initial guess used as a starting point of the optimization
+algorithm. The default is a tensor with components drawn according
+to a standard normal random variable.</p>
+</dd>
+<dt><strong>options</strong><span class="classifier">dict</span></dt><dd><p>Options for the optimizer:</p>
+<ul class="simple">
+<li><p>max_iter: the maximum number of iterations of an iterative
+minimization algorithm,</p></li>
+<li><p>stagnation: the value of a stopping criterion based on the
+relative stagnation between two iterates</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.linear_model_learning_custom_loss.LinearModelLearningCustomLoss.solve" title="tensap.approximation.learning.linear_model_learning_custom_loss.LinearModelLearningCustomLoss.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>()</p></td>
+<td><p>Solution of the minimization problem.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>initialize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>linear_model</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>risk_estimation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.linear_model_learning_custom_loss.LinearModelLearningCustomLoss.solve">
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.linear_model_learning_custom_loss.LinearModelLearningCustomLoss.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solution of the minimization problem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sol</strong><span class="classifier">numpy.ndarray or tensap.FunctionalBasisArray</span></dt><dd><p>The solution of the minimization problem.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">dict</span></dt><dd><p>Outputs of the algorithm.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.learning.linear_model_learning_density_l2">
+<span id="tensap-approximation-learning-linear-model-learning-density-l2-module"></span><h2>tensap.approximation.learning.linear_model_learning_density_l2 module<a class="headerlink" href="#module-tensap.approximation.learning.linear_model_learning_density_l2" title="Permalink to this headline">¶</a></h2>
+<p>Module linear_model_learning_density_l2.</p>
+<dl class="py class">
+<dt id="tensap.approximation.learning.linear_model_learning_density_l2.LinearModelLearningDensityL2">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.linear_model_learning_density_l2.</code><code class="sig-name descname">LinearModelLearningDensityL2</code><a class="headerlink" href="#tensap.approximation.learning.linear_model_learning_density_l2.LinearModelLearningDensityL2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.learning.linear_model_learning.LinearModelLearning" title="tensap.approximation.learning.linear_model_learning.LinearModelLearning"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.learning.linear_model_learning.LinearModelLearning</span></code></a></p>
+<p>Class LinearModelLearningDensityL2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>is_basis_orthonormal</strong><span class="classifier">bool, optional</span></dt><dd><p>Boolean indicating if the basis used to compute the approximation
+is orthonormal according to some reference measure. The default is
+True.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.linear_model_learning_density_l2.LinearModelLearningDensityL2.solve" title="tensap.approximation.learning.linear_model_learning_density_l2.LinearModelLearningDensityL2.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>()</p></td>
+<td><p>Solution (Ordinary or Regularized) of the minimization problem and cross-validation procedure.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>initialize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>linear_model</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>risk_estimation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.linear_model_learning_density_l2.LinearModelLearningDensityL2.solve">
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.linear_model_learning_density_l2.LinearModelLearningDensityL2.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solution (Ordinary or Regularized) of the minimization problem and
+cross-validation procedure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sol</strong><span class="classifier">numpy.ndarray  or tensap.FunctionalBasisArray</span></dt><dd><p>The solution of the minimization problem.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">dict</span></dt><dd><p>Outputs of the algorithm.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.learning.linear_model_learning_square_loss">
+<span id="tensap-approximation-learning-linear-model-learning-square-loss-module"></span><h2>tensap.approximation.learning.linear_model_learning_square_loss module<a class="headerlink" href="#module-tensap.approximation.learning.linear_model_learning_square_loss" title="Permalink to this headline">¶</a></h2>
+<p>Module linear_model_learning_square_loss.</p>
+<dl class="py class">
+<dt id="tensap.approximation.learning.linear_model_learning_square_loss.LinearModelLearningSquareLoss">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.linear_model_learning_square_loss.</code><code class="sig-name descname">LinearModelLearningSquareLoss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.linear_model_learning_square_loss.LinearModelLearningSquareLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.learning.linear_model_learning.LinearModelLearning" title="tensap.approximation.learning.linear_model_learning.LinearModelLearning"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.learning.linear_model_learning.LinearModelLearning</span></code></a></p>
+<p>Class LinearModelLearningSquareLoss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>weights</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The arrays for the weighted least-squares minimization. The default is
+None.</p>
+</dd>
+<dt><strong>linear_solver</strong><span class="classifier">str</span></dt><dd><p>The selected solver: ‘solve’ to directly solve the normal equation
+using numpy.solve, ‘qr’ to perform a QR decomposition, and solve
+the resulting system using numpy.solve. The default is ‘qr’.</p>
+</dd>
+<dt><strong>shared_coefficients</strong><span class="classifier">bool</span></dt><dd><p>When approximating a vector-valued function, indicates if the
+coefficients of the approximation are common to all the outputs. The
+default is True.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.linear_model_learning_square_loss.LinearModelLearningSquareLoss.solve" title="tensap.approximation.learning.linear_model_learning_square_loss.LinearModelLearningSquareLoss.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>()</p></td>
+<td><p>Solution (Ordinary or Regularized) of the Least-Squares problem and cross-validation procedure.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>initialize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>linear_model</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>risk_estimation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.linear_model_learning_square_loss.LinearModelLearningSquareLoss.solve">
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.linear_model_learning_square_loss.LinearModelLearningSquareLoss.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solution (Ordinary or Regularized) of the Least-Squares problem and
+cross-validation procedure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sol</strong><span class="classifier">numpy.ndarray or tensap.FunctionalBasisArray</span></dt><dd><p>The solution of the minimization problem.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">dict</span></dt><dd><p>Outputs of the algorithm.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.learning.loss_functions">
+<span id="tensap-approximation-learning-loss-functions-module"></span><h2>tensap.approximation.learning.loss_functions module<a class="headerlink" href="#module-tensap.approximation.learning.loss_functions" title="Permalink to this headline">¶</a></h2>
+<p>Module loss_functions.</p>
+<dl class="py class">
+<dt id="tensap.approximation.learning.loss_functions.CustomLossFunction">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.loss_functions.</code><code class="sig-name descname">CustomLossFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loss_function</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.CustomLossFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.learning.loss_functions.LossFunction" title="tensap.approximation.learning.loss_functions.LossFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.learning.loss_functions.LossFunction</span></code></a></p>
+<p>Class CustomLossFunction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>loss_function</strong><span class="classifier">tensorflow.function</span></dt><dd><p>The custom loss function, defined using tensorflow operations.</p>
+</dd>
+<dt><strong>error_function</strong><span class="classifier">function, optional</span></dt><dd><p>The function used to compute the test error. The default is None,
+indicating to use the risk function.</p>
+</dd>
+<dt><strong>relative_error_function</strong><span class="classifier">function, optional</span></dt><dd><p>The function used to compute the relative test error. The default is
+None, indicating to use the risk function.</p>
+</dd>
+<dt><strong>error_type</strong><span class="classifier">string, optional</span></dt><dd><p>The error type. The default is ‘relative’. Can also be ‘absolute’.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.CustomLossFunction.eval" title="tensap.approximation.learning.loss_functions.CustomLossFunction.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(fun, sample, *args[, nargout])</p></td>
+<td><p>Evaluate the loss function using the function fun and the provided sample.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.CustomLossFunction.relative_test_error" title="tensap.approximation.learning.loss_functions.CustomLossFunction.relative_test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_test_error</span></code></a>(fun, sample, *args)</p></td>
+<td><p>Compute the relative test error associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.CustomLossFunction.risk_estimation" title="tensap.approximation.learning.loss_functions.CustomLossFunction.risk_estimation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">risk_estimation</span></code></a>(fun, sample, *args[, nargout])</p></td>
+<td><p>Compute an estimation of the risk associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.CustomLossFunction.test_error" title="tensap.approximation.learning.loss_functions.CustomLossFunction.test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code></a>(fun, sample, *args)</p></td>
+<td><p>Compute the test error associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.CustomLossFunction.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.CustomLossFunction.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the loss function using the function fun and the provided
+sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function used to evaluate the loss function</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to evaluate the loss function</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>Specifies the number of output variables. The default is 1,
+returning only the evaluations of the loss. Set to 2 to also return
+the so-called reference evaluations of the loss.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.CustomLossFunction.relative_test_error">
+<code class="sig-name descname">relative_test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.CustomLossFunction.relative_test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the relative test error associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the error is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The relative test error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.CustomLossFunction.risk_estimation">
+<code class="sig-name descname">risk_estimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.CustomLossFunction.risk_estimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute an estimation of the risk associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the risk is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>Specifies the number of output variables. The default is 1,
+returning only the risk. Set to 2 to also return the so-called
+estimated reference risk.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The estimated risk.</p>
+</dd>
+<dt>np.float</dt><dd><p>The estimated reference risk.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.CustomLossFunction.test_error">
+<code class="sig-name descname">test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.CustomLossFunction.test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the test error associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the error is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The relative test error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.approximation.learning.loss_functions.DensityL2LossFunction">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.loss_functions.</code><code class="sig-name descname">DensityL2LossFunction</code><a class="headerlink" href="#tensap.approximation.learning.loss_functions.DensityL2LossFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.learning.loss_functions.LossFunction" title="tensap.approximation.learning.loss_functions.LossFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.learning.loss_functions.LossFunction</span></code></a></p>
+<p>Class DensityL2LossFunction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>error_type</strong><span class="classifier">string, optional</span></dt><dd><p>The error type. The default is ‘relative’.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.DensityL2LossFunction.eval" title="tensap.approximation.learning.loss_functions.DensityL2LossFunction.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(fun, sample, *args[, nargout])</p></td>
+<td><p>Evaluate the loss function using the function fun and the provided sample.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.DensityL2LossFunction.relative_test_error" title="tensap.approximation.learning.loss_functions.DensityL2LossFunction.relative_test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_test_error</span></code></a>(fun, sample, *args)</p></td>
+<td><p>Compute the relative test error associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">risk_estimation</span></code>(fun, sample, *args[, nargout])</p></td>
+<td><p>Compute an estimation of the risk associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.DensityL2LossFunction.test_error" title="tensap.approximation.learning.loss_functions.DensityL2LossFunction.test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code></a>(fun, sample, *args)</p></td>
+<td><p>Compute the test error associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.DensityL2LossFunction.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.DensityL2LossFunction.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the loss function using the function fun and the provided
+sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function used to evaluate the loss function</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to evaluate the loss function</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>Specifies the number of output variables. The default is 1,
+returning only the evaluations of the loss. Set to 2 to also return
+the so-called reference evaluations of the loss.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.DensityL2LossFunction.relative_test_error">
+<code class="sig-name descname">relative_test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.DensityL2LossFunction.relative_test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the relative test error associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the error is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The relative test error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.DensityL2LossFunction.test_error">
+<code class="sig-name descname">test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.DensityL2LossFunction.test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the test error associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the error is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The relative test error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.approximation.learning.loss_functions.LossFunction">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.loss_functions.</code><code class="sig-name descname">LossFunction</code><a class="headerlink" href="#tensap.approximation.learning.loss_functions.LossFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Class LossFunction.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.LossFunction.eval" title="tensap.approximation.learning.loss_functions.LossFunction.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(fun, sample, *args, nargout)</p></td>
+<td><p>Evaluate the loss function using the function fun and the provided sample.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.LossFunction.relative_test_error" title="tensap.approximation.learning.loss_functions.LossFunction.relative_test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_test_error</span></code></a>(fun, sample, *args)</p></td>
+<td><p>Compute the relative test error associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.LossFunction.risk_estimation" title="tensap.approximation.learning.loss_functions.LossFunction.risk_estimation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">risk_estimation</span></code></a>(fun, sample, *args[, nargout])</p></td>
+<td><p>Compute an estimation of the risk associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.LossFunction.test_error" title="tensap.approximation.learning.loss_functions.LossFunction.test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code></a>(fun, sample, *args)</p></td>
+<td><p>Compute the test error associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.LossFunction.eval">
+<em class="property">abstract </em><code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">nargout</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.LossFunction.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the loss function using the function fun and the provided
+sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function used to evaluate the loss function</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to evaluate the loss function</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>Specifies the number of output variables. The default is 1,
+returning only the evaluations of the loss. Set to 2 to also return
+the so-called reference evaluations of the loss.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.LossFunction.relative_test_error">
+<em class="property">abstract </em><code class="sig-name descname">relative_test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.LossFunction.relative_test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the relative test error associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the error is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The relative test error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.LossFunction.risk_estimation">
+<code class="sig-name descname">risk_estimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.LossFunction.risk_estimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute an estimation of the risk associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the risk is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>Specifies the number of output variables. The default is 1,
+returning only the risk. Set to 2 to also return the so-called
+estimated reference risk.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The estimated risk.</p>
+</dd>
+<dt>np.float</dt><dd><p>The estimated reference risk.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.LossFunction.test_error">
+<em class="property">abstract </em><code class="sig-name descname">test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.LossFunction.test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the test error associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the error is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The relative test error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.approximation.learning.loss_functions.SquareLossFunction">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.learning.loss_functions.</code><code class="sig-name descname">SquareLossFunction</code><a class="headerlink" href="#tensap.approximation.learning.loss_functions.SquareLossFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.learning.loss_functions.LossFunction" title="tensap.approximation.learning.loss_functions.LossFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.learning.loss_functions.LossFunction</span></code></a></p>
+<p>Class SquareLossFunction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>error_type</strong><span class="classifier">string, optional</span></dt><dd><p>The error type. The default is ‘relative’. Can also be ‘absolute’.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.SquareLossFunction.eval" title="tensap.approximation.learning.loss_functions.SquareLossFunction.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(fun, sample, *args[, nargout])</p></td>
+<td><p>Evaluate the loss function using the function fun and the provided sample.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.SquareLossFunction.relative_test_error" title="tensap.approximation.learning.loss_functions.SquareLossFunction.relative_test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_test_error</span></code></a>(fun, sample, *args)</p></td>
+<td><p>Compute the relative test error associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">risk_estimation</span></code>(fun, sample, *args[, nargout])</p></td>
+<td><p>Compute an estimation of the risk associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.learning.loss_functions.SquareLossFunction.test_error" title="tensap.approximation.learning.loss_functions.SquareLossFunction.test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code></a>(fun, sample, *args)</p></td>
+<td><p>Compute the test error associated with the function fun and the loss function using the provided sample.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.SquareLossFunction.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.SquareLossFunction.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the loss function using the function fun and the provided
+sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function used to evaluate the loss function</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to evaluate the loss function</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>Specifies the number of output variables. The default is 1,
+returning only the evaluations of the loss. Set to 2 to also return
+the so-called reference evaluations of the loss.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.SquareLossFunction.relative_test_error">
+<code class="sig-name descname">relative_test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.SquareLossFunction.relative_test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the relative test error associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the error is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The relative test error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.learning.loss_functions.SquareLossFunction.test_error">
+<code class="sig-name descname">test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.learning.loss_functions.SquareLossFunction.test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the test error associated with the function fun and
+the loss function using the provided sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to which the error is associated.</p>
+</dd>
+<dt><strong>sample</strong><span class="classifier">list</span></dt><dd><p>The sample used to estimate the risk.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by a specific loss function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.float</dt><dd><p>The relative test error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.learning">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.approximation.learning" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tensap.approximation.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.approximation.html#module-tensap.approximation">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tensap.approximation.html">tensap.approximation package</a><ul>
+      <li>Previous: <a href="tensap.approximation.integration.html" title="previous chapter">tensap.approximation.integration package</a></li>
+      <li>Next: <a href="tensap.approximation.tensor_approximation.html" title="next chapter">tensap.approximation.tensor_approximation package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.approximation.learning.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

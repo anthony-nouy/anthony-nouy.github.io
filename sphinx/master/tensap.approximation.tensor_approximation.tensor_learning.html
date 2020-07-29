@@ -1,0 +1,1445 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.approximation.tensor_approximation.tensor_learning package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.approximation.tools package" href="tensap.approximation.tools.html" />
+    <link rel="prev" title="tensap.approximation.tensor_approximation.principal_component_analysis package" href="tensap.approximation.tensor_approximation.principal_component_analysis.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-approximation-tensor-approximation-tensor-learning-package">
+<h1>tensap.approximation.tensor_approximation.tensor_learning package<a class="headerlink" href="#tensap-approximation-tensor-approximation-tensor-learning-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning">
+<span id="tensap-approximation-tensor-approximation-tensor-learning-canonical-tensor-learning-module"></span><h2>tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning module<a class="headerlink" href="#module-tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning" title="Permalink to this headline">¶</a></h2>
+<p>Module canonical_tensor_learning.</p>
+<dl class="py class">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.</code><code class="sig-name descname">CanonicalTensorLearning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">order</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning</span></code></a></p>
+<p>Class CanonicalTensorLearning.</p>
+<p>See also tensap.TensorLearning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">int</span></dt><dd><p>The order of the tensor.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">adapt_tree</span></code>(f, cv_error, test_error, output, …)</p></td>
+<td><p>Tree adaptation algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.adaptation_display" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.adaptation_display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adaptation_display</span></code></a>(f, *args)</p></td>
+<td><p>Display during the adaptation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.final_display" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.final_display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">final_display</span></code></a>(f)</p></td>
+<td><p>Display at the end of the computation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.initial_guess_new_rank" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.initial_guess_new_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial_guess_new_rank</span></code></a>(s_local, f, *args)</p></td>
+<td><p>Computation of the initial guess with the new selected rank.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.initialize" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize</span></code></a>()</p></td>
+<td><p>Initialization of the learning algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.local_solver" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.local_solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_solver</span></code></a>()</p></td>
+<td><p>Extraction of the solver for the adaptive algorithm</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.new_rank_selection" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.new_rank_selection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_rank_selection</span></code></a>(f)</p></td>
+<td><p>Selection of a new rank in the adaptive algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.pre_processing" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.pre_processing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pre_processing</span></code></a>(f)</p></td>
+<td><p>Initialization of the alternating minimization algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.prepare_alternating_minimization_system" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.prepare_alternating_minimization_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_alternating_minimization_system</span></code></a>(f, mu)</p></td>
+<td><p>Preparation of the alternating minimization algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.randomize_exploration_strategy" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.randomize_exploration_strategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">randomize_exploration_strategy</span></code></a>()</p></td>
+<td><p>Randomization of the exploration strategy.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.set_parameter" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.set_parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_parameter</span></code></a>(f, mu, coef)</p></td>
+<td><p>Update of the parameter mu of the tensor f.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>(*args)</p></td>
+<td><p>Solver for the learning problem with tensor formats.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.stagnation_criterion" title="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.stagnation_criterion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stagnation_criterion</span></code></a>(f, f0)</p></td>
+<td><p>Computation of the stagnation criterion.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>linear_model</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>risk_estimation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.adaptation_display">
+<code class="sig-name descname">adaptation_display</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.adaptation_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display during the adaptation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>enriched_nodes</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The enriched parameters.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.final_display">
+<code class="sig-name descname">final_display</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.final_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display at the end of the computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.initial_guess_new_rank">
+<code class="sig-name descname">initial_guess_new_rank</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s_local</span></em>, <em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.initial_guess_new_rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computation of the initial guess with the new selected rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>new_rank</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new tensor rank.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver with the initial guess in s_local.initial_guess.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.initialize">
+<code class="sig-name descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization of the learning algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The initialization of the solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.local_solver">
+<code class="sig-name descname">local_solver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.local_solver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extraction of the solver for the adaptive algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.new_rank_selection">
+<code class="sig-name descname">new_rank_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.new_rank_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selection of a new rank in the adaptive algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>new_rank</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new tensor rank.</p>
+</dd>
+<dt><strong>enriched_nodes</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The enriched parameters.</p>
+</dd>
+<dt><strong>tensor_for_initialization</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>A tensor used for the initialization of the next iteration.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.pre_processing">
+<code class="sig-name descname">pre_processing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.pre_processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization of the alternating minimization algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The current tensor approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The pre-processed tensor approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.prepare_alternating_minimization_system">
+<code class="sig-name descname">prepare_alternating_minimization_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">mu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.prepare_alternating_minimization_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preparation of the alternating minimization algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">int</span></dt><dd><p>The number of the parameter to be optimized.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>A</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The matricized partial evaluation of f.</p>
+</dd>
+<dt><strong>b</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The target training data.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.randomize_exploration_strategy">
+<code class="sig-name descname">randomize_exploration_strategy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.randomize_exploration_strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomization of the exploration strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha_list</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The randomized exploration strategy.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.set_parameter">
+<code class="sig-name descname">set_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">mu</span></em>, <em class="sig-param"><span class="n">coef</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.set_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update of the parameter mu of the tensor f.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">int</span></dt><dd><p>The number of the optimized parameter.</p>
+</dd>
+<dt><strong>coef</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new value of the parameter mu of f.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The updated approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.stagnation_criterion">
+<code class="sig-name descname">stagnation_criterion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">f0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.canonical_tensor_learning.CanonicalTensorLearning.stagnation_criterion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computation of the stagnation criterion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>f0</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The previous approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>stagnation</strong><span class="classifier">float</span></dt><dd><p>The value of the stagnation criterion.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.tensor_approximation.tensor_learning.tensor_learning">
+<span id="tensap-approximation-tensor-approximation-tensor-learning-tensor-learning-module"></span><h2>tensap.approximation.tensor_approximation.tensor_learning.tensor_learning module<a class="headerlink" href="#module-tensap.approximation.tensor_approximation.tensor_learning.tensor_learning" title="Permalink to this headline">¶</a></h2>
+<p>Module tensor_learning.</p>
+<dl class="py class">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.</code><code class="sig-name descname">TensorLearning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loss</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="tensap.approximation.learning.html#tensap.approximation.learning.learning.Learning" title="tensap.approximation.learning.learning.Learning"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.learning.learning.Learning</span></code></a></p>
+<p>Class TensorLearning.</p>
+<p>See also tensap.Learning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">int</span></dt><dd><p>Order of the tensor.</p>
+</dd>
+<dt><strong>bases</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The functional bases used for by the approximation.</p>
+</dd>
+<dt><strong>bases_eval</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The evaluations of the bases on the training data.</p>
+</dd>
+<dt><strong>bases_eval_test</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The evaluations of the bases on the test data.</p>
+</dd>
+<dt><strong>algorithm</strong><span class="classifier">str</span></dt><dd><p>The choice of algorithm.</p>
+</dd>
+<dt><strong>initialization_type</strong><span class="classifier">str</span></dt><dd><p>The type of initialization.</p>
+</dd>
+<dt><strong>initial_guess</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>An initial guess for the solver.</p>
+</dd>
+<dt><strong>tree_adaptation</strong><span class="classifier">bool</span></dt><dd><p>Boolean indicating if tree adaptation is to be performed.</p>
+</dd>
+<dt><strong>tree_adaptation_options</strong><span class="classifier">dict</span></dt><dd><p>Options for the tree adaptation.</p>
+</dd>
+<dt><strong>rank_adaptation</strong><span class="classifier">bool</span></dt><dd><p>Boolean indicating if rank adaptation is to be performed.</p>
+</dd>
+<dt><strong>rank_adaptation_options</strong><span class="classifier">dict</span></dt><dd><p>Options for the rank adaptation.</p>
+</dd>
+<dt><strong>tolerance</strong><span class="classifier">dict</span></dt><dd><p>Tolerances for the solver.</p>
+</dd>
+<dt><strong>linear_model_learning_parameters</strong><span class="classifier">dict</span></dt><dd><p>Parameters for the linear solvers.</p>
+</dd>
+<dt><strong>alternating_minimization_parameters</strong><span class="classifier">dict</span></dt><dd><p>Parameters for the alternating minimization.</p>
+</dd>
+<dt><strong>bases_adaptation_path</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Paths for each basis for the basis adaptation.</p>
+</dd>
+<dt><strong>store_iterates</strong><span class="classifier">bool</span></dt><dd><p>Boolean indicating if the iterates are to be stored.</p>
+</dd>
+<dt><strong>rank</strong><span class="classifier">int or list or numpy.ndarray</span></dt><dd><p>The rank of the expected approximation.</p>
+</dd>
+<dt><strong>output_dimension</strong><span class="classifier">int</span></dt><dd><p>The dimension of the outputs of the function to be approximated.</p>
+</dd>
+<dt><strong>_number_of_parameters</strong><span class="classifier">int</span></dt><dd><p>The number of parameters of the approximation.</p>
+</dd>
+<dt><strong>_exploration_strategy</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The exploration strategy.</p>
+</dd>
+<dt><strong>_warnings</strong><span class="classifier">dict</span></dt><dd><p>Dictionnary containing the state of some warnings to be displayed.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.adapt_tree" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.adapt_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adapt_tree</span></code></a>(f, cv_error, test_error, output, …)</p></td>
+<td><p>Tree adaptation algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.adaptation_display" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.adaptation_display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adaptation_display</span></code></a>(f, enriched_nodes)</p></td>
+<td><p>Display during the adaptation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.final_display" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.final_display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">final_display</span></code></a>(f)</p></td>
+<td><p>Display at the end of the computation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.initial_guess_new_rank" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.initial_guess_new_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial_guess_new_rank</span></code></a>(s_local, f, new_rank)</p></td>
+<td><p>Computation of the initial guess with the new selected rank.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.initialize" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize</span></code></a>()</p></td>
+<td><p>Initialization of the learning algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.local_solver" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.local_solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_solver</span></code></a>()</p></td>
+<td><p>Extraction of the solver for the adaptive algorithm</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.new_rank_selection" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.new_rank_selection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_rank_selection</span></code></a>(f)</p></td>
+<td><p>Selection of a new rank in the adaptive algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.pre_processing" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.pre_processing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pre_processing</span></code></a>(f)</p></td>
+<td><p>Initialization of the alternating minimization algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.prepare_alternating_minimization_system" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.prepare_alternating_minimization_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_alternating_minimization_system</span></code></a>(f, mu)</p></td>
+<td><p>Preparation of the alternating minimization algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.randomize_exploration_strategy" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.randomize_exploration_strategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">randomize_exploration_strategy</span></code></a>()</p></td>
+<td><p>Randomization of the exploration strategy.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.set_parameter" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.set_parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_parameter</span></code></a>(f, mu, coef)</p></td>
+<td><p>Update of the parameter mu of the tensor f.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.solve" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(*args)</p></td>
+<td><p>Solver for the learning problem with tensor formats.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.stagnation_criterion" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.stagnation_criterion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stagnation_criterion</span></code></a>(f, f0)</p></td>
+<td><p>Computation of the stagnation criterion.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>linear_model</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>risk_estimation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.adapt_tree">
+<code class="sig-name descname">adapt_tree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">cv_error</span></em>, <em class="sig-param"><span class="n">test_error</span></em>, <em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.adapt_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tree adaptation algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The current tensor approximation.</p>
+</dd>
+<dt><strong>cv_error</strong><span class="classifier">float</span></dt><dd><p>The current cross-validation error.</p>
+</dd>
+<dt><strong>test_error</strong><span class="classifier">float</span></dt><dd><p>The current test error.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">dict</span></dt><dd><p>The outputs of the solver.</p>
+</dd>
+<dt><strong>args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The current tensor approximation, perhaps with an adapted tree.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">dict</span></dt><dd><p>The outputs of the solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.adaptation_display">
+<em class="property">abstract </em><code class="sig-name descname">adaptation_display</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">enriched_nodes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.adaptation_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display during the adaptation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>enriched_nodes</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The enriched parameters.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.final_display">
+<em class="property">abstract </em><code class="sig-name descname">final_display</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.final_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display at the end of the computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.initial_guess_new_rank">
+<em class="property">abstract </em><code class="sig-name descname">initial_guess_new_rank</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s_local</span></em>, <em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">new_rank</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.initial_guess_new_rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computation of the initial guess with the new selected rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>new_rank</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new tensor rank.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver with the initial guess in s_local.initial_guess.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.initialize">
+<em class="property">abstract </em><code class="sig-name descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization of the learning algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The initialization of the solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.local_solver">
+<em class="property">abstract </em><code class="sig-name descname">local_solver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.local_solver" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Extraction of the solver for the adaptive algorithm</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.new_rank_selection">
+<em class="property">abstract </em><code class="sig-name descname">new_rank_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.new_rank_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selection of a new rank in the adaptive algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>new_rank</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new tensor rank.</p>
+</dd>
+<dt><strong>enriched_nodes</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The enriched parameters.</p>
+</dd>
+<dt><strong>tensor_for_initialization</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>A tensor used for the initialization of the next iteration.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.pre_processing">
+<em class="property">abstract </em><code class="sig-name descname">pre_processing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.pre_processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization of the alternating minimization algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The current tensor approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The pre-processed tensor approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.prepare_alternating_minimization_system">
+<em class="property">abstract </em><code class="sig-name descname">prepare_alternating_minimization_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">mu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.prepare_alternating_minimization_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preparation of the alternating minimization algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">int</span></dt><dd><p>The number of the parameter to be optimized.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>A</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The matricized partial evaluation of f.</p>
+</dd>
+<dt><strong>b</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The target training data.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.randomize_exploration_strategy">
+<em class="property">abstract </em><code class="sig-name descname">randomize_exploration_strategy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.randomize_exploration_strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomization of the exploration strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha_list</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The randomized exploration strategy.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.set_parameter">
+<em class="property">abstract </em><code class="sig-name descname">set_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">mu</span></em>, <em class="sig-param"><span class="n">coef</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.set_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update of the parameter mu of the tensor f.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">int</span></dt><dd><p>The number of the optimized parameter.</p>
+</dd>
+<dt><strong>coef</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new value of the parameter mu of f.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The updated approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.solve">
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solver for the learning problem with tensor formats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">misc</span></dt><dd><p>Additional arguments, if needed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The learned approximation.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">dict</span></dt><dd><p>The outputs of the solver.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>NotImplementedError</dt><dd><p>If the required solver is not implemented.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If the required data is not provided.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.stagnation_criterion">
+<em class="property">abstract </em><code class="sig-name descname">stagnation_criterion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">f0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning.stagnation_criterion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computation of the stagnation criterion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>f0</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The previous approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>stagnation</strong><span class="classifier">float</span></dt><dd><p>The value of the stagnation criterion.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning">
+<span id="tensap-approximation-tensor-approximation-tensor-learning-tree-based-tensor-learning-module"></span><h2>tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning module<a class="headerlink" href="#module-tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning" title="Permalink to this headline">¶</a></h2>
+<p>Module tree_based_tensor_learning.</p>
+<dl class="py class">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.</code><code class="sig-name descname">TreeBasedTensorLearning</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em>, <em class="sig-param"><span class="n">is_active_node</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning" title="tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.tensor_approximation.tensor_learning.tensor_learning.TensorLearning</span></code></a></p>
+<p>Class TreeBasedTensorLearning.</p>
+<p>See also tensap.TensorLearning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tree</strong><span class="classifier">tensap.DimensionTree</span></dt><dd><p>The dimension tree of the tree-based tensor.</p>
+</dd>
+<dt><strong>is_active_node</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Booleans indicating if each node is active.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.adapt_tree" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.adapt_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adapt_tree</span></code></a>(f, cv_error, test_error, output, …)</p></td>
+<td><p>Tree adaptation algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.adaptation_display" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.adaptation_display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adaptation_display</span></code></a>(f, enriched_nodes)</p></td>
+<td><p>Display during the adaptation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.canonical_correction" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.canonical_correction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">canonical_correction</span></code></a>(f, rank)</p></td>
+<td><p>Rank-r canonical correction.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.canonical_initialization" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.canonical_initialization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">canonical_initialization</span></code></a>(rank)</p></td>
+<td><p>Rank-r canonical initialization.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.create_basis_adaptation_path" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.create_basis_adaptation_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_basis_adaptation_path</span></code></a>(ranks, alpha)</p></td>
+<td><p>Creation of the basis adaptation path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.enriched_edges_to_ranks_random" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.enriched_edges_to_ranks_random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enriched_edges_to_ranks_random</span></code></a>(f, new_rank)</p></td>
+<td><p>Enrichment of the ranks of specified edges of the tensor f using random additions for each child / parent couple of the enriched edges.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.final_display" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.final_display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">final_display</span></code></a>(f)</p></td>
+<td><p>Display at the end of the computation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.initial_guess_new_rank" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.initial_guess_new_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial_guess_new_rank</span></code></a>(s_local, f, new_rank)</p></td>
+<td><p>Computation of the initial guess with the new selected rank.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.initialize" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize</span></code></a>()</p></td>
+<td><p>Initialization of the learning algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.local_solver" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.local_solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_solver</span></code></a>()</p></td>
+<td><p>Extraction of the solver for the adaptive algorithm</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.make_ranks_admissible" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.make_ranks_admissible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_ranks_admissible</span></code></a>(f, rank)</p></td>
+<td><p>Adjustment of the ranks to make the associated tree-based tensor f rank-admissible, by enriching new edges associated with nodes of the tree until all the rank admissibility conditions are met.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.new_rank_selection" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.new_rank_selection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_rank_selection</span></code></a>(f)</p></td>
+<td><p>Selection of a new rank in the adaptive algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.pre_processing" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.pre_processing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pre_processing</span></code></a>(f)</p></td>
+<td><p>Initialization of the alternating minimization algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.prepare_alternating_minimization_system" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.prepare_alternating_minimization_system"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_alternating_minimization_system</span></code></a>(f, mu)</p></td>
+<td><p>Preparation of the alternating minimization algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.randomize_exploration_strategy" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.randomize_exploration_strategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">randomize_exploration_strategy</span></code></a>()</p></td>
+<td><p>Randomization of the exploration strategy.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.rank_one_correction" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.rank_one_correction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rank_one_correction</span></code></a>(f)</p></td>
+<td><p>Rank one correction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.set_parameter" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.set_parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_parameter</span></code></a>(f, mu, coef)</p></td>
+<td><p>Update of the parameter mu of the tensor f.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>(*args)</p></td>
+<td><p>Solver for the learning problem with tensor formats.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.stagnation_criterion" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.stagnation_criterion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stagnation_criterion</span></code></a>(f, f0)</p></td>
+<td><p>Computation of the stagnation criterion.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.tensor_train" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.tensor_train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_train</span></code></a>(order, *args)</p></td>
+<td><p>Call of the constructor of the class TreeBasedTensorLearning, with a tree and active nodes corresponding to the Tensor-Train format in dimension order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.tensor_train_tucker" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.tensor_train_tucker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor_train_tucker</span></code></a>(order, *args)</p></td>
+<td><p>Call of the constructor of the class TreeBasedTensorLearning, with a tree and active nodes corresponding to the Tensor-Train Tucker format in dimension order.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.unique_tol" title="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.unique_tol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique_tol</span></code></a>(inp, tol)</p></td>
+<td><p>Unique values within tolerance, with sorted output.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 82%" />
+<col style="width: 18%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>create_basis_adaptation_path_dmrg</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>create_basis_adaptation_path_dmrg_low_rank</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>linear_model</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>risk_estimation</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.adapt_tree">
+<code class="sig-name descname">adapt_tree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">cv_error</span></em>, <em class="sig-param"><span class="n">test_error</span></em>, <em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.adapt_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tree adaptation algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The current tensor approximation.</p>
+</dd>
+<dt><strong>cv_error</strong><span class="classifier">float</span></dt><dd><p>The current cross-validation error.</p>
+</dd>
+<dt><strong>test_error</strong><span class="classifier">float</span></dt><dd><p>The current test error.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">dict</span></dt><dd><p>The outputs of the solver.</p>
+</dd>
+<dt><strong>args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The current tensor approximation, perhaps with an adapted tree.</p>
+</dd>
+<dt><strong>output</strong><span class="classifier">dict</span></dt><dd><p>The outputs of the solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.adaptation_display">
+<code class="sig-name descname">adaptation_display</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">enriched_nodes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.adaptation_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display during the adaptation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>enriched_nodes</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The enriched parameters.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.canonical_correction">
+<code class="sig-name descname">canonical_correction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">rank</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.canonical_correction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rank-r canonical correction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor or None</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>rank</strong><span class="classifier">int</span></dt><dd><p>The rank of the canonical correction.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The corrected approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>NotImplementedError</dt><dd><p>If the method is not implemented.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.canonical_initialization">
+<code class="sig-name descname">canonical_initialization</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rank</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.canonical_initialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rank-r canonical initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>rank</strong><span class="classifier">int</span></dt><dd><p>The rank of the canonical initialization.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TreeBasedTensor</dt><dd><p>The rank-r canonical initialization..</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.create_basis_adaptation_path">
+<code class="sig-name descname">create_basis_adaptation_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ranks</span></em>, <em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.create_basis_adaptation_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creation of the basis adaptation path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>rank</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The alpha-ranks of the current approximation.</p>
+</dd>
+<dt><strong>alpha</strong><span class="classifier">int</span></dt><dd><p>The current node.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>path</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The basis adaptation path.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.create_basis_adaptation_path_dmrg">
+<code class="sig-name descname">create_basis_adaptation_path_dmrg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ranks</span></em>, <em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.create_basis_adaptation_path_dmrg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.create_basis_adaptation_path_dmrg_low_rank">
+<code class="sig-name descname">create_basis_adaptation_path_dmrg_low_rank</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ranks</span></em>, <em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.create_basis_adaptation_path_dmrg_low_rank" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.enriched_edges_to_ranks_random">
+<em class="property">static </em><code class="sig-name descname">enriched_edges_to_ranks_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">new_rank</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.enriched_edges_to_ranks_random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enrichment of the ranks of specified edges of the tensor f using random
+additions for each child / parent couple of the enriched edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.TreeBasedTensor</span></dt><dd><p>The tree-based tensor to enrich.</p>
+</dd>
+<dt><strong>new_rank</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The new tree-based rank.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.TreeBasedTensor</span></dt><dd><p>The enriched tree-based tensor.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.final_display">
+<code class="sig-name descname">final_display</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.final_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display at the end of the computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.initial_guess_new_rank">
+<code class="sig-name descname">initial_guess_new_rank</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s_local</span></em>, <em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">new_rank</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.initial_guess_new_rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computation of the initial guess with the new selected rank.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>new_rank</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new tensor rank.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver with the initial guess in s_local.initial_guess.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.initialize">
+<code class="sig-name descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization of the learning algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The initialization of the solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.local_solver">
+<code class="sig-name descname">local_solver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.local_solver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extraction of the solver for the adaptive algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s_local</strong><span class="classifier">tensap.TensorLearning</span></dt><dd><p>The local solver.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.make_ranks_admissible">
+<em class="property">static </em><code class="sig-name descname">make_ranks_admissible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">rank</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.make_ranks_admissible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjustment of the ranks to make the associated tree-based tensor f
+rank-admissible, by enriching new edges associated with nodes of the
+tree until all the rank admissibility conditions are met.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.TreeBasedTensor</span></dt><dd><p>The current approximation in tree-based tensor format.</p>
+</dd>
+<dt><strong>rank</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The proposed tree-based rank.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>rank</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The admissible tree-based rank (if possible).</p>
+</dd>
+<dt><strong>d</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The enriched nodes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.new_rank_selection">
+<code class="sig-name descname">new_rank_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.new_rank_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selection of a new rank in the adaptive algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>new_rank</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new tensor rank.</p>
+</dd>
+<dt><strong>enriched_nodes</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The enriched parameters.</p>
+</dd>
+<dt><strong>tensor_for_initialization</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>A tensor used for the initialization of the next iteration.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.pre_processing">
+<code class="sig-name descname">pre_processing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.pre_processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialization of the alternating minimization algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The current tensor approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.Tensor</span></dt><dd><p>The pre-processed tensor approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.prepare_alternating_minimization_system">
+<code class="sig-name descname">prepare_alternating_minimization_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">mu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.prepare_alternating_minimization_system" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preparation of the alternating minimization algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">int</span></dt><dd><p>The number of the parameter to be optimized.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorLearning</dt><dd><p>The TensorLearning object.</p>
+</dd>
+<dt><strong>A</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The matricized partial evaluation of f.</p>
+</dd>
+<dt><strong>b</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The target training data.</p>
+</dd>
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.randomize_exploration_strategy">
+<code class="sig-name descname">randomize_exploration_strategy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.randomize_exploration_strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomization of the exploration strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha_list</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The randomized exploration strategy.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.rank_one_correction">
+<code class="sig-name descname">rank_one_correction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.rank_one_correction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rank one correction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor or None</span></dt><dd><p>The current approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The corrected approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>NotImplementedError</dt><dd><p>If the method is not implemented.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.set_parameter">
+<code class="sig-name descname">set_parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">mu</span></em>, <em class="sig-param"><span class="n">coef</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.set_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update of the parameter mu of the tensor f.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">int</span></dt><dd><p>The number of the optimized parameter.</p>
+</dd>
+<dt><strong>coef</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The new value of the parameter mu of f.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The updated approximation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.stagnation_criterion">
+<code class="sig-name descname">stagnation_criterion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">f0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.stagnation_criterion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computation of the stagnation criterion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The current approximation.</p>
+</dd>
+<dt><strong>f0</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The previous approximation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>stagnation</strong><span class="classifier">float</span></dt><dd><p>The value of the stagnation criterion.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.tensor_train">
+<em class="property">static </em><code class="sig-name descname">tensor_train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">order</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.tensor_train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call of the constructor of the class TreeBasedTensorLearning, with a
+tree and active nodes corresponding to the Tensor-Train format in
+dimension order.</p>
+<p>See also TreeBasedTensorLearning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">int</span></dt><dd><p>The order of the tensor.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters (see the constructor of
+TreeBasedTensorLearning).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TreeBasedTensorLearning</dt><dd><p>The solver with a tree and active nodes associated with the
+Tensor-Train format.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.tensor_train_tucker">
+<em class="property">static </em><code class="sig-name descname">tensor_train_tucker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">order</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.tensor_train_tucker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call of the constructor of the class TreeBasedTensorLearning, with a
+tree and active nodes corresponding to the Tensor-Train Tucker format
+in dimension order.</p>
+<p>See also TreeBasedTensorLearning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>order</strong><span class="classifier">int</span></dt><dd><p>The order of the tensor.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters (see the constructor of
+TreeBasedTensorLearning).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>TreeBasedTensorLearning</dt><dd><p>The solver with a tree and active nodes associated with the
+Tensor-Train Tucker format.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.unique_tol">
+<em class="property">static </em><code class="sig-name descname">unique_tol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em>, <em class="sig-param"><span class="n">tol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.tensor_learning.tree_based_tensor_learning.TreeBasedTensorLearning.unique_tol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique values within tolerance, with sorted output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>inp</strong><span class="classifier">list of numpy.ndarray</span></dt><dd><p>The values to be checked.</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float</span></dt><dd><p>The tolerance defining the uniqueness.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>bout</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The unique values of inp, within the tolerance tol.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.tensor_approximation.tensor_learning">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.approximation.tensor_approximation.tensor_learning" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tensap.approximation.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.approximation.html#module-tensap.approximation">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tensap.approximation.html">tensap.approximation package</a><ul>
+  <li><a href="tensap.approximation.tensor_approximation.html">tensap.approximation.tensor_approximation package</a><ul>
+      <li>Previous: <a href="tensap.approximation.tensor_approximation.principal_component_analysis.html" title="previous chapter">tensap.approximation.tensor_approximation.principal_component_analysis package</a></li>
+      <li>Next: <a href="tensap.approximation.tools.html" title="next chapter">tensap.approximation.tools package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.approximation.tensor_approximation.tensor_learning.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

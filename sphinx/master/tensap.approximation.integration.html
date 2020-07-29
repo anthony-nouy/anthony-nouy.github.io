@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.approximation.integration package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.approximation.learning package" href="tensap.approximation.learning.html" />
+    <link rel="prev" title="tensap.approximation.bases package" href="tensap.approximation.bases.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-approximation-integration-package">
+<h1>tensap.approximation.integration package<a class="headerlink" href="#tensap-approximation-integration-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.approximation.integration.integration_rules">
+<span id="tensap-approximation-integration-integration-rules-module"></span><h2>tensap.approximation.integration.integration_rules module<a class="headerlink" href="#module-tensap.approximation.integration.integration_rules" title="Permalink to this headline">¶</a></h2>
+<p>Module integration_rules.</p>
+<dl class="py class">
+<dt id="tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.integration.integration_rules.</code><code class="sig-name descname">FullTensorProductIntegrationRule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">weights</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.approximation.integration.integration_rules.IntegrationRule" title="tensap.approximation.integration.integration_rules.IntegrationRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.integration.integration_rules.IntegrationRule</span></code></a></p>
+<p>Class FullTensorProductIntegrationRule.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss</span></code>(random_variable, *args)</p></td>
+<td><p>Call the method gauss_integration_rule of tensap.RandomVariable or tensap.RandomVector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.integrate" title="tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.integrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integrate</span></code></a>(fun)</p></td>
+<td><p>Integrate the function fun using the integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.ndim" title="tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the number of integration points.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorize</span></code>(dim)</p></td>
+<td><p>Create a tensap.FullTensorProductIntegrationRule in dimension dim using the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.weights_on_grid" title="tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.weights_on_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weights_on_grid</span></code></a>()</p></td>
+<td><p>Return the weights on the grid.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.integrate">
+<code class="sig-name descname">integrate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.integrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate the function fun using the integration rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to be integrated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd><p>The integrated function using the integration rule.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.ndim">
+<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of integration points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The number of integration points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.weights_on_grid">
+<code class="sig-name descname">weights_on_grid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.FullTensorProductIntegrationRule.weights_on_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the weights on the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The weights on the grid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.approximation.integration.integration_rules.IntegrationRule">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.integration.integration_rules.</code><code class="sig-name descname">IntegrationRule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">weights</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.IntegrationRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class IntegrationRule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>points</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The integration points.</p>
+</dd>
+<dt><strong>weights</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The integration weights.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.integration.integration_rules.IntegrationRule.gauss" title="tensap.approximation.integration.integration_rules.IntegrationRule.gauss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss</span></code></a>(random_variable, *args)</p></td>
+<td><p>Call the method gauss_integration_rule of tensap.RandomVariable or tensap.RandomVector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.integration.integration_rules.IntegrationRule.integrate" title="tensap.approximation.integration.integration_rules.IntegrationRule.integrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integrate</span></code></a>(fun)</p></td>
+<td><p>Integrate the function fun using the integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.integration.integration_rules.IntegrationRule.ndim" title="tensap.approximation.integration.integration_rules.IntegrationRule.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the number of integration points.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.integration.integration_rules.IntegrationRule.tensorize" title="tensap.approximation.integration.integration_rules.IntegrationRule.tensorize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorize</span></code></a>(dim)</p></td>
+<td><p>Create a tensap.FullTensorProductIntegrationRule in dimension dim using the object.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.integration.integration_rules.IntegrationRule.gauss">
+<em class="property">static </em><code class="sig-name descname">gauss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">random_variable</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.IntegrationRule.gauss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call the method gauss_integration_rule of tensap.RandomVariable or
+tensap.RandomVector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>random_variable</strong><span class="classifier">tensap.RandomVariable or tensap.RandomVector</span></dt><dd><p>The random variable or vector associated to which the integration
+rule is to be computed.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">misc</span></dt><dd><p>Additional arguments.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.IntegrationRule</dt><dd><p>The integration rule associated with the random variable or vector.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.integration.integration_rules.IntegrationRule.integrate">
+<code class="sig-name descname">integrate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.IntegrationRule.integrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate the function fun using the integration rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function</span></dt><dd><p>The function to be integrated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd><p>The integrated function using the integration rule.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.integration.integration_rules.IntegrationRule.ndim">
+<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.IntegrationRule.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of integration points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The number of integration points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.integration.integration_rules.IntegrationRule.tensorize">
+<code class="sig-name descname">tensorize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.integration.integration_rules.IntegrationRule.tensorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a tensap.FullTensorProductIntegrationRule in dimension dim
+using the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dim</strong><span class="classifier">int</span></dt><dd><p>The dimension of the tensap.FullTensorProductIntegrationRule.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.FullTensorProductIntegrationRule</dt><dd><p>The integration rule in dimension dim.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.integration">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.approximation.integration" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tensap.approximation.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.approximation.html#module-tensap.approximation">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tensap.approximation.html">tensap.approximation package</a><ul>
+      <li>Previous: <a href="tensap.approximation.bases.html" title="previous chapter">tensap.approximation.bases package</a></li>
+      <li>Next: <a href="tensap.approximation.learning.html" title="next chapter">tensap.approximation.learning package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.approximation.integration.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

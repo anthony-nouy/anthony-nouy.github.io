@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.functions.sets package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.linear_algebra package" href="tensap.linear_algebra.html" />
+    <link rel="prev" title="tensap.functions.polynomials package" href="tensap.functions.polynomials.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-functions-sets-package">
+<h1>tensap.functions.sets package<a class="headerlink" href="#tensap-functions-sets-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.functions.sets.is_in">
+<span id="tensap-functions-sets-is-in-module"></span><h2>tensap.functions.sets.is_in module<a class="headerlink" href="#module-tensap.functions.sets.is_in" title="Permalink to this headline">¶</a></h2>
+<p>Module is_in.</p>
+<dl class="py function">
+<dt id="tensap.functions.sets.is_in.is_in">
+<code class="sig-prename descclassname">tensap.functions.sets.is_in.</code><code class="sig-name descname">is_in</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">B</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.sets.is_in.is_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a boolean array of length x.shape[0] such that ok[k] = True if the
+point x[k, :] is in the box given by B.</p>
+<p>B is of shape (2, dim) and contains the two extreme points B[0, :] and
+B[1, :] of the box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>B</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The box.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>ok</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>A boolean array indicating if the points x are in the box B.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.sets">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.functions.sets" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tensap.functions.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.compositional_model_function">tensap.functions.compositional_model_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.function">tensap.functions.function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.functional_tensor">tensap.functions.functional_tensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.multivariate_functions_benchmark">tensap.functions.multivariate_functions_benchmark module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.tensorized_function">tensap.functions.tensorized_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.tensorizer">tensap.functions.tensorizer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.user_defined_function">tensap.functions.user_defined_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tensap.functions.html">tensap.functions package</a><ul>
+      <li>Previous: <a href="tensap.functions.polynomials.html" title="previous chapter">tensap.functions.polynomials package</a></li>
+      <li>Next: <a href="tensap.linear_algebra.html" title="next chapter">tensap.linear_algebra package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.functions.sets.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
