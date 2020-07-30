@@ -1,0 +1,3080 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.functions.measures package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.functions.polynomials package" href="tensap.functions.polynomials.html" />
+    <link rel="prev" title="tensap.functions package" href="tensap.functions.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-functions-measures-package">
+<h1>tensap.functions.measures package<a class="headerlink" href="#tensap-functions-measures-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.functions.measures.copulas">
+<span id="tensap-functions-measures-copulas-module"></span><h2>tensap.functions.measures.copulas module<a class="headerlink" href="#module-tensap.functions.measures.copulas" title="Permalink to this headline">¶</a></h2>
+<p>Module copulas.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.copulas.Copula">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.copulas.</code><code class="sig-name descname">Copula</code><a class="headerlink" href="#tensap.functions.measures.copulas.Copula" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.functions.measures.copulas.IndependentCopula">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.copulas.</code><code class="sig-name descname">IndependentCopula</code><a class="headerlink" href="#tensap.functions.measures.copulas.IndependentCopula" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.copulas.Copula" title="tensap.functions.measures.copulas.Copula"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.copulas.Copula</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 59%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cdf</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pdf</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.copulas.IndependentCopula.cdf">
+<code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.copulas.IndependentCopula.cdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.copulas.IndependentCopula.pdf">
+<code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.copulas.IndependentCopula.pdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.discrete_measure">
+<span id="tensap-functions-measures-discrete-measure-module"></span><h2>tensap.functions.measures.discrete_measure module<a class="headerlink" href="#module-tensap.functions.measures.discrete_measure" title="Permalink to this headline">¶</a></h2>
+<p>Module discrete_measure.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.discrete_measure.DiscreteMeasure">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.discrete_measure.</code><code class="sig-name descname">DiscreteMeasure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.measure.Measure" title="tensap.functions.measures.measure.Measure"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.measure.Measure</span></code></a></p>
+<p>Class DiscreteMeasure: discrete measure in R^d
+sum_{i=1}^n w_i delta_{x_i}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>values</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Array containing the set of values (x_1,…,x_N) taken by the random
+variable, with x_i in R^d, i = 1, …, N.</p>
+</dd>
+<dt><strong>weights</strong><span class="classifier">numpy.ndarray, optional</span></dt><dd><p>Array containing the weights P(X=x_1), …, P(X=x_N). The default
+is None, indicating to take weights equal to 1.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.integration_rule" title="tensap.functions.measures.discrete_measure.DiscreteMeasure.integration_rule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integration_rule</span></code></a>()</p></td>
+<td><p>Return the integration rule associated with the measure</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.mass" title="tensap.functions.measures.discrete_measure.DiscreteMeasure.mass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code></a>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.ndim" title="tensap.functions.measures.discrete_measure.DiscreteMeasure.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.plot" title="tensap.functions.measures.discrete_measure.DiscreteMeasure.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(*args)</p></td>
+<td><p>Plot a graphical representation of the discrete measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.random" title="tensap.functions.measures.discrete_measure.DiscreteMeasure.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>([n])</p></td>
+<td><p>Generate n random numbers according to the probability distribution obtained by rescaling the DiscreteMeasure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.support" title="tensap.functions.measures.discrete_measure.DiscreteMeasure.support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code></a>()</p></td>
+<td><p>Return the support of the Measure.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_measure.DiscreteMeasure.integration_rule">
+<code class="sig-name descname">integration_rule</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.integration_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the integration rule associated with the measure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.IntegrationRule</dt><dd><p>The integration rule associated with the measure</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_measure.DiscreteMeasure.mass">
+<code class="sig-name descname">mass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mass of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_measure.DiscreteMeasure.ndim">
+<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_measure.DiscreteMeasure.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a graphical representation of the discrete measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters for matplotlib.pyplot’s function vlines.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_measure.DiscreteMeasure.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate n random numbers according to the probability distribution
+obtained by rescaling the DiscreteMeasure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>The number of random numbers generated. The default is 1.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The n generated random numbers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_measure.DiscreteMeasure.support">
+<code class="sig-name descname">support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_measure.DiscreteMeasure.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.discrete_random_variable">
+<span id="tensap-functions-measures-discrete-random-variable-module"></span><h2>tensap.functions.measures.discrete_random_variable module<a class="headerlink" href="#module-tensap.functions.measures.discrete_random_variable" title="Permalink to this headline">¶</a></h2>
+<p>Module discrete_random_variable.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.discrete_random_variable.</code><code class="sig-name descname">DiscreteRandomVariable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">probabilities</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable" title="tensap.functions.measures.random_variable.RandomVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.random_variable.RandomVariable</span></code></a></p>
+<p>Class DiscreteRandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>values</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Array containing the set of values (x_1,…,x_N) taken by the random
+variable, with x_i in R^d, i = 1, …, N.</p>
+</dd>
+<dt><strong>probabilities</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>Array containing the probabilities P(X=x_1), …, P(X=x_N). The default
+is None, indicating to create a uniform law: P(X=x_i)=1/N,
+i = 1, …, N.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.cdf" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.cdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf</span></code></a>(x)</p></td>
+<td><p>Compute the cumulative density function of X at x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the cumulative distribution function (cdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretize</span></code>(n)</p></td>
+<td><p>Return a discrete random variable taking n possible values x1, …, xn, these values being the quantiles of self of probability 1/(2n) + i/n, i=0n …, n-1 and such that P(Xn &gt;= xn) = 1/n.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss_integration_rule</span></code>(nb_pts)</p></td>
+<td><p>Return the nb_pts-points gauss integration rule associated with the measure of self, using Golub-Welsch algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.get_parameters" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.get_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameters</span></code></a>()</p></td>
+<td><p>Return the parameters of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.get_standard_random_variable" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.get_standard_random_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_standard_random_variable</span></code></a>()</p></td>
+<td><p>Return the standard discrete random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.icdf" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.icdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf</span></code></a>(p)</p></td>
+<td><p>Compute the inverse cumulative density function of X at p (quantile).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the inverse cumulative distribution function (icdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.integration_rule" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.integration_rule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integration_rule</span></code></a>()</p></td>
+<td><p>Return the integration rule object associated with the discrete random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">iso_probabilistic_grid</span></code>(n)</p></td>
+<td><p>Return a set of n+1 points (x_0, …, x_{n}) such that the n sets (x0, x_1), [x_1, x_2) …</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lhs_random</span></code>(n[, p])</p></td>
+<td><p>Latin Hypercube Sampling of the random variable self of n points in dimension p.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">likelihood</span></code>(x)</p></td>
+<td><p>Compute the log-likelihood of the random variable on sample x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code>()</p></td>
+<td><p>Compute the maximum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.mean" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>()</p></td>
+<td><p>Return the mean of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code>()</p></td>
+<td><p>Compute the minimum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, nargout])</p></td>
+<td><p>Compute the moments of self of orders contained in ind, defined as E(X^ind[î]).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the random variable, equal to 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_parameters</span></code>()</p></td>
+<td><p>Compute the number of parameters that admits the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">orthonormal_polynomials</span></code>(*max_degree)</p></td>
+<td><p>Return the max_degree-1 first orthonormal polynomials associated with the RandomVariable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf</span></code>(x)</p></td>
+<td><p>Compute the probability density function (pdf) of the RandomVariable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the probability density function (pdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.plot" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(quantity, *args)</p></td>
+<td><p>Plot the desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.random" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>([n])</p></td>
+<td><p>Generate n random numbers according to the distribution of the RandomVariable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.random_variable_statistics" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.random_variable_statistics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_variable_statistics</span></code></a>()</p></td>
+<td><p>Return the mean and the variance of the discrete random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code>()</p></td>
+<td><p>Return the standard deviation of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.support" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code></a>()</p></td>
+<td><p>Return the support of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transfer</span></code>(Y, x)</p></td>
+<td><p>Transfer from the random variable self to the random variable Y at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_support</span></code>()</p></td>
+<td><p>Return the truncated support of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.var" title="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>()</p></td>
+<td><p>Return the variance of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code>()</p></td>
+<td><p>Return the variance of the random variable.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>random_rejection</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.cdf">
+<code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the cumulative density function of X at x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">float, list or numpy.ndarray</span></dt><dd><p>The points at which the cumulative density function of X is to be
+evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the cumulative density function of X at x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.get_parameters">
+<code class="sig-name descname">get_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the parameters of the random variable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.get_standard_random_variable">
+<code class="sig-name descname">get_standard_random_variable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.get_standard_random_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard discrete random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.UniformRandomVariable</dt><dd><p>The standard discrete random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.icdf">
+<code class="sig-name descname">icdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.icdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the inverse cumulative density function of X at p (quantile).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>p</strong><span class="classifier">float, list or numpy.ndarray</span></dt><dd><p>The points at which the inverse cumulative density function of X is
+to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the inverse cumulative density function of X at
+x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.integration_rule">
+<code class="sig-name descname">integration_rule</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.integration_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the integration rule object associated with the discrete random
+variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.IntegrationRule</dt><dd><p>The integration rule object associated with the discrete random
+variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.mean">
+<code class="sig-name descname">mean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantity</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>quantity</strong><span class="classifier">str</span></dt><dd><p>The desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters for matplotlib.pyplot’s function step (for
+the cdf), vlines (for the pdf) or plot (for the icdf).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the provided argument quantity is wrong.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate n random numbers according to the distribution of the
+RandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of random numbers generated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The generated numbers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.random_variable_statistics">
+<code class="sig-name descname">random_variable_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.random_variable_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean and the variance of the discrete random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+<dt>float</dt><dd><p>The variance of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.support">
+<code class="sig-name descname">support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.var">
+<code class="sig-name descname">var</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.discrete_random_variable.DiscreteRandomVariable.var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the variance of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The variance of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.empirical_random_variable">
+<span id="tensap-functions-measures-empirical-random-variable-module"></span><h2>tensap.functions.measures.empirical_random_variable module<a class="headerlink" href="#module-tensap.functions.measures.empirical_random_variable" title="Permalink to this headline">¶</a></h2>
+<p>Module empirical_random_variable.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.empirical_random_variable.</code><code class="sig-name descname">EmpiricalRandomVariable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable" title="tensap.functions.measures.random_variable.RandomVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.random_variable.RandomVariable</span></code></a></p>
+<p>Class EmpiricalRandomVariable. A random variable fitted using gaussian
+kernel smoothing, this class gives best results in the case of normal
+distributions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sample</strong><span class="classifier">numpy.array</span></dt><dd><p>The sample used to generate the random variable.</p>
+</dd>
+<dt><strong>bandwidth</strong><span class="classifier">float</span></dt><dd><p>The computed bandwidth for the kernel density estimator.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.cdf" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.cdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf</span></code></a>(x)</p></td>
+<td><p>Compute the cumulative distribution function (cdf) of the RandomVariable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the cumulative distribution function (cdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretize</span></code>(n)</p></td>
+<td><p>Return a discrete random variable taking n possible values x1, …, xn, these values being the quantiles of self of probability 1/(2n) + i/n, i=0n …, n-1 and such that P(Xn &gt;= xn) = 1/n.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss_integration_rule</span></code>(nb_pts)</p></td>
+<td><p>Return the nb_pts-points gauss integration rule associated with the measure of self, using Golub-Welsch algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.get_parameters" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.get_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameters</span></code></a>()</p></td>
+<td><p>Return the parameters of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.get_standard_random_variable" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.get_standard_random_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_standard_random_variable</span></code></a>()</p></td>
+<td><p>Return the standard empirical random variable with zero mean and unit standard deviation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.icdf" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.icdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf</span></code></a>(x, *args, **kwargs)</p></td>
+<td><p>Compute the inverse cumulative distribution function (icdf) of the RandomVariable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the inverse cumulative distribution function (icdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">iso_probabilistic_grid</span></code>(n)</p></td>
+<td><p>Return a set of n+1 points (x_0, …, x_{n}) such that the n sets (x0, x_1), [x_1, x_2) …</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lhs_random</span></code>(n[, p])</p></td>
+<td><p>Latin Hypercube Sampling of the random variable self of n points in dimension p.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">likelihood</span></code>(x)</p></td>
+<td><p>Compute the log-likelihood of the random variable on sample x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code>()</p></td>
+<td><p>Compute the maximum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>()</p></td>
+<td><p>Return the mean of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code>()</p></td>
+<td><p>Compute the minimum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, nargout])</p></td>
+<td><p>Compute the moments of self of orders contained in ind, defined as E(X^ind[î]).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the random variable, equal to 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_parameters</span></code>()</p></td>
+<td><p>Compute the number of parameters that admits the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.orthonormal_polynomials" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.orthonormal_polynomials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orthonormal_polynomials</span></code></a>(*args)</p></td>
+<td><p>Return the max_degree-1 first orthonormal polynomials associated with the RandomVariable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.pdf" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.pdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf</span></code></a>(x)</p></td>
+<td><p>Compute the probability density function (pdf) of the RandomVariable at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the probability density function (pdf) of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code>(quantity[, n_pts, bar])</p></td>
+<td><p>Plot the desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.random" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>([n])</p></td>
+<td><p>Generate n random numbers according to the distribution of the RandomVariable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.random_variable_statistics" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.random_variable_statistics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_variable_statistics</span></code></a>()</p></td>
+<td><p>Return the mean and the variance of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.shift" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(b, s)</p></td>
+<td><p>Shift the random variable using the provided bias and scaling factor.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code>()</p></td>
+<td><p>Return the standard deviation of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.support" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code></a>()</p></td>
+<td><p>Return the support of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.transfer" title="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.transfer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transfer</span></code></a>(Y, x)</p></td>
+<td><p>Transfer from the random variable self to the random variable Y at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_support</span></code>()</p></td>
+<td><p>Return the truncated support of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code>()</p></td>
+<td><p>Return the variance of the random variable.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>random_rejection</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.cdf">
+<code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the cumulative distribution function (cdf) of the
+RandomVariable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">float or list or numpy.ndarray</span></dt><dd><p>The points at which the cdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the cdf at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.get_parameters">
+<code class="sig-name descname">get_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the parameters of the random variable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.get_standard_random_variable">
+<code class="sig-name descname">get_standard_random_variable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.get_standard_random_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard empirical random variable with zero mean and
+unit standard deviation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.EmpiricalRandomVariable</dt><dd><p>The standard empirical random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.icdf">
+<code class="sig-name descname">icdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.icdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the inverse cumulative distribution function (icdf) of the
+RandomVariable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">float or list or numpy.ndarray</span></dt><dd><p>The points at which the icdf is to be evaluated.</p>
+</dd>
+<dt><strong>*args, **kwargs</strong><span class="classifier">tuples</span></dt><dd><p>Additional parameters for scipy.optimize’s function brentq.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the icdf at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.orthonormal_polynomials">
+<code class="sig-name descname">orthonormal_polynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.orthonormal_polynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the max_degree-1 first orthonormal polynomials associated with
+the RandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>max_degree</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum degree of the returned polynomials. The default is
+None, choosing the default maximum degree associated with the
+constructor of the polynomials.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>poly</strong><span class="classifier">tensap.OrthonormalPolynomials</span></dt><dd><p>The generated orthonormal polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.pdf">
+<code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the probability density function (pdf) of the RandomVariable
+at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">float or list or numpy.ndarray</span></dt><dd><p>The points at which the pdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the pdf at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate n random numbers according to the distribution of the
+RandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of random numbers generated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The generated numbers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.random_variable_statistics">
+<code class="sig-name descname">random_variable_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.random_variable_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean and the variance of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+<dt>float</dt><dd><p>The variance of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.shift">
+<code class="sig-name descname">shift</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.shift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the random variable using the provided bias and scaling factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bias</strong><span class="classifier">float</span></dt><dd><p>The bias.</p>
+</dd>
+<dt><strong>scaling</strong><span class="classifier">float</span></dt><dd><p>The scaling factor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.EmpiricalRandomVariable</dt><dd><p>The shifted random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.support">
+<code class="sig-name descname">support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.transfer">
+<code class="sig-name descname">transfer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.empirical_random_variable.EmpiricalRandomVariable.transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer from the random variable self to the random variable Y at
+points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Y</strong><span class="classifier">tensap.RandomVariable</span></dt><dd><p>The target RandomVariable of the transfer.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The input points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The transfered points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.measure">
+<span id="tensap-functions-measures-measure-module"></span><h2>tensap.functions.measures.measure module<a class="headerlink" href="#module-tensap.functions.measures.measure" title="Permalink to this headline">¶</a></h2>
+<p>Module measure.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.measure.Measure">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.measure.</code><code class="sig-name descname">Measure</code><a class="headerlink" href="#tensap.functions.measures.measure.Measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Class Measure.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.measure.Measure.mass" title="tensap.functions.measures.measure.Measure.mass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code></a>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.measure.Measure.ndim" title="tensap.functions.measures.measure.Measure.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the Measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.measure.Measure.support" title="tensap.functions.measures.measure.Measure.support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code></a>()</p></td>
+<td><p>Return the support of the Measure.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.measure.Measure.mass">
+<em class="property">abstract </em><code class="sig-name descname">mass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.measure.Measure.mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mass of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.measure.Measure.ndim">
+<em class="property">abstract </em><code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.measure.Measure.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.measure.Measure.support">
+<em class="property">abstract </em><code class="sig-name descname">support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.measure.Measure.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.normal_random_variable">
+<span id="tensap-functions-measures-normal-random-variable-module"></span><h2>tensap.functions.measures.normal_random_variable module<a class="headerlink" href="#module-tensap.functions.measures.normal_random_variable" title="Permalink to this headline">¶</a></h2>
+<p>Module normal_random_variable.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.normal_random_variable.</code><code class="sig-name descname">NormalRandomVariable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">standard_deviation</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable" title="tensap.functions.measures.random_variable.RandomVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.random_variable.RandomVariable</span></code></a></p>
+<p>Class NormalRandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>moments</strong><span class="classifier">numpy.array</span></dt><dd><p>The moments of the normal random variable (if computed).</p>
+</dd>
+<dt><strong>mu</strong><span class="classifier">float, optional</span></dt><dd><p>The mean of the normal random variable. The default is 0.</p>
+</dd>
+<dt><strong>sigma</strong><span class="classifier">float, optional</span></dt><dd><p>The standard deviation of the normal random variable. The default is 1.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.cdf" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.cdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf</span></code></a>(x)</p></td>
+<td><p>Evaluate the cumulative distribution function (cdf) of the normal random variable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the cumulative distribution function (cdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretize</span></code>(n)</p></td>
+<td><p>Return a discrete random variable taking n possible values x1, …, xn, these values being the quantiles of self of probability 1/(2n) + i/n, i=0n …, n-1 and such that P(Xn &gt;= xn) = 1/n.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss_integration_rule</span></code>(nb_pts)</p></td>
+<td><p>Return the nb_pts-points gauss integration rule associated with the measure of self, using Golub-Welsch algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.get_parameters" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.get_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameters</span></code></a>()</p></td>
+<td><p>Return the parameters of the normal random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.get_standard_random_variable" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.get_standard_random_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_standard_random_variable</span></code></a>()</p></td>
+<td><p>Return the standard normal random variable with mean 0 and standard deviation 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.icdf" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.icdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf</span></code></a>(x)</p></td>
+<td><p>Evaluate the inverse cumulative distribution function (icdf) of the normal random variable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the inverse cumulative distribution function (icdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">iso_probabilistic_grid</span></code>(n)</p></td>
+<td><p>Return a set of n+1 points (x_0, …, x_{n}) such that the n sets (x0, x_1), [x_1, x_2) …</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lhs_random</span></code>(n[, p])</p></td>
+<td><p>Latin Hypercube Sampling of the random variable self of n points in dimension p.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">likelihood</span></code>(x)</p></td>
+<td><p>Compute the log-likelihood of the random variable on sample x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code>()</p></td>
+<td><p>Compute the maximum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>()</p></td>
+<td><p>Return the mean of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code>()</p></td>
+<td><p>Compute the minimum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, nargout])</p></td>
+<td><p>Compute the moments of self of orders contained in ind, defined as E(X^ind[î]).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the random variable, equal to 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_parameters</span></code>()</p></td>
+<td><p>Compute the number of parameters that admits the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.orthonormal_polynomials" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.orthonormal_polynomials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orthonormal_polynomials</span></code></a>(*max_degree)</p></td>
+<td><p>Return the max_degree-1 first orthonormal polynomials associated with the NormalRandomVariable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.pdf" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.pdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf</span></code></a>(x)</p></td>
+<td><p>Evaluate the probability density function (pdf) of the normal random variable at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the probability density function (pdf) of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code>(quantity[, n_pts, bar])</p></td>
+<td><p>Plot the desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.random" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(n)</p></td>
+<td><p>Generate n random numbers according to the distribution of the RandomVariable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.random_variable_statistics" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.random_variable_statistics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_variable_statistics</span></code></a>()</p></td>
+<td><p>Return the mean and the variance of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.shift" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(bias, scaling)</p></td>
+<td><p>Shift the normal random variable using the provided bias and scaling factor.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code>()</p></td>
+<td><p>Return the standard deviation of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.support" title="tensap.functions.measures.normal_random_variable.NormalRandomVariable.support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code></a>()</p></td>
+<td><p>Return the support of the normal random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transfer</span></code>(Y, x)</p></td>
+<td><p>Transfer from the random variable self to the random variable Y at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_support</span></code>()</p></td>
+<td><p>Return the truncated support of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code>()</p></td>
+<td><p>Return the variance of the random variable.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>random_rejection</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.cdf">
+<code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the cumulative distribution function (cdf) of the normal
+random variable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the cdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the cdf.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.get_parameters">
+<code class="sig-name descname">get_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the parameters of the normal random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+<dt>float</dt><dd><p>The standard deviation of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.get_standard_random_variable">
+<em class="property">static </em><code class="sig-name descname">get_standard_random_variable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.get_standard_random_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard normal random variable with mean 0 and standard
+deviation 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.NormalRandomVariable</dt><dd><p>The standard normal random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.icdf">
+<code class="sig-name descname">icdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.icdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the inverse cumulative distribution function (icdf) of the
+normal random variable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the icdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the icdf.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.orthonormal_polynomials">
+<code class="sig-name descname">orthonormal_polynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">max_degree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.orthonormal_polynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the max_degree-1 first orthonormal polynomials associated with
+the NormalRandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>max_degree</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum degree of the returned polynomials. The default is
+None, choosing the default maximum degree associated with the
+constructor of the polynomials.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>poly</strong><span class="classifier">tensap.OrthonormalPolynomials</span></dt><dd><p>The generated orthonormal polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.pdf">
+<code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the probability density function (pdf) of the normal
+random variable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the pdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the pdf.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate n random numbers according to the distribution of the
+RandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of random numbers generated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The generated numbers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.random_variable_statistics">
+<code class="sig-name descname">random_variable_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.random_variable_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean and the variance of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+<dt>float</dt><dd><p>The variance of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.shift">
+<code class="sig-name descname">shift</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bias</span></em>, <em class="sig-param"><span class="n">scaling</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.shift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the normal random variable using the provided bias and scaling
+factor.</p>
+<p>The mean mu of the random variable becomes mu + bias, and its standard
+deviation sigma becomes sigma * scaling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bias</strong><span class="classifier">float</span></dt><dd><p>The bias.</p>
+</dd>
+<dt><strong>scaling</strong><span class="classifier">float</span></dt><dd><p>The scaling factor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>RV</strong><span class="classifier">tensap.NormalRandomVariable</span></dt><dd><p>The shifted normal random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.normal_random_variable.NormalRandomVariable.support">
+<em class="property">static </em><code class="sig-name descname">support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.NormalRandomVariable.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the normal random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Support of the normal random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="tensap.functions.measures.normal_random_variable.randn">
+<code class="sig-prename descclassname">tensap.functions.measures.normal_random_variable.</code><code class="sig-name descname">randn</code><span class="sig-paren">(</span><em class="sig-param">d0</em>, <em class="sig-param">d1</em>, <em class="sig-param">...</em>, <em class="sig-param">dn</em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.normal_random_variable.randn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a sample (or samples) from the “standard normal” distribution.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a convenience function for users porting code from Matlab,
+and wraps <cite>standard_normal</cite>. That function takes a
+tuple to specify the size of the output, which is consistent with
+other NumPy functions like <cite>numpy.zeros</cite> and <cite>numpy.ones</cite>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>New code should use the <code class="docutils literal notranslate"><span class="pre">standard_normal</span></code> method of a <code class="docutils literal notranslate"><span class="pre">default_rng()</span></code>
+instance instead; see <cite>random-quick-start</cite>.</p>
+</div>
+<p>If positive int_like arguments are provided, <cite>randn</cite> generates an array
+of shape <code class="docutils literal notranslate"><span class="pre">(d0,</span> <span class="pre">d1,</span> <span class="pre">...,</span> <span class="pre">dn)</span></code>, filled
+with random floats sampled from a univariate “normal” (Gaussian)
+distribution of mean 0 and variance 1. A single float randomly sampled
+from the distribution is returned if no argument is provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>d0, d1, …, dn</strong><span class="classifier">int, optional</span></dt><dd><p>The dimensions of the returned array, must be non-negative.
+If no argument is given a single Python float is returned.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>Z</strong><span class="classifier">ndarray or float</span></dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">(d0,</span> <span class="pre">d1,</span> <span class="pre">...,</span> <span class="pre">dn)</span></code>-shaped array of floating-point samples from
+the standard normal distribution, or a single such float if
+no parameters were supplied.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">standard_normal</span></code></dt><dd><p>Similar, but takes a tuple as its argument.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">normal</span></code></dt><dd><p>Also accepts mu and sigma arguments.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.standard_normal</span></code></dt><dd><p>which should be used for new code.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>For random samples from <span class="math notranslate nohighlight">\(N(\mu, \sigma^2)\)</span>, use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sigma</span> <span class="pre">*</span> <span class="pre">np.random.randn(...)</span> <span class="pre">+</span> <span class="pre">mu</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">()</span>
+<span class="go">2.1923875335537315  # random</span>
+</pre></div>
+</div>
+<p>Two-by-four array of samples from N(3, 6.25):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">+</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">array([[-4.49401501,  4.00950034, -1.81814867,  7.29718677],   # random</span>
+<span class="go">       [ 0.39924804,  4.68456316,  4.99394529,  4.84057254]])  # random</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.probability_measure">
+<span id="tensap-functions-measures-probability-measure-module"></span><h2>tensap.functions.measures.probability_measure module<a class="headerlink" href="#module-tensap.functions.measures.probability_measure" title="Permalink to this headline">¶</a></h2>
+<p>Module probability_measure.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.probability_measure.ProbabilityMeasure">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.probability_measure.</code><code class="sig-name descname">ProbabilityMeasure</code><a class="headerlink" href="#tensap.functions.measures.probability_measure.ProbabilityMeasure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.measure.Measure" title="tensap.functions.measures.measure.Measure"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.measure.Measure</span></code></a></p>
+<p>Class ProbabilityMeasure.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.probability_measure.ProbabilityMeasure.mass" title="tensap.functions.measures.probability_measure.ProbabilityMeasure.mass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code></a>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the Measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code>()</p></td>
+<td><p>Return the support of the Measure.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>random_rejection</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.probability_measure.ProbabilityMeasure.mass">
+<em class="property">static </em><code class="sig-name descname">mass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.probability_measure.ProbabilityMeasure.mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mass of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.probability_measure.ProbabilityMeasure.random_rejection">
+<code class="sig-name descname">random_rejection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">c</span></em>, <em class="sig-param"><span class="n">m</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.probability_measure.ProbabilityMeasure.random_rejection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.product_measure">
+<span id="tensap-functions-measures-product-measure-module"></span><h2>tensap.functions.measures.product_measure module<a class="headerlink" href="#module-tensap.functions.measures.product_measure" title="Permalink to this headline">¶</a></h2>
+<p>Module product_measure.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.product_measure.</code><code class="sig-name descname">ProductMeasure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measures</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.measure.Measure" title="tensap.functions.measures.measure.Measure"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.measure.Measure</span></code></a></p>
+<p>Class ProductMeasure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>measures</strong><span class="classifier">list or tensap.RandomVector</span></dt><dd><p>List of Measure objects.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.product_measure.ProductMeasure.duplicate" title="tensap.functions.measures.product_measure.ProductMeasure.duplicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">duplicate</span></code></a>(measure, dim)</p></td>
+<td><p>Create a ProductMeasure by duplicating dim times the provided measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.product_measure.ProductMeasure.mass" title="tensap.functions.measures.product_measure.ProductMeasure.mass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code></a>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.product_measure.ProductMeasure.ndim" title="tensap.functions.measures.product_measure.ProductMeasure.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.product_measure.ProductMeasure.random_vector" title="tensap.functions.measures.product_measure.ProductMeasure.random_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_vector</span></code></a>()</p></td>
+<td><p>Return, if self is a ProbabilityMeasure, the associated RandomVector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.product_measure.ProductMeasure.support" title="tensap.functions.measures.product_measure.ProductMeasure.support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code></a>()</p></td>
+<td><p>Return the support of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.product_measure.ProductMeasure.truncated_support" title="tensap.functions.measures.product_measure.ProductMeasure.truncated_support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_support</span></code></a>()</p></td>
+<td><p>Return the truncated support of the measures of the ProductMeasure.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>marginal</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pdf</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>random</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>random_sequential</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.duplicate">
+<em class="property">static </em><code class="sig-name descname">duplicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span></em>, <em class="sig-param"><span class="n">dim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.duplicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a ProductMeasure by duplicating dim times the provided measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>measure</strong><span class="classifier">tensap.Measure</span></dt><dd><p>The measure to be duplicated.</p>
+</dd>
+<dt><strong>dim</strong><span class="classifier">int</span></dt><dd><p>The number of times the provided measure is duplicated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.ProductMeasure</dt><dd><p>The created ProductMeasure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.marginal">
+<code class="sig-name descname">marginal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.marginal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.mass">
+<code class="sig-name descname">mass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mass of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.ndim">
+<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.pdf">
+<code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.pdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.random_sequential">
+<code class="sig-name descname">random_sequential</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.random_sequential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.random_vector">
+<code class="sig-name descname">random_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.random_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return, if self is a ProbabilityMeasure, the associated RandomVector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.RandomVector</dt><dd><p>The RandomVector associated with self.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.support">
+<code class="sig-name descname">support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.product_measure.ProductMeasure.truncated_support">
+<code class="sig-name descname">truncated_support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.product_measure.ProductMeasure.truncated_support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the truncated support of the measures of the ProductMeasure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list</dt><dd><p>The truncated support of the measures of the ProductMeasure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.random_multi_indices">
+<span id="tensap-functions-measures-random-multi-indices-module"></span><h2>tensap.functions.measures.random_multi_indices module<a class="headerlink" href="#module-tensap.functions.measures.random_multi_indices" title="Permalink to this headline">¶</a></h2>
+<p>Module random_multi_indices.</p>
+<dl class="py function">
+<dt id="tensap.functions.measures.random_multi_indices.random_multi_indices">
+<code class="sig-prename descclassname">tensap.functions.measures.random_multi_indices.</code><code class="sig-name descname">random_multi_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_multi_indices.random_multi_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a random variable uniformly distributed on I1 x … x Id.</p>
+<p>If shape contains integers, the intervals are defined as
+Ij = np.arange(shape[j-1]), j = 1, …, len(shape).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>shape</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The number of elements of each interval, or the interval themselves.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.RandomVector</dt><dd><p>The random variable uniformly distributed on I1 x … x Id.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.random_variable">
+<span id="tensap-functions-measures-random-variable-module"></span><h2>tensap.functions.measures.random_variable module<a class="headerlink" href="#module-tensap.functions.measures.random_variable" title="Permalink to this headline">¶</a></h2>
+<p>Module random_variable.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.random_variable.RandomVariable">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.random_variable.</code><code class="sig-name descname">RandomVariable</code><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.probability_measure.ProbabilityMeasure" title="tensap.functions.measures.probability_measure.ProbabilityMeasure"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.probability_measure.ProbabilityMeasure</span></code></a></p>
+<p>Class RandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>moments</strong><span class="classifier">numpy.array</span></dt><dd><p>The moments of the normal random variable (if computed).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.cdf" title="tensap.functions.measures.random_variable.RandomVariable.cdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf</span></code></a>(x)</p></td>
+<td><p>Compute the cumulative distribution function (cdf) of the RandomVariable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.cdf_plot" title="tensap.functions.measures.random_variable.RandomVariable.cdf_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf_plot</span></code></a>(*args)</p></td>
+<td><p>Plot the cumulative distribution function (cdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.discretize" title="tensap.functions.measures.random_variable.RandomVariable.discretize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretize</span></code></a>(n)</p></td>
+<td><p>Return a discrete random variable taking n possible values x1, …, xn, these values being the quantiles of self of probability 1/(2n) + i/n, i=0n …, n-1 and such that P(Xn &gt;= xn) = 1/n.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.gauss_integration_rule" title="tensap.functions.measures.random_variable.RandomVariable.gauss_integration_rule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss_integration_rule</span></code></a>(nb_pts)</p></td>
+<td><p>Return the nb_pts-points gauss integration rule associated with the measure of self, using Golub-Welsch algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.get_parameters" title="tensap.functions.measures.random_variable.RandomVariable.get_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameters</span></code></a>()</p></td>
+<td><p>Return the parameters of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.icdf" title="tensap.functions.measures.random_variable.RandomVariable.icdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf</span></code></a>(x)</p></td>
+<td><p>Compute the inverse cumulative distribution function (icdf) of the RandomVariable at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.icdf_plot" title="tensap.functions.measures.random_variable.RandomVariable.icdf_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf_plot</span></code></a>(*args)</p></td>
+<td><p>Plot the inverse cumulative distribution function (icdf) of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.iso_probabilistic_grid" title="tensap.functions.measures.random_variable.RandomVariable.iso_probabilistic_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iso_probabilistic_grid</span></code></a>(n)</p></td>
+<td><p>Return a set of n+1 points (x_0, …, x_{n}) such that the n sets (x0, x_1), [x_1, x_2) …</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.lhs_random" title="tensap.functions.measures.random_variable.RandomVariable.lhs_random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lhs_random</span></code></a>(n[, p])</p></td>
+<td><p>Latin Hypercube Sampling of the random variable self of n points in dimension p.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.likelihood" title="tensap.functions.measures.random_variable.RandomVariable.likelihood"><code class="xref py py-obj docutils literal notranslate"><span class="pre">likelihood</span></code></a>(x)</p></td>
+<td><p>Compute the log-likelihood of the random variable on sample x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.max" title="tensap.functions.measures.random_variable.RandomVariable.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>()</p></td>
+<td><p>Compute the maximum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.mean" title="tensap.functions.measures.random_variable.RandomVariable.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>()</p></td>
+<td><p>Return the mean of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.min" title="tensap.functions.measures.random_variable.RandomVariable.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>()</p></td>
+<td><p>Compute the minimum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.moment" title="tensap.functions.measures.random_variable.RandomVariable.moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code></a>(ind[, nargout])</p></td>
+<td><p>Compute the moments of self of orders contained in ind, defined as E(X^ind[î]).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.ndim" title="tensap.functions.measures.random_variable.RandomVariable.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the random variable, equal to 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.number_of_parameters" title="tensap.functions.measures.random_variable.RandomVariable.number_of_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_parameters</span></code></a>()</p></td>
+<td><p>Compute the number of parameters that admits the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.orthonormal_polynomials" title="tensap.functions.measures.random_variable.RandomVariable.orthonormal_polynomials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orthonormal_polynomials</span></code></a>(*max_degree)</p></td>
+<td><p>Return the max_degree-1 first orthonormal polynomials associated with the RandomVariable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.pdf" title="tensap.functions.measures.random_variable.RandomVariable.pdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf</span></code></a>(x)</p></td>
+<td><p>Compute the probability density function (pdf) of the RandomVariable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.pdf_plot" title="tensap.functions.measures.random_variable.RandomVariable.pdf_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf_plot</span></code></a>(*args)</p></td>
+<td><p>Plot the probability density function (pdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.plot" title="tensap.functions.measures.random_variable.RandomVariable.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(quantity[, n_pts, bar])</p></td>
+<td><p>Plot the desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.random" title="tensap.functions.measures.random_variable.RandomVariable.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(n)</p></td>
+<td><p>Generate n random numbers according to the distribution of the RandomVariable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.random_variable_statistics" title="tensap.functions.measures.random_variable.RandomVariable.random_variable_statistics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_variable_statistics</span></code></a>()</p></td>
+<td><p>Return the mean and the variance of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.std" title="tensap.functions.measures.random_variable.RandomVariable.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>()</p></td>
+<td><p>Return the standard deviation of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code>()</p></td>
+<td><p>Return the support of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.transfer" title="tensap.functions.measures.random_variable.RandomVariable.transfer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transfer</span></code></a>(Y, x)</p></td>
+<td><p>Transfer from the random variable self to the random variable Y at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.truncated_support" title="tensap.functions.measures.random_variable.RandomVariable.truncated_support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_support</span></code></a>()</p></td>
+<td><p>Return the truncated support of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable.variance" title="tensap.functions.measures.random_variable.RandomVariable.variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code></a>()</p></td>
+<td><p>Return the variance of the random variable.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>random_rejection</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.cdf">
+<code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the cumulative distribution function (cdf) of the
+RandomVariable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">float or list or numpy.ndarray</span></dt><dd><p>The points at which the cdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the cdf at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.cdf_plot">
+<code class="sig-name descname">cdf_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.cdf_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the cumulative distribution function (cdf) of the random variable.</p>
+<p>See also plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters of the method plot.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.discretize">
+<code class="sig-name descname">discretize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.discretize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a discrete random variable taking n possible values x1, …, xn,
+these values being the quantiles of self of probability 1/(2n) + i/n,
+i=0n …, n-1 and such that P(Xn &gt;= xn) = 1/n.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of possible values the discrete random variable can
+take.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.DiscreteRandomVariable</dt><dd><p>The obtained discrete random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.gauss_integration_rule">
+<code class="sig-name descname">gauss_integration_rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nb_pts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.gauss_integration_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the nb_pts-points gauss integration rule associated with the
+measure of self, using Golub-Welsch algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>nb_pts</strong><span class="classifier">int</span></dt><dd><p>The number of integration points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.IntegrationRule</dt><dd><p>The integration rule associated with the measure of self.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.get_parameters">
+<code class="sig-name descname">get_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the parameters of the random variable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.icdf">
+<code class="sig-name descname">icdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.icdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the inverse cumulative distribution function (icdf) of the
+RandomVariable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">float or list or numpy.ndarray</span></dt><dd><p>The points at which the icdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the icdf at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.icdf_plot">
+<code class="sig-name descname">icdf_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.icdf_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the inverse cumulative distribution function (icdf) of the random
+variable.</p>
+<p>See also plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters of the method plot.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.iso_probabilistic_grid">
+<code class="sig-name descname">iso_probabilistic_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.iso_probabilistic_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a set of n+1 points (x_0, …, x_{n}) such that the n sets
+(x0, x_1), [x_1, x_2) … [x_{n-1}, x_{n})  have all the same
+probability p = 1/n (with x0 = self.min() and x_{n+1}=self.max()).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of points of the grid plus one.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The iso-probabilistic grid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.lhs_random">
+<code class="sig-name descname">lhs_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">p</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.lhs_random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latin Hypercube Sampling of the random variable self of n points in
+dimension p.</p>
+<p>Requires the package pyDOE.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>Number of points.</p>
+</dd>
+<dt><strong>p</strong><span class="classifier">int, optional</span></dt><dd><p>The dimension. The default is 1.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The coordinates of the Latin Hypercube Sampling in each dimension.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.likelihood">
+<code class="sig-name descname">likelihood</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.likelihood" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Compute the log-likelihood of the random variable on sample x.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The sample used to compute the log-likelihood.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd><p>The log-likelihood of the random variable on sample x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.max">
+<code class="sig-name descname">max</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the maximum value that can take the inverse cumulative
+distribution function of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The maximum value that can take the inverse cumulative distribution
+function of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.mean">
+<code class="sig-name descname">mean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.min">
+<code class="sig-name descname">min</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the minimum value that can take the inverse cumulative
+distribution function of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The minimum value that can take the inverse cumulative distribution
+function of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.moment">
+<code class="sig-name descname">moment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the moments of self of orders contained in ind, defined as
+E(X^ind[î]).
+If a second output argument is asked, the computed moments are stored
+in the random variable X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The orders of the moments.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>Indicates the number of expected outputs. The default is 1,
+indicating to return only the moments.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The computed moments.</p>
+</dd>
+<dt>tensap.RandomVariable</dt><dd><p>The RandomVariable object with the computed moments stored in the
+attribute moments.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.ndim">
+<em class="property">static </em><code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the random variable, equal to 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The dimension of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.number_of_parameters">
+<code class="sig-name descname">number_of_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.number_of_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the number of parameters that admits the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The number of parameters that admits the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.orthonormal_polynomials">
+<code class="sig-name descname">orthonormal_polynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">max_degree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.orthonormal_polynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the max_degree-1 first orthonormal polynomials associated with
+the RandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>max_degree</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum degree of the returned polynomials. The default is
+None, choosing the default maximum degree associated with the
+constructor of the polynomials.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>poly</strong><span class="classifier">tensap.OrthonormalPolynomials</span></dt><dd><p>The generated orthonormal polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.pdf">
+<code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the probability density function (pdf) of the RandomVariable
+at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">float or list or numpy.ndarray</span></dt><dd><p>The points at which the pdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the pdf at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.pdf_plot">
+<code class="sig-name descname">pdf_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.pdf_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the probability density function (pdf) of the random variable.</p>
+<p>See also plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters of the method plot.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantity</span></em>, <em class="sig-param"><span class="n">n_pts</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">bar</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>quantity</strong><span class="classifier">str</span></dt><dd><p>The desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p>
+</dd>
+<dt><strong>n_pts</strong><span class="classifier">int, optional</span></dt><dd><p>The number of points used for the plot. The default is 100.</p>
+</dd>
+<dt><strong>bar</strong><span class="classifier">boolean, optional</span></dt><dd><p>Determines if the method uses matplotlib.pyplot’s function bar
+or plot. The default is False.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters for matplotlib.pyplot’s function plot or bar.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the provided argument quantity is wrong.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate n random numbers according to the distribution of the
+RandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of random numbers generated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The generated numbers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.random_variable_statistics">
+<code class="sig-name descname">random_variable_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.random_variable_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean and the variance of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+<dt>float</dt><dd><p>The variance of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.std">
+<code class="sig-name descname">std</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard deviation of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The standard deviation of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.transfer">
+<code class="sig-name descname">transfer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer from the random variable self to the random variable Y at
+points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Y</strong><span class="classifier">tensap.RandomVariable</span></dt><dd><p>The target RandomVariable of the transfer.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The input points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The transfered points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.truncated_support">
+<code class="sig-name descname">truncated_support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.truncated_support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the truncated support of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sup</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The truncated support of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_variable.RandomVariable.variance">
+<code class="sig-name descname">variance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_variable.RandomVariable.variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the variance of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The variance of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.random_vector">
+<span id="tensap-functions-measures-random-vector-module"></span><h2>tensap.functions.measures.random_vector module<a class="headerlink" href="#module-tensap.functions.measures.random_vector" title="Permalink to this headline">¶</a></h2>
+<p>Module random_vector.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.random_vector.RandomVector">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.random_vector.</code><code class="sig-name descname">RandomVector</code><span class="sig-paren">(</span><em class="sig-param">random_variables</em>, <em class="sig-param">order=None</em>, <em class="sig-param">copula=&lt;tensap.functions.measures.copulas.IndependentCopula object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.probability_measure.ProbabilityMeasure" title="tensap.functions.measures.probability_measure.ProbabilityMeasure"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.probability_measure.ProbabilityMeasure</span></code></a></p>
+<p>Class RandomVector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>random_variables</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The RandomVariable objects constituting the random vector.</p>
+</dd>
+<dt><strong>copula</strong><span class="classifier">tensap.Copula</span></dt><dd><p>The copula of the random vector.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.cdf" title="tensap.functions.measures.random_vector.RandomVector.cdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf</span></code></a>(x)</p></td>
+<td><p>Compute the cumulative distribution function (cdf) at points x, x must have self.ndim() columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.get_standard_random_vector" title="tensap.functions.measures.random_vector.RandomVector.get_standard_random_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_standard_random_vector</span></code></a>()</p></td>
+<td><p>Return the standard RandomVector associated with self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.iso_probabilistic_grid" title="tensap.functions.measures.random_vector.RandomVector.iso_probabilistic_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iso_probabilistic_grid</span></code></a>(n)</p></td>
+<td><p>Generate a grid of (n[0]-1) x …</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.lhs_random" title="tensap.functions.measures.random_vector.RandomVector.lhs_random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lhs_random</span></code></a>(n)</p></td>
+<td><p>Latin Hypercube Sampling of the RandomVector of n points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.mean" title="tensap.functions.measures.random_vector.RandomVector.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>()</p></td>
+<td><p>Return the mean of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.ndim" title="tensap.functions.measures.random_vector.RandomVector.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the Measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.orthonormal_polynomials" title="tensap.functions.measures.random_vector.RandomVector.orthonormal_polynomials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orthonormal_polynomials</span></code></a>([max_degree])</p></td>
+<td><p>Return the max_degree-1 first orthonormal polynomials associated with the RandomVector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.pdf" title="tensap.functions.measures.random_vector.RandomVector.pdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf</span></code></a>(x)</p></td>
+<td><p>Compute the probability density function (pdf) of each RandomVariable in self at points x, x must have self.ndim() columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.random" title="tensap.functions.measures.random_vector.RandomVector.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>([n])</p></td>
+<td><p>Generate n random numbers according to the distribution of the RandomVector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.std" title="tensap.functions.measures.random_vector.RandomVector.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>()</p></td>
+<td><p>Return the standard deviation of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.support" title="tensap.functions.measures.random_vector.RandomVector.support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code></a>()</p></td>
+<td><p>Return the support of the Measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.transfer" title="tensap.functions.measures.random_vector.RandomVector.transfer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transfer</span></code></a>(Y, x)</p></td>
+<td><p>Transfer from the tensap.RandomVector X to the tensap.RandomVector Y, at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.transpose" title="tensap.functions.measures.random_vector.RandomVector.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(perm)</p></td>
+<td><p>Transpose (permute) the components of a random vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.truncated_support" title="tensap.functions.measures.random_vector.RandomVector.truncated_support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_support</span></code></a>()</p></td>
+<td><p>Return the truncated support of the random vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.random_vector.RandomVector.variance" title="tensap.functions.measures.random_vector.RandomVector.variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code></a>()</p></td>
+<td><p>Return the variance of the random variable.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>marginal</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>random_rejection</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.cdf">
+<code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the cumulative distribution function (cdf) at points x, x must
+have self.ndim() columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the cdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the cdf at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.get_standard_random_vector">
+<code class="sig-name descname">get_standard_random_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.get_standard_random_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard RandomVector associated with self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.RandomVector</dt><dd><p>The standard RandomVector.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.iso_probabilistic_grid">
+<code class="sig-name descname">iso_probabilistic_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.iso_probabilistic_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a grid of (n[0]-1) x … x (n[d-1]-1) points
+(x_{i_1}^1, …, x_{i_d}^d) such that the N = (n[0] x … x(n[d-1]
+sets [x_{i_1-1}^1, x_{i_1}^1] x … x [x_{i_d-1}^1, x_{i_d}^1] have
+the same probability p = 1/N.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of points of the grid plus one in each or all the
+dimensions.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.FullTensorGrid</dt><dd><p>The iso-probabilistic grid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.lhs_random">
+<code class="sig-name descname">lhs_random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.lhs_random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latin Hypercube Sampling of the RandomVector of n points.</p>
+<p>Requires the package pyDOE.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>Number of points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list</dt><dd><p>List containing the coordinates of the Latin Hypercube Sampling in
+each dimension.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.marginal">
+<code class="sig-name descname">marginal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.marginal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.mean">
+<code class="sig-name descname">mean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.ndim">
+<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.orthonormal_polynomials">
+<code class="sig-name descname">orthonormal_polynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_degree</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.orthonormal_polynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the max_degree-1 first orthonormal polynomials associated with
+the RandomVector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>max_degree</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum degree of the returned polynomials. The default is
+None, choosing the default maximum degree associated with the
+constructor of the polynomials.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>poly</strong><span class="classifier">tensap.OrthonormalPolynomials</span></dt><dd><p>The generated orthonormal polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.pdf">
+<code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the probability density function (pdf) of each RandomVariable
+in self at points x, x must have self.ndim() columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the pdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the pdf at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate n random numbers according to the distribution of the
+RandomVector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of random numbers generated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The generated numbers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of random variables constituting the RandomVector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The number of random variables constituting the RandomVector.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.std">
+<code class="sig-name descname">std</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.std" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard deviation of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The standard deviation of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.support">
+<code class="sig-name descname">support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the Measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.transfer">
+<code class="sig-name descname">transfer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Y</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer from the tensap.RandomVector X to the tensap.RandomVector Y,
+at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Y</strong><span class="classifier">tensap.RandomVector</span></dt><dd><p>The target RandomVector of the transfer.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The input points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The transfered points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.transpose">
+<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">perm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.transpose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transpose (permute) the components of a random vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>perm</strong><span class="classifier">list or numpy.array</span></dt><dd><p>The permutation indices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.RandomVector</dt><dd><p>The random vector with transposed (permuted) components.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.truncated_support">
+<code class="sig-name descname">truncated_support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.truncated_support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the truncated support of the random vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sup</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The truncated support of the random vector.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>NotImplementedError</dt><dd><p>If the copula is not an IndependentCopula.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.random_vector.RandomVector.variance">
+<code class="sig-name descname">variance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.random_vector.RandomVector.variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the variance of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The variance of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures.uniform_random_variable">
+<span id="tensap-functions-measures-uniform-random-variable-module"></span><h2>tensap.functions.measures.uniform_random_variable module<a class="headerlink" href="#module-tensap.functions.measures.uniform_random_variable" title="Permalink to this headline">¶</a></h2>
+<p>Module uniform_random_variable.</p>
+<dl class="py class">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.measures.uniform_random_variable.</code><code class="sig-name descname">UniformRandomVariable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inf</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">sup</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.measures.random_variable.RandomVariable" title="tensap.functions.measures.random_variable.RandomVariable"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.measures.random_variable.RandomVariable</span></code></a></p>
+<p>Class UniformRandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>moments</strong><span class="classifier">numpy.array</span></dt><dd><p>The moments of the uniform random variable (if computed).</p>
+</dd>
+<dt><strong>inf</strong><span class="classifier">float, optional</span></dt><dd><p>The lower bound of the support of the random variable. The default
+is -1.</p>
+</dd>
+<dt><strong>sup</strong><span class="classifier">float, optional</span></dt><dd><p>The upper bound of the support of the random variable. The default
+is 1.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.cdf" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.cdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf</span></code></a>(x)</p></td>
+<td><p>Evaluate the cumulative distribution function (cdf) of the uniform random variable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the cumulative distribution function (cdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretize</span></code>(n)</p></td>
+<td><p>Return a discrete random variable taking n possible values x1, …, xn, these values being the quantiles of self of probability 1/(2n) + i/n, i=0n …, n-1 and such that P(Xn &gt;= xn) = 1/n.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss_integration_rule</span></code>(nb_pts)</p></td>
+<td><p>Return the nb_pts-points gauss integration rule associated with the measure of self, using Golub-Welsch algorithm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.get_parameters" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.get_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameters</span></code></a>()</p></td>
+<td><p>Return the parameters of the uniform random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.get_standard_random_variable" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.get_standard_random_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_standard_random_variable</span></code></a>()</p></td>
+<td><p>Return the standard uniform random variable on [-1, 1].</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.icdf" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.icdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf</span></code></a>(x)</p></td>
+<td><p>Evaluate the inverse cumulative distribution function (icdf) of the uniform random variable at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">icdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the inverse cumulative distribution function (icdf) of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">iso_probabilistic_grid</span></code>(n)</p></td>
+<td><p>Return a set of n+1 points (x_0, …, x_{n}) such that the n sets (x0, x_1), [x_1, x_2) …</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lhs_random</span></code>(n[, p])</p></td>
+<td><p>Latin Hypercube Sampling of the random variable self of n points in dimension p.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">likelihood</span></code>(x)</p></td>
+<td><p>Compute the log-likelihood of the random variable on sample x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code>()</p></td>
+<td><p>Return the mass of the Measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code>()</p></td>
+<td><p>Compute the maximum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>()</p></td>
+<td><p>Return the mean of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code>()</p></td>
+<td><p>Compute the minimum value that can take the inverse cumulative distribution function of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, nargout])</p></td>
+<td><p>Compute the moments of self of orders contained in ind, defined as E(X^ind[î]).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the random variable, equal to 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_parameters</span></code>()</p></td>
+<td><p>Compute the number of parameters that admits the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.orthonormal_polynomials" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.orthonormal_polynomials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orthonormal_polynomials</span></code></a>(*max_degree)</p></td>
+<td><p>Return the max_degree-1 first orthonormal polynomials associated with the UniformRandomVariable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.pdf" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.pdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf</span></code></a>(x)</p></td>
+<td><p>Evaluate the probability density function (pdf) of the uniform random variable at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pdf_plot</span></code>(*args)</p></td>
+<td><p>Plot the probability density function (pdf) of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code>(quantity[, n_pts, bar])</p></td>
+<td><p>Plot the desired quantity, chosen between ‘pdf’, ‘cdf’ or ‘icdf’.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.random" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>([n])</p></td>
+<td><p>Generate n random numbers according to the distribution of the RandomVariable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.random_variable_statistics" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.random_variable_statistics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_variable_statistics</span></code></a>()</p></td>
+<td><p>Return the mean and the variance of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.shift" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(bias, scaling)</p></td>
+<td><p>Shift the uniform random variable using the provided bias and scaling factor.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code>()</p></td>
+<td><p>Return the standard deviation of the random variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.support" title="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.support"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support</span></code></a>()</p></td>
+<td><p>Return the support of the uniform random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transfer</span></code>(Y, x)</p></td>
+<td><p>Transfer from the random variable self to the random variable Y at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_support</span></code>()</p></td>
+<td><p>Return the truncated support of the random variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code>()</p></td>
+<td><p>Return the variance of the random variable.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>random_rejection</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.cdf">
+<code class="sig-name descname">cdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the cumulative distribution function (cdf) of the uniform
+random variable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the cdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the cdf.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.get_parameters">
+<code class="sig-name descname">get_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the parameters of the uniform random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The lower bound of the support of the random variable.</p>
+</dd>
+<dt>float</dt><dd><p>The upper bound of the support of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.get_standard_random_variable">
+<em class="property">static </em><code class="sig-name descname">get_standard_random_variable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.get_standard_random_variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the standard uniform random variable on [-1, 1].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.UniformRandomVariable</dt><dd><p>The standard uniform random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.icdf">
+<code class="sig-name descname">icdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.icdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the inverse cumulative distribution function (icdf) of the
+uniform random variable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the icdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the icdf.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.orthonormal_polynomials">
+<code class="sig-name descname">orthonormal_polynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">max_degree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.orthonormal_polynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the max_degree-1 first orthonormal polynomials associated with
+the UniformRandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>max_degree</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum degree of the returned polynomials. The default is
+None, choosing the default maximum degree associated with the
+constructor of the polynomials.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>poly</strong><span class="classifier">tensap.OrthonormalPolynomials</span></dt><dd><p>The generated orthonormal polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.pdf">
+<code class="sig-name descname">pdf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the probability density function (pdf) of the uniform
+random variable at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the pdf is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the pdf.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate n random numbers according to the distribution of the
+RandomVariable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of random numbers generated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The generated numbers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.random_variable_statistics">
+<code class="sig-name descname">random_variable_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.random_variable_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean and the variance of the random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>The mean of the random variable.</p>
+</dd>
+<dt>float</dt><dd><p>The variance of the random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.shift">
+<code class="sig-name descname">shift</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bias</span></em>, <em class="sig-param"><span class="n">scaling</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.shift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the uniform random variable using the provided bias and scaling
+factor.</p>
+<p>The lower bound inf becomes scaling*inf + bias, and the upper bound
+sup becomes scaling*sup + bias.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bias</strong><span class="classifier">float</span></dt><dd><p>The bias.</p>
+</dd>
+<dt><strong>scaling</strong><span class="classifier">float</span></dt><dd><p>The scaling factor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>shifted_rv</strong><span class="classifier">tensap.UniformRandomVariable</span></dt><dd><p>The shifted uniform random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.measures.uniform_random_variable.UniformRandomVariable.support">
+<code class="sig-name descname">support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.UniformRandomVariable.support" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the uniform random variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Support of the uniform random variable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="tensap.functions.measures.uniform_random_variable.rand">
+<code class="sig-prename descclassname">tensap.functions.measures.uniform_random_variable.</code><code class="sig-name descname">rand</code><span class="sig-paren">(</span><em class="sig-param">d0</em>, <em class="sig-param">d1</em>, <em class="sig-param">...</em>, <em class="sig-param">dn</em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.measures.uniform_random_variable.rand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Random values in a given shape.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a convenience function for users porting code from Matlab,
+and wraps <cite>random_sample</cite>. That function takes a
+tuple to specify the size of the output, which is consistent with
+other NumPy functions like <cite>numpy.zeros</cite> and <cite>numpy.ones</cite>.</p>
+</div>
+<p>Create an array of the given shape and populate it with
+random samples from a uniform distribution
+over <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1)</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>d0, d1, …, dn</strong><span class="classifier">int, optional</span></dt><dd><p>The dimensions of the returned array, must be non-negative.
+If no argument is given a single Python float is returned.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier">ndarray, shape <code class="docutils literal notranslate"><span class="pre">(d0,</span> <span class="pre">d1,</span> <span class="pre">...,</span> <span class="pre">dn)</span></code></span></dt><dd><p>Random values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">array([[ 0.14022471,  0.96360618],  #random</span>
+<span class="go">       [ 0.37601032,  0.25528411],  #random</span>
+<span class="go">       [ 0.49313049,  0.94909878]]) #random</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.measures">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.functions.measures" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tensap.functions.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.compositional_model_function">tensap.functions.compositional_model_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.function">tensap.functions.function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.functional_tensor">tensap.functions.functional_tensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.multivariate_functions_benchmark">tensap.functions.multivariate_functions_benchmark module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.tensorized_function">tensap.functions.tensorized_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.tensorizer">tensap.functions.tensorizer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.user_defined_function">tensap.functions.user_defined_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tensap.functions.html">tensap.functions package</a><ul>
+      <li>Previous: <a href="tensap.functions.html" title="previous chapter">tensap.functions package</a></li>
+      <li>Next: <a href="tensap.functions.polynomials.html" title="next chapter">tensap.functions.polynomials package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.functions.measures.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

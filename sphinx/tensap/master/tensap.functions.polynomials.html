@@ -1,0 +1,1457 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.functions.polynomials package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.functions.sets package" href="tensap.functions.sets.html" />
+    <link rel="prev" title="tensap.functions.measures package" href="tensap.functions.measures.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-functions-polynomials-package">
+<h1>tensap.functions.polynomials package<a class="headerlink" href="#tensap-functions-polynomials-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.functions.polynomials.orthonormal_polynomials">
+<span id="tensap-functions-polynomials-orthonormal-polynomials-module"></span><h2>tensap.functions.polynomials.orthonormal_polynomials module<a class="headerlink" href="#module-tensap.functions.polynomials.orthonormal_polynomials" title="Permalink to this headline">¶</a></h2>
+<p>Module orthonormal_polynomials.</p>
+<dl class="py class">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.DiscretePolynomials">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.polynomials.orthonormal_polynomials.</code><code class="sig-name descname">DiscretePolynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.DiscretePolynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials</span></code></a></p>
+<p>Class DiscretePolynomials.</p>
+<p>Polynomials orthonormal with respect to a discrete measure.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_poly_coef</span></code>(ind)</p></td>
+<td><p>Return the coefficients of the first order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the first order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_poly_coeff</span></code>(n, ind)</p></td>
+<td><p>Return the coefficients of the n-th order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_polyval</span></code>(n, ind, x)</p></td>
+<td><p>Evaluate the n-th order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain</span></code>()</p></td>
+<td><p>Return the support of the associated measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_orthonormal</span></code>()</p></td>
+<td><p>Check the orthonormality of the basis created by the functions of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>(ind[, measure])</p></td>
+<td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
+<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the output of the polynomials.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code>()</p></td>
+<td><p>Coefficients and corresponding indices for the decomposition of the constant function 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">poly_coeff</span></code>(ind)</p></td>
+<td><p>Compute the coefficients of the monomials used to create the polynomials of degree specified in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code>(ind[, n, measure])</p></td>
+<td><p>Return an array of size n of random evaluations of the polynomials for which the degree is in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">roots</span></code>(deg)</p></td>
+<td><p>Return the roots of the polynomial of degree deg.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_domain</span></code>()</p></td>
+<td><p>Return the truncated support of the associated measure.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.EmpiricalPolynomials">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.polynomials.orthonormal_polynomials.</code><code class="sig-name descname">EmpiricalPolynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.EmpiricalPolynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials</span></code></a></p>
+<p>Class EmpiricalPolynomials.</p>
+<p>Polynomials defined on R and orthonormal with respect to the gaussian
+kernel smoothed distribution based on a sample x, which was centered and
+normalized (unit variance).</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_poly_coef</span></code>(ind)</p></td>
+<td><p>Return the coefficients of the first order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the first order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_poly_coeff</span></code>(n, ind)</p></td>
+<td><p>Return the coefficients of the n-th order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_polyval</span></code>(n, ind, x)</p></td>
+<td><p>Evaluate the n-th order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain</span></code>()</p></td>
+<td><p>Return the support of the associated measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_orthonormal</span></code>()</p></td>
+<td><p>Check the orthonormality of the basis created by the functions of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>(ind[, measure])</p></td>
+<td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
+<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the output of the polynomials.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code>()</p></td>
+<td><p>Coefficients and corresponding indices for the decomposition of the constant function 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">poly_coeff</span></code>(ind)</p></td>
+<td><p>Compute the coefficients of the monomials used to create the polynomials of degree specified in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code>(ind[, n, measure])</p></td>
+<td><p>Return an array of size n of random evaluations of the polynomials for which the degree is in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">roots</span></code>(deg)</p></td>
+<td><p>Return the roots of the polynomial of degree deg.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_domain</span></code>()</p></td>
+<td><p>Return the truncated support of the associated measure.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.HermitePolynomials">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.polynomials.orthonormal_polynomials.</code><code class="sig-name descname">HermitePolynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">50</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.HermitePolynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials</span></code></a></p>
+<p>Class HermitePolynomials.</p>
+<p>Polynomials defined on R and orthonormal with respect to the standard
+gaussian measure 1/sqrt(2*pi)*exp(-x^2/2).</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_poly_coef</span></code>(ind)</p></td>
+<td><p>Return the coefficients of the first order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the first order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_poly_coeff</span></code>(n, ind)</p></td>
+<td><p>Return the coefficients of the n-th order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_polyval</span></code>(n, ind, x)</p></td>
+<td><p>Evaluate the n-th order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain</span></code>()</p></td>
+<td><p>Return the support of the associated measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_orthonormal</span></code>()</p></td>
+<td><p>Check the orthonormality of the basis created by the functions of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>(ind[, measure])</p></td>
+<td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
+<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the output of the polynomials.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code>()</p></td>
+<td><p>Coefficients and corresponding indices for the decomposition of the constant function 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">poly_coeff</span></code>(ind)</p></td>
+<td><p>Compute the coefficients of the monomials used to create the polynomials of degree specified in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code>(ind[, n, measure])</p></td>
+<td><p>Return an array of size n of random evaluations of the polynomials for which the degree is in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">roots</span></code>(deg)</p></td>
+<td><p>Return the roots of the polynomial of degree deg.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_domain</span></code>()</p></td>
+<td><p>Return the truncated support of the associated measure.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.LegendrePolynomials">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.polynomials.orthonormal_polynomials.</code><code class="sig-name descname">LegendrePolynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">50</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.LegendrePolynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials</span></code></a></p>
+<p>Class LegendrePolynomials.</p>
+<p>Polynomials defined on [-1,1], orthonormal with respect to the standard
+uniform measure 1/2.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_poly_coef</span></code>(ind)</p></td>
+<td><p>Return the coefficients of the first order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the first order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_poly_coeff</span></code>(n, ind)</p></td>
+<td><p>Return the coefficients of the n-th order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_polyval</span></code>(n, ind, x)</p></td>
+<td><p>Evaluate the n-th order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain</span></code>()</p></td>
+<td><p>Return the support of the associated measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_orthonormal</span></code>()</p></td>
+<td><p>Check the orthonormality of the basis created by the functions of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>(ind[, measure])</p></td>
+<td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
+<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the output of the polynomials.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code>()</p></td>
+<td><p>Coefficients and corresponding indices for the decomposition of the constant function 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">poly_coeff</span></code>(ind)</p></td>
+<td><p>Compute the coefficients of the monomials used to create the polynomials of degree specified in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code>(ind[, n, measure])</p></td>
+<td><p>Return an array of size n of random evaluations of the polynomials for which the degree is in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">roots</span></code>(deg)</p></td>
+<td><p>Return the roots of the polynomial of degree deg.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_domain</span></code>()</p></td>
+<td><p>Return the truncated support of the associated measure.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.polynomials.orthonormal_polynomials.</code><code class="sig-name descname">OrthonormalPolynomials</code><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.polynomials.polynomials.UnivariatePolynomials</span></code></a></p>
+<p>Class OrthonormalPolynomials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>measure</strong><span class="classifier">tensap.Measure</span></dt><dd><p>The measure associated with the orthonormal polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_poly_coef</span></code>(ind)</p></td>
+<td><p>Return the coefficients of the first order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.d_polyval" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.d_polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_polyval</span></code></a>(ind, x)</p></td>
+<td><p>Evaluate the first order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_poly_coeff</span></code>(n, ind)</p></td>
+<td><p>Return the coefficients of the n-th order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.dn_polyval" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.dn_polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_polyval</span></code></a>(n, ind, x)</p></td>
+<td><p>Evaluate the n-th order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.domain" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain</span></code></a>()</p></td>
+<td><p>Return the support of the associated measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.is_orthonormal" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.is_orthonormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_orthonormal</span></code></a>()</p></td>
+<td><p>Check the orthonormality of the basis created by the functions of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>(ind[, measure])</p></td>
+<td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.moment" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code></a>(ind[, measure])</p></td>
+<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the output of the polynomials.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.one" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.one"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code></a>()</p></td>
+<td><p>Coefficients and corresponding indices for the decomposition of the constant function 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.poly_coeff" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.poly_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poly_coeff</span></code></a>(ind)</p></td>
+<td><p>Compute the coefficients of the monomials used to create the polynomials of degree specified in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.polyval" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyval</span></code></a>(ind, x)</p></td>
+<td><p>Evaluate the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.random" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(ind[, n, measure])</p></td>
+<td><p>Return an array of size n of random evaluations of the polynomials for which the degree is in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.roots" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.roots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">roots</span></code></a>(deg)</p></td>
+<td><p>Return the roots of the polynomial of degree deg.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.truncated_domain" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.truncated_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_domain</span></code></a>()</p></td>
+<td><p>Return the truncated support of the associated measure.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.d_polyval">
+<code class="sig-name descname">d_polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.d_polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the first order derivative of the polynomials of degrees
+contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the derivatives of the polynomials are to be
+evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the first order derivatives of the selected
+polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.dn_polyval">
+<code class="sig-name descname">dn_polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.dn_polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the n-th order derivative of the polynomials of degrees
+contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the derivatives of the polynomials are to be
+evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the n-th order derivatives of the selected
+polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.domain">
+<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the associated measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The support of the associated measure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.is_orthonormal">
+<em class="property">static </em><code class="sig-name descname">is_orthonormal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.is_orthonormal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the orthonormality of the basis created by the functions of self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>Indicates if the polynomials are orthonormal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.moment">
+<code class="sig-name descname">moment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the moments of the family of polynomials p_i(X), i in ind,
+of a random variable X, using a gauss integration rule.</p>
+<dl class="simple">
+<dt>Assuming ind is a numpy.ndarray:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>if ind.ndim == 1, return the float</dt><dd><p>m = E(p_ind[0](X)…p_ind[-1](X)),</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>else if ind.ndim == 2, return the vector</dt><dd><dl class="simple">
+<dt>m = (E(p_ind[j, 0](X)…p_ind[j, -1](X)) :</dt><dd><p>j = 1, …, ind.shape[0]).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials for which the moments are to be
+computed.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.Measure, optional</span></dt><dd><p>The measure used for the computation of the moments. The default is
+None, indicating to use self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The moments of the family of polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.one">
+<em class="property">static </em><code class="sig-name descname">one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coefficients and corresponding indices for the decomposition of the
+constant function 1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.poly_coeff">
+<code class="sig-name descname">poly_coeff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.poly_coeff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the coefficients of the monomials used to create the
+polynomials of degree specified in ind.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">ind or numpy.ndarray</span></dt><dd><p>The orders of the polynomials to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.polyval">
+<code class="sig-name descname">polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the polynomials of degrees contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the polynomials are to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the selected polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array of size n of random evaluations of the polynomials for
+which the degree is in ind. If measure is not provided, the
+random generation is performed using self.measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The indices of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>The number of random evaluations. The default is 1.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.ProbabilityMeasure, optional</span></dt><dd><p>The probability measure used for the generation of the input
+points. The default is None, indicating to use
+self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>out</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The random evaluations of the polynomials.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The randomly drawn input points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.roots">
+<code class="sig-name descname">roots</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the roots of the polynomial of degree deg.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deg</strong><span class="classifier">int</span></dt><dd><p>The degree of the polynomial for which the roots are to be
+computed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The roots of the polynomial of degree deg.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.truncated_domain">
+<code class="sig-name descname">truncated_domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.truncated_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the truncated support of the associated measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The truncated support of the associated measure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.polynomials.orthonormal_polynomials.</code><code class="sig-name descname">ShiftedOrthonormalPolynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">polynomials</span></em>, <em class="sig-param"><span class="n">shift</span></em>, <em class="sig-param"><span class="n">scaling</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.polynomials.polynomials.UnivariatePolynomials</span></code></a></p>
+<p>Class ShiftedOrthonormalPolynomials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>measure</strong><span class="classifier">tensap.Measure</span></dt><dd><p>The measure associated with the ShiftedOrthonormalPolynomials.</p>
+</dd>
+<dt><strong>polynomials</strong><span class="classifier">tensap.OrthonormalPolynomials</span></dt><dd><p>The OrthonormalPolynomials which are shifted.</p>
+</dd>
+<dt><strong>shift</strong><span class="classifier">float</span></dt><dd><p>The shifting parameter.</p>
+</dd>
+<dt><strong>scaling</strong><span class="classifier">float</span></dt><dd><p>The scaling parameter.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_poly_coef</span></code>(ind)</p></td>
+<td><p>Return the coefficients of the first order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.d_polyval" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.d_polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_polyval</span></code></a>(ind, x)</p></td>
+<td><p>Evaluate the first order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_poly_coeff</span></code>(n, ind)</p></td>
+<td><p>Return the coefficients of the n-th order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.dn_polyval" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.dn_polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_polyval</span></code></a>(n, ind, x)</p></td>
+<td><p>Evaluate the n-th order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.domain" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain</span></code></a>()</p></td>
+<td><p>Return the support of the associated shifted measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.is_orthonormal" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.is_orthonormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_orthonormal</span></code></a>()</p></td>
+<td><p>Check the orthonormality of the basis created by the functions of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.mean" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(ind, *measure)</p></td>
+<td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.moment" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code></a>(ind, *measure)</p></td>
+<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.ndim" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the output of the polynomials.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.one" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.one"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code></a>()</p></td>
+<td><p>Coefficients and corresponding indices for the decomposition of the constant function 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.poly_coeff" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.poly_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poly_coeff</span></code></a>()</p></td>
+<td><p>Compute the coefficients of the monomials used to create the polynomials of degree specified in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.polyval" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyval</span></code></a>(ind, x)</p></td>
+<td><p>Evaluate the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.random" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(ind[, n, measure])</p></td>
+<td><p>Return an array of size n of random evaluations of the shifted polynomials for which the degree is in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.roots" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.roots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">roots</span></code></a>(n)</p></td>
+<td><p>Return the roots of the shifted polynomial of degree deg.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.truncated_domain" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.truncated_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncated_domain</span></code></a>()</p></td>
+<td><p>Return the truncated support of the associated shifted measure.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.d_polyval">
+<code class="sig-name descname">d_polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.d_polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the first order derivative of the polynomials of degrees
+contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the derivatives of the polynomials are to be
+evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the first order derivatives of the selected
+polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.dn_polyval">
+<code class="sig-name descname">dn_polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.dn_polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the n-th order derivative of the polynomials of degrees
+contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the derivatives of the polynomials are to be
+evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the n-th order derivatives of the selected
+polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.domain">
+<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the support of the associated shifted measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The support of the associated measure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.is_orthonormal">
+<em class="property">static </em><code class="sig-name descname">is_orthonormal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.is_orthonormal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the orthonormality of the basis created by the functions of self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>Indicates if the polynomials are orthonormal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.mean">
+<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean of the polynomials of degrees contained in ind, with a
+Measure given by measure if provided, or to self.measure otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials for which the mean is to be
+computed.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.Measure, optional</span></dt><dd><p>The measure used for the computation of the mean. The default is
+None, indicating to use self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The mean of the selected polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.moment">
+<code class="sig-name descname">moment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the moments of the family of polynomials p_i(X), i in ind,
+of a random variable X, using a gauss integration rule.</p>
+<dl class="simple">
+<dt>Assuming ind is a numpy.ndarray:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>if ind.ndim == 1, return the float</dt><dd><p>m = E(p_ind[0](X)…p_ind[-1](X)),</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>else if ind.ndim == 2, return the vector</dt><dd><dl class="simple">
+<dt>m = (E(p_ind[j, 0](X)…p_ind[j, -1](X)) :</dt><dd><p>j = 1, …, ind.shape[0]).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials for which the moments are to be
+computed.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.Measure, optional</span></dt><dd><p>The measure used for the computation of the moments. The default is
+None, indicating to use self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The moments of the family of polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.ndim">
+<em class="property">static </em><code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the output of the polynomials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The dimension of the output of the polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.one">
+<em class="property">static </em><code class="sig-name descname">one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coefficients and corresponding indices for the decomposition of the
+constant function 1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.poly_coeff">
+<em class="property">static </em><code class="sig-name descname">poly_coeff</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.poly_coeff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the coefficients of the monomials used to create the
+polynomials of degree specified in ind.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">ind or numpy.ndarray</span></dt><dd><p>The orders of the polynomials to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.polyval">
+<code class="sig-name descname">polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the polynomials of degrees contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the polynomials are to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the selected polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array of size n of random evaluations of the shifted
+polynomials for which the degree is in ind. If measure is not provided,
+the random generation is performed using self.measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The indices of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>The number of random evaluations. The default is 1.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.ProbabilityMeasure, optional</span></dt><dd><p>The probability measure used for the generation of the input
+points. The default is None, indicating to use
+self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>fx</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The random evaluations of the polynomials.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The randomly drawn input points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.roots">
+<code class="sig-name descname">roots</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the roots of the shifted polynomial of degree deg.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deg</strong><span class="classifier">int</span></dt><dd><p>The degree of the polynomial for which the roots are to be
+computed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The roots of the polynomial of degree deg.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.truncated_domain">
+<code class="sig-name descname">truncated_domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.truncated_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the truncated support of the associated shifted measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The truncated support of the associated measure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.polynomials.polynomials">
+<span id="tensap-functions-polynomials-polynomials-module"></span><h2>tensap.functions.polynomials.polynomials module<a class="headerlink" href="#module-tensap.functions.polynomials.polynomials" title="Permalink to this headline">¶</a></h2>
+<p>Module polynomials.</p>
+<dl class="py class">
+<dt id="tensap.functions.polynomials.polynomials.CanonicalPolynomials">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.polynomials.polynomials.</code><code class="sig-name descname">CanonicalPolynomials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.polynomials.polynomials.UnivariatePolynomials</span></code></a></p>
+<p>Class CanonicalPolynomials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>measure</strong><span class="classifier">None or tensap.Measure</span></dt><dd><p>The measure associated with the canonical polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_poly_coef</span></code>(ind)</p></td>
+<td><p>Return the coefficients of the first order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.d_polyval" title="tensap.functions.polynomials.polynomials.CanonicalPolynomials.d_polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_polyval</span></code></a>(ind, x)</p></td>
+<td><p>Evaluate the first order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_poly_coeff</span></code>(n, ind)</p></td>
+<td><p>Return the coefficients of the n-th order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_polyval</span></code>(n, ind, x)</p></td>
+<td><p>Evaluate the n-th order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.domain" title="tensap.functions.polynomials.polynomials.CanonicalPolynomials.domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain</span></code></a>()</p></td>
+<td><p>Return the domain of the canonical polynomials.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.is_orthonormal" title="tensap.functions.polynomials.polynomials.CanonicalPolynomials.is_orthonormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_orthonormal</span></code></a>()</p></td>
+<td><p>Check the orthonormality of the basis created by the functions of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>(ind[, measure])</p></td>
+<td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
+<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the output of the polynomials.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.one" title="tensap.functions.polynomials.polynomials.CanonicalPolynomials.one"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code></a>()</p></td>
+<td><p>Coefficients and corresponding indices for the decomposition of the constant function 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.poly_coeff" title="tensap.functions.polynomials.polynomials.CanonicalPolynomials.poly_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poly_coeff</span></code></a>(ind)</p></td>
+<td><p>Compute the coefficients of the monomials used to create the polynomials of degree specified in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyval</span></code>(ind, x)</p></td>
+<td><p>Evaluate the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.CanonicalPolynomials.d_polyval">
+<code class="sig-name descname">d_polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.d_polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the first order derivative of the polynomials of degrees
+contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the derivatives of the polynomials are to be
+evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the first order derivatives of the selected
+polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.CanonicalPolynomials.domain">
+<em class="property">static </em><code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the domain of the canonical polynomials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list</dt><dd><p>The domain of the canonical polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.CanonicalPolynomials.is_orthonormal">
+<em class="property">static </em><code class="sig-name descname">is_orthonormal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.is_orthonormal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the orthonormality of the basis created by the functions of self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>Indicates if the polynomials are orthonormal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.CanonicalPolynomials.one">
+<em class="property">static </em><code class="sig-name descname">one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coefficients and corresponding indices for the decomposition of the
+constant function 1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.CanonicalPolynomials.poly_coeff">
+<code class="sig-name descname">poly_coeff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.CanonicalPolynomials.poly_coeff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the coefficients of the monomials used to create the
+polynomials of degree specified in ind.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">ind or numpy.ndarray</span></dt><dd><p>The orders of the polynomials to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.polynomials.polynomials.</code><code class="sig-name descname">UnivariatePolynomials</code><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Class UnivariatePolynomials.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.d_poly_coef" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.d_poly_coef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_poly_coef</span></code></a>(ind)</p></td>
+<td><p>Return the coefficients of the first order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.d_polyval" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.d_polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">d_polyval</span></code></a>(ind, x)</p></td>
+<td><p>Evaluate the first order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.dn_poly_coeff" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.dn_poly_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_poly_coeff</span></code></a>(n, ind)</p></td>
+<td><p>Return the coefficients of the n-th order derivative of the polynomials of degrees contained in ind.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.dn_polyval" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.dn_polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dn_polyval</span></code></a>(n, ind, x)</p></td>
+<td><p>Evaluate the n-th order derivative of the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.is_orthonormal" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.is_orthonormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_orthonormal</span></code></a>()</p></td>
+<td><p>Check the orthonormality of the basis created by the functions of self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.mean" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(ind[, measure])</p></td>
+<td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.moment" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code></a>(ind[, measure])</p></td>
+<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.ndim" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the output of the polynomials.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.one" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.one"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one</span></code></a>()</p></td>
+<td><p>Coefficients and corresponding indices for the decomposition of the constant function 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.poly_coeff" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.poly_coeff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poly_coeff</span></code></a>(ind)</p></td>
+<td><p>Compute the coefficients of the monomials used to create the polynomials of degree specified in ind.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.polyval" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.polyval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyval</span></code></a>(ind, x)</p></td>
+<td><p>Evaluate the polynomials of degrees contained in ind at the points x.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.d_poly_coef">
+<code class="sig-name descname">d_poly_coef</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.d_poly_coef" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the coefficients of the first order derivative of the
+polynomials of degrees contained in ind.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The coefficients of the first order derivative of the polynomials
+of order contained in ind.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.d_polyval">
+<code class="sig-name descname">d_polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.d_polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the first order derivative of the polynomials of degrees
+contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the derivatives of the polynomials are to be
+evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the first order derivatives of the selected
+polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.dn_poly_coeff">
+<code class="sig-name descname">dn_poly_coeff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.dn_poly_coeff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the coefficients of the n-th order derivative of the
+polynomials of degrees contained in ind.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The degrees of derivation of the polynomials.</p>
+</dd>
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The orders of the polynomials to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The coefficients of the n-th order derivative of the polynomials
+of order contained in ind.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.dn_polyval">
+<code class="sig-name descname">dn_polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.dn_polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the n-th order derivative of the polynomials of degrees
+contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the derivatives of the polynomials are to be
+evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the n-th order derivatives of the selected
+polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.is_orthonormal">
+<em class="property">abstract </em><code class="sig-name descname">is_orthonormal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.is_orthonormal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the orthonormality of the basis created by the functions of self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>Indicates if the polynomials are orthonormal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.mean">
+<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean of the polynomials of degrees contained in ind, with a
+Measure given by measure if provided, or to self.measure otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials for which the mean is to be
+computed.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.Measure, optional</span></dt><dd><p>The measure used for the computation of the mean. The default is
+None, indicating to use self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The mean of the selected polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.moment">
+<code class="sig-name descname">moment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the moments of the family of polynomials p_i(X), i in ind,
+of a random variable X, using a gauss integration rule.</p>
+<dl class="simple">
+<dt>Assuming ind is a numpy.ndarray:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>if ind.ndim == 1, return the float</dt><dd><p>m = E(p_ind[0](X)…p_ind[-1](X)),</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>else if ind.ndim == 2, return the vector</dt><dd><dl class="simple">
+<dt>m = (E(p_ind[j, 0](X)…p_ind[j, -1](X)) :</dt><dd><p>j = 1, …, ind.shape[0]).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials for which the moments are to be
+computed.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.Measure, optional</span></dt><dd><p>The measure used for the computation of the moments. The default is
+None, indicating to use self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The moments of the family of polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.ndim">
+<em class="property">static </em><code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the output of the polynomials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The dimension of the output of the polynomials.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.one">
+<em class="property">abstract </em><code class="sig-name descname">one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coefficients and corresponding indices for the decomposition of the
+constant function 1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.poly_coeff">
+<em class="property">abstract </em><code class="sig-name descname">poly_coeff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.poly_coeff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the coefficients of the monomials used to create the
+polynomials of degree specified in ind.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">ind or numpy.ndarray</span></dt><dd><p>The orders of the polynomials to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.polyval">
+<code class="sig-name descname">polyval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.polyval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the polynomials of degrees contained in ind at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials to be evaluated.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the polynomials are to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluation of the selected polynomials at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.polynomials">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.functions.polynomials" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tensap.functions.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.compositional_model_function">tensap.functions.compositional_model_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.function">tensap.functions.function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.functional_tensor">tensap.functions.functional_tensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.multivariate_functions_benchmark">tensap.functions.multivariate_functions_benchmark module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.tensorized_function">tensap.functions.tensorized_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.tensorizer">tensap.functions.tensorizer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions.user_defined_function">tensap.functions.user_defined_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.html#module-tensap.functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tensap.functions.html">tensap.functions package</a><ul>
+      <li>Previous: <a href="tensap.functions.measures.html" title="previous chapter">tensap.functions.measures package</a></li>
+      <li>Next: <a href="tensap.functions.sets.html" title="next chapter">tensap.functions.sets package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.functions.polynomials.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
