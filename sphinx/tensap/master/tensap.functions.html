@@ -1,0 +1,1530 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.functions package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.functions.measures package" href="tensap.functions.measures.html" />
+    <link rel="prev" title="tensap.approximation.tools package" href="tensap.approximation.tools.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-functions-package">
+<h1>tensap.functions package<a class="headerlink" href="#tensap-functions-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.measures.html">tensap.functions.measures package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.copulas">tensap.functions.measures.copulas module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.discrete_measure">tensap.functions.measures.discrete_measure module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.discrete_random_variable">tensap.functions.measures.discrete_random_variable module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.empirical_random_variable">tensap.functions.measures.empirical_random_variable module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.measure">tensap.functions.measures.measure module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.normal_random_variable">tensap.functions.measures.normal_random_variable module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.probability_measure">tensap.functions.measures.probability_measure module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.product_measure">tensap.functions.measures.product_measure module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.random_multi_indices">tensap.functions.measures.random_multi_indices module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.random_variable">tensap.functions.measures.random_variable module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.random_vector">tensap.functions.measures.random_vector module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures.uniform_random_variable">tensap.functions.measures.uniform_random_variable module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.measures.html#module-tensap.functions.measures">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.polynomials.html">tensap.functions.polynomials package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.polynomials.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.polynomials.html#module-tensap.functions.polynomials.orthonormal_polynomials">tensap.functions.polynomials.orthonormal_polynomials module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.polynomials.html#module-tensap.functions.polynomials.polynomials">tensap.functions.polynomials.polynomials module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.polynomials.html#module-tensap.functions.polynomials">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.sets.html">tensap.functions.sets package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.sets.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.sets.html#module-tensap.functions.sets.is_in">tensap.functions.sets.is_in module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.functions.sets.html#module-tensap.functions.sets">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.functions.compositional_model_function">
+<span id="tensap-functions-compositional-model-function-module"></span><h2>tensap.functions.compositional_model_function module<a class="headerlink" href="#module-tensap.functions.compositional_model_function" title="Permalink to this headline">¶</a></h2>
+<p>Module compositional_model_function</p>
+<dl class="py class">
+<dt id="tensap.functions.compositional_model_function.CompositionalModelFunction">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.compositional_model_function.</code><code class="sig-name descname">CompositionalModelFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em>, <em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.compositional_model_function.CompositionalModelFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.function.Function" title="tensap.functions.function.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.function.Function</span></code></a></p>
+<p>Class CompositionalModelFunction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tree</strong><span class="classifier">tensap.DimensionTree</span></dt><dd><p>The dimension tree associated with the function.</p>
+</dd>
+<dt><strong>fun</strong><span class="classifier">list or numpy.ndarray or function or tensap.Function</span></dt><dd><p>A list or array of functions, one for each node of the tree, or
+one function, identical for all the internal nodes of the tree.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.Measure</span></dt><dd><p>The measure associated with the function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(x[, return_f])</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.compositional_model_function.CompositionalModelFunction.eval" title="tensap.functions.compositional_model_function.CompositionalModelFunction.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(x)</p></td>
+<td><p>Evaluate the CompositionalModelFunction at points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval_on_tensor_grid</span></code>(x)</p></td>
+<td><p>Evaluate the Function on a grid x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fplot</span></code>([support, n_points])</p></td>
+<td><p>Plot the function on a support using a given number of points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">partial_evaluation</span></code>(not_alpha, x_not_alpha)</p></td>
+<td><p>Return the partial evaluation of a function f(x) = f(x_alpha,x_not_alpha), a function f_alpha(.) = f(., x_not_alpha) for fixed values x_not_alpha of the variables with indices not_alpha.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code>([n, measure])</p></td>
+<td><p>Evaluates the function at n points x drawn randomly according to the ProbabilityMeasure in measure if provided, or in self.measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">store_eval</span></code>(x)</p></td>
+<td><p>Evaluate the function, reuising previous evaluations if possible, and storing the new evaluations in self.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">surf</span></code>([n])</p></td>
+<td><p>Surface plot of the bivariate function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code>(g[, n, measure])</p></td>
+<td><p>Compute the test error associated with the function, using a function g or some of its evaluations as a reference.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.compositional_model_function.CompositionalModelFunction.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.compositional_model_function.CompositionalModelFunction.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the CompositionalModelFunction at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the function is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the function at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.function">
+<span id="tensap-functions-function-module"></span><h2>tensap.functions.function module<a class="headerlink" href="#module-tensap.functions.function" title="Permalink to this headline">¶</a></h2>
+<p>Module function.</p>
+<dl class="py class">
+<dt id="tensap.functions.function.Function">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.function.</code><code class="sig-name descname">Function</code><a class="headerlink" href="#tensap.functions.function.Function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class Function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dim</strong><span class="classifier">int</span></dt><dd><p>The dimension of the input of the function.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.Measure</span></dt><dd><p>The measure associated with the function.</p>
+</dd>
+<dt><strong>output_shape</strong><span class="classifier">int or list or numpy.ndarray</span></dt><dd><p>The shape of the output of the function.</p>
+</dd>
+<dt><strong>evaluation_at_multiple_points</strong><span class="classifier">bool</span></dt><dd><p>Indicates if the function can be evaluated at multiple points at once.</p>
+</dd>
+<dt><strong>store</strong><span class="classifier">bool</span></dt><dd><p>Indicates if the Function object should store the evaluations of the
+function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(x[, return_f])</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.function.Function.eval" title="tensap.functions.function.Function.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(x)</p></td>
+<td><p>Evaluate the function at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.function.Function.eval_on_tensor_grid" title="tensap.functions.function.Function.eval_on_tensor_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval_on_tensor_grid</span></code></a>(x)</p></td>
+<td><p>Evaluate the Function on a grid x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.function.Function.fplot" title="tensap.functions.function.Function.fplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fplot</span></code></a>([support, n_points])</p></td>
+<td><p>Plot the function on a support using a given number of points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.function.Function.partial_evaluation" title="tensap.functions.function.Function.partial_evaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partial_evaluation</span></code></a>(not_alpha, x_not_alpha)</p></td>
+<td><p>Return the partial evaluation of a function f(x) = f(x_alpha,x_not_alpha), a function f_alpha(.) = f(., x_not_alpha) for fixed values x_not_alpha of the variables with indices not_alpha.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.function.Function.random" title="tensap.functions.function.Function.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>([n, measure])</p></td>
+<td><p>Evaluates the function at n points x drawn randomly according to the ProbabilityMeasure in measure if provided, or in self.measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.function.Function.store_eval" title="tensap.functions.function.Function.store_eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store_eval</span></code></a>(x)</p></td>
+<td><p>Evaluate the function, reuising previous evaluations if possible, and storing the new evaluations in self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.function.Function.surf" title="tensap.functions.function.Function.surf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surf</span></code></a>([n])</p></td>
+<td><p>Surface plot of the bivariate function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.function.Function.test_error" title="tensap.functions.function.Function.test_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code></a>(g[, n, measure])</p></td>
+<td><p>Compute the test error associated with the function, using a function g or some of its evaluations as a reference.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.function.Function.eval">
+<em class="property">abstract </em><code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.function.Function.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the function at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the function is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the function at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.function.Function.eval_on_tensor_grid">
+<code class="sig-name descname">eval_on_tensor_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.function.Function.eval_on_tensor_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the Function on a grid x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">tensap.TensorGrid</span></dt><dd><p>The tensap.ensorGrid used for the evaluation..</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>fx</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The evaluation of the Function on the grid.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>NotImplementedError</dt><dd><p>If the method is not implemented.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If x is not a tensap.TensorGrid object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.function.Function.fplot">
+<code class="sig-name descname">fplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">support</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_points</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.function.Function.fplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the function on a support using a given number of points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>support</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The support of the plot. The default is None, indicating to use
+the truncated_support of self.measure.</p>
+</dd>
+<dt><strong>n_points</strong><span class="classifier">int, optional</span></dt><dd><p>The number of points used for the plot. The default is 100.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by the function matplotlib.pyplot.plot.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.function.Function.partial_evaluation">
+<code class="sig-name descname">partial_evaluation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">not_alpha</span></em>, <em class="sig-param"><span class="n">x_not_alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.function.Function.partial_evaluation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the partial evaluation of a function
+f(x) = f(x_alpha,x_not_alpha), a function
+f_alpha(.) = f(., x_not_alpha) for fixed values x_not_alpha of the
+variables with indices not_alpha.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>not_alpha</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The indices of the fixed variables.</p>
+</dd>
+<dt><strong>x_not_alpha</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The points at which the function is evaluated in the dimensions
+not_alpha.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>f_alpha</strong><span class="classifier">tensap.UserDefinedFunction</span></dt><dd><p>The partial evaluation of the Function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the Function has an empty attribute dim.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.function.Function.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.function.Function.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the function at n points x drawn randomly according to the
+ProbabilityMeasure in measure if provided, or in self.measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>The number of random evaluations. The default is 1.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.ProbabilityMeasure, optional</span></dt><dd><p>The probability measure according to which the points x are drawn.
+The default is None, indicating to use self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the function at the points x.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The points at which the function is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the provided measure is not a tensap.ProbabilityMeasure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.function.Function.store_eval">
+<code class="sig-name descname">store_eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.function.Function.store_eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the function, reuising previous evaluations if possible, and
+storing the new evaluations in self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The input points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The evaluations of the Function.</p>
+</dd>
+<dt>tensap.Function</dt><dd><p>The Function with stored evaluations, for future reuse.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.function.Function.surf">
+<code class="sig-name descname">surf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.function.Function.surf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Surface plot of the bivariate function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The number of points used for the surface plot in each dimension.
+The default is [1000, 1000].</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Additional parameters used by matplotlib.pyplot’s plot_surface
+function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>ax</strong><span class="classifier">matplotlib.axes._subplots.AxesSubplot</span></dt><dd><p>The surface plot as a matplotlib.axes._subplots.AxesSubplot object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.function.Function.test_error">
+<code class="sig-name descname">test_error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.function.Function.test_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the test error associated with the function, using a function g
+or some of its evaluations as a reference. A measure can be provided
+to randomly draw the test input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>g</strong><span class="classifier">tensap.Function or numpy.ndarray</span></dt><dd><p>The reference function or evaluations of it.</p>
+</dd>
+<dt><strong>n</strong><span class="classifier">int or numpy.ndarray, optional</span></dt><dd><p>The test sample size, or the test input data. The default is 1000
+test input points.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tap.ProbabilityMeasure, optional</span></dt><dd><p>A probability measure used to draw the test input data. The default
+is None, indicating to either use self.measure, g.measure or the
+provided input points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>err_l2</strong><span class="classifier">float</span></dt><dd><p>The L2 error.</p>
+</dd>
+<dt><strong>err_linf</strong><span class="classifier">float</span></dt><dd><p>The L-infinity error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.functional_tensor">
+<span id="tensap-functions-functional-tensor-module"></span><h2>tensap.functions.functional_tensor module<a class="headerlink" href="#module-tensap.functions.functional_tensor" title="Permalink to this headline">¶</a></h2>
+<p>Module functional_tensor.</p>
+<dl class="py class">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.functional_tensor.</code><code class="sig-name descname">FunctionalTensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tensor</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bases</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fdims</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.function.Function" title="tensap.functions.function.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.function.Function</span></code></a></p>
+<p>Class FunctionalTensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tensor</strong><span class="classifier">Tensor or tensap.FunctionalTensor, optional</span></dt><dd><p>The tensor of the FunctionalTensor. The default is None.</p>
+</dd>
+<dt><strong>bases</strong><span class="classifier">list or tensap.FunctionalBases, optional</span></dt><dd><p>The functional bases of the FunctionalTensor. The default is None.</p>
+</dd>
+<dt><strong>fdims</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The dimensions corresponding to the bases. The default is None.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(x[, return_f])</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.conditional_expectation" title="tensap.functions.functional_tensor.FunctionalTensor.conditional_expectation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conditional_expectation</span></code></a>(dims, *args)</p></td>
+<td><p>Compute the conditional expectation of self with respect to the random variables dims (a subset of [1, …, d]).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.derivative" title="tensap.functions.functional_tensor.FunctionalTensor.derivative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">derivative</span></code></a>(n)</p></td>
+<td><p>Compute the n-th order derivative of self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.dot_product_expectation" title="tensap.functions.functional_tensor.FunctionalTensor.dot_product_expectation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot_product_expectation</span></code></a>(f_2[, fdims])</p></td>
+<td><p>Computes the expectation of self(X)f_2(X) where X is the random vector associated with self.bases if measure is not provided, and measure otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.eval" title="tensap.functions.functional_tensor.FunctionalTensor.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(x, *dims)</p></td>
+<td><p>Evaluate self at the points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.eval_derivative" title="tensap.functions.functional_tensor.FunctionalTensor.eval_derivative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval_derivative</span></code></a>(n, x, *dims)</p></td>
+<td><p>Evaluate the n-th order derivative of self at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.eval_on_grid" title="tensap.functions.functional_tensor.FunctionalTensor.eval_on_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval_on_grid</span></code></a>(x[, dims])</p></td>
+<td><p>Compute evaluations of self at points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval_on_tensor_grid</span></code>(x)</p></td>
+<td><p>Evaluate the Function on a grid x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.eval_with_bases_evals" title="tensap.functions.functional_tensor.FunctionalTensor.eval_with_bases_evals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval_with_bases_evals</span></code></a>(bases_eval[, dims])</p></td>
+<td><p>Evaluate the function self, given evaluations of self.bases.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.expectation" title="tensap.functions.functional_tensor.FunctionalTensor.expectation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expectation</span></code></a>(*measure)</p></td>
+<td><p>Compute the expectation of the random variable self(measure) if measure is provided, and of self(self.bases.measure) otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fplot</span></code>([support, n_points])</p></td>
+<td><p>Plot the function on a support using a given number of points.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.get_random_vector" title="tensap.functions.functional_tensor.FunctionalTensor.get_random_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_random_vector</span></code></a>()</p></td>
+<td><p>Return the RandomVector associated with self.bases.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.is_random" title="tensap.functions.functional_tensor.FunctionalTensor.is_random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_random</span></code></a>()</p></td>
+<td><p>Determine if self is random.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.mean" title="tensap.functions.functional_tensor.FunctionalTensor.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(*measure)</p></td>
+<td><p>Compute the expectation of the random variable self(measure) if measure is provided, and of self(self.bases.measure) otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.norm" title="tensap.functions.functional_tensor.FunctionalTensor.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a>(*measure)</p></td>
+<td><p>Return the L^2 norm of self(X), with X = measure if provided, and X = self.bases.measure otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.parameter_gradient_eval" title="tensap.functions.functional_tensor.FunctionalTensor.parameter_gradient_eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameter_gradient_eval</span></code></a>(alpha[, x])</p></td>
+<td><p>Compute the gradient of the function with respect to its alpha-th parameter, evaluated at some points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">partial_evaluation</span></code>(not_alpha, x_not_alpha)</p></td>
+<td><p>Return the partial evaluation of a function f(x) = f(x_alpha,x_not_alpha), a function f_alpha(.) = f(., x_not_alpha) for fixed values x_not_alpha of the variables with indices not_alpha.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.random" title="tensap.functions.functional_tensor.FunctionalTensor.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Evaluates the function at n points x drawn randomly according to the ProbabilityMeasure in measure if provided, or in self.measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.random_dims" title="tensap.functions.functional_tensor.FunctionalTensor.random_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_dims</span></code></a>(dims, *args[, nargout])</p></td>
+<td><p>Evaluate the function in dimensions dims using n points drawn randomly according to measure if provided, or to self.bases.measure.marginal(dims) otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.std" title="tensap.functions.functional_tensor.FunctionalTensor.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(*measure)</p></td>
+<td><p><p>’</p>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.storage" title="tensap.functions.functional_tensor.FunctionalTensor.storage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">storage</span></code></a>()</p></td>
+<td><p>Return the storage requirement of the FunctionalTensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">store_eval</span></code>(x)</p></td>
+<td><p>Evaluate the function, reuising previous evaluations if possible, and storing the new evaluations in self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">surf</span></code>([n])</p></td>
+<td><p>Surface plot of the bivariate function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code>(g[, n, measure])</p></td>
+<td><p>Compute the test error associated with the function, using a function g or some of its evaluations as a reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.variance" title="tensap.functions.functional_tensor.FunctionalTensor.variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance</span></code></a>(*measure)</p></td>
+<td><p>Compute the variance of the random variable self(measure) if measure is provided, and of self(self.bases.measure) otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.functional_tensor.FunctionalTensor.variance_conditional_expectation" title="tensap.functions.functional_tensor.FunctionalTensor.variance_conditional_expectation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variance_conditional_expectation</span></code></a>(alpha)</p></td>
+<td><p>Compute the variance of the conditional expectation of self in dimensions in alpha.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>parameter_gradient_eval_dmrg</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.conditional_expectation">
+<code class="sig-name descname">conditional_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.conditional_expectation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the conditional expectation of self with respect to the random
+variables dims (a subset of [1, …, d]).</p>
+<p>The expectation with respect to other variables (in the complementary
+set of dims) is taken with respect to the probability measure given by
+a tensap.RandomVector if provided as an additional argument, or with
+respect to the probability measure associated with the corresponding
+bases of self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dims</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The dimensions of the random variables with respect to which the
+conditional expectation is to be computed.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Tuple containing a tensap.randomVector giving the probability
+measure of the variables other than the ones in dims. If not
+provided, the measure is infered from self.bases.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.FunctionalTensor</dt><dd><p>The conditional expectation of self with respect to the random
+variables dims, as a len(dims)-order tensor.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.derivative">
+<code class="sig-name descname">derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.derivative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the n-th order derivative of self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The order of derivation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The n-th order derivative of self.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.dot_product_expectation">
+<code class="sig-name descname">dot_product_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f_2</span></em>, <em class="sig-param"><span class="n">fdims</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.dot_product_expectation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the expectation of self(X)f_2(X) where X is the random vector
+associated with self.bases if measure is not provided, and measure
+otherwise.</p>
+<p>For tensor-valued functions of X (len(X)&lt;self.order), fdims specifies
+the dimensions of self and f_2 corresponding to theRandomVector X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>f_2</strong><span class="classifier">tensap.FunctionalTensor</span></dt><dd><p>The second functional tensor of the product.</p>
+</dd>
+<dt><strong>fdims</strong><span class="classifier">list of numpy.ndarray, optional</span></dt><dd><p>Specifies the dimensions of self and f_2 corresponding to
+theRandomVector X. The default is None, indicating all the
+dimensions</p>
+</dd>
+<dt><strong>*measure</strong><span class="classifier">tensap.RandomVector, optional</span></dt><dd><p>The measure used for the computation of the product. If not
+provided, indicates to use self.bases.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float or Tensor</dt><dd><p>The expectation of self(X)f_2(X).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the two tensors do not have the same order and fdims is not
+specified.</p>
+</dd>
+<dt>NotImplementedError</dt><dd><p>If the bases of self and f_2 are not equal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">dims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate self at the points x.</p>
+<p>If dims is provided, compute the partial evaluations of self at points
+x in dimensions in dims.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray or None</span></dt><dd><p>The points at which the function is to be evaluated. If x is None
+and self.evaluated_bases, evaluates the function using the
+evaluations of the bases.</p>
+</dd>
+<dt><strong>*dims</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The dimensions of the partial evaluation. If not provided,
+evaluate the function in all dimensions.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpu.ndarray or Tensor</dt><dd><p>The evaluations of self at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.eval_derivative">
+<code class="sig-name descname">eval_derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">dims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.eval_derivative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the n-th order derivative of self at the points x.</p>
+<p>If dims is provided, compute the partial evaluations of the n-th order
+derivative of self at points x n dimensions in dims.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The order of derivation.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the function is to be evaluated.</p>
+</dd>
+<dt><strong>*dims</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The dimensions of the partial evaluation. If not provided,
+evaluate the function in all dimensions.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpu.ndarray or Tensor</dt><dd><p>The evaluations of the n-th derivative of self at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.eval_on_grid">
+<code class="sig-name descname">eval_on_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.eval_on_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute evaluations of self at points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list</span></dt><dd><p>List such that x[k] contains the grid associated with the (k+1)-th
+variable.</p>
+</dd>
+<dt><strong>dims</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>Array indicating the dimensions associated with x. The default is
+None, indicating all the dimensions.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>out</strong><span class="classifier">FunctionalTensor or tensap.Tensor</span></dt><dd><p>The evaluations of self at points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.eval_with_bases_evals">
+<code class="sig-name descname">eval_with_bases_evals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bases_eval</span></em>, <em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.eval_with_bases_evals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the function self, given evaluations of self.bases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bases_eval</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The evaluations of self.bases.</p>
+</dd>
+<dt><strong>dims</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The dimensions of the evaluation. The default is None, indicating
+all the dimensions.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>out</strong><span class="classifier">numpy.ndarray or Tensor</span></dt><dd><p>The (partially) evaluated function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.expectation">
+<code class="sig-name descname">expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.expectation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the expectation of the random variable self(measure) if
+measure is provided, and of self(self.bases.measure) otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*measure</strong><span class="classifier">tensap.RandomVector, optional</span></dt><dd><p>The measure used for the computation of the expectation. If not
+provided, indicates to use self.bases.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float or Tensor</dt><dd><p>The expectation of the function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.get_random_vector">
+<code class="sig-name descname">get_random_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.get_random_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the RandomVector associated with self.bases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.RandomVector</dt><dd><p>The RandomVector associated with self.bases.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.is_random">
+<code class="sig-name descname">is_random</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.is_random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if self is random.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>Boolean indicating if if self is random.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.mean">
+<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the expectation of the random variable self(measure) if
+measure is provided, and of self(self.bases.measure) otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*measure</strong><span class="classifier">tensap.RandomVector, optional</span></dt><dd><p>The measure used for the computation of the mean. If not provided,
+indicates to use self.bases.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float or Tensor</dt><dd><p>The mean of the function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.norm">
+<code class="sig-name descname">norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the L^2 norm of self(X), with X = measure if provided, and
+X = self.bases.measure otherwise.</p>
+<p>If self.evaluatedBases is true, without additional information, return
+the canonical norm of self.tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*measure</strong><span class="classifier">tensap.RandomVector, optional</span></dt><dd><p>The measure used for the computation of the norm. If not provided,
+indicates to use self.bases.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float or Tensor</dt><dd><p>The L^2 norm of self(X).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.parameter_gradient_eval">
+<code class="sig-name descname">parameter_gradient_eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.parameter_gradient_eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the gradient of the function with respect to its alpha-th
+parameter, evaluated at some points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha</strong><span class="classifier">int</span></dt><dd><p>The number of the parameter with respect to which compute the
+gradient of self.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The points at which the gradient is to be evaluated. The default is
+None, indicating to use self.bases if self.evaluated_bases is True.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>grad</strong><span class="classifier">Tensor</span></dt><dd><p>The gradient of the function with respect to its alpha-th
+parameter, evaluated at some points.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If no input points are provided.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.parameter_gradient_eval_dmrg">
+<code class="sig-name descname">parameter_gradient_eval_dmrg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dmrg_type</span><span class="o">=</span><span class="default_value">'dmrg'</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.parameter_gradient_eval_dmrg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.random">
+<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the function at n points x drawn randomly according to the
+ProbabilityMeasure in measure if provided, or in self.measure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>The number of random evaluations. The default is 1.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.ProbabilityMeasure, optional</span></dt><dd><p>The probability measure according to which the points x are drawn.
+The default is None, indicating to use self.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the function at the points x.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The points at which the function is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the provided measure is not a tensap.ProbabilityMeasure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.random_dims">
+<code class="sig-name descname">random_dims</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.random_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the function in dimensions dims using n points drawn randomly
+according to measure if provided, or to
+self.bases.measure.marginal(dims) otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dims</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The dimensions of the bases to be evaluated.</p>
+</dd>
+<dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>The number of random evaluations. The default is 1.</p>
+</dd>
+<dt><strong>measure</strong><span class="classifier">tensap.ProbabilityMeasure, optional</span></dt><dd><p>The probability measure used for the generation of the input
+points. The default is None, indicating to use
+self.measure.marginal(dims).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>bases_eval</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Random evaluations of the function.</p>
+</dd>
+<dt><strong>x</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The input points, grouped by basis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.std">
+<code class="sig-name descname">std</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.std" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘
+Compute the standard deviation of the random variable self(measure) if
+measure is provided, and of self(self.bases.measure) otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*measure</strong><span class="classifier">tensap.RandomVector, optional</span></dt><dd><p>The measure used for the computation of the standard deviation. If
+not provided, indicates to use self.bases.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>v</strong><span class="classifier">float or Tensor</span></dt><dd><p>The standard deviation of the function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.storage">
+<code class="sig-name descname">storage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the storage requirement of the FunctionalTensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The storage requirement of the FunctionalTensor.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.variance">
+<code class="sig-name descname">variance</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the variance of the random variable self(measure) if
+measure is provided, and of self(self.bases.measure) otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*measure</strong><span class="classifier">tensap.RandomVector, optional</span></dt><dd><p>The measure used for the computation of the variance. If not
+provided, indicates to use self.bases.measure.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>var</strong><span class="classifier">float or Tensor</span></dt><dd><p>The variance of the function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.functional_tensor.FunctionalTensor.variance_conditional_expectation">
+<code class="sig-name descname">variance_conditional_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.functional_tensor.FunctionalTensor.variance_conditional_expectation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the variance of the conditional expectation of self in
+dimensions in alpha.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Array containing the dimensions (either explicitely or using
+booleans) in which the variance of the conditional expectation is
+computed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>v</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The variance of the conditional expectation of self in
+dimensions in alpha.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.multivariate_functions_benchmark">
+<span id="tensap-functions-multivariate-functions-benchmark-module"></span><h2>tensap.functions.multivariate_functions_benchmark module<a class="headerlink" href="#module-tensap.functions.multivariate_functions_benchmark" title="Permalink to this headline">¶</a></h2>
+<p>Module multivariate_functions_benchmark</p>
+<dl class="py function">
+<dt id="tensap.functions.multivariate_functions_benchmark.multivariate_functions_benchmark">
+<code class="sig-prename descclassname">tensap.functions.multivariate_functions_benchmark.</code><code class="sig-name descname">multivariate_functions_benchmark</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">case</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.multivariate_functions_benchmark.multivariate_functions_benchmark" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate different functions used to benchmark the package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>case</strong><span class="classifier">str</span></dt><dd><p>The name of the function. Can be ‘borehole’, ‘ishigami’,
+‘sin_of_a_sum’, ‘linear_additive’, ‘linear_rank_one’,
+‘quadratic_rank_one’, ‘canonical_rank_2’, ‘mixture’, ‘field’,
+‘oscillatory’, ‘product_peak’, ‘corner_peak’, ‘gaussian’, ‘continuous’,
+‘discontinuous’, ‘henon_heiles’, ‘sobol’, ‘anisotropic’, ‘polynomial’.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Parameters of the function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>function</dt><dd><p>The asked function.</p>
+</dd>
+<dt>tensap.RandomVector</dt><dd><p>Input random variables.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>NotImplementedError</dt><dd><p>If the function is not implemented.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.tensorized_function">
+<span id="tensap-functions-tensorized-function-module"></span><h2>tensap.functions.tensorized_function module<a class="headerlink" href="#module-tensap.functions.tensorized_function" title="Permalink to this headline">¶</a></h2>
+<p>Module tensorized_function.</p>
+<dl class="py class">
+<dt id="tensap.functions.tensorized_function.TensorizedFunction">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.tensorized_function.</code><code class="sig-name descname">TensorizedFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">tens</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorized_function.TensorizedFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.function.Function" title="tensap.functions.function.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.function.Function</span></code></a></p>
+<p>Class TensorizedFunction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function or tensap.Function</span></dt><dd><p>A function of (d+1)*dim variables.</p>
+</dd>
+<dt><strong>tens</strong><span class="classifier">tensap.Tensorizer</span></dt><dd><p>A tensap.Tensorizer object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(x[, return_f])</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.tensorized_function.TensorizedFunction.domain" title="tensap.functions.tensorized_function.TensorizedFunction.domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">domain</span></code></a>()</p></td>
+<td><p>Return the domain of the function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.tensorized_function.TensorizedFunction.eval" title="tensap.functions.tensorized_function.TensorizedFunction.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(z)</p></td>
+<td><p>Evaluate the function at the points x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval_on_tensor_grid</span></code>(x)</p></td>
+<td><p>Evaluate the Function on a grid x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fplot</span></code>([support, n_points])</p></td>
+<td><p>Plot the function on a support using a given number of points.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">partial_evaluation</span></code>(not_alpha, x_not_alpha)</p></td>
+<td><p>Return the partial evaluation of a function f(x) = f(x_alpha,x_not_alpha), a function f_alpha(.) = f(., x_not_alpha) for fixed values x_not_alpha of the variables with indices not_alpha.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code>([n, measure])</p></td>
+<td><p>Evaluates the function at n points x drawn randomly according to the ProbabilityMeasure in measure if provided, or in self.measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">store_eval</span></code>(x)</p></td>
+<td><p>Evaluate the function, reuising previous evaluations if possible, and storing the new evaluations in self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">surf</span></code>([n])</p></td>
+<td><p>Surface plot of the bivariate function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code>(g[, n, measure])</p></td>
+<td><p>Compute the test error associated with the function, using a function g or some of its evaluations as a reference.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.tensorized_function.TensorizedFunction.domain">
+<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorized_function.TensorizedFunction.domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the domain of the function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sup</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The domain of the function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.tensorized_function.TensorizedFunction.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorized_function.TensorizedFunction.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the function at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the function is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the function at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.tensorizer">
+<span id="tensap-functions-tensorizer-module"></span><h2>tensap.functions.tensorizer module<a class="headerlink" href="#module-tensap.functions.tensorizer" title="Permalink to this headline">¶</a></h2>
+<p>Module tensorizer.</p>
+<dl class="py class">
+<dt id="tensap.functions.tensorizer.Tensorizer">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.tensorizer.</code><code class="sig-name descname">Tensorizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">X</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Y</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorizer.Tensorizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class Tensorizer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>b</strong><span class="classifier">int</span></dt><dd><p>The base of the map.</p>
+</dd>
+<dt><strong>d</strong><span class="classifier">int</span></dt><dd><p>The resolution of the map.</p>
+</dd>
+<dt><strong>dim</strong><span class="classifier">int</span></dt><dd><p>The input dimension of the function to be tensorized.</p>
+</dd>
+<dt><strong>X</strong><span class="classifier">tensap.RandomVector</span></dt><dd><p>Random vector used for the map.</p>
+</dd>
+<dt><strong>Y</strong><span class="classifier">tensap.RandomVector</span></dt><dd><p>Random vector used for the map.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.tensorizer.Tensorizer.inverse_map" title="tensap.functions.tensorizer.Tensorizer.inverse_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_map</span></code></a>(z)</p></td>
+<td><p>Evaluate the map at points z = (i_1, …, i_d, y), returning x such that self.map(x) = z.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.tensorizer.Tensorizer.map" title="tensap.functions.tensorizer.Tensorizer.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map</span></code></a>(x[, nargout])</p></td>
+<td><p>Evaluate the map at points x, returning y and i such that self.map(x) = (i_1, …, i_d, y).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.tensorizer.Tensorizer.tensorize" title="tensap.functions.tensorizer.Tensorizer.tensorize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorize</span></code></a>(fun)</p></td>
+<td><p>Tensorize a provided function defined on self.X.support().</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.tensorizer.Tensorizer.tensorized_function_functional_bases" title="tensap.functions.tensorizer.Tensorizer.tensorized_function_functional_bases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorized_function_functional_bases</span></code></a>([h])</p></td>
+<td><p>Return a tensap.FunctionalBases object associated with the provided basis or basis function(s) and the Tensorizer object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.tensorizer.Tensorizer.u2z" title="tensap.functions.tensorizer.Tensorizer.u2z"><code class="xref py py-obj docutils literal notranslate"><span class="pre">u2z</span></code></a>(u, b, d[, nargout])</p></td>
+<td><p>Return the representation of numbers on [0, 1] in base b with resolution d.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.tensorizer.Tensorizer.z2u" title="tensap.functions.tensorizer.Tensorizer.z2u"><code class="xref py py-obj docutils literal notranslate"><span class="pre">z2u</span></code></a>(z, b)</p></td>
+<td><p>Return the representation of numbers in base b in decimal on [0, 1].</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.tensorizer.Tensorizer.inverse_map">
+<code class="sig-name descname">inverse_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorizer.Tensorizer.inverse_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the map at points z = (i_1, …, i_d, y), returning x such
+that self.map(x) = z.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>z</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the inverse map is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The points x such that self.map(x) = z.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.tensorizer.Tensorizer.map">
+<code class="sig-name descname">map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorizer.Tensorizer.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the map at points x, returning y and i such that
+self.map(x) = (i_1, …, i_d, y).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the map is to be evaluated.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>The number of outputs. The default is 1, returning a horizontal
+stack of i and y. Set to 2 to return y and i separately.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Either (i_1, …, i_d, y) if nargout == 1, or y if nargout == 2.</p>
+</dd>
+<dt>numpy.ndarray</dt><dd><p>(i_1, …, i_d), if nargout == 2.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.tensorizer.Tensorizer.tensorize">
+<code class="sig-name descname">tensorize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorizer.Tensorizer.tensorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tensorize a provided function defined on self.X.support().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function or tensap.Function</span></dt><dd><p>The function to be tensorized.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.TensorizedFunction</dt><dd><p>The tensorized function.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the provided argument is neither a tensap.Function nor a
+function.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.tensorizer.Tensorizer.tensorized_function_functional_bases">
+<code class="sig-name descname">tensorized_function_functional_bases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorizer.Tensorizer.tensorized_function_functional_bases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a tensap.FunctionalBases object associated with the provided
+basis or basis function(s) and the Tensorizer object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>h</strong><span class="classifier">tensap.FunctionalBases or tensap.FunctionalBasis or function or</span></dt><dd></dd>
+<dt><strong>list or scalar, optional</strong></dt><dd><p>The function used to generate the basis. The default is the
+function 1.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.FunctionalBases</dt><dd><p>The functional bases.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.tensorizer.Tensorizer.u2z">
+<em class="property">static </em><code class="sig-name descname">u2z</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorizer.Tensorizer.u2z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the representation of numbers on [0, 1] in base b with
+resolution d.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>u</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The inputs to be converted in base b with resolution d.</p>
+</dd>
+<dt><strong>b</strong><span class="classifier">int</span></dt><dd><p>The base.</p>
+</dd>
+<dt><strong>d</strong><span class="classifier">int</span></dt><dd><p>The resolution.</p>
+</dd>
+<dt><strong>nargout</strong><span class="classifier">int, optional</span></dt><dd><p>The number of outputs. The default is 1, returning a horizontal
+stack of i and y. Set to 2 to return y and i separately.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Either (i_1, …, i_d, y) if nargout == 1, or y if nargout == 2.</p>
+</dd>
+<dt>numpy.ndarray</dt><dd><p>(i_1, …, i_d), if nargout == 2.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.functions.tensorizer.Tensorizer.z2u">
+<em class="property">static </em><code class="sig-name descname">z2u</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.tensorizer.Tensorizer.z2u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the representation of numbers in base b in decimal on [0, 1].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>z</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The numbers in base b.</p>
+</dd>
+<dt><strong>b</strong><span class="classifier">int</span></dt><dd><p>The base.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The decimal representation of the inputs on [0, 1].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions.user_defined_function">
+<span id="tensap-functions-user-defined-function-module"></span><h2>tensap.functions.user_defined_function module<a class="headerlink" href="#module-tensap.functions.user_defined_function" title="Permalink to this headline">¶</a></h2>
+<p>Module user_defined_function.</p>
+<dl class="py class">
+<dt id="tensap.functions.user_defined_function.UserDefinedFunction">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.functions.user_defined_function.</code><code class="sig-name descname">UserDefinedFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">shape</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.user_defined_function.UserDefinedFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.functions.function.Function" title="tensap.functions.function.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.function.Function</span></code></a></p>
+<p>Class UserDefinedFunction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fun</strong><span class="classifier">function or tensap.Function</span></dt><dd><p>The function defining the UserDefinedFunction object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(x[, return_f])</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.user_defined_function.UserDefinedFunction.eval" title="tensap.functions.user_defined_function.UserDefinedFunction.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>(x)</p></td>
+<td><p>Evaluate the function at the points x.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval_on_tensor_grid</span></code>(x)</p></td>
+<td><p>Evaluate the Function on a grid x.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fplot</span></code>([support, n_points])</p></td>
+<td><p>Plot the function on a support using a given number of points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">partial_evaluation</span></code>(not_alpha, x_not_alpha)</p></td>
+<td><p>Return the partial evaluation of a function f(x) = f(x_alpha,x_not_alpha), a function f_alpha(.) = f(., x_not_alpha) for fixed values x_not_alpha of the variables with indices not_alpha.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code>([n, measure])</p></td>
+<td><p>Evaluates the function at n points x drawn randomly according to the ProbabilityMeasure in measure if provided, or in self.measure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">store_eval</span></code>(x)</p></td>
+<td><p>Evaluate the function, reuising previous evaluations if possible, and storing the new evaluations in self.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">surf</span></code>([n])</p></td>
+<td><p>Surface plot of the bivariate function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_error</span></code>(g[, n, measure])</p></td>
+<td><p>Compute the test error associated with the function, using a function g or some of its evaluations as a reference.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.functions.user_defined_function.UserDefinedFunction.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.user_defined_function.UserDefinedFunction.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the function at the points x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The points at which the function is to be evaluated.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The evaluations of the function at the points x.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.functions">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.functions" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tensap.functions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.functions.compositional_model_function">tensap.functions.compositional_model_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.functions.function">tensap.functions.function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.functions.functional_tensor">tensap.functions.functional_tensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.functions.multivariate_functions_benchmark">tensap.functions.multivariate_functions_benchmark module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.functions.tensorized_function">tensap.functions.tensorized_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.functions.tensorizer">tensap.functions.tensorizer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.functions.user_defined_function">tensap.functions.user_defined_function module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.functions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tensap.approximation.tools.html" title="previous chapter">tensap.approximation.tools package</a></li>
+      <li>Next: <a href="tensap.functions.measures.html" title="next chapter">tensap.functions.measures package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.functions.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

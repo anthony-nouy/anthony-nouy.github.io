@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.linear_algebra package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.tensor_algebra package" href="tensap.tensor_algebra.html" />
+    <link rel="prev" title="tensap.functions.sets package" href="tensap.functions.sets.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-linear-algebra-package">
+<h1>tensap.linear_algebra package<a class="headerlink" href="#tensap-linear-algebra-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.linear_algebra.magic_indices">
+<span id="tensap-linear-algebra-magic-indices-module"></span><h2>tensap.linear_algebra.magic_indices module<a class="headerlink" href="#module-tensap.linear_algebra.magic_indices" title="Permalink to this headline">¶</a></h2>
+<p>Module magic_indices.</p>
+<dl class="py function">
+<dt id="tensap.linear_algebra.magic_indices.magic_indices">
+<code class="sig-prename descclassname">tensap.linear_algebra.magic_indices.</code><code class="sig-name descname">magic_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">F</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">option</span><span class="o">=</span><span class="default_value">'left_right'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.linear_algebra.magic_indices.magic_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the set of n magic indices (i_1, j_1), …, (i_n, j_n) constructed
+by a greedy algorithm.</p>
+<dl class="simple">
+<dt>If option is ‘left_right’ (default value):</dt><dd><p>[ik,jk] = arg max_{i,j} | F_ij - I_{k-1}(F)_ij |
+where I_{k-1}(F) is the rank-(k-1) matrix which interpolates F on the
+cross corresponding to rows (i_1, …, i_{k-1}) and
+columns (j_1,…, j_{k-1}).</p>
+</dd>
+<dt>If option is ‘left’:</dt><dd><p>jk is equal to k and
+<span class="math notranslate nohighlight">\(ik = arg max_{i} max_{1 &lt;= j &lt;= M} | F_ij - I_[k-1](F)_ij |\)</span>.</p>
+</dd>
+<dt>If option is ‘right’:</dt><dd><p>ik is equal to k and
+<span class="math notranslate nohighlight">\(jk = arg max_{j} max_{1 &lt;= i &lt;= N} | F_ij - I[k-1](F)_ij |\)</span></p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>F</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Input matrix.</p>
+</dd>
+<dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>Number of magic indices. The default is None, indicating to choose
+n = np.min(F.shape).</p>
+</dd>
+<dt><strong>option</strong><span class="classifier">str, optional</span></dt><dd><p>The selected option. The default is ‘left_right’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>I, J</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The magic indices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the selected option is incorrect.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.linear_algebra">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.linear_algebra" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tensap.linear_algebra package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.linear_algebra.magic_indices">tensap.linear_algebra.magic_indices module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.linear_algebra">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tensap.functions.sets.html" title="previous chapter">tensap.functions.sets package</a></li>
+      <li>Next: <a href="tensap.tensor_algebra.html" title="next chapter">tensap.tensor_algebra package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.linear_algebra.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

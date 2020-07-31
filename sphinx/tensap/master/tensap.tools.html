@@ -1,0 +1,1254 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.tools package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="tensap.tensor_algebra.tools package" href="tensap.tensor_algebra.tools.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-tools-package">
+<h1>tensap.tools package<a class="headerlink" href="#tensap-tools-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.tools.chebyshev_points">
+<span id="tensap-tools-chebyshev-points-module"></span><h2>tensap.tools.chebyshev_points module<a class="headerlink" href="#module-tensap.tools.chebyshev_points" title="Permalink to this headline">¶</a></h2>
+<p>Module chebyshev_points.</p>
+<dl class="py function">
+<dt id="tensap.tools.chebyshev_points.chebyshev_points">
+<code class="sig-prename descclassname">tensap.tools.chebyshev_points.</code><code class="sig-name descname">chebyshev_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.chebyshev_points.chebyshev_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first n Chebyshev points in [s[0], s[1]].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>The number of Chebyshev points.</p>
+</dd>
+<dt><strong>s</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The interval on which the points are computed. The default is [-1, 1].</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The first n Chebyshev points in [s[0], s[1]].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.tools.grids">
+<span id="tensap-tools-grids-module"></span><h2>tensap.tools.grids module<a class="headerlink" href="#module-tensap.tools.grids" title="Permalink to this headline">¶</a></h2>
+<p>Module grids.</p>
+<dl class="py class">
+<dt id="tensap.tools.grids.FullTensorGrid">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.tools.grids.</code><code class="sig-name descname">FullTensorGrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grids</span></em>, <em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.FullTensorGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.tools.grids.TensorGrid" title="tensap.tools.grids.TensorGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.tools.grids.TensorGrid</span></code></a></p>
+<p>Class FullTensorGrid: tensor product grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#tensap.tools.grids.FullTensorGrid.size" title="tensap.tools.grids.FullTensorGrid.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></dt><dd><p>Return the number of grid points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.grids.FullTensorGrid.array" title="tensap.tools.grids.FullTensorGrid.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>([ind])</p></td>
+<td><p>Return an array of shape (n, d) where n is the number of grid points and d is the dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.grids.FullTensorGrid.multi_indices" title="tensap.tools.grids.FullTensorGrid.multi_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multi_indices</span></code></a>()</p></td>
+<td><p>Return a set of multi-indices for indexing the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the underlying space.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.grids.FullTensorGrid.plot" title="tensap.tools.grids.FullTensorGrid.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(y, *args)</p></td>
+<td><p>Plot the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_grid</span></code>(*args, **kwargs)</p></td>
+<td><p>Plot the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.grids.FullTensorGrid.random" title="tensap.tools.grids.FullTensorGrid.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a>(X, n)</p></td>
+<td><p>Generate a random FullTensorGrid from a RandomVector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code>([d])</p></td>
+<td><p>Return the shape of the grid, along the dimension d if provided.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>eval_at_indices</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.tools.grids.FullTensorGrid.array">
+<code class="sig-name descname">array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.FullTensorGrid.array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array of shape (n, d) where n is the number of grid points
+and d is the dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The TensorGrid as an array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.FullTensorGrid.eval_at_indices">
+<code class="sig-name descname">eval_at_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.FullTensorGrid.eval_at_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.FullTensorGrid.multi_indices">
+<code class="sig-name descname">multi_indices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.FullTensorGrid.multi_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a set of multi-indices for indexing the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>Aset of multi-indices for indexing the grid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.FullTensorGrid.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.FullTensorGrid.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The values of the function on the grid.</p>
+</dd>
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Parameters of the plot, see matplotlib.pyplot.plot for more
+information.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.FullTensorGrid.random">
+<em class="property">static </em><code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.FullTensorGrid.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random FullTensorGrid from a RandomVector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">tensap.RandomVector</span></dt><dd><p>The RandomVector used to generate the FullTensorGrid.</p>
+</dd>
+<dt><strong>n</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Array of size d (or an integer for isotropic grid) containing
+the sizes of the grids in each dimension.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.FullTensorGrid</dt><dd><p>The random FullTensorGrid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.FullTensorGrid.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#tensap.tools.grids.FullTensorGrid.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of grid points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The number of grid points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.tools.grids.SparseTensorGrid">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.tools.grids.</code><code class="sig-name descname">SparseTensorGrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grids</span></em>, <em class="sig-param"><span class="n">indices</span></em>, <em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.SparseTensorGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tensap.tools.grids.TensorGrid" title="tensap.tools.grids.TensorGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.tools.grids.TensorGrid</span></code></a></p>
+<p>Class SparseTensorGrid: sparse tensor product grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#tensap.tools.grids.SparseTensorGrid.size" title="tensap.tools.grids.SparseTensorGrid.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></dt><dd><p>Return the number of grid points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.grids.SparseTensorGrid.array" title="tensap.tools.grids.SparseTensorGrid.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>()</p></td>
+<td><p>Return an array of shape (n, d) where n is the number of grid points and d is the dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
+<td><p>Return the dimension of the underlying space.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_grid</span></code>(*args, **kwargs)</p></td>
+<td><p>Plot the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code>([d])</p></td>
+<td><p>Return the shape of the grid, along the dimension d if provided.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.tools.grids.SparseTensorGrid.array">
+<code class="sig-name descname">array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.SparseTensorGrid.array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array of shape (n, d) where n is the number of grid points
+and d is the dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The TensorGrid as an array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.SparseTensorGrid.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#tensap.tools.grids.SparseTensorGrid.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of grid points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The number of grid points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="tensap.tools.grids.TensorGrid">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.tools.grids.</code><code class="sig-name descname">TensorGrid</code><a class="headerlink" href="#tensap.tools.grids.TensorGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Class TensorGrid: grids in product sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dim</strong><span class="classifier">int</span></dt><dd><p>The dimension.</p>
+</dd>
+<dt><strong>grids: list</strong></dt><dd><p>List containing the grids.</p>
+</dd>
+<dt><strong>shape: numpy.ndarray</strong></dt><dd><p>The shapes of the grids.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.grids.TensorGrid.array" title="tensap.tools.grids.TensorGrid.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>()</p></td>
+<td><p>Return an array of shape (n, d) where n is the number of grid points and d is the dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.grids.TensorGrid.ndim" title="tensap.tools.grids.TensorGrid.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the underlying space.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.grids.TensorGrid.plot_grid" title="tensap.tools.grids.TensorGrid.plot_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_grid</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Plot the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.grids.TensorGrid.shape" title="tensap.tools.grids.TensorGrid.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a>([d])</p></td>
+<td><p>Return the shape of the grid, along the dimension d if provided.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.tools.grids.TensorGrid.array">
+<em class="property">abstract </em><code class="sig-name descname">array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.TensorGrid.array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array of shape (n, d) where n is the number of grid points
+and d is the dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The TensorGrid as an array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.TensorGrid.ndim">
+<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.TensorGrid.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the underlying space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The dimension of the underlying space.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.TensorGrid.plot_grid">
+<code class="sig-name descname">plot_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.TensorGrid.plot_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Parameters of the plot, see matplotlib.pyplot.plot for more
+information.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the dimension is greater than 3.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.TensorGrid.shape">
+<code class="sig-name descname">shape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.grids.TensorGrid.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the shape of the grid, along the dimension d if provided.</p>
+<p>Equivalent to self.shape[d] if d is provided, self.shape otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>d</strong><span class="classifier">int, optional</span></dt><dd><p>The dimension for which the shape is asked. The default is None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The shape of the grid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.grids.TensorGrid.size">
+<em class="property">abstract property </em><code class="sig-name descname">size</code><a class="headerlink" href="#tensap.tools.grids.TensorGrid.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of grid points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The number of grid points.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.tools.multi_indices">
+<span id="tensap-tools-multi-indices-module"></span><h2>tensap.tools.multi_indices module<a class="headerlink" href="#module-tensap.tools.multi_indices" title="Permalink to this headline">¶</a></h2>
+<p>Module multi_indices.</p>
+<dl class="py class">
+<dt id="tensap.tools.multi_indices.MultiIndices">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.tools.multi_indices.</code><code class="sig-name descname">MultiIndices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">array</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class MultiIndices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>array</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>An array containing n multi-indices in N^d.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.add_indices" title="tensap.tools.multi_indices.MultiIndices.add_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_indices</span></code></a>(J)</p></td>
+<td><p>Return the union of multi-indices of self and J.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.bounded_by" title="tensap.tools.multi_indices.MultiIndices.bounded_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bounded_by</span></code></a>(m[, m0])</p></td>
+<td><p>Create the set of multi-indices bounded by m.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.cardinal" title="tensap.tools.multi_indices.MultiIndices.cardinal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cardinal</span></code></a>()</p></td>
+<td><p>Return the cardinal of the MultiIndices object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.envelope" title="tensap.tools.multi_indices.MultiIndices.envelope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">envelope</span></code></a>(u)</p></td>
+<td><p>Compute the monotone envelope (or monotone majorant) of a bounded sequence u.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.get_indices" title="tensap.tools.multi_indices.MultiIndices.get_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_indices</span></code></a>(k)</p></td>
+<td><p>Return the multi-indices k in self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.get_margin" title="tensap.tools.multi_indices.MultiIndices.get_margin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_margin</span></code></a>()</p></td>
+<td><p>Return the margin of the multi-index set self defined by the set of multi-indices i not in self such that it exists k in N^* s.t.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.get_maximal_indices" title="tensap.tools.multi_indices.MultiIndices.get_maximal_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_maximal_indices</span></code></a>()</p></td>
+<td><p>Return the set of maximal multi-indices contained in the downward closed multi-index set self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.get_reduced_margin" title="tensap.tools.multi_indices.MultiIndices.get_reduced_margin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_reduced_margin</span></code></a>()</p></td>
+<td><p>Return the reduced margin of the multi-index set self defined by the set of multi-indices i not in self such that for all k in N^* s.t.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.ind2sub" title="tensap.tools.multi_indices.MultiIndices.ind2sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ind2sub</span></code></a>(shape, ind)</p></td>
+<td><p>Create the set of multi-indices with array [I1, …, Id] such that (I1, …, Id) = np.unravel_index(np.ravel(ind), shape).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.intersect_indices" title="tensap.tools.multi_indices.MultiIndices.intersect_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersect_indices</span></code></a>(J)</p></td>
+<td><p>Return the intersection of the multi-indices of self and J.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.is_downward_closed" title="tensap.tools.multi_indices.MultiIndices.is_downward_closed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_downward_closed</span></code></a>([m])</p></td>
+<td><p>Check whether or not the multi-index set is downward closed (or lower or monotone).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.keep_dims" title="tensap.tools.multi_indices.MultiIndices.keep_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keep_dims</span></code></a>(dims)</p></td>
+<td><p>Keep the dimensions dims in self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.keep_indices" title="tensap.tools.multi_indices.MultiIndices.keep_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keep_indices</span></code></a>(k)</p></td>
+<td><p>Keep the multi-indices k in self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.ndim" title="tensap.tools.multi_indices.MultiIndices.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
+<td><p>Return the dimension of the multi-indices.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.norm" title="tensap.tools.multi_indices.MultiIndices.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a>([p, k])</p></td>
+<td><p>Compute the p-norm of multi-indices k in the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.plot" title="tensap.tools.multi_indices.MultiIndices.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(*args)</p></td>
+<td><p>Plot the multi-index set self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.product_set" title="tensap.tools.multi_indices.MultiIndices.product_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">product_set</span></code></a>(L[, d])</p></td>
+<td><p>Create the set of multi-indices obtained by a product of sets of indices.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.remove_dims" title="tensap.tools.multi_indices.MultiIndices.remove_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_dims</span></code></a>(dims)</p></td>
+<td><p>Remove the dimensions in ind in the MultiIndices.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.remove_indices" title="tensap.tools.multi_indices.MultiIndices.remove_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_indices</span></code></a>(J)</p></td>
+<td><p>Remove multi-indices J from self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.sort" title="tensap.tools.multi_indices.MultiIndices.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>([columns, mode])</p></td>
+<td><p>Sort multi-indices column-wise using the column order provided in columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.sort_by_norm" title="tensap.tools.multi_indices.MultiIndices.sort_by_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_by_norm</span></code></a>(p[, mode])</p></td>
+<td><p>Sort the multi-indices by increasing or decreasing p-norm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.sort_by_weighted_norm" title="tensap.tools.multi_indices.MultiIndices.sort_by_weighted_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_by_weighted_norm</span></code></a>(p, w[, mode])</p></td>
+<td><p>Sort the multi-indices by increasing or decreasing weighted p-norm.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.sub2ind" title="tensap.tools.multi_indices.MultiIndices.sub2ind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub2ind</span></code></a>(shape)</p></td>
+<td><p>Convert the indices of the MultiIndices object into flat indices.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.to_list" title="tensap.tools.multi_indices.MultiIndices.to_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_list</span></code></a>()</p></td>
+<td><p>Convert the MultiIndices’ array into a list of arrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.weighted_norm" title="tensap.tools.multi_indices.MultiIndices.weighted_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weighted_norm</span></code></a>(p, w[, k])</p></td>
+<td><p>Compute the weighted p-norm of multi-indices k in the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.with_bounded_norm" title="tensap.tools.multi_indices.MultiIndices.with_bounded_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_bounded_norm</span></code></a>(d, p, m)</p></td>
+<td><p>Create the set of multi-indices in N^d with p-norm bounded by m, p&gt;0.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.tools.multi_indices.MultiIndices.with_bounded_weighted_norm" title="tensap.tools.multi_indices.MultiIndices.with_bounded_weighted_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_bounded_weighted_norm</span></code></a>(d, p, m, w)</p></td>
+<td><p>Create the set of multi-indices in N^d with weighted p-norm bounded by m, p&gt;0.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.add_indices">
+<code class="sig-name descname">add_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">J</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.add_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the union of multi-indices of self and J.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>J</strong><span class="classifier">tensap.MultiIndices</span></dt><dd><p>The second MultiIndices object.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The union of multi-indices of self and J.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.bounded_by">
+<em class="property">static </em><code class="sig-name descname">bounded_by</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">m0</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.bounded_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the set of multi-indices bounded by m.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>m</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>List or array of length d containing the highest indices in each
+dimension.</p>
+</dd>
+<dt><strong>m0</strong><span class="classifier">int, optional</span></dt><dd><p>The lowest index for all dimensions. The default is 0.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>MultiIndices object containing the  product set
+(m0:m[0]) x … x (m0:m[d-1]).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.cardinal">
+<code class="sig-name descname">cardinal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.cardinal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cardinal of the MultiIndices object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The cardinal of the MultiIndices object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.envelope">
+<code class="sig-name descname">envelope</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.envelope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the monotone envelope (or monotone majorant) of a bounded
+sequence u.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>u</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The bounded sequence.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>env</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The monotone envelope corresponding to the sequence defined by
+<span class="math notranslate nohighlight">\(env_i = max_{j &gt;= i} |u_j|\)</span></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.get_indices">
+<code class="sig-name descname">get_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.get_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the multi-indices k in self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>k</strong><span class="classifier">int or list or numpy.ndarray</span></dt><dd><p>The numbers of the multi-indices to select.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The multi-indices k in self.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.get_margin">
+<code class="sig-name descname">get_margin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.get_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin of the multi-index set self defined by the set of
+multi-indices i not in self such that it exists k in N^* s.t. i_k != 0
+implies i - e_k in self where e_k is the k-th Kronecker sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The margin of self.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.get_maximal_indices">
+<code class="sig-name descname">get_maximal_indices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.get_maximal_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the set of maximal multi-indices contained in the downward
+closed multi-index set self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The set of maximal multi-indices contained in the downward closed
+multi-index set self.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.get_reduced_margin">
+<code class="sig-name descname">get_reduced_margin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.get_reduced_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the reduced margin of the multi-index set self defined by the
+set of multi-indices i not in self such that for all k in N^* s.t.
+i_k != 0 implies i - e_k in self where e_k is the k-th Kronecker
+sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The reduced margin of self.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.ind2sub">
+<em class="property">static </em><code class="sig-name descname">ind2sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em>, <em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.ind2sub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the set of multi-indices with array [I1, …, Id] such that
+(I1, …, Id) = np.unravel_index(np.ravel(ind), shape).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>shape</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The shape of the array.</p>
+</dd>
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The indices into the flattened version of an array of dimensions
+shape.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The MultiIndices created using the flat indices ind and shape.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.intersect_indices">
+<code class="sig-name descname">intersect_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">J</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.intersect_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the intersection of the multi-indices of self and J.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>J</strong><span class="classifier">tensap.MultiIndices</span></dt><dd><p>The second multi-indices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The intersection of the multi-indices of self and J.</p>
+</dd>
+<dt><strong>ind_I</strong><span class="classifier">numpy.array</span></dt><dd><p>The indices of the multi-indices in self common to self and J.</p>
+</dd>
+<dt><strong>ind_J</strong><span class="classifier">numpy.array</span></dt><dd><p>The indices of the multi-indices in J common to self and J.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.is_downward_closed">
+<code class="sig-name descname">is_downward_closed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.is_downward_closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether or not the multi-index set is downward closed (or lower
+or monotone).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>m</strong><span class="classifier">int, optional</span></dt><dd><p>The lowest index for all dimensions. The default is 0.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>cond</strong><span class="classifier">boolean</span></dt><dd><p>Boolean indicating whether or not the multi-index set is downward
+closed.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.keep_dims">
+<code class="sig-name descname">keep_dims</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.keep_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keep the dimensions dims in self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dims</strong><span class="classifier">int or list or numpy.ndarray</span></dt><dd><p>The dimension(s) to keep.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The MultiIndices with retained dimensions.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.keep_indices">
+<code class="sig-name descname">keep_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.keep_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keep the multi-indices k in self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>k</strong><span class="classifier">int or list or numpy.ndarray</span></dt><dd><p>The number(s) of the multi-indices to keep.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The MultiIndices with retained indices.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.ndim">
+<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.ndim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimension of the multi-indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int</dt><dd><p>The dimension of the multi-indices.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.norm">
+<code class="sig-name descname">norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the p-norm of multi-indices k in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>p</strong><span class="classifier">int or numpy.inf, optional</span></dt><dd><p>The positive real scalar p of the p-norm, or numpy.inf. The default
+is 2.</p>
+</dd>
+<dt><strong>k</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The multi-indices of which the norm is to be computed. The default
+is all the multi-indices of the object.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>norm</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The p-norm of the selected multi-indices.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the multi-index set self.</p>
+<p>See also the function plot_multi_indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>*args</strong><span class="classifier">tuple</span></dt><dd><p>Parameters used in tensap’s function plot_multi_indices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.product_set">
+<em class="property">static </em><code class="sig-name descname">product_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">L</span></em>, <em class="sig-param"><span class="n">d</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.product_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the set of multi-indices obtained by a product of sets of
+indices.</p>
+<p>If ndim(L) is 1 and L contains a set of indices, the method returns
+a MultiIndices containing the product set L x … x L (d times).</p>
+<p>If ndim(L) is 2 and L contains arrays of integers of size m_k,
+0 &lt;= k &lt;= d-1, the method returns a MultiIndices containing the product
+set L[0] x … x L[d-1].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>L</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The grid or grids used to create the product set.</p>
+</dd>
+<dt><strong>d</strong><span class="classifier">int, optional</span></dt><dd><p>The dimension of the set of multi-indices. The default is None,
+indicating to infer it from L.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The set of multi-indices obtained by a product of sets of indices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the provided arguments are wrong.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.remove_dims">
+<code class="sig-name descname">remove_dims</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.remove_dims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the dimensions in ind in the MultiIndices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dims</strong><span class="classifier">int or list or numpy.ndarray</span></dt><dd><p>The dimension(s) to be removed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The MultiIndices object with removed dimenions in dims.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.remove_indices">
+<code class="sig-name descname">remove_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">J</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.remove_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove multi-indices J from self.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>J</strong><span class="classifier">tensap.MultiIndices or int or list or numpy.ndarray</span></dt><dd><p>The multi-indices to remove in a tensap.MultiIndices object,
+or their numbers as an int or in a list or numpy.ndarray.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The MultiIndices object with removed multi-indices in J.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.sort">
+<code class="sig-name descname">sort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">columns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'ascend'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.sort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort multi-indices column-wise using the column order provided in
+columns.</p>
+<p>The method first sorts according to the column columns[0], then sorts
+the equal coefficients of column columns[1] and so on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>columns</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The column order used to sort the multi-indices. The default is
+last to first column.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">string, optional</span></dt><dd><p>The sorting mode, equal to ‘ascend’ or ‘descend’. The default is
+‘ascend’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The MultiIndices object with sorted multi-indices.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.sort_by_norm">
+<code class="sig-name descname">sort_by_norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'ascend'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.sort_by_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort the multi-indices by increasing or decreasing p-norm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>p</strong><span class="classifier">int</span></dt><dd><p>The positive real scalar p of the p-norm, or numpy.inf.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">string, optional</span></dt><dd><p>The sorting mode, equal to ‘ascend’ or ‘descend’. The default is
+‘ascend’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The MultiIndices object with multi-indices sorted by increasing or
+decreasing p-norm.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.sort_by_weighted_norm">
+<code class="sig-name descname">sort_by_weighted_norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'ascend'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.sort_by_weighted_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort the multi-indices by increasing or decreasing weighted p-norm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>p</strong><span class="classifier">int</span></dt><dd><p>The positive real scalar p of the p-norm, or numpy.inf.</p>
+</dd>
+<dt><strong>w</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The self.cardinal() weights used in the computation of the norm.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">string, optional</span></dt><dd><p>The sorting mode, equal to ‘ascend’ or ‘descend’. The default is
+‘ascend’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>tensap.MultiIndices</dt><dd><p>The MultiIndices object with multi-indices sorted by increasing or
+decreasing weighted p-norm.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.sub2ind">
+<code class="sig-name descname">sub2ind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.sub2ind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the indices of the MultiIndices object into flat indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>shape</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The shape of the array.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The flat indices associated with the MultiIndices object and shape.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.to_list">
+<code class="sig-name descname">to_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.to_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the MultiIndices’ array into a list of arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list</dt><dd><p>The MultiIndices’ array as a list of arrays.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.weighted_norm">
+<code class="sig-name descname">weighted_norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.weighted_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the weighted p-norm of multi-indices k in the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>p</strong><span class="classifier">int or numpy.inf</span></dt><dd><p>The positive real scalar p of the p-norm, or numpy.inf.</p>
+</dd>
+<dt><strong>w</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The self.cardinal() weights used in the computation of the norm.</p>
+</dd>
+<dt><strong>k</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The multi-indices of which the norm is to be computed. The default
+is all the multi-indices of the object.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>norm</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The p-norm of the selected multi-indices.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.with_bounded_norm">
+<em class="property">static </em><code class="sig-name descname">with_bounded_norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">m</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.with_bounded_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the set of multi-indices in N^d with p-norm bounded by m, p&gt;0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>d</strong><span class="classifier">int</span></dt><dd><p>The dimension, a positive integer.</p>
+</dd>
+<dt><strong>p</strong><span class="classifier">int or numpy.inf</span></dt><dd><p>The p of the p-norm, either a positive real scalar or numpy.inf.</p>
+</dd>
+<dt><strong>m</strong><span class="classifier">int</span></dt><dd><p>The bound of the norm, a positive real scalar.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">tensap.MultiIndices</span></dt><dd><p>The set of multi-indices in N^d with p-norm bounded by m.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.tools.multi_indices.MultiIndices.with_bounded_weighted_norm">
+<em class="property">static </em><code class="sig-name descname">with_bounded_weighted_norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">w</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.multi_indices.MultiIndices.with_bounded_weighted_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the set of multi-indices in N^d with weighted p-norm bounded by
+m, p&gt;0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>d</strong><span class="classifier">int</span></dt><dd><p>The dimension, a positive integer.</p>
+</dd>
+<dt><strong>p</strong><span class="classifier">int or numpy.inf</span></dt><dd><p>The p of the p-norm, either a positive real scalar or numpy.inf.</p>
+</dd>
+<dt><strong>m</strong><span class="classifier">int</span></dt><dd><p>The bound of the norm, a positive real scalar.</p>
+</dd>
+<dt><strong>w</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The d weights defining the weighted p-norm of a multi-index i.
+<span class="math notranslate nohighlight">\(|i|_{p, w} = (sum_{k=1}^d w_k^p i_k^p)^(1/p) for 0 &lt; p &lt; inf\)</span>
+<span class="math notranslate nohighlight">\(|i|_{Inf, w} = max_k w_k i_k\)</span></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>ind</strong><span class="classifier">tensap.MultiIndices</span></dt><dd><p>The set of multi-indices in N^d with weighted p-norm bounded by m.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.tools.utils">
+<span id="tensap-tools-utils-module"></span><h2>tensap.tools.utils module<a class="headerlink" href="#module-tensap.tools.utils" title="Permalink to this headline">¶</a></h2>
+<p>Module utils.</p>
+<dl class="py function">
+<dt id="tensap.tools.utils.baseb2integer">
+<code class="sig-prename descclassname">tensap.tools.utils.</code><code class="sig-name descname">baseb2integer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">I</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.utils.baseb2integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the integers with given representations in base b.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>I</strong><span class="classifier">numpy.ndarray or list</span></dt><dd><p>A row of I contains d integers [i_1, …, i_d] in {0, …, b-1}
+associated with an integer i = sum_{k=1}^d i_k b^(d-k) in [0, b^d-1].</p>
+</dd>
+<dt><strong>b</strong><span class="classifier">int</span></dt><dd><p>The base.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The integers with given representations in base b.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tensap.tools.utils.fast_intersect">
+<code class="sig-prename descclassname">tensap.tools.utils.</code><code class="sig-name descname">fast_intersect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.utils.fast_intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tensap.tools.utils.fast_setdiff">
+<code class="sig-prename descclassname">tensap.tools.utils.</code><code class="sig-name descname">fast_setdiff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.utils.fast_setdiff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tensap.tools.utils.integer2baseb">
+<code class="sig-prename descclassname">tensap.tools.utils.</code><code class="sig-name descname">integer2baseb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">d</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tools.utils.integer2baseb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the representation [i_1, …, i_d] in base b of a set of non
+negative integers i = sum_{k=1}^d i_k b^(d-k) in [0, b^d-1].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>i</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The integers to be convertes in base b.</p>
+</dd>
+<dt><strong>b</strong><span class="classifier">int</span></dt><dd><p>The base.</p>
+</dd>
+<dt><strong>d</strong><span class="classifier">int, optional</span></dt><dd><p>The dimension. The default is the minimal integer allowing the
+representation of max(i).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The representation [i_1, …, i_d] in base b of the integers.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.tools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.tools" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tensap.tools package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.tools.chebyshev_points">tensap.tools.chebyshev_points module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.tools.grids">tensap.tools.grids module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.tools.multi_indices">tensap.tools.multi_indices module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.tools.utils">tensap.tools.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tensap.tools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tensap.tensor_algebra.tools.html" title="previous chapter">tensap.tensor_algebra.tools package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.tools.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

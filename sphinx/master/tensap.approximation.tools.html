@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tensap.approximation.tools package &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tensap.functions package" href="tensap.functions.html" />
+    <link rel="prev" title="tensap.approximation.tensor_approximation.tensor_learning package" href="tensap.approximation.tensor_approximation.tensor_learning.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tensap-approximation-tools-package">
+<h1>tensap.approximation.tools package<a class="headerlink" href="#tensap-approximation-tools-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tensap.approximation.tools.model_selection">
+<span id="tensap-approximation-tools-model-selection-module"></span><h2>tensap.approximation.tools.model_selection module<a class="headerlink" href="#module-tensap.approximation.tools.model_selection" title="Permalink to this headline">¶</a></h2>
+<p>Module model_selection.</p>
+<dl class="py class">
+<dt id="tensap.approximation.tools.model_selection.ModelSelection">
+<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.tools.model_selection.</code><code class="sig-name descname">ModelSelection</code><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class ModelSelection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pen_shape</strong><span class="classifier">function</span></dt><dd><p>Function specifying the penalization shape.</p>
+</dd>
+<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Dictionnary containing the data used for the model selection.
+data[‘complexity’] contains the complexities of the models, and
+data[‘empirical_risk’] the associated empirical risk values.</p>
+</dd>
+<dt><strong>gap_factor</strong><span class="classifier">int or float</span></dt><dd><p>Multiplicative factor used in the slope heuristic.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity" title="tensap.approximation.tools.model_selection.ModelSelection.complexity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complexity</span></code></a>(x, *args, **kwargs)</p></td>
+<td><p>Return the complexity associated to the input argument’s type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity_functional_basis_array" title="tensap.approximation.tools.model_selection.ModelSelection.complexity_functional_basis_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complexity_functional_basis_array</span></code></a>(x[, fun])</p></td>
+<td><p>Return the complexity associated with a FunctionalBasisArray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity_tree_based_tensor" title="tensap.approximation.tools.model_selection.ModelSelection.complexity_tree_based_tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complexity_tree_based_tensor</span></code></a>(x[, fun, c_type])</p></td>
+<td><p>Return the complexity associated with the TreeBasedTensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tools.model_selection.ModelSelection.lambda_path" title="tensap.approximation.tools.model_selection.ModelSelection.lambda_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lambda_path</span></code></a>()</p></td>
+<td><p>Return the path of possible values of lambda and associated arguments of the minimum of the penalized risk.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tensap.approximation.tools.model_selection.ModelSelection.m_lambda" title="tensap.approximation.tools.model_selection.ModelSelection.m_lambda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">m_lambda</span></code></a>(lbda)</p></td>
+<td><p>Compute the argument of the minimum of the penalized risk for given values of the penalization factor lbda.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tensap.approximation.tools.model_selection.ModelSelection.slope_heuristic" title="tensap.approximation.tools.model_selection.ModelSelection.slope_heuristic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slope_heuristic</span></code></a>([lambda_path, m_path])</p></td>
+<td><p>Apply the slope heuristic to the path of possible values of lambda to compute its optimal value lambda_hat and associated argument of the minimum of the penalized risk m_hat.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="tensap.approximation.tools.model_selection.ModelSelection.complexity">
+<em class="property">static </em><code class="sig-name descname">complexity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the complexity associated to the input argument’s type.</p>
+<p>See also complexity_functional_basis_array,
+complexity_tree_based_tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">list or numpy.ndarray or tensap.FunctionalBasisArray or</span></dt><dd></dd>
+<dt><strong>tensap.FunctionalTensor or tensap.TreeBasedTensor</strong></dt><dd><p>The object(s) of which the complexity is computed.</p>
+</dd>
+<dt><strong>*args, **kwargs</strong><span class="classifier">tuples</span></dt><dd><p>Additional parameters for the methods
+complexity_functional_basis_array and complexity_tree_based_tensor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float or list</dt><dd><p>The complexity(ies) associated with the object(s).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the argument x is not of correct type.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tools.model_selection.ModelSelection.complexity_functional_basis_array">
+<em class="property">static </em><code class="sig-name descname">complexity_functional_basis_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">fun</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity_functional_basis_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the complexity associated with a FunctionalBasisArray.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">tensap.FunctionalBasisArray</span></dt><dd><p>The FunctionalBasisArray of which the complexity is computed.</p>
+</dd>
+<dt><strong>fun</strong><span class="classifier">str, optional</span></dt><dd><p>Name of the function applied to the array to extract the storage
+complexity. The default is ‘storage’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd><p>The complexity associated with the FunctionalBasisArray.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tools.model_selection.ModelSelection.complexity_tree_based_tensor">
+<em class="property">static </em><code class="sig-name descname">complexity_tree_based_tensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">fun</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">c_type</span><span class="o">=</span><span class="default_value">'standard'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity_tree_based_tensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the complexity associated with the TreeBasedTensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">tensap.TreeBasedTensor</span></dt><dd><p>The TreeBasedTensor of which the complexity is computed.</p>
+</dd>
+<dt><strong>fun</strong><span class="classifier">str, optional</span></dt><dd><p>Name of the function applied to the array to extract the storage
+complexity. The default is ‘storage’. Can also be ‘sparse_storage’
+or ‘sparse_leaves_storage’ for instance.</p>
+</dd>
+<dt><strong>c_type</strong><span class="classifier">str, optional</span></dt><dd><p>The complexity type. The default is ‘standard’. Can also be
+‘stiefel’ or ‘grassman’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float or list</dt><dd><p>The complexity(ies) associated with the TreeBasedTensor(s).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If the complexity type is neither ‘standard’ nor ‘stiefel’ nor
+‘grassman’.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tools.model_selection.ModelSelection.lambda_path">
+<code class="sig-name descname">lambda_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.lambda_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the path of possible values of lambda and associated arguments
+of the minimum of the penalized risk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The path of possible values of lambda.</p>
+</dd>
+<dt>numpy.ndarray</dt><dd><p>The path of the arguments of the minimum of the penalized risk
+associated with the path of possible values of lambda.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tools.model_selection.ModelSelection.m_lambda">
+<code class="sig-name descname">m_lambda</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lbda</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.m_lambda" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the argument of the minimum of the penalized risk for given
+values of the penalization factor lbda.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lbda</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The values of the penalization factor.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>The argument of the minimum of the penalized risk for the values of
+the penalization factor.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tensap.approximation.tools.model_selection.ModelSelection.slope_heuristic">
+<code class="sig-name descname">slope_heuristic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lambda_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">m_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.slope_heuristic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the slope heuristic to the path of possible values of lambda to
+compute its optimal value lambda_hat and associated argument of the
+minimum of the penalized risk m_hat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lambda_path</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The path of possible values of lambda. The default is None,
+indicating to compute it using the method lambda_path.</p>
+</dd>
+<dt><strong>m_path</strong><span class="classifier">list or numpy.ndarray, optional</span></dt><dd><p>The path of the arguments of the minimum of the penalized risk
+associated with the path of possible values of lambda. The default
+is None, indicating to compute it using the method lambda_path.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>lambda_hat</strong><span class="classifier">float</span></dt><dd><p>The value of lambda determined using the slope heuristic.</p>
+</dd>
+<dt><strong>m_hat</strong><span class="classifier">int</span></dt><dd><p>The model number associated with the value of lambda determined
+using the slope heuristic.</p>
+</dd>
+<dt><strong>lambda_path</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The path of possible values of lambda.</p>
+</dd>
+<dt><strong>m_path</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>The path of the arguments of the minimum of the penalized risk
+associated with the path of possible values of lambda.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tensap.approximation.tools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tensap.approximation.tools" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tensap.approximation.html">tensap.approximation package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tensap.approximation.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensap.approximation.html#module-tensap.approximation">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.functions.html">tensap.functions package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.linear_algebra.html">tensap.linear_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tensor_algebra.html">tensap.tensor_algebra package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tensap.tools.html">tensap.tools package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tensap.approximation.html">tensap.approximation package</a><ul>
+      <li>Previous: <a href="tensap.approximation.tensor_approximation.tensor_learning.html" title="previous chapter">tensap.approximation.tensor_approximation.tensor_learning package</a></li>
+      <li>Next: <a href="tensap.functions.html" title="next chapter">tensap.functions package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tensap.approximation.tools.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
