@@ -1,0 +1,1901 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; tensap 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="prev" title="Welcome to tensap’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>tensap (Tensor Approximation Package) is a Python package for the
+approximation of functions and tensors, available on GitHub at
+<a class="reference external" href="https://github.com/anthony-nouy/tensap">https://github.com/anthony-nouy/tensap</a>, or through its GitHub page
+<a class="reference external" href="https://anthony-nouy.github.io/tensap/">https://anthony-nouy.github.io/tensap/</a>.</p>
+<p>To install from PyPi, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">tensap</span>
+</pre></div>
+</div>
+<p>Alternatively, you can install tensap directly from github by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">anthony</span><span class="o">-</span><span class="n">nouy</span><span class="o">/</span><span class="n">tensap</span><span class="nd">@master</span>
+</pre></div>
+</div>
+<p>The package tensap features low-rank tensors (including canonical,
+tensor-train and tree-based tensor formats or tree tensor networks),
+sparse tensors, polynomials, and allows the plug-in of other
+approximation tools. It provides different approximation methods based
+on interpolation, least-squares projection or statistical learning.</p>
+<p>The package is shipped with tutorials showing its main applications. A
+documentation is also available.</p>
+<p>At minimum, tensap requires the packages numpy and scipy. The packages
+tensorflow and sklearn are required for some applications.</p>
+<div class="section" id="fulltensor">
+<h2><strong>FullTensor</strong><a class="headerlink" href="#fulltensor" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>FullTensor</strong> <strong>X</strong> represents an order <span class="math notranslate nohighlight">\(d\)</span> tensor
+<span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N_1 \times \cdots \times N_d}\)</span>, or
+multidimensional array of size <span class="math notranslate nohighlight">\(N_1\times \ldots \times N_d\)</span>.
+The entries of <span class="math notranslate nohighlight">\(X\)</span> are <span class="math notranslate nohighlight">\(X_{i_1, \ldots, i_d}\)</span>, with
+<span class="math notranslate nohighlight">\((i_1,\ldots,i_d)\)</span> a tuple of indices, where
+<span class="math notranslate nohighlight">\(i_\nu \in \{0,\ldots,N_\nu-1\}\)</span> is related to the
+<span class="math notranslate nohighlight">\(\nu\)</span>-th mode of the tensor.</p>
+<p>We present in this section how to create a <strong>FullTensor</strong> using tensap,
+and several possible operations with such an object. For an introduction
+to tensor calculus, we refer to the monograph <a class="reference internal" href="bibliography.html#hackbusch2019tensor" id="id1"><span>[hackbusch2019tensor]</span></a>.</p>
+<p>For examples of use, see the tutorial file
+<code class="docutils literal notranslate"><span class="pre">tutorials\tensor_algebra\tutorial_FullTensor.py</span></code>.</p>
+<div class="section" id="creating-a-fulltensor">
+<h3>Creating a <strong>FullTensor</strong><a class="headerlink" href="#creating-a-fulltensor" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Provided with an array <strong>data</strong> of shape <strong>[N_1, …, N_d]</strong>, the
+command <strong>X = tensap.FullTensor(data)</strong> returns a tensor
+<span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N_1 \times \cdots \times N_d}\)</span>, with order
+<strong>X.order = d</strong> and shape <strong>X.shape = (N_1, …, N_d)</strong>. The number
+of entries of <strong>X</strong> is given by
+<span class="math notranslate nohighlight">\({\texttt{\detokenize{X.size = X.storage()}}} = \prod_{i=1}^d N_i\)</span>.
+The number of nonzero entries of <strong>X</strong> is given by
+<strong>X.sparse_storage()</strong>.</div>
+</div>
+<p>It is also possible to generate a <strong>FullTensor</strong> with entries:</p>
+<ul class="simple">
+<li><p>equal to 0 with <strong>tensap.FullTensor.zeros([N_1, …, N_d])</strong>,</p></li>
+<li><p>equal to 1 with <strong>tensap.FullTensor.ones([N_1, …, N_d])</strong>,</p></li>
+<li><p>drawn randomly according to the uniform distribution on
+<span class="math notranslate nohighlight">\([0, 1]\)</span> with <strong>tensap.FullTensor.rand([N_1, …, N_d])</strong>,</p></li>
+<li><p>drawn randomly according to the standard gaussian distribution with
+<strong>tensap.FullTensor.randn([N_1, …, N_d])</strong>,</p></li>
+<li><p>different from 0 only on the diagonal, provided in <strong>diag_data</strong>,
+with <strong>tensap.FullTensor.diag(diag_data, d)</strong> (generating a tensor
+of order d and shape <span class="math notranslate nohighlight">\([N, \ldots, N]\)</span>, with <span class="math notranslate nohighlight">\(N = len(diag_data)\)</span>,</p></li>
+<li><p>generated using a provided <strong>generator</strong> with
+<strong>tensap.FullTensor.create(generator, [N_1, …, N_d])</strong>.</p></li>
+</ul>
+</div>
+<div class="section" id="accessing-the-entries-of-a-fulltensor">
+<h3>Accessing the entries of a <strong>FullTensor</strong><a class="headerlink" href="#accessing-the-entries-of-a-fulltensor" title="Permalink to this headline">¶</a></h3>
+<p>The entries of a tensor <strong>X</strong> can be accessed with the method
+<strong>eval_at_indices</strong>: <strong>X.eval_at_indices(ind)</strong> returns the entries
+of <span class="math notranslate nohighlight">\(X\)</span> indexed by the list <strong>ind</strong> containing the indices to
+access in each dimension.</p>
+<div class="section" id="extracting-diagonal-entries">
+<h4>Extracting diagonal entries.<a class="headerlink" href="#extracting-diagonal-entries" title="Permalink to this headline">¶</a></h4>
+<p>For a tensor <span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N, \ldots, N}\)</span>, the command
+<strong>X.eval_diag()</strong> returns the diagonal entries
+<span class="math notranslate nohighlight">\(X_{i, \ldots, i}\)</span>, <span class="math notranslate nohighlight">\(i = 1, \ldots, N\)</span>, of the tensor. The
+command <strong>X.eval_diag(dims)</strong> returns the entries
+<span class="math notranslate nohighlight">\(X_{i, \ldots, i}\)</span>, with <span class="math notranslate nohighlight">\(i\)</span> in <strong>ind</strong>.</p>
+</div>
+<div class="section" id="extracting-a-sub-tensor">
+<h4>Extracting a sub-tensor.<a class="headerlink" href="#extracting-a-sub-tensor" title="Permalink to this headline">¶</a></h4>
+<p>A sub-tensor can be extracted from <strong>X</strong> with the method
+<strong>sub_tensor</strong>: for an order-3 <strong>FullTensor</strong> <strong>X</strong> of size
+<span class="math notranslate nohighlight">\(N_1\times N_2 \times N_3\)</span>, <strong>X.sub_tensor([0, 1], ’:’, 2)</strong>
+returns a sub-tensor of size <span class="math notranslate nohighlight">\(2\times N_2 \times 1\)</span> containing the
+entries <span class="math notranslate nohighlight">\(X_{i_1,i_2,i_3}\)</span> with <span class="math notranslate nohighlight">\(i_1\in \{0,1\}\)</span>,
+<span class="math notranslate nohighlight">\(0\le i_2 \le N_2-1\)</span> and <span class="math notranslate nohighlight">\(i_3=2\)</span>.</p>
+</div>
+</div>
+<div class="section" id="permuting-the-modes-of-a-fulltensor">
+<h3>Permuting the modes of a <strong>FullTensor</strong><a class="headerlink" href="#permuting-the-modes-of-a-fulltensor" title="Permalink to this headline">¶</a></h3>
+<p>The methods <strong>transpose</strong> and <strong>itranspose</strong> permute the dimensions of a
+tensor <strong>X</strong>, given a permutation <strong>dims</strong> of <span class="math notranslate nohighlight">\(\{1, \ldots, d\}\)</span>.
+They are such that <strong>X = X.transpose(dims).itranspose(dims)</strong>.</p>
+</div>
+<div class="section" id="reshaping-a-fulltensor">
+<h3>Reshaping a <strong>FullTensor</strong>.<a class="headerlink" href="#reshaping-a-fulltensor" title="Permalink to this headline">¶</a></h3>
+<p>The command <strong>X.reshape(shape)</strong> reshapes a <strong>FullTensor</strong> using a
+column-major order (e.g. used in Fortran, Matlab, R). It relies on the
+numpy’s reshape function with Fortran-like index (argument
+<strong>order=’F’</strong>). For a tuple <span class="math notranslate nohighlight">\((i_1,\ldots,i_d)\)</span>, we define</p>
+<div class="math notranslate nohighlight">
+\[\overline{i_1,\ldots,i_d} = i_1 + N_1(i_{2-1}-1) + N_1N_2(i_{3-1}-1) + \ldots + N_1\ldots N_{d-1}(i_d-1) .\]</div>
+<p>A tensor <span class="math notranslate nohighlight">\(X\)</span> is be identified with a vector
+<span class="math notranslate nohighlight">\(\mathrm{vec}(X)\)</span> whose entries are
+<span class="math notranslate nohighlight">\(\mathrm{vec}(X)_{\overline{i_1,\ldots,i_d}}\)</span>. This vector can be
+obtained with the command <strong>X.reshape(N)</strong> with
+<strong>N=numpy.prod(X.shape)</strong>.</p>
+<div class="section" id="alpha-matricization">
+<h4><span class="math notranslate nohighlight">\(\alpha\)</span>-Matricization.<a class="headerlink" href="#alpha-matricization" title="Permalink to this headline">¶</a></h4>
+<p>For <span class="math notranslate nohighlight">\(\alpha \subset \{1,\ldots,d\}\)</span> an its complementary subset
+<span class="math notranslate nohighlight">\(\alpha^c\)</span> in <span class="math notranslate nohighlight">\(\{1,\ldots,d\}\)</span>, an
+<span class="math notranslate nohighlight">\(\alpha\)</span>-matricization of a tensor <span class="math notranslate nohighlight">\(X\)</span> is a matrix <span class="math notranslate nohighlight">\(M\)</span>
+of size
+<span class="math notranslate nohighlight">\((\prod_{i \in \alpha} N_i) \times (\prod_{i \in \alpha^c} N_i)\)</span>,
+such that
+<span class="math notranslate nohighlight">\(X_{i_1,\ldots,i_d} = M_{\overline{i_\alpha},\overline{i_{\alpha^c}}}\)</span>
+with <span class="math notranslate nohighlight">\(i_\alpha = (i_\nu)_{\nu\in \alpha}\)</span>. It can be obtained with
+<strong>X.matricize(alpha)</strong>, which returns a <strong>FullTensor</strong> or order
+<span class="math notranslate nohighlight">\(2\)</span>. The matricization relies on the method <strong>reshape</strong>.</p>
+</div>
+<div class="section" id="orthogonalization">
+<h4>Orthogonalization.<a class="headerlink" href="#orthogonalization" title="Permalink to this headline">¶</a></h4>
+<p>It is possible to obtain a representation of a tensor <span class="math notranslate nohighlight">\(X\)</span> such
+that its <span class="math notranslate nohighlight">\(\alpha\)</span>-matricization is an orthogonal matrix (i.e. with
+orthogonal columns) using the method <strong>X.orth(alpha)</strong>.</p>
+</div>
+</div>
+<div class="section" id="norms-and-singular-values">
+<h3>Norms and singular-values<a class="headerlink" href="#norms-and-singular-values" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="computing-the-frobenius-norm-of-a-fulltensor">
+<h4>Computing the Frobenius norm of a <strong>FullTensor</strong>.<a class="headerlink" href="#computing-the-frobenius-norm-of-a-fulltensor" title="Permalink to this headline">¶</a></h4>
+<p>The command <strong>X.norm()</strong> returns the Frobenius norm
+<span class="math notranslate nohighlight">\(\Vert X \Vert_F\)</span> of <span class="math notranslate nohighlight">\(X\)</span>, defined by</p>
+<div class="math notranslate nohighlight">
+\[\Vert X \Vert_F^2 = \sum_{i_1}^{N_1} \cdots \sum_{i_d}^{N_d} X_{i_1, \ldots, i_d}^2.\]</div>
+</div>
+<div class="section" id="computing-the-alpha-singular-values-and-alpha-principal-components-of-a-fulltensor">
+<h4>Computing the <span class="math notranslate nohighlight">\(\alpha\)</span>-singular values and <span class="math notranslate nohighlight">\(\alpha\)</span>-principal components of a <strong>FullTensor</strong>.<a class="headerlink" href="#computing-the-alpha-singular-values-and-alpha-principal-components-of-a-fulltensor" title="Permalink to this headline">¶</a></h4>
+<p>For a subset <span class="math notranslate nohighlight">\(\alpha \subset \{1, \ldots, d\}\)</span> and its
+complementary subset <span class="math notranslate nohighlight">\(\alpha^c\)</span>, the <span class="math notranslate nohighlight">\(\alpha\)</span>-matricization
+<span class="math notranslate nohighlight">\(M\)</span> of <span class="math notranslate nohighlight">\(X\)</span> admits a singular value decomposition</p>
+<div class="math notranslate nohighlight">
+\[M_{i_\alpha,i_{\alpha^c}} = \sum_{k} \sigma^k v^k_{i_\alpha} w^k_{i_\alpha^c}\]</div>
+<p>where the <span class="math notranslate nohighlight">\(\sigma^k\)</span> are the singular values of <span class="math notranslate nohighlight">\(M\)</span> and the
+<span class="math notranslate nohighlight">\(v^k\)</span> the corresponding left singular vectors, or principal
+components of <span class="math notranslate nohighlight">\(M\)</span>. They are respectively called the
+<span class="math notranslate nohighlight">\(\alpha\)</span>-singular values and <span class="math notranslate nohighlight">\(\alpha\)</span>-principal components
+of <span class="math notranslate nohighlight">\(X\)</span>. The <span class="math notranslate nohighlight">\(\alpha\)</span>-singular values are obtained with
+<strong>X.singular_values()</strong>. The <span class="math notranslate nohighlight">\(\alpha\)</span>-principal components (and
+<span class="math notranslate nohighlight">\(\alpha\)</span>-singular values) are obtained with
+<strong>X.alpha_principal_components(alpha)</strong>, which is equivalent to
+<strong>X.matricize(alpha).principal_components()</strong>.</p>
+</div>
+</div>
+<div class="section" id="operations-with-fulltensor">
+<h3>Operations with <strong>FullTensor</strong><a class="headerlink" href="#operations-with-fulltensor" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="outer-product">
+<h4>Outer product.<a class="headerlink" href="#outer-product" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">The outer product <span class="math notranslate nohighlight">\(X \circ Y\)</span> of two tensors
+<span class="math notranslate nohighlight">\(X\in {\mathbb{R}}^{N_1 \times \cdots \times N_d}\)</span> and
+<span class="math notranslate nohighlight">\(Y \in {\mathbb{R}}^{\hat N_1 \times \cdots \times \hat N_{\hat d}}\)</span>
+is a tensor
+<span class="math notranslate nohighlight">\(Z \in {\mathbb{R}}^{N_1 \times \ldots \times N_d \times \hat N_1 \times \cdots \times \hat N_{\hat d}}\)</span>
+of order <span class="math notranslate nohighlight">\(d + \hat d\)</span> with entries</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[{Z}_{i_1,\ldots,i_d,j_1,\ldots,j_{\hat d}} =  X_{i_1, \ldots,i_ d} Y_{j_1, \ldots, j_{\hat d}}\]</div>
+<p>It is provided by <strong>X.tensordot(Y, 0)</strong>, similarly to numpy’s
+tensordot function.</p>
+</div></blockquote>
+</div>
+<div class="section" id="kronecker-product">
+<h4>Kronecker product.<a class="headerlink" href="#kronecker-product" title="Permalink to this headline">¶</a></h4>
+<p>The Kronecker product <span class="math notranslate nohighlight">\(X\otimes Y\)</span> of two tensors <span class="math notranslate nohighlight">\(X\)</span> and
+<span class="math notranslate nohighlight">\(Y\)</span> of the same order <span class="math notranslate nohighlight">\(d=\hat d\)</span> is a tensor <span class="math notranslate nohighlight">\(Z\)</span> of
+size <span class="math notranslate nohighlight">\(N_1\hat N_1 \times  \ldots \times N_d \hat N_{\hat d}\)</span> with
+entries</p>
+<div class="math notranslate nohighlight">
+\[Z_{\overline{i_1j_1},\ldots,\overline{i_dj_d}} = X_{i_1,\ldots,i_d} Y_{j_1,\ldots,j_d}.\]</div>
+<p>It is given by the command <strong>kron</strong>, which is similar to numpy’s kron
+function, but for arbitrary tensors.</p>
+</div>
+<div class="section" id="hadamard-product">
+<h4>Hadamard product.<a class="headerlink" href="#hadamard-product" title="Permalink to this headline">¶</a></h4>
+<p>The Hadamard (elementwise) product <span class="math notranslate nohighlight">\(X \circledast Y\)</span> of two
+tensors <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> of the same order and size is obtained
+through the command <strong>__mul__(X,Y)</strong>, which returns a tensor
+<span class="math notranslate nohighlight">\(Z\)</span> with entries</p>
+<div class="math notranslate nohighlight">
+\[Z_{i_1,\ldots,i_d} = X_{i_1,\ldots,i_d} Y_{i_1,\ldots,i_d}\]</div>
+</div>
+<div class="section" id="contracted-product">
+<h4>Contracted product.<a class="headerlink" href="#contracted-product" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">For <span class="math notranslate nohighlight">\(I\subset \{1,\ldots,d\}\)</span> and
+<span class="math notranslate nohighlight">\(J \subset \{1,\ldots,\hat d\}\)</span> with <span class="math notranslate nohighlight">\(\#I = \#J\)</span>, <strong>Z =
+X.tensordot(Y, I, J)</strong> performs the mode <span class="math notranslate nohighlight">\((I,J)\)</span>-contracted
+product of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Z\)</span> which is a tensor Z of order
+<span class="math notranslate nohighlight">\(d + \hat d - \#I - \#J\)</span> with entries</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\begin{split}{Z}_{(i_\nu)_{\nu \notin I}, (j_\mu)_{\mu \notin J}} =
+            \sum_{\substack{i_\nu=1 \\ \nu \in I}}^{N_\nu} \sum_{\substack{j_\mu=1 \\ \mu \in J}}^{N_\mu}
+            \prod_{\nu \in I} \prod_{\mu \in J}
+            \delta_{i_\nu, j_\mu} X_{i_1, \ldots,i_ d} Y_{j_1, \ldots, j_{\hat d}}\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\delta_{i,j}\)</span> the Kronecker delta, that is a contraction
+of tensors <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> along dimensions <span class="math notranslate nohighlight">\(I\)</span> of
+<span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(J\)</span> of <span class="math notranslate nohighlight">\(Y\)</span>. For example, for
+order-<span class="math notranslate nohighlight">\(4\)</span> tensors <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, <strong>Z =
+X.tensordot(Y, [0,1], [1,2])</strong> returns a tensor <span class="math notranslate nohighlight">\(Z\)</span> or order
+<span class="math notranslate nohighlight">\(4\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[Z_{i_3,i_4,j_1,j_4} = \sum_{i_1,i_2} X_{i_1,i_2,i_3,i_4} Y_{j_1,i_1,i_2,j_4} .\]</div>
+<p>The method <strong>tensordot_eval_diag</strong> provides the diagonal (or
+entries with equal pairs of indices) of the result of the method
+<strong>tensor_dot</strong>, but at a cost lower than when using <strong>X.tensordot(Y,
+I, J).eval_diag()</strong>.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">For example, for order-<span class="math notranslate nohighlight">\(4\)</span> tensors <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>,
+<strong>X.tensordot_eval_diag(Y,[0,1],[1,2],[2,3],[0,3])</strong> returns the
+diagonal of <span class="math notranslate nohighlight">\(Z\)</span>, i.e. an order-one tensor <span class="math notranslate nohighlight">\(M\)</span> with entries</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[M_k = Z_{k,k,k,k} = \sum_{i_1,i_2} X_{i_1,i_2,k,k} Y_{k,i_1,i_2,k}\]</div>
+<p><strong>X.tensordot_eval_diag(Y,[0,1],[1,2],[2,3],[0,3],diag = True)</strong>
+returns a tensor <span class="math notranslate nohighlight">\(M\)</span> of order <span class="math notranslate nohighlight">\(2\)</span> with entries</p>
+<div class="math notranslate nohighlight">
+\[M_{k_1,k_2} = Z_{k_1,k_2,k_1,k_2} = \sum_{i_1,i_2} X_{i_1,i_2,k_1,k_3} Y_{k,i_1,i_2,k}\]</div>
+<p><strong>X.tensordot_eval_diag(Y,[0,1],[1,2],[2],[0])</strong> returns the
+diagonal of <span class="math notranslate nohighlight">\(Z\)</span>, i.e. a tensor <span class="math notranslate nohighlight">\(M\)</span> of order <span class="math notranslate nohighlight">\(3\)</span>
+<span class="math notranslate nohighlight">\(v\)</span> with entries</p>
+<div class="math notranslate nohighlight">
+\[M_{k,i_4,j_4} = Z_{k,i_4,k,j_4} = \sum_{i_1,i_2} X_{i_1,i_2,k,i_4} Y_{k,i_1,i_2,j_4}\]</div>
+</div></blockquote>
+</div>
+<div class="section" id="dot-product">
+<h4>Dot product.<a class="headerlink" href="#dot-product" title="Permalink to this headline">¶</a></h4>
+<p>The dot product of two tensors <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> with same shape
+<span class="math notranslate nohighlight">\([N_1, \ldots, N_d]\)</span>, defined by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}( X, Y ) = \sum_{\substack{i_\nu = 1 \\ \nu = 1, \ldots, d}}^{N_\nu} X_{i_1, \ldots, i_d} Y_{i_1, \ldots, i_d},\end{split}\]</div>
+<p>can be obtained with <strong>X.dot(Y)</strong>. It is equivalent to <strong>X.tensordot(Y,
+range(X.order), range(Y.order))</strong>.</p>
+</div>
+<div class="section" id="contractions-with-matrices-or-vectors">
+<h4>Contractions with matrices or vectors<a class="headerlink" href="#contractions-with-matrices-or-vectors" title="Permalink to this headline">¶</a></h4>
+<p>Given a tensor <span class="math notranslate nohighlight">\(X\)</span> and a list of matrices
+<span class="math notranslate nohighlight">\(M = [M^1, ..., M^d]\)</span>, the command <strong>Z =
+X.tensor_matrix_product(M)</strong> returns an order-d tensor <span class="math notranslate nohighlight">\(Z\)</span> whose
+entries are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}Z_{i_1, \ldots, i_d} = \sum_{\substack{k_\nu = 1 \\ \nu = 1, \ldots, d}}^{N_\nu} X_{k_1, \ldots, k_d} \prod_{\nu = 1}^d M^\nu_{i_\nu, k_\nu}\end{split}\]</div>
+<p>The same method exists for vectors instead of matrices:
+<strong>tensor_vector_product</strong>. Similarly to <strong>tensordot_eval_diag</strong>, the
+method <strong>tensor_matrix_product_eval_diag</strong> evaluates the diagonal of
+the result of <strong>tensor_matrix_product</strong>, with a lower cost.</p>
+</div>
+</div>
+</div>
+<div class="section" id="tensor-formats">
+<h2>Tensor formats<a class="headerlink" href="#tensor-formats" title="Permalink to this headline">¶</a></h2>
+<p>Here we present tensor formats available in tensap, which are structured
+formats of tensors in <span class="math notranslate nohighlight">\(\mathbb{R}^{N_1\times \ldots \times N_d}.\)</span>
+For a detailed description of methods, see the description of the
+corresponding methods for <strong>FullTensor</strong> in . For an introduction to
+tensor formats, we refer to the monograph <a class="reference internal" href="bibliography.html#hackbusch2019tensor" id="id2"><span>[hackbusch2019tensor]</span></a> and the survey
+<a class="reference internal" href="bibliography.html#nouy-2017-morbook" id="id3"><span>[nouy:2017_morbook]</span></a>.</p>
+<div class="section" id="canonicaltensor">
+<h3><strong>CanonicalTensor</strong><a class="headerlink" href="#canonicaltensor" title="Permalink to this headline">¶</a></h3>
+<p>The entries of an order-<span class="math notranslate nohighlight">\(d\)</span> tensor
+<span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N_1 \times \cdots \times N_d}\)</span> in canonical
+format can be written</p>
+<div class="math notranslate nohighlight">
+\[\label{eq:CanonicalTensor}
+            X_{i_1, \ldots, i_d} = \sum_{k=1}^r C_k U^1_{i_1, k} \cdots U^d_{i_d, k},\]</div>
+<p>with <span class="math notranslate nohighlight">\(r\)</span> the canonical rank, and where the
+<span class="math notranslate nohighlight">\(U_\nu = (U^\nu_{i_\nu, k})_{1\le i_\nu \le N_\nu , 1\le k \le r}\)</span>
+are order-two tensors.</p>
+<div class="section" id="creating-a-canonicaltensor">
+<h4>Creating a <strong>CanonicalTensor</strong>.<a class="headerlink" href="#creating-a-canonicaltensor" title="Permalink to this headline">¶</a></h4>
+<p>To create a canonical tensor in tensap, one can use the command
+<strong>tensap.CanonicalTensor(C, U)</strong>, where <strong>C</strong> contains the
+<span class="math notranslate nohighlight">\((C_k)_{k=1}^d\)</span>, and <strong>U</strong> is a list containing the <span class="math notranslate nohighlight">\(U^\nu\)</span>,
+<span class="math notranslate nohighlight">\(1\le \nu\le d\)</span>.</p>
+<div class="line-block">
+<div class="line">The storage complexity of such a tensor, obtained with
+<strong>X.storage()</strong>, is equal to <span class="math notranslate nohighlight">\(r(1 + N_1 + \cdots + N_d)\)</span>.</div>
+<div class="line">It is also possible to generate a <strong>CanonicalTensor</strong> with entries</div>
+</div>
+<ul class="simple">
+<li><p>equal to 0 with <strong>tensap.CanonicalTensor.zeros(r, [N_1, …,
+N_d])</strong>,</p></li>
+<li><p>equal to 1 with <strong>tensap.CanonicalTensor.ones(r, [N_1, …,
+N_d])</strong>,</p></li>
+<li><p>drawn randomly according to the uniform distribution on
+<span class="math notranslate nohighlight">\([0, 1]\)</span> with <strong>tensap.CanonicalTensor.rand(r, [N_1, …,
+N_d])</strong>,</p></li>
+<li><p>drawn randomly according to the standard gaussian distribution with
+<strong>tensap.CanonicalTensor.randn(r, [N_1, …, N_d])</strong>,</p></li>
+<li><p>generated using a provided <strong>generator</strong> with
+<strong>tensap.CanonicalTensor.create</strong> <strong>(generator, r, [N_1, …,
+N_d])</strong>.</p></li>
+</ul>
+</div>
+<div class="section" id="converting-a-canonicaltensor-to-a-fulltensor">
+<h4>Converting a <strong>CanonicalTensor</strong> to a <strong>FullTensor</strong>.<a class="headerlink" href="#converting-a-canonicaltensor-to-a-fulltensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>CanonicalTensor</strong> <strong>X</strong> can be converted to a <strong>FullTensor</strong>
+(introduced in Section [sec:FullTensor]) with the command <strong>X.full()</strong>.</p>
+</div>
+<div class="section" id="converting-a-canonicaltensor-to-a-treebasedtensor">
+<h4>Converting a <strong>CanonicalTensor</strong> to a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#converting-a-canonicaltensor-to-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>CanonicalTensor</strong> <strong>X</strong> can be converted to a <strong>TreeBasedTensor</strong>
+(introduced in Section [sec:TreeBasedTensor]) with the command
+<strong>X.tree_based_tensor(tree, is_active_node)</strong>, with <strong>tree</strong> a
+<strong>DimensionTree</strong> object, and <strong>is_active_node</strong> a list or array of
+booleans indicating if each node of the tree is active.</p>
+</div>
+<div class="section" id="accessing-the-diagonal-of-a-canonicaltensor">
+<h4>Accessing the diagonal of a <strong>CanonicalTensor</strong>.<a class="headerlink" href="#accessing-the-diagonal-of-a-canonicaltensor" title="Permalink to this headline">¶</a></h4>
+<p>For a canonical tensor
+<span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N \times \ldots \times N}\)</span>, the command
+<strong>X.eval_diag()</strong> returns the diagonal <span class="math notranslate nohighlight">\(X_{i, \ldots, i}\)</span>,
+<span class="math notranslate nohighlight">\(i = 1, \ldots, N\)</span>, of the tensor. The method <strong>eval_diag</strong> can
+also be used to evaluate the diagonal in a subset of dimensions <strong>dims</strong>
+of the tensor with <strong>X.eval_diag(dims)</strong>, which returns a
+<strong>CanonicalTensor</strong>.</p>
+</div>
+<div class="section" id="computing-the-frobenius-norm-of-a-canonicaltensor">
+<h4>Computing the Frobenius norm of a <strong>CanonicalTensor</strong>.<a class="headerlink" href="#computing-the-frobenius-norm-of-a-canonicaltensor" title="Permalink to this headline">¶</a></h4>
+<p>The command <strong>X.norm()</strong> returns the Frobenius norm of <span class="math notranslate nohighlight">\(X\)</span>. The
+Frobenius norm of <span class="math notranslate nohighlight">\(X\)</span> is equal to the Frobenius norm of its core
+<span class="math notranslate nohighlight">\(C\)</span> if <strong>X.is_orth</strong> is <strong>True</strong>.</p>
+</div>
+<div class="section" id="computing-the-derivative-of-canonicaltensor-with-respect-to-one-of-its-parameters">
+<h4>Computing the derivative of <strong>CanonicalTensor</strong> with respect to one of its parameters.<a class="headerlink" href="#computing-the-derivative-of-canonicaltensor-with-respect-to-one-of-its-parameters" title="Permalink to this headline">¶</a></h4>
+<p>Given an order-<span class="math notranslate nohighlight">\(d\)</span> canonical tensor <span class="math notranslate nohighlight">\(X\)</span> in
+<span class="math notranslate nohighlight">\({\mathbb{R}}^{N \times \cdots \times N}\)</span>, the command
+<strong>X.parameter_gradient_eval_diag(k)</strong>, for <span class="math notranslate nohighlight">\(1 \leq k \leq d\)</span>,
+returns the derivative</p>
+<div class="math notranslate nohighlight">
+\[\left.\frac{\partial X_{i_1, \ldots, i_d}}{\partial U^k}\right|_{i_1=\cdots=i_d=i}, \; i = 1, \ldots, N.\]</div>
+<p>The derivative of <span class="math notranslate nohighlight">\(X\)</span> with respect to its core <span class="math notranslate nohighlight">\(C\)</span>, that
+writes</p>
+<div class="math notranslate nohighlight">
+\[\left.\frac{\partial X_{i_1, \ldots, i_d}}{\partial C}\right|_{i_1=\cdots=i_d=i}, \; i = 1, \ldots, N,\]</div>
+<p>is obtained with <strong>X.parameter_gradient_eval_diag(d+1)</strong>.</p>
+<p>The method <strong>parameter_gradient_eval_diag</strong> is used in the
+statistical learning algorithms presented in Section
+[sec:TensorLearning].</p>
+</div>
+<div class="section" id="performing-operations-with-canonicaltensor">
+<h4>Performing operations with <strong>CanonicalTensor</strong>.<a class="headerlink" href="#performing-operations-with-canonicaltensor" title="Permalink to this headline">¶</a></h4>
+<p>Some operations between tensors are implemented for <strong>DiagonalTensor</strong>
+(see for a detailed description of the operations): the Kronecker
+product with <strong>kron</strong>, the contraction with matrices with
+<strong>tensor_matrix_product</strong>, the evaluation of the diagonal of a
+contraction with matrices with <strong>tensor_matrix_product_eval_diag</strong>,
+the dot product with <strong>dot</strong>.</p>
+<p>Given a tensor <span class="math notranslate nohighlight">\(X\)</span> and a list of matrices
+<span class="math notranslate nohighlight">\(M = [M^1, ..., M^d]\)</span>, the command <strong>Z =
+X.tensor_matrix_product(M)</strong> returns an order-d tensor <span class="math notranslate nohighlight">\(Z\)</span> whose
+entries are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}Z_{i_1, \ldots, i_d} = \sum_{k=1}^r \sum_{\substack{k_\nu = 1 \\ \nu = 1, \ldots, d}}^{N_\nu} C_k U^1_{k_1, k} \cdots U^d_{k_d, k} \prod_{\nu = 1}^d M^\nu_{i_\nu, k_\nu}\end{split}\]</div>
+<p>The method <strong>tensor_matrix_product_eval_diag</strong> evaluates the
+diagonal of the result of <strong>tensor_matrix_product</strong>.</p>
+<p>The dot product of two canonical tensors <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> with
+same shape <span class="math notranslate nohighlight">\([N_1, \ldots, N_d]\)</span> can be obtained with <strong>X.dot(Y)</strong>.</p>
+</div>
+</div>
+<div class="section" id="diagonaltensor">
+<h3><strong>DiagonalTensor</strong><a class="headerlink" href="#diagonaltensor" title="Permalink to this headline">¶</a></h3>
+<p>A diagonal tensor
+<span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N_1 \times \cdots \times N_d}\)</span> is a tensor
+whose entries <span class="math notranslate nohighlight">\(X_{i_1, \ldots, i_d}\)</span> are non-zero only if
+<span class="math notranslate nohighlight">\(i_1 = \cdots = i_d\)</span>.</p>
+<div class="section" id="creating-a-diagonaltensor">
+<h4>Creating a <strong>DiagonalTensor</strong>.<a class="headerlink" href="#creating-a-diagonaltensor" title="Permalink to this headline">¶</a></h4>
+<p>To create a diagonal tensor in tensap, one can use the command
+<strong>tensap.DiagonalTensor(D, d)</strong>, where <strong>D</strong> (of length <span class="math notranslate nohighlight">\(r\)</span>)
+contains the diagonal of the tensor, and <strong>d</strong> is the order of the
+tensor. The result if an order <span class="math notranslate nohighlight">\(d\)</span> tensor in
+<span class="math notranslate nohighlight">\(\mathbb{R}^{r\times \ldots \times r} = \mathbb{R}^{ r^d}\)</span>.</p>
+<p>The sparse storage complexity of such a tensor, obtained with
+<strong>X.sparse_storage()</strong>, is equal to <strong>r = len(D)</strong>. Its storage
+complexity, not taking into account the fact that only the diagonal is
+non-zero, is equal to <span class="math notranslate nohighlight">\(r^d\)</span> and obtained with <strong>X.storage()</strong>.</p>
+<p>It is also possible to generate a <strong>DiagonalTensor</strong> with entries</p>
+<ul class="simple">
+<li><p>equal to 0 with <strong>tensap.DiagonalTensor.zeros(r, d)</strong>,</p></li>
+<li><p>equal to 1 with <strong>tensap.DiagonalTensor.ones(r, d)</strong>,</p></li>
+<li><p>drawn randomly according to the uniform distribution on
+<span class="math notranslate nohighlight">\([0, 1]\)</span> with <strong>tensap.DiagonalTensor.rand(r, d)</strong>,</p></li>
+<li><p>drawn randomly according to the standard gaussian distribution with
+<strong>tensap.DiagonalTensor.randn(r, d)</strong>,</p></li>
+<li><p>generated using a provided <strong>generator</strong> with
+<strong>tensap.DiagonalTensor.create</strong> <strong>(generator, r, d)</strong>.</p></li>
+</ul>
+</div>
+<div class="section" id="converting-a-diagonaltensor-to-a-fulltensor">
+<h4>Converting a <strong>DiagonalTensor</strong> to a <strong>FullTensor</strong>.<a class="headerlink" href="#converting-a-diagonaltensor-to-a-fulltensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>DiagonalTensor</strong> <strong>X</strong> can be converted to a <strong>FullTensor</strong>
+(introduced in Section [sec:FullTensor]) with the command <strong>X.full()</strong>.</p>
+</div>
+<div class="section" id="converting-a-diagonaltensor-to-a-sparsetensor">
+<h4>Converting a <strong>DiagonalTensor</strong> to a <strong>SparseTensor</strong>.<a class="headerlink" href="#converting-a-diagonaltensor-to-a-sparsetensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>DiagonalTensor</strong> <strong>X</strong> can be converted to a <strong>SparseTensor</strong>
+(introduced in Section [sec:SparseTensor]) with the command
+<strong>X.sparse()</strong>.</p>
+</div>
+<div class="section" id="converting-a-diagonaltensor-to-a-treebasedtensor">
+<h4>Converting a <strong>DiagonalTensor</strong> to a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#converting-a-diagonaltensor-to-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>DiagonalTensor</strong> <strong>X</strong> can be converted to a <strong>TreeBasedTensor</strong>
+(introduced in Section [sec:TreeBasedTensor]) with the command
+<strong>X.tree_based_tensor(tree, is_active_node)</strong>, with <strong>tree</strong> a
+<strong>DimensionTree</strong> object, and <strong>is_active_node</strong> a list or array of
+booleans indicating if each node of the tree is active.</p>
+</div>
+<div class="section" id="accessing-the-entries-of-a-diagonaltensor">
+<h4>Accessing the entries of a <strong>DiagonalTensor</strong>.<a class="headerlink" href="#accessing-the-entries-of-a-diagonaltensor" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">The entries of the tensor <strong>X</strong> can be accessed with the method
+<strong>eval_at_indices</strong>: <strong>X.eval_at_indices(ind)</strong> returns the
+entries of <span class="math notranslate nohighlight">\(X\)</span> indexed by the list <strong>ind</strong> containing the
+indices to access in each dimension.</div>
+<div class="line">A sub-tensor can be extracted from <strong>X</strong> with the method
+<strong>sub_tensor</strong>.</div>
+</div>
+<p>For a tensor <span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N \times \ldots \times N}\)</span>, the
+command <strong>X.eval_diag()</strong> returns the diagonal
+<span class="math notranslate nohighlight">\(X_{i, \ldots, i}\)</span>, <span class="math notranslate nohighlight">\(i = 1, \ldots, N\)</span>, of the tensor. The
+method <strong>eval_diag</strong> can also be used to evaluate the diagonal in some
+dimensions <strong>dims</strong> of the tensor with <strong>X.eval_diag(dims)</strong>.</p>
+</div>
+<div class="section" id="computing-the-frobenius-norm-of-a-diagonaltensor">
+<h4>Computing the Frobenius norm of a <strong>DiagonalTensor</strong>.<a class="headerlink" href="#computing-the-frobenius-norm-of-a-diagonaltensor" title="Permalink to this headline">¶</a></h4>
+<p>The command <strong>X.norm()</strong> returns the Frobenius norm of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</div>
+<div class="section" id="performing-operations-with-diagonaltensor">
+<h4>Performing operations with <strong>DiagonalTensor</strong>.<a class="headerlink" href="#performing-operations-with-diagonaltensor" title="Permalink to this headline">¶</a></h4>
+<p>Some operations between tensors are implemented for <strong>DiagonalTensor</strong>
+(see for a detailed description of the operations): the outer product
+with <strong>tensordot</strong>, the evaluation of the diagonal (or subtensors) of an
+outer product with <strong>tensordot_eval_diag</strong>, the Kronecker product with
+<strong>kron</strong>, the contraction with matrices or vectors with
+<strong>tensor_matrix_product</strong> or <strong>tensor_vector_product</strong> respectively,
+the evaluation of the diagonal of a contraction with matrices with
+<strong>tensor_matrix_product_eval_diag</strong>, the dot product with <strong>dot</strong>.</p>
+</div>
+</div>
+<div class="section" id="sparsetensor">
+<h3><strong>SparseTensor</strong><a class="headerlink" href="#sparsetensor" title="Permalink to this headline">¶</a></h3>
+<p>A sparse tensor
+<span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N_1 \times \cdots \times N_d}\)</span> is a tensor
+whose entries <span class="math notranslate nohighlight">\(X_{i_1, \ldots, i_d}\)</span> are non-zero only for
+<span class="math notranslate nohighlight">\((i_1, \ldots, i_d) \in I\)</span>, with <span class="math notranslate nohighlight">\(I\)</span> a set of multi-indices.</p>
+<div class="section" id="creating-a-sparsetensor">
+<h4>Creating a <strong>SparseTensor</strong>.<a class="headerlink" href="#creating-a-sparsetensor" title="Permalink to this headline">¶</a></h4>
+<p>To create a sparse tensor <span class="math notranslate nohighlight">\({\texttt{\detokenize{X}}}\)</span> in tensap,
+one can use the command <strong>tensap.SparseTensor(D, I, [N_1, …,
+N_d])</strong>, where <strong>D</strong> contains the non-zero entries of <span class="math notranslate nohighlight">\(X\)</span>, <strong>I</strong>
+is a <strong>tensap.MultiIndices</strong> containing the indices of its non-zero
+enties, and where <span class="math notranslate nohighlight">\(N_1, \ldots, N_d\)</span> is its shape.</p>
+<p>The sparse storage complexity of such a tensor, obtained with
+<strong>X.sparse_storage()</strong>, is equal to <span class="math notranslate nohighlight">\(\text{card}(I)\)</span>. Its storage
+complexity, not taking into account the sparsity, is equal to
+<span class="math notranslate nohighlight">\(N_1 \cdots N_d\)</span> and can be accessed with <strong>X.storage()</strong>.</p>
+</div>
+<div class="section" id="converting-a-sparsetensor-to-a-fulltensor">
+<h4>Converting a <strong>SparseTensor</strong> to a <strong>FullTensor</strong>.<a class="headerlink" href="#converting-a-sparsetensor-to-a-fulltensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>SparseTensor</strong> <strong>X</strong> can be converted to a <strong>FullTensor</strong>
+(introduced in Section [sec:FullTensor]) with the command <strong>X.full()</strong>.</p>
+</div>
+<div class="section" id="converting-a-fulltensor-to-a-sparsetensor">
+<h4>Converting a <strong>FullTensor</strong> to a <strong>SparseTensor</strong>.<a class="headerlink" href="#converting-a-fulltensor-to-a-sparsetensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>FullTensor</strong> <strong>X</strong> can be converted to a <strong>SparseTensor</strong>
+(introduced in Section [sec:SparseTensor]) with the command
+<strong>X.sparse()</strong>.</p>
+</div>
+<div class="section" id="accessing-the-entries-of-a-sparsetensor">
+<h4>Accessing the entries of a <strong>SparseTensor</strong>.<a class="headerlink" href="#accessing-the-entries-of-a-sparsetensor" title="Permalink to this headline">¶</a></h4>
+<p>The entries of the tensor <strong>X</strong> can be accessed with the method
+<strong>eval_at_indices</strong>: <strong>X.eval_at_indices(ind)</strong> returns the entries
+of <span class="math notranslate nohighlight">\(X\)</span> indexed by the list <strong>ind</strong> containing the indices to
+access in each dimension.</p>
+<p>A sub-tensor can be extracted from <strong>X</strong> with the method
+<strong>sub_tensor</strong>.</p>
+<p>For a tensor <span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N, \ldots, N}\)</span>, the command
+<strong>X.eval_diag()</strong> returns the diagonal <span class="math notranslate nohighlight">\(X_{i, \ldots, i}\)</span>,
+<span class="math notranslate nohighlight">\(i = 1, \ldots, N\)</span>, of the tensor. The method <strong>eval_diag</strong> can
+also be used to evaluate the diagonal in some dimensions <strong>dims</strong> of the
+tensor with <strong>X.eval_diag(dims)</strong>.</p>
+</div>
+<div class="section" id="reshaping-a-sparsetensor">
+<h4>Reshaping a <strong>SparseTensor</strong>.<a class="headerlink" href="#reshaping-a-sparsetensor" title="Permalink to this headline">¶</a></h4>
+<p>The method <strong>reshape</strong> reshapes a <strong>SparseTensor</strong> using the
+Fortran-like index order of numpy’s reshape function.</p>
+<p>The methods <strong>transpose</strong> and <strong>itranspose</strong> permute the dimensions of a
+tensor <strong>X</strong>, given a permutation <strong>dims</strong> of <span class="math notranslate nohighlight">\(\{1, \ldots, d\}\)</span>.
+They are such that <strong>X = X.transpose(dims).itranspose(dims)</strong>.</p>
+</div>
+<div class="section" id="computing-the-frobenius-norm-of-a-sparsetensor">
+<h4>Computing the Frobenius norm of a <strong>SparseTensor</strong>.<a class="headerlink" href="#computing-the-frobenius-norm-of-a-sparsetensor" title="Permalink to this headline">¶</a></h4>
+<p>The command <strong>X.norm()</strong> returns the Frobenius norm of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</div>
+<div class="section" id="performing-operations-with-sparsetensor">
+<h4>Performing operations with <strong>SparseTensor</strong>.<a class="headerlink" href="#performing-operations-with-sparsetensor" title="Permalink to this headline">¶</a></h4>
+<p>Some operations between tensors are implemented for <strong>SparseTensor</strong>
+(see for a detailed description of the operations): the Kronecker
+product with <strong>kron</strong>, the contraction with matrices or vectors with
+<strong>tensor_matrix_product</strong> or <strong>tensor_vector_product</strong> respectively,
+the evaluation of the diagonal of a contraction with matrices with
+<strong>tensor_matrix_product_eval_diag</strong>, the dot product with <strong>dot</strong>.</p>
+</div>
+</div>
+<div class="section" id="treebasedtensor-and-dimensiontree">
+<h3><strong>TreeBasedTensor</strong> and <strong>DimensionTree</strong><a class="headerlink" href="#treebasedtensor-and-dimensiontree" title="Permalink to this headline">¶</a></h3>
+<p>We present in this section the <strong>DimensionTree</strong> and <strong>TreeBasedTensor</strong>
+objects. For examples of use, see the tutorial file
+<code class="docutils literal notranslate"><span class="pre">tutorials\tensor_algebra\tutorial_DimensionTree.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">tutorials\tensor_algebra\tutorial_TreeBasedTensor.py</span></code>.</p>
+<div class="section" id="dimensiontree">
+<h4><strong>DimensionTree</strong><a class="headerlink" href="#dimensiontree" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">A dimension tree <span class="math notranslate nohighlight">\(T\)</span> is a collection of non-empty subsets of
+<span class="math notranslate nohighlight">\(D = \{1, \ldots, d\}\)</span> which is such that (i) all nodes
+<span class="math notranslate nohighlight">\(\alpha \in T\)</span> are non-empty subsets of <span class="math notranslate nohighlight">\(D\)</span>, (ii)
+<span class="math notranslate nohighlight">\(D\)</span> is the root of <span class="math notranslate nohighlight">\(T\)</span>, (iii) every node
+<span class="math notranslate nohighlight">\(\alpha \in T\)</span> with <span class="math notranslate nohighlight">\(\#\alpha \ge 2\)</span> has at least two
+children and the set of children of <span class="math notranslate nohighlight">\(\alpha\)</span>, denoted by
+<span class="math notranslate nohighlight">\(S(\alpha)\)</span>, is a non-trivial partition of <span class="math notranslate nohighlight">\(\alpha\)</span>, and
+(iv) every node <span class="math notranslate nohighlight">\(\alpha\)</span> with <span class="math notranslate nohighlight">\(\#\alpha = 1\)</span> has no child
+and is called a leaf (see for example Figure [fig:treeExamples]).</div>
+<div class="line">We let
+<span class="math notranslate nohighlight">\(\operatorname{depth}(T) = \max_{\alpha \in T} \operatorname{level}(\alpha)\)</span>
+be the depth of <span class="math notranslate nohighlight">\(T\)</span>, and <span class="math notranslate nohighlight">\({\mathcal{L}}(T)\)</span> be the set of
+leaves of <span class="math notranslate nohighlight">\(T\)</span>, which are such that <span class="math notranslate nohighlight">\(S(\alpha) = \emptyset\)</span>
+for all <span class="math notranslate nohighlight">\(\alpha \in {\mathcal{L}}(T)\)</span>.</div>
+</div>
+<p>.32</p>
+<p>=[circle,fill=black] child node [active,label=below:<span class="math notranslate nohighlight">\(\{1\}\)</span>] child
+node [active,label=below:<span class="math notranslate nohighlight">\(\{2\}\)</span>] child node
+[active,label=below:<span class="math notranslate nohighlight">\(\{3\}\)</span>] child node
+[active,label=below:<span class="math notranslate nohighlight">\(\{4\}\)</span>] ;</p>
+<p>.32</p>
+<p>=[circle,fill=black] =[sibling distance=15mm] =[sibling distance=15mm]
+=[sibling distance=15mm] child node [active,label=below:<span class="math notranslate nohighlight">\(\{1\}\)</span>]
+child node [active,label=above right:<span class="math notranslate nohighlight">\(\{2,3,4\}\)</span>] child node
+[active,label=below:<span class="math notranslate nohighlight">\(\{2\}\)</span>] child node [active,label=above
+right:<span class="math notranslate nohighlight">\(\{3,4\}\)</span>] child node [active,label=below:<span class="math notranslate nohighlight">\(\{3\}\)</span>]
+child node [active,label=below:<span class="math notranslate nohighlight">\(\{4\}\)</span>] ;</p>
+<p>.32</p>
+<p>=[circle,fill=black] =[sibling distance=20mm] =[sibling distance=10mm]
+child node [active,label=above left:<span class="math notranslate nohighlight">\(\{1,2\}\)</span>] child node
+[active,label=below:<span class="math notranslate nohighlight">\(\{1\}\)</span>] child node
+[active,label=below:<span class="math notranslate nohighlight">\(\{2\}\)</span>] child node [active,label=above
+right:<span class="math notranslate nohighlight">\(\{3,4\}\)</span>] child node [active,label=below:<span class="math notranslate nohighlight">\(\{3\}\)</span>]
+child node [active,label=below:<span class="math notranslate nohighlight">\(\{4\}\)</span>] ;</p>
+</div>
+<div class="section" id="creating-a-dimensiontree">
+<h4>Creating a <strong>DimensionTree</strong>.<a class="headerlink" href="#creating-a-dimensiontree" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>DimensionTree</strong> is characterized by its adjacency matrix and the
+dimension associated with each leaf node: <strong>T =
+tensap.DimensionTree(dims, adjacency_matrix)</strong>. The adjacency matrix of
+a dimension tree <span class="math notranslate nohighlight">\(T\)</span> can be accessed with <strong>T.adjacency_matrix</strong>.
+The dimension associated with each leaf node can be accessed with
+<strong>T.dim2ind</strong>.</p>
+<p>Denoting by <strong>order</strong> the number of leaf nodes, it is possible to create</p>
+<ul class="simple">
+<li><p>a trivial tree with <strong>tensap.DimensionTree.trivial(order)</strong> (Figure
+[fig:trivialTree]),</p></li>
+<li><p>a linear tree with <strong>tensap.DimensionTree.linear(order)</strong> (Figure
+[fig:linearTree]),</p></li>
+<li><p>a balanced tree with
+<strong>tensap.DimensionTree.balanced(order)</strong>(Figure
+[fig:balancedTree]),</p></li>
+<li><p>a random tree with <strong>tensap.DimensionTree.random(order, arity)</strong>,
+with <strong>arity</strong> the arity of the tree, equal to the maximum number of
+children per node (randomly selected in an interval if provided).</p></li>
+</ul>
+<p>Finally, a dimension tree can be created by extracting a sub-tree from
+an existing tree <span class="math notranslate nohighlight">\(T\)</span> with <strong>T.sub_dimension_tree(root)</strong> where
+<strong>root</strong> is the node in <span class="math notranslate nohighlight">\(T\)</span> that will become the root node of the
+extracted tree.</p>
+</div>
+<div class="section" id="displaying-a-dimensiontree">
+<h4>Displaying a <strong>DimensionTree</strong>.<a class="headerlink" href="#displaying-a-dimensiontree" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>DimensionTree</strong> can be displayed with the command <strong>T.plot()</strong>. The
+dimension associated with each leaf node can be plotted on the tree with
+<strong>T.plot_dims()</strong>. Finally, the tree can be plotted with some quantity
+displayed at each node with <strong>T.plot_with_labels_at_nodes(labels)</strong>.</p>
+</div>
+<div class="section" id="accessing-properties-of-the-tree">
+<h4>Accessing properties of the tree.<a class="headerlink" href="#accessing-properties-of-the-tree" title="Permalink to this headline">¶</a></h4>
+<p>The number of nodes of a dimension tree <span class="math notranslate nohighlight">\(T\)</span> is given by
+<strong>T.nb_nodes</strong>.</p>
+<p>The parent of <span class="math notranslate nohighlight">\(\alpha\)</span>, denoted by <span class="math notranslate nohighlight">\(P(\alpha)\)</span>, can be
+obtained with <strong>T.parent(alpha)</strong>, and its ascendants <span class="math notranslate nohighlight">\(A(\alpha)\)</span>
+and descendants <span class="math notranslate nohighlight">\(D(\alpha)\)</span> by <strong>T.ascendants(alpha)</strong> and
+<strong>T.descendants(alpha)</strong>, respectively. The children of <span class="math notranslate nohighlight">\(\alpha\)</span>
+are given by <strong>T.children(alpha)</strong>. The command
+<strong>T.child_number(alpha)</strong> returns <span class="math notranslate nohighlight">\(i^\gamma_\alpha\)</span>, for
+<span class="math notranslate nohighlight">\(\alpha \in T \setminus \{D\}\)</span> and <span class="math notranslate nohighlight">\(\gamma = P(\alpha)\)</span>,
+which is such that <span class="math notranslate nohighlight">\(\alpha\)</span> is the <span class="math notranslate nohighlight">\(i^\gamma_\alpha\)</span>-th
+child of <span class="math notranslate nohighlight">\(\gamma\)</span>. For instance, in the tree of Figure
+[fig:linearTree], the node <span class="math notranslate nohighlight">\(\alpha = \{3,4\}\)</span> is the second child
+of <span class="math notranslate nohighlight">\(\gamma = \{2,3,4\}\)</span>.</p>
+<p>The level of a node <span class="math notranslate nohighlight">\(\alpha\)</span> is denoted by
+<span class="math notranslate nohighlight">\(\operatorname{level}(\alpha)\)</span>. The levels are defined such that
+<span class="math notranslate nohighlight">\(\operatorname{level}(D) = 0\)</span> and
+<span class="math notranslate nohighlight">\(\operatorname{level}(\beta) = \operatorname{level}(\alpha) + 1\)</span>
+for <span class="math notranslate nohighlight">\(\beta \in S(\alpha)\)</span>. The nodes of <span class="math notranslate nohighlight">\(T\)</span> with level
+<span class="math notranslate nohighlight">\(l\)</span> are returned by <strong>T.nodes_with_level(l)</strong>.</p>
+<p>The leaf nodes <span class="math notranslate nohighlight">\(\alpha \in {\mathcal{L}}(T)\)</span> are such that
+<strong>T.is_leaf[alpha-1]</strong> is <strong>True</strong>.</p>
+<div class="section" id="treebasedtensor">
+<h5><strong>TreeBasedTensor</strong><a class="headerlink" href="#treebasedtensor" title="Permalink to this headline">¶</a></h5>
+<div class="line-block">
+<div class="line">Given a dimension tree <span class="math notranslate nohighlight">\(T\)</span>, a <strong>TreeBasedTensor</strong> <strong>X</strong> is a
+tensor in <em>tree-based format</em> (see
+<a class="reference internal" href="bibliography.html#falco2018sema" id="id4"><span>[Falco2018SEMA]</span></a>, <a class="reference internal" href="bibliography.html#hackbusch2019tensor" id="id5"><span>[hackbusch2019tensor]</span></a>). It represents
+an order <span class="math notranslate nohighlight">\(d\)</span> tensor
+<span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N_1 \times \cdots \times N_d}\)</span> in the set
+of tensors with <span class="math notranslate nohighlight">\(\alpha\)</span>-ranks bounded by some integer
+<span class="math notranslate nohighlight">\(r_\alpha\)</span>, <span class="math notranslate nohighlight">\(\alpha \in T\)</span>. Such a tensor admits a
+representation</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[X_{i_1, \ldots, i_d} = \sum_{\substack{1 \leq k_\beta \leq r_\beta \beta \in T\setminus \{D\}}} \prod_{\alpha \in T\setminus {\mathcal{L}}(T)} C^\alpha_{(k_\beta)_{\beta \in S(\alpha)},k_\alpha} \prod_{\alpha \in {\mathcal{L}}(T)} C^{\alpha}_{i_\alpha,k_\alpha},\]</div>
+<p>with <span class="math notranslate nohighlight">\(C^\alpha\)</span>, <span class="math notranslate nohighlight">\(\alpha \in T\)</span>, some tensors that
+parameterize the representation of <span class="math notranslate nohighlight">\(X\)</span>. When <span class="math notranslate nohighlight">\(T\)</span> is a
+binary tree, the corresponding format is the so-called hierarchical
+Tucker (HT) format. The particular case of a linear binary tree is the
+tensor train Tucker format.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">The <em>Tucker format</em> corresponds to a trivial tree
+<span class="math notranslate nohighlight">\(T=\{\{1\},\ldots,\{d\},\{1,\ldots,d\}\}\)</span> and admits the
+representation</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[X_{i_1, \ldots, i_d} = \sum_{k_1=1}^{r_1} \ldots \sum_{k_d=1}^{r_d} C^{1,\ldots,d}_{k_1,\ldots,k_d} C^{1}_{i_1,k_1} \ldots C^{d}_{i_d,k_d}.\]</div>
+</div></blockquote>
+<p>A <em>degenerate tree-based format</em> is defined as the set of tensors with
+<span class="math notranslate nohighlight">\(\alpha\)</span>-ranks bounded by some integer <span class="math notranslate nohighlight">\(r_\alpha\)</span>, for all
+<span class="math notranslate nohighlight">\(\alpha\)</span> in a subset <span class="math notranslate nohighlight">\(A\)</span> of <span class="math notranslate nohighlight">\(T\)</span>. The set <span class="math notranslate nohighlight">\(A\)</span>
+corresponds to active nodes, which should contain all interior nodes
+<span class="math notranslate nohighlight">\(T\setminus{\mathcal{L}}(T)\)</span>. A <strong>TreeBasedTensor</strong> <strong>X</strong> with
+active nodes <span class="math notranslate nohighlight">\(A\)</span> admits a representation.</p>
+<div class="math notranslate nohighlight">
+\[X_{i_1, \ldots, i_d} = \sum_{\substack{1 \leq k_\beta \leq r_\beta \beta \in A \setminus \{D\}}} \prod_{\alpha \in A\setminus {\mathcal{L}}(T)} C^\alpha_{(k_\beta)_{\beta \in S(\alpha)},k_\alpha} \prod_{\alpha \in {\mathcal{L}}(T) \cap A} C^{\alpha}_{i_\alpha,k_\alpha},\]</div>
+<p>with <span class="math notranslate nohighlight">\(C^\alpha\)</span>, <span class="math notranslate nohighlight">\(\alpha \in A\)</span>, some tensors that
+parameterize the representation of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<div class="line-block">
+<div class="line">The <em>tensor train format</em> is a degenerate tree-based format with a
+linear tree <span class="math notranslate nohighlight">\(T\)</span> and all leaf nodes inactive except the first
+one, that means <span class="math notranslate nohighlight">\(A = \{\{1\},\{1,2\}, \ldots, \{1,\ldots,d\}\}\)</span>.
+A tensor <span class="math notranslate nohighlight">\(X\)</span> in tensor train format admits a representation</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[X_{i_1,\ldots,i_d} = \sum_{k_1=1}^{r_1} \ldots \sum_{k_{d-1}=1}^{r_{d-1}} C^1_{1,i_1,k_1} C^2_{k_1,i_2,k_2} \ldots C^{d-1}_{k_{d-2},i_{d-1},k_{d-1}} C^d_{k_{d-1},i_d,1}\]</div>
+<p>with tensor <span class="math notranslate nohighlight">\(C^\nu\)</span> and rank <span class="math notranslate nohighlight">\(r_\nu\)</span> associated with the
+node <span class="math notranslate nohighlight">\(\alpha = \{1,\ldots,\nu\}\)</span>.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">For a more detailed presentation of tree-based formats (possibly
+degenerate) and more examples, see <a class="reference internal" href="bibliography.html#nouy-2017hopca" id="id6"><span>[nouy:2017hopca]</span></a>.</div>
+<div class="line">If the rank <span class="math notranslate nohighlight">\(r_D\)</span> associated with the root node is different
+from <span class="math notranslate nohighlight">\(1\)</span>, a <strong>TreeBasedTensor</strong> <strong>X</strong> represents a tensor of
+order <span class="math notranslate nohighlight">\(d+1\)</span> with entries <span class="math notranslate nohighlight">\(X_{i_1,\ldots,i_d,k_D}\)</span>,
+<span class="math notranslate nohighlight">\(1\le k_D \le r_D\)</span>. I can be used to defined vector-valued
+functional tensors (see ).</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-treebasedtensor">
+<h4>Creating a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#creating-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">A <strong>TreeBasedTensor</strong> is created with the command <strong>X =
+tensap.TreeBasedTensor(C, T)</strong>, with <strong>C</strong> the list of <strong>FullTensor</strong>
+objects representing the <span class="math notranslate nohighlight">\(C^\alpha\)</span>, <span class="math notranslate nohighlight">\(\alpha \in T\)</span>, and
+<strong>T</strong> a <strong>DimensionTree</strong>. If some entries of the list <strong>C</strong>
+corresponding to leaf nodes are empty, it creates a degenerate tensor
+format, with <span class="math notranslate nohighlight">\(T\setminus A\)</span> corresponding to the empty entries
+of <strong>C</strong>.</div>
+<div class="line">It is possible to create a <strong>TreeBasedTensor</strong> in tensor-train format
+with the command <strong>tensap.TreeBasedTensor.tensor_train(C)</strong>, with
+<strong>C</strong> a list containing the tensors <span class="math notranslate nohighlight">\(C^1,\ldots,C^d\)</span>.</div>
+<div class="line">Given a <strong>DimensionTree</strong> <strong>T</strong>, it is also possible to generate a
+<strong>TreeBasedTensor</strong> with entries</div>
+</div>
+<ul class="simple">
+<li><p>equal to 0 with <strong>tensap.TreeBasedTensor.zeros(T, r, s, I)</strong>,</p></li>
+<li><p>equal to 1 with <strong>tensap.TreeBasedTensor.ones(T, r, s, I)</strong>,</p></li>
+<li><p>drawn randomly according to the uniform distribution on
+<span class="math notranslate nohighlight">\([0, 1]\)</span> with <strong>tensap.TreeBasedTensor.rand(T, r, s, I)</strong>,</p></li>
+<li><p>drawn randomly according to the standard gaussian distribution with
+<strong>tensap.TreeBasedTensor.randn(T, r, s, I)</strong>,</p></li>
+<li><p>generated using a provided <strong>generator</strong> with
+<strong>tensap.TreeBasedTensor.create</strong> <strong>(generator, T, r, s, I)</strong>,</p></li>
+</ul>
+<p>where <strong>r</strong> is a list containing the <span class="math notranslate nohighlight">\(\alpha\)</span>-ranks,
+<span class="math notranslate nohighlight">\(\alpha \in T\)</span>, or <strong>’random’</strong>, <strong>s</strong> is a list containing the
+sizes <span class="math notranslate nohighlight">\(N_1, \ldots, N_d\)</span>, or <strong>’random’</strong>, and <strong>I</strong> is a list of
+booleans indicating if the node <span class="math notranslate nohighlight">\(\alpha\)</span> is active,
+<span class="math notranslate nohighlight">\(\alpha \in T\)</span>, or <strong>’random’</strong>.</p>
+</div>
+<div class="section" id="storage-complexity">
+<h4>Storage complexity.<a class="headerlink" href="#storage-complexity" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">The storage complexity of <strong>X</strong> is given by
+<span class="math notranslate nohighlight">\({\texttt{\detokenize{X.size = X.storage()}}}\)</span> and returns the
+number of entries in tensors <span class="math notranslate nohighlight">\(C^\alpha\)</span>, <span class="math notranslate nohighlight">\(\alpha\in A\)</span>.</div>
+<div class="line">The storage complexity of <strong>X</strong> taking into account the sparsity in
+the <span class="math notranslate nohighlight">\(C^\alpha\)</span>, <span class="math notranslate nohighlight">\(\alpha \in T\)</span>, is given by
+<strong>X.sparse_storage()</strong>. It returns the number of non-zero entries in
+tensors <span class="math notranslate nohighlight">\(C^\alpha\)</span>, <span class="math notranslate nohighlight">\(\alpha\in A\)</span>.</div>
+<div class="line">The storage complexity of <strong>X</strong> taking into account the sparsity only
+in the leaf nodes is given by <strong>X.sparse_leaves_storage()</strong>.</div>
+</div>
+</div>
+<div class="section" id="displaying-a-treebasedtensor">
+<h4>Displaying a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#displaying-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>A graphical representation of a <strong>TreeBasedTensor</strong> <strong>X</strong> can be
+obtained with the command <strong>X.plot()</strong>. Labels can be added to the nodes
+of the tree, as well as a title, with <strong>X.plot(labels, title)</strong>.</p>
+</div>
+<div class="section" id="converting-a-treebasedtensor-to-a-fulltensor">
+<h4>Converting a <strong>TreeBasedTensor</strong> to a <strong>FullTensor</strong>.<a class="headerlink" href="#converting-a-treebasedtensor-to-a-fulltensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>TreeBasedTensor</strong> <strong>X</strong> can be converted to a <strong>FullTensor</strong>
+(introduced in Section [sec:FullTensor]) with the command <strong>X.full()</strong>.</p>
+</div>
+<div class="section" id="converting-a-fulltensor-to-a-treebasedtensor">
+<h4>Converting a <strong>FullTensor</strong> to a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#converting-a-fulltensor-to-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>FullTensor</strong> <strong>X</strong> can be converted to a <strong>TreeBasedTensor</strong> with
+the command <strong>X.tree_based_tensor()</strong>. The associated dimension tree
+is a trivial tree with active nodes.</p>
+</div>
+<div class="section" id="accessing-the-entries-of-a-treebasedtensor">
+<h4>Accessing the entries of a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#accessing-the-entries-of-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>The entries of the tensor <strong>X</strong> can be accessed with the method
+<strong>eval_at_indices</strong>: <strong>X.eval_at_indices(ind)</strong> returns the entries
+of <span class="math notranslate nohighlight">\(X\)</span> indexed by the list <strong>ind</strong> containing the indices to
+access in each dimension.</p>
+<p>A sub-tensor can be extracted from <strong>X</strong> with the method <strong>sub_tensor</strong>
+(see )</p>
+<p>For a tensor <span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N, \ldots, N}\)</span>, the command
+<strong>X.eval_diag()</strong> returns the diagonal <span class="math notranslate nohighlight">\(X_{i, \ldots, i}\)</span>,
+<span class="math notranslate nohighlight">\(i = 1, \ldots, N\)</span>, of the tensor. The method <strong>eval_diag</strong> can
+also be used to evaluate the diagonal in some dimensions <strong>dims</strong> of the
+tensor with <strong>X.eval_diag(dims)</strong>.</p>
+</div>
+<div class="section" id="obtaining-an-orthonormal-representation-of-a-treebasedtensor">
+<h4>Obtaining an orthonormal representation of a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#obtaining-an-orthonormal-representation-of-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>The command <strong>X.orth()</strong> returns a representation of <strong>X</strong> where all the
+core tensors except the root core represent orthonormal bases of
+principal subspaces.</p>
+<p>The command <strong>X.orth_at_node(alpha)</strong> returns a representation of
+<strong>X</strong> where all the core tensors except the one of node <span class="math notranslate nohighlight">\(\alpha\)</span>
+represent orthonormal bases of principal subspaces. The core tensor
+<span class="math notranslate nohighlight">\(C^\alpha\)</span> of the node <span class="math notranslate nohighlight">\(\alpha\)</span> is such that the tensor
+writes</p>
+<div class="math notranslate nohighlight">
+\[X_{i_\alpha, i_{\alpha^c}} = \sum_{k} \sum_{l} C^\alpha_{k,l} u_l(i_\alpha) w_k(i_{\alpha^c}),\]</div>
+<p>where the <span class="math notranslate nohighlight">\(u_l\)</span> are orthonormal tensors and the <span class="math notranslate nohighlight">\(w_k\)</span> are
+orthonormal tensors. This orthonormality of the representation can be
+checked by computing the Gram matrices of the bases of minimal subspaces
+associated with the nodes of the tree with <strong>X.gramians()</strong>.</p>
+</div>
+<div class="section" id="modifying-the-tree-structure-of-a-treebasedtensor">
+<h4>Modifying the tree structure of a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#modifying-the-tree-structure-of-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>It is possible to modify the tree of a <strong>TreeBasedTensor</strong> <strong>X</strong> by
+permuting two of its nodes <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> given a
+relative tolerance <strong>tol</strong> with <strong>X.permute_nodes([alpha, beta],
+tol)</strong>.</p>
+<p>The leaves of the tree can also be permuted with the command
+<strong>X.permute_leaves(perm, tol)</strong>, where <strong>perm</strong> is a permutation of
+<span class="math notranslate nohighlight">\((1, \ldots, d)\)</span>.</p>
+<p>The method <strong>optimize_dimension_tree</strong> tries random permutations of
+nodes to minimize the storage complexity of a tree-based tensor
+<span class="math notranslate nohighlight">\(X\)</span>: <strong>X.optimize_dimension_tree(tol, n)</strong> tries <span class="math notranslate nohighlight">\(n\)</span>
+random permutations and returns a <strong>TreeBasedTensor</strong> <strong>Y</strong> which is
+such that <strong>Y.storage()</strong> is less or equal than <strong>X.storage()</strong>. The
+nodes to permute are drawn according to probability measures favoring
+high decreases of the ranks while maintaining a permutation cost as low
+as possible (see <a class="reference internal" href="bibliography.html#grelier2019learning" id="id7"><span>[grelier2019learning]</span></a>).</p>
+<p>The similar method <strong>optimize_leaves_permutations</strong> focuses on the
+permutation of the leaf nodes to try to reduce the storage complexity of
+a <strong>TreeBasedTensor</strong>.</p>
+</div>
+<div class="section" id="computing-the-frobenius-norm-of-a-treebasedtensor">
+<h4>Computing the Frobenius norm of a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#computing-the-frobenius-norm-of-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>The command <strong>X.norm()</strong> returns the Frobenius norm of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</div>
+<div class="section" id="computing-the-alpha-singular-values-of-a-treebasedtensor">
+<h4>Computing the <span class="math notranslate nohighlight">\(\alpha\)</span>-singular values of a <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#computing-the-alpha-singular-values-of-a-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>For all <span class="math notranslate nohighlight">\(\alpha \in T\)</span>, the <span class="math notranslate nohighlight">\(\alpha\)</span>-singular values of
+<span class="math notranslate nohighlight">\(X\)</span> can be obtained with <strong>X.singular_values()</strong>.</p>
+<p>The method <strong>rank</strong> uses the method <strong>singular_values</strong> to compute the
+<span class="math notranslate nohighlight">\(\alpha\)</span>-ranks, <span class="math notranslate nohighlight">\(\alpha \in T\)</span>, of a <strong>TreeBasedTensor</strong>.</p>
+</div>
+<div class="section" id="computing-the-derivative-of-treebasedtensor-with-respect-to-one-of-its-parameters">
+<h4>Computing the derivative of <strong>TreeBasedTensor</strong> with respect to one of its parameters.<a class="headerlink" href="#computing-the-derivative-of-treebasedtensor-with-respect-to-one-of-its-parameters" title="Permalink to this headline">¶</a></h4>
+<p>For an order-<span class="math notranslate nohighlight">\(d\)</span> tree-based tensor <strong>X</strong> in
+<span class="math notranslate nohighlight">\({\mathbb{R}}^{N \times \cdots \times N}\)</span>,
+<strong>X.parameter_gradient_eval_diag(alpha)</strong>, for <span class="math notranslate nohighlight">\(\alpha \in T\)</span>,
+returns the derivative</p>
+<div class="math notranslate nohighlight">
+\[\left.\frac{\partial X_{i_1, \ldots, i_d}}{\partial C^\alpha}\right|_{i_1=\cdots=i_d=i}, \; i = 1, \ldots, N.\]</div>
+<p>The method <strong>parameter_gradient_eval_diag</strong> is used in the
+statistical learning algorithms presented in Section
+[sec:TensorLearning].</p>
+</div>
+<div class="section" id="performing-operations-with-treebasedtensor">
+<h4>Performing operations with <strong>TreeBasedTensor</strong>.<a class="headerlink" href="#performing-operations-with-treebasedtensor" title="Permalink to this headline">¶</a></h4>
+<p>Some operations between tensors are implemented for <strong>TreeBasedTensor</strong>
+(see for a detailed description of the operations): the Kronecker
+product with <strong>kron</strong>, the contraction with matrices or vectors with
+<strong>tensor_matrix_product</strong> or <strong>tensor_vector_product</strong> respectively,
+the evaluation of the diagonal of a contraction with matrices with
+<strong>tensor_matrix_product_eval_diag</strong>, the dot product with <strong>dot</strong>.</p>
+<p><strong>Z = X.tensor_matrix_product(M)</strong> <strong>tensor_vector_product</strong>
+<strong>tensor_matrix_product_eval_diag</strong> <strong>X.kron(Y)</strong> <strong>X.dot(Y)</strong></p>
+</div>
+</div>
+<div class="section" id="tensor-truncation-with-truncator">
+<h3>Tensor truncation with <strong>Truncator</strong><a class="headerlink" href="#tensor-truncation-with-truncator" title="Permalink to this headline">¶</a></h3>
+<p>The object <strong>Truncator</strong> embeds several methods of truncation of tensors
+in different formats. Given a tolerance <strong>tol</strong> and a maximum rank or
+tuple of ranks <strong>r</strong>, a <strong>Truncator</strong> object can be created with <strong>t =
+tensap.Truncator(tol, r)</strong>. The thresholding type (<strong>’hard’</strong> or
+<strong>’soft’</strong>) can also be specified as a third argument.</p>
+<p>For examples of use, see the tutorial file
+<code class="docutils literal notranslate"><span class="pre">tutorials\tensor_algebra\tutorial_tensor_truncation.py</span></code>.</p>
+<div class="section" id="truncation">
+<h4>Truncation.<a class="headerlink" href="#truncation" title="Permalink to this headline">¶</a></h4>
+<p>The generic method <strong>truncate</strong> calls one of the methods presented
+below, based on the type and order of its input, to obtain a truncation
+of the provided tensor satisfying the relative prevision and maximal
+rank requirements.</p>
+<p>For an order <span class="math notranslate nohighlight">\(2\)</span> tensor, the method <strong>svd</strong> is called. For a
+tensor of order greater than <span class="math notranslate nohighlight">\(2\)</span>, the method <strong>hosvd</strong> is called
+for a <strong>FullTensor</strong>, and <strong>hsvd</strong> for a <strong>TreeBasedTensor</strong>.</p>
+</div>
+<div class="section" id="truncated-singular-value-decomposition">
+<h4>Truncated singular value decomposition.<a class="headerlink" href="#truncated-singular-value-decomposition" title="Permalink to this headline">¶</a></h4>
+<p>The method <strong>svd</strong> computes the truncated singular value decomposition
+of an order <span class="math notranslate nohighlight">\(2\)</span> tensor. The input tensor can be a
+<strong>numpy.ndarray</strong>, a <strong>tensorflow.Tensor</strong>, a <strong>FullTensor</strong> or a
+<strong>CanonicalTensor</strong>, in which case the method <strong>trunc_svd</strong> is called,
+or a <strong>TreeBasedTensor</strong>, in which case the method <strong>hsvd</strong> is called.</p>
+<p>The method <strong>trunc_svd</strong> computes the truncated singular value
+decomposition of a matrix, with a given relative precision in Schatten
+<span class="math notranslate nohighlight">\(p\)</span>-norm (with a specified value for <span class="math notranslate nohighlight">\(p\)</span>) and given maximal
+rank. The returned truncation is a <strong>CanonicalTensor</strong>.</p>
+</div>
+<div class="section" id="truncated-higher-order-singular-value-decomposition">
+<h4>Truncated higher-order singular value decomposition.<a class="headerlink" href="#truncated-higher-order-singular-value-decomposition" title="Permalink to this headline">¶</a></h4>
+<p>A truncated higher-order singular value decomposition of a
+<strong>numpy.ndarray</strong>, a <strong>FullTensor</strong> or a <strong>TreeBasedTensor</strong> can be
+computed with the method <strong>hosvd</strong>. The output is either a
+<strong>CanonicalTensor</strong> for an order <span class="math notranslate nohighlight">\(2\)</span> tensor, or a
+<strong>TreeBasedTensor</strong> with a trivial tree for a tensor of order greater
+than <span class="math notranslate nohighlight">\(2\)</span>.</p>
+</div>
+<div class="section" id="truncation-in-tree-based-tensor-format">
+<h4>Truncation in tree-based tensor format.<a class="headerlink" href="#truncation-in-tree-based-tensor-format" title="Permalink to this headline">¶</a></h4>
+<p>The method <strong>hsvd</strong> computes, given a <strong>TreeBasedTensor</strong> or a
+<strong>FullTensor</strong> with a tree and a set of active nodes, a truncation in
+tree-based tensor format.</p>
+</div>
+<div class="section" id="truncation-in-tensor-train-format">
+<h4>Truncation in tensor train format.<a class="headerlink" href="#truncation-in-tensor-train-format" title="Permalink to this headline">¶</a></h4>
+<p>The method <strong>ttsvd</strong>, given a <strong>FullTensor</strong>, calls the method <strong>hsvd</strong>
+with a linear tree and all the leaf nodes inactive except the first one,
+resulting in a truncation in tensor-train format.</p>
+</div>
+</div>
+</div>
+<div class="section" id="measures-bases-and-functions">
+<h2>Measures, bases and functions<a class="headerlink" href="#measures-bases-and-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="randomvariable">
+<h3><strong>RandomVariable</strong><a class="headerlink" href="#randomvariable" title="Permalink to this headline">¶</a></h3>
+<p>A random variable <span class="math notranslate nohighlight">\(X\)</span> can be created by calling its name: for
+instance, <strong>X = tensap.UniformRandomVariable(a, b)</strong> creates a random
+variable with a uniform distribution on the interval <span class="math notranslate nohighlight">\([a, b]\)</span>. The
+random variables currently implemented in tensap are:</p>
+<ul class="simple">
+<li><p><strong>tensap.DiscreteRandomVariable(v, p)</strong>: a random variable with
+discrete values <span class="math notranslate nohighlight">\(v\)</span> and associated probabilities <span class="math notranslate nohighlight">\(p\)</span>,</p></li>
+<li><p><strong>tensap.UniformRandomVariable(a, b)</strong>: a uniform random variable on
+<span class="math notranslate nohighlight">\([a, b]\)</span>,</p></li>
+<li><p><strong>tensap.NormalRandomVariable(m, s)</strong>: a normal random variable with
+mean <span class="math notranslate nohighlight">\(m\)</span> and standard deviation <span class="math notranslate nohighlight">\(s\)</span>,</p></li>
+<li><p><strong>tensap.EmpiricalRandomVariable(S)</strong>: a random variable created from
+a sample <span class="math notranslate nohighlight">\(S\)</span> using kernel density estimation with Scott’s rule
+of thumb to determine the bandwidth.</p></li>
+</ul>
+<p>A new random variable can easily be implemented in tensap by making its
+class inheriting from <strong>RandomVariable</strong> and implementing the few
+methods necessary for its creation.</p>
+<p>Once a random variable <span class="math notranslate nohighlight">\(X\)</span> is created, one can for instance
+generate <span class="math notranslate nohighlight">\(n\)</span> random numbers according to its distribution with
+<strong>X.random(n)</strong>, create the orthonormal polynomials associated with its
+measure with <strong>X.orthonormal_polynomials()</strong> (as presented in Section
+[sec:polynomials]), or evaluate its probability density function
+(<strong>X.pdf(x)</strong>), cumulative distribution function (<strong>X.cdf(x)</strong>) or
+inverse cumulative distribution function (<strong>X.icdf(x)</strong>).</p>
+</div>
+<div class="section" id="randomvector">
+<h3><strong>RandomVector</strong><a class="headerlink" href="#randomvector" title="Permalink to this headline">¶</a></h3>
+<p>A random vector <span class="math notranslate nohighlight">\(X\)</span> if defined in tensap by a list of
+<strong>RandomVariable</strong> objects and a <strong>Copula</strong>, characterizing the
+dependencies between the random variables. Currently, only the
+independent copula <strong>IndependentCopula</strong> is implemented.</p>
+<p>Given a list of <strong>RandomVariable</strong> <strong>random_variables</strong> and a <strong>Copula
+C</strong>, a random vector can be created with <strong>X =
+tensap.RandomVector(random_variables, copula=C)</strong>.</p>
+<p>Once a random vector <span class="math notranslate nohighlight">\(X\)</span> is created, one can for instance generate
+<span class="math notranslate nohighlight">\(n\)</span> random numbers according to its distribution with
+<strong>X.random(n)</strong>, create the orthonormal polynomials associated with its
+measure with <strong>X.orthonormal_polynomials()</strong> (as presented in Section
+[sec:polynomials]), or evaluate its probability density function
+(<strong>X.pdf(x)</strong>) or cumulative distribution function (<strong>X.cdf(x)</strong>).</p>
+</div>
+<div class="section" id="polynomials">
+<h3><strong>Polynomials</strong><a class="headerlink" href="#polynomials" title="Permalink to this headline">¶</a></h3>
+<p>Families of univariate polynomials <span class="math notranslate nohighlight">\((p_i)_{i\ge 0}\)</span> are
+represented in tensap with classes inheriting from
+<strong>UnivariatePolynomials</strong>. The <span class="math notranslate nohighlight">\(i\)</span>-th polynomial <span class="math notranslate nohighlight">\(p_i\)</span>
+represented by a <strong>UnivariatePolynomials</strong> object <strong>P</strong> can be evaluated
+with <strong>P.polyval(x, i)</strong>, as well as its first order derivative
+(<strong>P.d_polyval(x, i)</strong>) and its <span class="math notranslate nohighlight">\(n\)</span>-th order derivative
+(<strong>P.dn_polyval(x, n, i)</strong>).</p>
+<p>Given a measure <span class="math notranslate nohighlight">\(\mu\)</span>, the moments
+<span class="math notranslate nohighlight">\(\int  p_{i_1}(x)...p_{i_k}(x) d\mu(x)\)</span> for
+<span class="math notranslate nohighlight">\((i_1,...,i_k) \in {\mathbb{N}}^{k}\)</span> can be obtained with
+<strong>P.moment(I, mu)</strong>, with <span class="math notranslate nohighlight">\({\texttt{\detokenize{I}}}\)</span> a
+<span class="math notranslate nohighlight">\(n\)</span>-by-<span class="math notranslate nohighlight">\(k\)</span> array representing <span class="math notranslate nohighlight">\(n\)</span> tuples
+<span class="math notranslate nohighlight">\((i_1,...,i_k)\)</span>. <strong>P.moment(I, X)</strong> with
+<span class="math notranslate nohighlight">\({\texttt{\detokenize{X}}}\)</span> a random variable considers for
+<span class="math notranslate nohighlight">\(\mu\)</span> the probability distribution of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<div class="section" id="canonicalpolynomials">
+<h4><strong>CanonicalPolynomials</strong>.<a class="headerlink" href="#canonicalpolynomials" title="Permalink to this headline">¶</a></h4>
+<p>The family of canonical polynomials is implemented in the class
+<strong>CanonicalPolynomials</strong>. It is such that its <span class="math notranslate nohighlight">\(i\)</span>-th polynomial is
+<span class="math notranslate nohighlight">\(p_i(x) = x^i\)</span>.</p>
+</div>
+<div class="section" id="orthonormalpolynomials">
+<h4><strong>OrthonormalPolynomials</strong>.<a class="headerlink" href="#orthonormalpolynomials" title="Permalink to this headline">¶</a></h4>
+<p>Orthonormal polynomials are families of polynomials
+<span class="math notranslate nohighlight">\((p_i)_{i \geq 0}\)</span> that satisfy</p>
+<div class="math notranslate nohighlight">
+\[\int p_i(x) p_j(x) d\mu(x)= \delta_{ij}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\delta_{ij}\)</span> the Kronecker delta, and with <span class="math notranslate nohighlight">\(\mu\)</span> some
+measure.</p>
+<div class="line-block">
+<div class="line">In tensap, the orthonormal polynomials <span class="math notranslate nohighlight">\(p_i\)</span>, <span class="math notranslate nohighlight">\(i \geq 0\)</span>,
+are defined using the three-term recurrence relation</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+                &amp;\tilde p_{-1}(x) = 0, \quad \tilde p_0(x) = 1, \\
+                &amp;\tilde p_{i+1}(x) = (x - a_i)\tilde p_{i}(x) - b_i \tilde p_{i-1}(x), \quad i \geq 0,\\
+                &amp;p_i(x) = \frac{\tilde p_i(x)}{n_i}, \quad i \geq 0
+            \end{aligned}\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(a_i\)</span> and <span class="math notranslate nohighlight">\(b_i\)</span> the recurrence coefficients, and
+<span class="math notranslate nohighlight">\(n_i\)</span> the norm of <span class="math notranslate nohighlight">\(\tilde p_i\)</span>, defined by</p>
+<div class="math notranslate nohighlight">
+\[a_i = \frac{\int \tilde p_i(x) x \tilde p_i(x) d\mu(x)}{\int p_i(x) \tilde p_i(x) d\mu(x)}, \quad
+                b_i = \frac{\tilde p_i(x) \tilde p_i(x) d\mu(x)}{\int \tilde p_{i-1}(x) \tilde p_{i-1}(x)  d\mu(x)}, \quad
+                n_i = \sqrt{\int\tilde p_i(x) \tilde p_i(x) d\mu(x)}.\]</div>
+<p>Implementing a new family of orthonormal polynomials in tensap is
+easy: one only needs to create a class with a method providing the
+recurrence coefficients <span class="math notranslate nohighlight">\(a_i\)</span>, <span class="math notranslate nohighlight">\(b_i\)</span> and the norms
+<span class="math notranslate nohighlight">\(n_i\)</span>, <span class="math notranslate nohighlight">\(\forall i \geq 0\)</span>.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Are currently implemented in tensap:</div>
+</div>
+<ul class="simple">
+<li><p><strong>DiscretePolynomials</strong>: discrete polynomials orthonormal with
+respect to the measure of a <strong>DiscreteRandomVariable</strong>;</p></li>
+<li><p><strong>LegendrePolynomials</strong>: polynomials defined on <span class="math notranslate nohighlight">\([-1,1]\)</span> and
+orthonormal with respect to the uniform measure on <span class="math notranslate nohighlight">\([-1,1]\)</span>
+with density <span class="math notranslate nohighlight">\(\frac{1}{2}\mathbf{1}_{[-1,1]}(x)\)</span>;</p></li>
+<li><p><strong>HermitePolynomials</strong>: polynomials defined on <span class="math notranslate nohighlight">\({\mathbb{R}}\)</span>
+and orthonormal with respect to the standard gaussian measure with
+density <span class="math notranslate nohighlight">\(\exp(-x^2/2)/\sqrt{2\pi}\)</span>;</p></li>
+<li><p><strong>EmpiricalPolynomials</strong>: polynomials orthonormal with respect to the
+measure of an <strong>EmpiricalRandomVariable</strong>.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">If <strong>mu</strong> is a <strong>LebesgueMeasure</strong> on <span class="math notranslate nohighlight">\([-1,1]\)</span>,
+<strong>mu.orthonormal_polynomials()</strong> returns a <strong>LegendrePolynomials</strong>
+with suitably normalized coefficients. If <strong>mu</strong> is a
+<strong>LebesgueMeasure</strong> on <span class="math notranslate nohighlight">\([a,b]\)</span> different from <span class="math notranslate nohighlight">\([-1,1]\)</span>,
+<strong>mu.orthonormal_polynomials()</strong> returns a
+<strong>ShiftedOrthonormalPolynomials</strong>.</div>
+<div class="line">If <span class="math notranslate nohighlight">\({\texttt{\detokenize{X}}}\)</span> is a <strong>DiscreteRandomVariable</strong>,
+a <strong>UniformRandomVariable</strong>, a <strong>NormalRandomVariable</strong>, or a
+<strong>EmpiricalRandomVariable</strong>, the corresponding family of orthonormal
+polynomials can be created with the command
+<strong>X.orthonormal_polynomials()</strong>. If <span class="math notranslate nohighlight">\({\texttt{\detokenize{X}}}\)</span>
+does not correspond to a default measure but can be obtained as the
+push-forward measure of a default measure by an affine transformation
+(e.g. a uniform measure on <span class="math notranslate nohighlight">\([a,b] \neq [-1,1]\)</span>, or a gaussian
+measure with mean <span class="math notranslate nohighlight">\(a\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> with
+<span class="math notranslate nohighlight">\((a,\sigma)\neq (0,1)\)</span>.), the returned object is a
+<strong>ShiftedOrthonormalPolynomials</strong>.</div>
+</div>
+</div>
+</div>
+<div class="section" id="functionalbasis">
+<h3><strong>FunctionalBasis</strong><a class="headerlink" href="#functionalbasis" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Bases of functions can be implemented in tensap by inheriting from
+<strong>FunctionalBasis</strong>. The basis functions of a <strong>FunctionalBasis</strong>
+object <strong>H</strong> can be evaluated with <strong>H.eval(x)</strong>, as well as their
+<span class="math notranslate nohighlight">\(i\)</span>-th order derivative with <strong>H.eval_derivative(i, x)</strong>.</div>
+<div class="line">We present below some specific bases implemented in tensap. New bases
+can easily be implemented by making their class inherit from
+<strong>FunctionalBasis</strong>.</div>
+</div>
+<div class="section" id="polynomialfunctionalbasis">
+<h4><strong>PolynomialFunctionalBasis</strong>.<a class="headerlink" href="#polynomialfunctionalbasis" title="Permalink to this headline">¶</a></h4>
+<p>The command <strong>tensap.PolynomialFunctionalBasis</strong> <strong>(basis, indices)</strong>,
+with <strong>basis</strong> a <strong>UnivariatePolynomials</strong> and <strong>indices</strong> a list,
+returns the basis of polynomials <span class="math notranslate nohighlight">\((p_i)_{i \in I}\)</span> with <span class="math notranslate nohighlight">\(I\)</span>
+given by <strong>indices</strong>.</p>
+</div>
+<div class="section" id="userdefinedfunctionalbasis">
+<h4><strong>UserDefinedFunctionalBasis</strong>.<a class="headerlink" href="#userdefinedfunctionalbasis" title="Permalink to this headline">¶</a></h4>
+<p>Given a list of functions <strong>fun</strong>, taking each as inputs <span class="math notranslate nohighlight">\(d\)</span>
+variables, and a <strong>Measure mu</strong>, the command
+<strong>tensap.UserDefinedFunctionalBases(fun, mu, d)</strong> returns a basis whose
+functions are the ones given in <strong>fun</strong>, with a domain equipped with the
+measure <span class="math notranslate nohighlight">\(mu\)</span>.</p>
+</div>
+<div class="section" id="fulltensorproductfunctionalbasis">
+<h4><strong>FullTensorProductFunctionalBasis</strong>.<a class="headerlink" href="#fulltensorproductfunctionalbasis" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>FullTensorProductFunctionalBasis</strong> object represents a basis of
+multivariate functions
+<span class="math notranslate nohighlight">\(\{\phi^1_{i_1}(x_1) \cdots \phi^d_{i_d}(x_d)\}_{i_1 \in I^1, \ldots, i_d \in I^d}\)</span>.
+It is obtained with the command
+<strong>tensap.FullTensorProductFunctionalBasis(bases)</strong>, where <strong>bases</strong> is a
+list of <strong>FunctionalBasis</strong> or a <strong>FunctionalBases</strong>, containing the
+different bases <span class="math notranslate nohighlight">\(\{\phi^\nu_{i_\nu}\}_{i_\nu \in I^\nu}\)</span>,
+<span class="math notranslate nohighlight">\(\nu = 1, \ldots, d\)</span>.</p>
+</div>
+<div class="section" id="sparsetensorproductfunctionalbasis">
+<h4><strong>SparseTensorProductFunctionalBasis</strong>.<a class="headerlink" href="#sparsetensorproductfunctionalbasis" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>SparseTensorProductFunctionalBasis</strong> object represents a basis of
+multivariate functions
+<span class="math notranslate nohighlight">\(\{\phi^1_{i_1}(x_1) \cdots \phi^d_{i_d}(x_d)\}_{(i_1, \ldots, i_d) \in \Lambda}\)</span>,
+with <span class="math notranslate nohighlight">\(\Lambda \subset I^1 \times \cdots \times I^d\)</span> a set of
+multi-indices. It is obtained with the command
+<strong>tensap.SparseTensorProductFunctionalBasis(bases, indices)</strong>, where
+<strong>bases</strong> is a list of <strong>FunctionalBasis</strong> or a <strong>FunctionalBases</strong>,
+containing the different bases
+<span class="math notranslate nohighlight">\(\{\phi^\nu_{i_\nu}\}_{i_\nu \in I^\nu}\)</span>,
+<span class="math notranslate nohighlight">\(\nu = 1, \ldots, d\)</span>, and <strong>indices</strong> is a <strong>MultiIndices</strong>
+representing the set of multi-indices <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
+</div>
+</div>
+<div class="section" id="functionalbases">
+<h3><strong>FunctionalBases</strong><a class="headerlink" href="#functionalbases" title="Permalink to this headline">¶</a></h3>
+<p>The command <strong>tensap.FunctionalBases(bases)</strong>, with <strong>bases</strong> a list of
+<strong>FunctionalBasis</strong>, returns an object representing a collections of
+bases. To obtain a collection of <span class="math notranslate nohighlight">\(d\)</span> identical bases, one can use
+<strong>tensap.FunctionalBases.duplicate(basis, d)</strong>.</p>
+<p>Similarly to <strong>FunctionalBasis</strong>, the basis functions of a
+<strong>FunctionalBases</strong> object <strong>H</strong> can be evaluated with <strong>H.eval(x)</strong>, as
+well as their <span class="math notranslate nohighlight">\(i\)</span>-th order derivative with <strong>H.eval_derivative(i,
+x)</strong>.</p>
+</div>
+<div class="section" id="functionalbasisarray">
+<h3><strong>FunctionalBasisArray</strong><a class="headerlink" href="#functionalbasisarray" title="Permalink to this headline">¶</a></h3>
+<p>Given a basis of functions <span class="math notranslate nohighlight">\(\{\phi_{i}\}_{i \in I}\)</span>, a
+<strong>FunctionalBasisArray</strong> object represents a function <span class="math notranslate nohighlight">\(f\)</span> that
+writes</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \sum_{i \in I} a_i \phi_i(x),\]</div>
+<p>with some coefficients <span class="math notranslate nohighlight">\(a_i\)</span>, <span class="math notranslate nohighlight">\(i \in I\)</span>, and can be created
+with the command <strong>f = tensap.FunctionalBasisArray(a, basis, shape)</strong>,
+with <strong>shape</strong> the output shape of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>A <strong>FunctionalBasisArray</strong> is a <strong>Function</strong>. It can be evaluated with
+the command <strong>f.eval(x)</strong>, and one can obtain its derivatives with
+<strong>f.eval_derivative(n, x)</strong>.</p>
+</div>
+<div class="section" id="functionaltensor">
+<h3><strong>FunctionalTensor</strong><a class="headerlink" href="#functionaltensor" title="Permalink to this headline">¶</a></h3>
+<p>Given <span class="math notranslate nohighlight">\(d\)</span> bases of functions
+<span class="math notranslate nohighlight">\(\{\phi^\nu_{i_\nu}\}_{i_\nu \in I^\nu}\)</span>,
+<span class="math notranslate nohighlight">\(\nu = 1, \ldots, d\)</span>, and a tensor
+<span class="math notranslate nohighlight">\(a \in {\mathbb{R}}^{I^1 \times \cdots \times I^d}\)</span>, a
+<strong>FunctionalTensor</strong> object represents a function <span class="math notranslate nohighlight">\(f\)</span> that writes</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \sum_{i_1 \in I^1} \cdots \sum_{i_d \in I^d} a_{i_1, \ldots, i_d} \phi^1_{i_1}(x_1) \cdots \phi^d_{i_d}(x_d).\]</div>
+<p>The tensor <span class="math notranslate nohighlight">\(a\)</span> can be in different tensor formats
+(<strong>FullTensor</strong>, <strong>TreeBasedTensor</strong>, …).</p>
+<p>A <strong>FunctionalTensor</strong> is a <strong>Function</strong>. It can be evaluated with the
+command <strong>f.eval(x)</strong>, and one can obtain its derivatives with
+<strong>f.eval_derivative(n, x)</strong>.</p>
+</div>
+<div class="section" id="tensorizer-and-tensorizedfunction">
+<h3><strong>Tensorizer</strong> and <strong>TensorizedFunction</strong><a class="headerlink" href="#tensorizer-and-tensorizedfunction" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">For an introduction to tensorization of functions, see
+<a class="reference internal" href="bibliography.html#ali2020approximationwtparti" id="id8"><span>[Ali2020ApproximationWTpartI]</span></a>, <a class="reference internal" href="bibliography.html#ali2020approximationwtpartii" id="id9"><span>[Ali2020ApproximationWTpartII]</span></a>.</div>
+<div class="line">We consider functions defined on the interval <span class="math notranslate nohighlight">\(I = [0,1)\)</span>. For a
+given <span class="math notranslate nohighlight">\(b \in \{2,3,\ldots, \}\)</span> and <span class="math notranslate nohighlight">\(d\in {\mathbb{N}}\)</span>, an
+element <span class="math notranslate nohighlight">\(x \in I\)</span> can be identified with the tuple
+<span class="math notranslate nohighlight">\((i_1,\ldots,i_d,y)\)</span>, such that</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\label{eq:tensorization}
+            x = t_{b,d}(i_1,\ldots,i_d,y) = \sum_{k=1}^d i_kb^{-k} + b^{-d}y\]</div>
+<p>with <span class="math notranslate nohighlight">\(i_k \in I_b = \{0,\ldots,b-1\}\)</span>, <span class="math notranslate nohighlight">\(k = 1,\ldots,d\)</span>,
+and <span class="math notranslate nohighlight">\(y = b^d x - \lfloor b^d x \rfloor \in [0,1)\)</span>. The tuple
+<span class="math notranslate nohighlight">\((i_1,\ldots,i_d)\)</span> is the representation in base <span class="math notranslate nohighlight">\(b\)</span> of
+<span class="math notranslate nohighlight">\(\lfloor b^d x \rfloor\)</span>. This defines a bijective map
+<span class="math notranslate nohighlight">\(t_{b,d}\)</span> from <span class="math notranslate nohighlight">\(\{0,\ldots,b-1\}^{d} \times [0,1)\)</span> to
+<span class="math notranslate nohighlight">\([0,1)\)</span>.</p>
+</div></blockquote>
+<p>Such a mapping is represented in tensap by the object <strong>Tensorizer</strong>:
+<strong>t = tensap.Tensorizer(b, d)</strong>. For a given <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\([0,1)\)</span>,
+on obtains the corresponding tuple <span class="math notranslate nohighlight">\((i_1, ..., i_d,y)\)</span> with the
+command <strong>= t.map(x)</strong>. For a given tuple <span class="math notranslate nohighlight">\((i_1, ..., i_d,y)\)</span>, on
+obtains the corresponding <span class="math notranslate nohighlight">\(x\)</span> with <strong>t.inverse_map([i_1, …,
+i_d,y])</strong>.</p>
+<p>This identification is generalized to functions of <span class="math notranslate nohighlight">\(D\)</span> variables
+with <strong>t = tensap.Tensorizer(b, d, D)</strong>.</p>
+<div class="line-block">
+<div class="line">The map <span class="math notranslate nohighlight">\(t_{b,d}\)</span> allows to define a tensorization map
+<span class="math notranslate nohighlight">\(T_{b,d}\)</span>, which associates to a univariate function <span class="math notranslate nohighlight">\(F\)</span>
+defined on <span class="math notranslate nohighlight">\([0,1)\)</span> the multivariate function
+<span class="math notranslate nohighlight">\(f = F \circ t_{b,d}\)</span> defined on <span class="math notranslate nohighlight">\(I_b^d \times I\)</span>, such
+that</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[f(i_1,\ldots,i_d,y) = F(t_{b,d}(i_1,\ldots,i_d,y)).\]</div>
+<p>Such a function is represented in tensap by a <strong>TensorizedFunction</strong>,
+and can be created with <strong>f = tensap.TensorizedFunction(fun, t)</strong>,
+with <strong>fun</strong> a <strong>function</strong> or <strong>Function</strong> and <strong>t</strong> a
+<strong>Tensorizer</strong>. The <strong>TensorizedFunction</strong> <strong>f</strong> is a function of
+<span class="math notranslate nohighlight">\(d+1\)</span> variables that can be evaluated with <strong>f.eval(x)</strong>, with
+<strong>x</strong> a list or <strong>numpy.ndarray</strong> with <span class="math notranslate nohighlight">\(d+1\)</span> columns.</p>
+</div></blockquote>
+<p>See the tutorial file <code class="docutils literal notranslate"><span class="pre">tutorials\functions\tutorial_TensorizedFunction.py</span></code>.</p>
+</div>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="multiindices">
+<h3><strong>MultiIndices</strong><a class="headerlink" href="#multiindices" title="Permalink to this headline">¶</a></h3>
+<p>A multi-index is a tuple <span class="math notranslate nohighlight">\((i_1,\ldots,i_d) \in {\mathbb{N}}_0^d\)</span>.
+A set <span class="math notranslate nohighlight">\(I \subset {\mathbb{N}}_0^d\)</span> of multi-indices is represented
+with an object <strong>MultiIndices</strong>.</p>
+<p>To create a multi-index set <span class="math notranslate nohighlight">\(I\)</span>, we use the command
+<strong>tensap.MultiIndices(I)</strong> with <strong>I</strong> a numpy array of size
+<span class="math notranslate nohighlight">\(\#I \times d\)</span>.</p>
+<p>A product set <span class="math notranslate nohighlight">\(I = I_1 \times \ldots \times I_d\)</span> can be obtained
+with <strong>tensap.MultiIndices.product_set([I1,…,Id])</strong>.</p>
+<p>The set of multi-indices</p>
+<div class="math notranslate nohighlight">
+\[I = \{i  \in {\mathbb{N}}_0^d : \Vert i \Vert_{\ell^p} \le m\}\]</div>
+<p>can be obtained with <strong>tensap.MultiIndices.with_bounded_norm(d, p,
+m)</strong></p>
+<p>The set of multi-indices</p>
+<div class="math notranslate nohighlight">
+\[I = \{i  \in {\mathbb{N}}_0^d : i_\nu \le m_\nu , 1\le \nu \le d\}\]</div>
+<p>can be obtained with <strong>tensap.MultiIndices.bounded_by(d, p, m)</strong>. If
+<span class="math notranslate nohighlight">\(m\)</span> is of length <span class="math notranslate nohighlight">\(1\)</span>, it uses <span class="math notranslate nohighlight">\(m_\nu = m\)</span> for all
+<span class="math notranslate nohighlight">\(\nu\)</span>.</p>
+<p>For obtaining the margin or reduced margin of an multi-index set
+<span class="math notranslate nohighlight">\(I\)</span>, we can use For other operations of <strong>MultiIndices</strong>, see the
+tutorial file <code class="docutils literal notranslate"><span class="pre">tutorials\tools\tutorial_MultiIndices.py</span></code>.</p>
+</div>
+<div class="section" id="tensorgrid-fulltensorgrid-and-sparsetensorgrid">
+<h3><strong>TensorGrid</strong>, <strong>FullTensorGrid</strong> and <strong>SparseTensorGrid</strong><a class="headerlink" href="#tensorgrid-fulltensorgrid-and-sparsetensorgrid" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Tensor product grids or sparse grids are represented with classes
+<strong>FullTensorGrid</strong> and <strong>SparseTensorGrid</strong>, that inherit from
+<strong>TensorGrid</strong>.</div>
+<div class="line">See the tutorial file
+<code class="docutils literal notranslate"><span class="pre">tutorials\functions\tutorial_functions_bases_grids.py</span></code>.</div>
+</div>
+</div>
+</div>
+<div class="section" id="learning">
+<h2>Learning<a class="headerlink" href="#learning" title="Permalink to this headline">¶</a></h2>
+<p>We present in this section some objects implemented in tensap for
+learning functions or tensors.</p>
+<div class="section" id="functional-tensorprincipalcomponentanalysis">
+<h3><strong>(Functional)TensorPrincipalComponentAnalysis</strong><a class="headerlink" href="#functional-tensorprincipalcomponentanalysis" title="Permalink to this headline">¶</a></h3>
+<p>The objects <strong>TensorPrincipalComponentAnalysis</strong> (resp.
+<strong>FunctionalTensorPrincipalComponentAnalysis</strong>) implements approximation
+methods for algebraic (resp. functional) tensors based on principal
+component analysis, using an adaptive sampling of the entries of the
+tensor (or the function). See <a class="reference internal" href="bibliography.html#nouy-2017hopca" id="id10"><span>[nouy:2017hopca]</span></a> for a
+description of the algorithms, and for examples of use, see the tutorial
+files <code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_TensorPrincipalComponentAnalysis.py</span></code>
+and <code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_FunctionalTensorPrincipalComponentAnalysis.py</span></code>.</p>
+<div class="line-block">
+<div class="line">The difference between the two objects if that
+<strong>TensorPrincipalComponentAnalysis</strong>’ methods take as first input a
+function returning components of the algebraic tensor to learn,
+whereas the methods of <strong>FunctionalTensorPrincipalComponentAnalysis</strong>
+take as first input the functional tensor to learn.</div>
+</div>
+<p>Both objects are parameterized by the attributes:</p>
+<ul class="simple">
+<li><p><strong>pca_sampling_factor</strong>: a factor to determine the number of
+samples <span class="math notranslate nohighlight">\(N\)</span> for the estimation of the principal components (1
+by default): if the precision is prescribed,
+<span class="math notranslate nohighlight">\(N = {\texttt{\detokenize{pca_sampling_factor}}} \times N_\alpha\)</span>,
+if the rank is prescribed,
+<span class="math notranslate nohighlight">\(N = {\texttt{\detokenize{pca_sampling_factor}}} \times t\)</span>;</p></li>
+<li><p><strong>pca_adaptive_sampling</strong>: a boolean indicating if adaptive
+sampling is used to determine the principal components with
+prescribed precision;</p></li>
+<li><p><strong>tol</strong>: an array containing the prescribed relative precision; set
+<strong>tol = inf</strong> for prescribing the rank;</p></li>
+<li><p><strong>max_rank</strong>: an array containing the maximum alpha-ranks (the
+length depends on the format). If <strong>len(max_rank) == 1</strong>, uses the
+same value for all alpha; setting <strong>max_rank = inf</strong> prescribes the
+precision.</p></li>
+</ul>
+<p>Furthermore, a <strong>FunctionalTensorPrincipalComponentAnalysis</strong> is
+parameterized by the attributes:</p>
+<ul class="simple">
+<li><p><strong>bases</strong>: the functional bases used for the projection of the
+function;</p></li>
+<li><p><strong>grid</strong>: the <strong>FullTensorGrid</strong> used for the projection of the
+function on the functional bases;</p></li>
+<li><p><strong>projection_type</strong>: the type of projection, the default being
+’interpolation’.</p></li>
+</ul>
+<p>Both objects implement four main methods:</p>
+<ul class="simple">
+<li><p><strong>hopca</strong>: returns the set of <span class="math notranslate nohighlight">\(\{\nu\}\)</span>-principal components of
+an order <span class="math notranslate nohighlight">\(d\)</span> tensor, for all <span class="math notranslate nohighlight">\(\nu \in \{1,\ldots,d\}\)</span>;</p></li>
+<li><p><strong>tucker_approximation</strong>: returns an approximation of a tensor of
+order <span class="math notranslate nohighlight">\(d\)</span> or a function of <span class="math notranslate nohighlight">\(d\)</span> variables in Tucker
+format;</p></li>
+<li><p><strong>tree_based_approximation</strong>: provided with a tree and a list of
+active nodes, returns an approximation of a tensor of order <span class="math notranslate nohighlight">\(d\)</span>
+or a function of <span class="math notranslate nohighlight">\(d\)</span> variables in tree-based tensor format;</p></li>
+<li><p><strong>tt_approximation</strong>: returns an approximation of a tensor of order
+<span class="math notranslate nohighlight">\(d\)</span> or a function of <span class="math notranslate nohighlight">\(d\)</span> variables in tensor-train
+format.</p></li>
+</ul>
+</div>
+<div class="section" id="lossfunction">
+<h3><strong>LossFunction</strong><a class="headerlink" href="#lossfunction" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">In tensap, a loss function is an object inheriting from
+<strong>LossFunction</strong>. Given a function <strong>fun</strong> and a sample as a list used
+to evaluate the loss function, a <strong>LossFunction</strong> object <span class="math notranslate nohighlight">\(\ell\)</span>
+can be evaluated with <strong>l.eval(fun, sample)</strong>. The risk associated
+with <strong>fun</strong> can be evaluated using the sample with
+<strong>l.risk_estimation(fun, sample)</strong>. Finally, the test error and
+relative test error (if defined) can be evaluated with
+<strong>l.test_error(fun, sample)</strong> and <strong>l.relative_test_error(fun,
+sample)</strong>, respectively.</div>
+<div class="line">Currently, three loss functions are implemented in tensap:</div>
+</div>
+<ul class="simple">
+<li><p><strong>SquareLossFunction</strong>: <span class="math notranslate nohighlight">\(\ell(g, (x, y)) = (y - g(x))^2\)</span>, used
+for least-squares regression in supervised learning, to construct an
+approximation of a random variable <span class="math notranslate nohighlight">\(Y\)</span> as a function of a
+random vector <span class="math notranslate nohighlight">\(X\)</span> (a predictive model);</p></li>
+<li><p><strong>DensityL2LossFunction</strong>: <span class="math notranslate nohighlight">\(\ell(g, x) = \|g\|^2 - 2g(x)\)</span>, used
+for least-squares density estimation, to approximate the distribution
+of a random variable <span class="math notranslate nohighlight">\(X\)</span> from samples of <span class="math notranslate nohighlight">\(X\)</span>;</p></li>
+<li><p><strong>CustomLossFunction</strong>: defined by the user as any function defining
+a loss. If the loss is defined using tensorflow operations, then the
+empirical risk can be minimized using tensorflow’s automatic
+differentiation capability with a <strong>LinearModelLearningCustomLoss</strong>
+object, presented in the next section.</p></li>
+</ul>
+</div>
+<div class="section" id="linearmodellearning">
+<h3><strong>LinearModelLearning</strong><a class="headerlink" href="#linearmodellearning" title="Permalink to this headline">¶</a></h3>
+<p>Objects inheriting from <strong>LinearModelLearning</strong> implement the empirical
+risk minimization associated with a linear model that writes</p>
+<div class="math notranslate nohighlight">
+\[g(x) = \sum_{i \in I} a_i \phi_i(x),\]</div>
+<p>with <span class="math notranslate nohighlight">\(\{\phi_i\}_{i \in I}\)</span> a given basis (or a set of features)
+and <span class="math notranslate nohighlight">\((a_i)_{i \in I}\)</span> some coefficients, and a loss function,
+introduced in the previous section.</p>
+<p>In order to perform empirical risk minimization, a
+<strong>LinearModelLearning</strong> object <strong>s</strong> must be provided with a training
+sample in <strong>s.training_sample</strong>. In supervised learning, for the
+approximation of a random variable <span class="math notranslate nohighlight">\(Y\)</span> as a function of <span class="math notranslate nohighlight">\(X\)</span>,
+the training sample is a list <strong>[x, y]</strong>, with
+<span class="math notranslate nohighlight">\({\texttt{\detokenize{y}}}\)</span> represents <span class="math notranslate nohighlight">\(n\)</span> samples
+<span class="math notranslate nohighlight">\(\{y_k\}_{k=1}^n\)</span> of <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(x\)</span> the <span class="math notranslate nohighlight">\(n\)</span>
+corresponding samples <span class="math notranslate nohighlight">\(\{x_k\}_{k=1}^n\)</span> of <span class="math notranslate nohighlight">\(X\)</span>. In density
+estimation, the training sample is an array <strong>x</strong> containing samples
+<span class="math notranslate nohighlight">\(\{x_k\}_{k=1}^n\)</span> from the distribution to estimate.</p>
+<p>One must also provide a basis (in <strong>s.basis</strong>) or evaluations of the
+basis on the training set (in <strong>s.basis_eval</strong>, in which case the
+<span class="math notranslate nohighlight">\(x\)</span> are not mandatory in <strong>s.training_sample</strong>). The latter
+option allows for providing features <span class="math notranslate nohighlight">\(\phi_i(x_k)\)</span> associated with
+samples <span class="math notranslate nohighlight">\(x^k\)</span>, without providing the feature maps <span class="math notranslate nohighlight">\(\phi_i\)</span>.</p>
+<div class="line-block">
+<div class="line">One can also provide the <strong>LinearModelLearning</strong> <strong>s</strong> with a test
+sample in <strong>s.test_data</strong> to compute a test error.</div>
+<div class="line">Currently in tensap, three different <strong>LinearModelLearning</strong> objects
+are implemented:</div>
+</div>
+<ul class="simple">
+<li><p><strong>LinearModelLearningSquareLoss</strong>, to minimize the risk associated
+with a <strong>SquareLossFunction</strong>;</p></li>
+<li><p><strong>LinearModelLearningDensityL2</strong>, to minimize the risk associated
+with a <strong>DensityL2LossFunction</strong>;</p></li>
+<li><p><strong>LinearModelLearningCustomLoss</strong>, to minimize the risk associated
+with a <strong>CustomLossFunction</strong>.</p></li>
+</ul>
+<div class="section" id="linearmodellearningsquareloss">
+<h4><strong>LinearModelLearningSquareLoss</strong>.<a class="headerlink" href="#linearmodellearningsquareloss" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>LinearModelLearningSquareLoss</strong> object <strong>s</strong> implements three ways
+of solving the empirical risk minimization associated with a
+<strong>SquareLossFunction</strong>:</p>
+<ul>
+<li><p>by default, <strong>s.solve()</strong> solves the ordinary least-squares problem</p>
+<div class="math notranslate nohighlight">
+\[\min_{(a_i)_{i \in I}} \frac 1 n \sum_{k=1}^n (y_k - \sum_{i \in I} a_i \phi_i(x_k))^2;\]</div>
+</li>
+<li><p>with the attribute <strong>s.regularization = True</strong>, <strong>s.solve()</strong> solves
+the regularized problem</p>
+<div class="math notranslate nohighlight">
+\[\min_{(a_i)_{i \in I}} \frac 1 n \sum_{k=1}^n (y_k - \sum_{i \in I} a_i \phi_i(x_k))^2 + \lambda \|a\|_p\]</div>
+<p>with <span class="math notranslate nohighlight">\(\lambda\)</span> a regularization hyper-parameter, selected with
+a cross-validation estimate of the error and <span class="math notranslate nohighlight">\(p\)</span> specified by
+<strong>s.regularization_type</strong> which can be <strong>’l0’</strong> (<span class="math notranslate nohighlight">\(p = 0\)</span>),
+<strong>’l1’</strong> (<span class="math notranslate nohighlight">\(p = 1\)</span>) or <strong>’l2’</strong> (<span class="math notranslate nohighlight">\(p = 2\)</span>);</p>
+</li>
+<li><p>let us suppose that we have a collection of candidate sparsity
+patterns <span class="math notranslate nohighlight">\(K_\lambda\)</span>, <span class="math notranslate nohighlight">\(\lambda \in \Lambda\)</span>, for the
+parameter <span class="math notranslate nohighlight">\(a\)</span>: with the attribute <strong>s.basis_adaptation =
+True</strong>, <strong>s.solve()</strong> solves, for all <span class="math notranslate nohighlight">\(\lambda\in \Lambda\)</span>, the
+problem</p>
+<div class="math notranslate nohighlight">
+\[\min_{(a_i)_{i \in I}} \frac 1 n \sum_{k=1}^n (y_k - \sum_{i \in I} a_i \phi_i(x_k))^2 \quad \text{subject to } \mathrm{support}(a) \subset K_\lambda,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathrm{support}(a) = \{ k \in K : a_k \neq 0 \}\)</span>, and
+selects the optimal sparsity pattern using a cross-validation
+estimate of the error.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="linearmodellearningdensityl2">
+<h4><strong>LinearModelLearningDensityL2</strong>.<a class="headerlink" href="#linearmodellearningdensityl2" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>LinearModelLearningDensityL2</strong> object <strong>s</strong> implements three ways of
+solving the empirical risk minimization associated with a
+<strong>DensityL2LossFunction</strong>:</p>
+<ul>
+<li><p>by default, <strong>s.solve()</strong> solves the minimization problem</p>
+<div class="math notranslate nohighlight">
+\[\min_{(a_i)_{i \in I}} \| \sum_{i \in I} a_i \phi_i \|_{L^2}^2 - \frac 2 n \sum_{k=1}^n \sum_{i \in I} a_i \phi_i(x_k);\]</div>
+</li>
+<li><p>with the attribute <strong>s.regularization = True</strong>, <strong>s.solve()</strong> solves
+the constrained problem</p>
+<div class="math notranslate nohighlight">
+\[\min_{(a_i)_{i \in I}} \|\sum_{i \in I} a_i \phi_i \|_{L^2}^2 - \frac 2 n \sum_{k=1}^n \sum_{i \in I} a_i \phi_i(x_k) \quad \text{subject to } \mathrm{support}(a) \subset K_\lambda,\]</div>
+<p>with <span class="math notranslate nohighlight">\(K_\lambda\)</span>, <span class="math notranslate nohighlight">\(\lambda \in \Lambda\)</span>, a sequence of
+sets of indices that introduce the coefficients solution of the
+minimization problem without regularization in decreasing order of
+magnitude. The optimal sparsity pattern is determined using a
+cross-validation estimate of the error;</p>
+</li>
+<li><p>let us suppose that we have a collection of candidate patterns
+<span class="math notranslate nohighlight">\(K_\lambda\)</span>, <span class="math notranslate nohighlight">\(\lambda \in \Lambda\)</span>, for the parameter
+<span class="math notranslate nohighlight">\(a\)</span>: with the attribute <strong>s.basis_adaptation = True</strong>,
+<strong>s.solve()</strong> solves, for all <span class="math notranslate nohighlight">\(\lambda\in \Lambda\)</span>, the problem</p>
+<div class="math notranslate nohighlight">
+\[\min_{(a_i)_{i \in I}} \|\sum_{i \in I} a_i \phi_i \|^2 - \frac 2 n \sum_{k=1}^n \sum_{i \in I} a_i \phi_i(x_k) \quad \text{subject to } \mathrm{support}(a) \subset K_\lambda,\]</div>
+<p>and selects the optimal sparsity pattern using a cross-validation
+estimate of the error.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="linearmodellearningcustomloss">
+<h4><strong>LinearModelLearningCustomLoss</strong>.<a class="headerlink" href="#linearmodellearningcustomloss" title="Permalink to this headline">¶</a></h4>
+<p>A <strong>LinearModelLearningCustomLoss</strong> object <strong>s</strong> implements a way of
+solving the empirical risk minimization associated with a
+<strong>CustomLossFunction</strong> using tensorflow’s automatic differentiation
+capabilities.</p>
+<p>By default, the optimizer used is keras’ Adam algorithm, which is a
+“stochastic gradient descent method that is based on adaptive estimation
+of first-order and second-order moments” (per tensorflow’s
+documentation).</p>
+<p>The algorithm requires a starting point, provided in
+<strong>s.initial_guess</strong>, and several options can be set:</p>
+<ul class="simple">
+<li><p><strong>s.options[’max_iter’]</strong> sets the maximum number of iterations used
+in the optimization algorithm,</p></li>
+<li><p><strong>s.options[’stagnation’]</strong> sets the stopping tolerance on the
+stagnation between two iterates,</p></li>
+<li><p>for the Adam algorithm (and other minimization algorithms provided by
+tensorflow/keras), the learning rate can be provided in
+<strong>s.optimizer.learning_rate</strong>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tensorlearning">
+<h3><strong>TensorLearning</strong><a class="headerlink" href="#tensorlearning" title="Permalink to this headline">¶</a></h3>
+<p>The package tensap implements algorithms to perform statistical learning
+with canonical and tree-based tensor formats. See <a class="reference internal" href="bibliography.html#grelier-2018" id="id11"><span>[grelier:2018]</span></a>,
+<a class="reference internal" href="bibliography.html#grelier2019learning" id="id12"><span>[grelier2019learning]</span></a>, <a class="reference internal" href="bibliography.html#arxiv200701165m" id="id13"><span>[2020arXiv200701165M]</span></a> for a detailed presentation
+of algorithms and related theory.</p>
+<p>For examples, see the tutorial files
+<code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_tensor_learning_CanonicalTensorLearning.py</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_tensor_learning_TreeBasedTensorLearning.py</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_tensor_learning_TreeBasedTensorDensityLearning.py</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_tensor_learning_tensorized_function_learning.py</span></code>.</p>
+<p>These algorithms are implemented in the core object <strong>TensorLearning</strong>,
+common to all the tensor formats, so that implementing such a learning
+algorithm for a new tensor format is simple. In tensap are currently
+implemented <strong>CanonicalTensorLearning</strong> for the learning in canonical
+tensor format and <strong>TreeBasedTensorLearning</strong> for the learning in
+tree-based tensor format.</p>
+<p>Two algorithms are proposed: the standard one, which minimizes an
+empirical risk over the set of tensors in a given format thanks to an
+alternating minimization over the parameters of the tensors, and the
+adaptive one, which returns a sequence of empirical risk minimizers with
+adapted rank (for the canonical and tree-based tensor formats) and
+adapted tree (for the tree-based tensor format).</p>
+<p>In order to perform empirical risk minimization, a <strong>TensorLearning</strong>
+object <strong>s</strong> must be provided with a training sample in
+<strong>s.training_sample</strong>. In supervised learning, for the approximation of
+a random variable <span class="math notranslate nohighlight">\(Y\)</span> as a function of <span class="math notranslate nohighlight">\(X\)</span>, the training
+sample is a list <strong>[x, y]</strong>, with <span class="math notranslate nohighlight">\({\texttt{\detokenize{y}}}\)</span>
+represents <span class="math notranslate nohighlight">\(n\)</span> samples <span class="math notranslate nohighlight">\(\{y_k\}_{k=1}^n\)</span> of <span class="math notranslate nohighlight">\(Y\)</span> and
+<span class="math notranslate nohighlight">\(x\)</span> the <span class="math notranslate nohighlight">\(n\)</span> corresponding samples
+<span class="math notranslate nohighlight">\(\{x_k = (x_{k,1},\ldots,x_{k,d})\}_{k=1}^n\)</span> of <span class="math notranslate nohighlight">\(X\)</span>. In
+density estimation, the training sample is an array <strong>x</strong> containing
+samples <span class="math notranslate nohighlight">\(\{x_k= (x_{k,1},\ldots,x_{k,d})\}_{k=1}^n\)</span> from the
+distribution to estimate.</p>
+<p>One must also provide bases (in <strong>s.bases</strong>) or evaluations of the bases
+on the training set (in <strong>s.bases_eval</strong>, in which case the <span class="math notranslate nohighlight">\(x\)</span>
+are not mandatory in <strong>s.training_sample</strong>). The latter option allows
+for providing features <span class="math notranslate nohighlight">\(\phi^\nu_i(x_{\nu,k})\)</span>,
+<span class="math notranslate nohighlight">\(1\le \nu\le d\)</span>, associated with samples
+<span class="math notranslate nohighlight">\(x_k = (x_{k,1},\ldots,x_{k,d})\)</span>, without providing the feature
+maps <span class="math notranslate nohighlight">\(\phi^\nu_i\)</span>.</p>
+<p>One can also provide the <strong>TensorLearning</strong> <strong>s</strong> with a test sample in
+<strong>s.test_data</strong> to compute a test error.</p>
+<div class="section" id="rank-adaptation">
+<h4>Rank adaptation.<a class="headerlink" href="#rank-adaptation" title="Permalink to this headline">¶</a></h4>
+<p>(See <a class="reference internal" href="bibliography.html#grelier-2018" id="id14"><span>[grelier:2018]</span></a>) The rank adaptation
+is enabled by setting <strong>s.rank_adaptation</strong> to <strong>True</strong>.</p>
+<p>For tensors in canonical format, the algorithm returns a sequence of
+rank-<span class="math notranslate nohighlight">\(r\)</span> approximations, with
+<span class="math notranslate nohighlight">\(r = 1, \ldots, r_{\text{max}}\)</span>, <span class="math notranslate nohighlight">\(r_{\text{max}}\)</span> being
+given by <strong>s.rank_adaptation_options</strong> <strong>[’max_iterations’]</strong>.</p>
+<p>For tensors in tree-based format, the algorithm returns a sequence of
+tensors with non-decreasing tree-based rank, obtained by increasing, at
+each iterations, the ranks associated with a subset of nodes of the tree
+<span class="math notranslate nohighlight">\(T\)</span>. The number of nodes in this subset is influenced by a
+parameter <strong>s.rank_adaptation_options[’theta’]</strong> in <span class="math notranslate nohighlight">\([0, 1]\)</span>,
+which is such that the larger it is, the more ranks are increased at
+each iteration. The default value of <span class="math notranslate nohighlight">\(0.8\)</span>.</p>
+</div>
+<div class="section" id="tree-adaptation">
+<h4>Tree adaptation.<a class="headerlink" href="#tree-adaptation" title="Permalink to this headline">¶</a></h4>
+<p>(See <a class="reference internal" href="bibliography.html#grelier-2018" id="id15"><span>[grelier:2018]</span></a>) For tree-based
+tensor formats, the tree can be adapted at each iteration using the
+algorithm mentioned in Section [sec:TreeBasedTensor], by setting
+<strong>s.tree_adaptation</strong> to <strong>True</strong>. The tolerance for the tree
+adaptation is provided by <strong>s.tree_adaptation_options[’tolerance’]</strong>
+and the maximal number of tried trees by
+<strong>s.tree_adaptation_options[’max_iterations’]</strong>.</p>
+</div>
+<div class="section" id="model-selection">
+<h4>Model selection.<a class="headerlink" href="#model-selection" title="Permalink to this headline">¶</a></h4>
+<p>(See <a class="reference internal" href="bibliography.html#arxiv200701165m" id="id16"><span>[2020arXiv200701165M]</span></a>) At the end of the adaptive
+procedure, a model can be selected by setting <strong>s.model_selection</strong> to
+<strong>True</strong>, using either a test error (specified by
+<strong>s.model_selection_options[’type’] = ’test_error’</strong>) or a
+cross-validation estimate of the error (specified by
+<strong>s.model_selection_options[’type’] = ’cv_error’</strong>).</p>
+</div>
+</div>
+<div class="section" id="example-character-classification-in-tree-based-tensor-format">
+<h3>Example: character classification in tree-based tensor format.<a class="headerlink" href="#example-character-classification-in-tree-based-tensor-format" title="Permalink to this headline">¶</a></h3>
+<p>We present below a part of the tutorial file
+<code class="docutils literal notranslate"><span class="pre">tutorial\tensor\learning\digits\recognition.py</span></code> shipped with the
+package tensap. Its aim is to create a classifier in tree-based tensor
+format, able to recognize hand written digits from <span class="math notranslate nohighlight">\(0\)</span> to
+<span class="math notranslate nohighlight">\(9\)</span>.</p>
+<p>The output of the algorithm is displayed below the Python script, as
+well as in Figure [fig:classification_results], which shows the
+confusion matrix on the test sample as well as a visual comparison on
+some test samples. We see that, using a training sample of size
+<span class="math notranslate nohighlight">\(1617\)</span>, it returns a classifier that obtains a score of
+<span class="math notranslate nohighlight">\(98.89\%\)</span> of correct classification on a test sample of size
+<span class="math notranslate nohighlight">\(180\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">metrics</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">tensap</span>
+
+<span class="c1"># %% Data import and preparation</span>
+<span class="n">DIGITS</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
+<span class="n">DATA</span> <span class="o">=</span> <span class="n">DIGITS</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">DIGITS</span><span class="o">.</span><span class="n">images</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">DATA</span> <span class="o">=</span> <span class="n">DATA</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">DATA</span><span class="p">)</span>  <span class="c1"># Scaling of the data</span>
+
+<span class="c1"># %% Patch reshape of the data: the patches are consecutive entries of the data</span>
+<span class="n">PS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>  <span class="c1"># Patch size</span>
+<span class="n">DATA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">DATA</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="p">:],</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)[</span><span class="n">PS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="n">PS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">PS</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                            <span class="n">PS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">j</span><span class="p">:</span><span class="n">PS</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">j</span><span class="o">+</span><span class="n">PS</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span> <span class="k">for</span>
+     <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="n">PS</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="n">PS</span><span class="p">[</span><span class="mi">1</span><span class="p">]))])</span> <span class="k">for</span>
+    <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DATA</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
+<span class="n">DIM</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">DATA</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">PS</span><span class="p">)))</span>
+
+<span class="c1"># %% Probability measure</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dimension </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">DIM</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">tensap</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">tensap</span><span class="o">.</span><span class="n">DiscreteRandomVariable</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">DATA</span><span class="p">)),</span> <span class="n">DIM</span><span class="p">)</span>
+
+<span class="c1"># %% Training and test samples</span>
+<span class="n">P_TRAIN</span> <span class="o">=</span> <span class="mf">0.9</span>  <span class="c1"># Proportion of the sample used for the training</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="n">DATA</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">TRAIN</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">P_TRAIN</span><span class="o">*</span><span class="n">N</span><span class="p">)))</span>
+<span class="n">TEST</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">setdiff1d</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">TRAIN</span><span class="p">)</span>
+<span class="n">X_TRAIN</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">[</span><span class="n">TRAIN</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">X_TEST</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">[</span><span class="n">TEST</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">Y_TRAIN</span> <span class="o">=</span> <span class="n">DIGITS</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="n">TRAIN</span><span class="p">]</span>
+<span class="n">Y_TEST</span> <span class="o">=</span> <span class="n">DIGITS</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="n">TEST</span><span class="p">]</span>
+
+<span class="c1"># One hot encoding (vector-valued function)</span>
+<span class="n">Y_TRAIN</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">Y_TRAIN</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">Y_TEST</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">Y_TEST</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+<span class="c1"># %% Approximation bases: 1, cos and sin for each pixel of the patch</span>
+<span class="n">FUN</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">))]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">PS</span><span class="p">)):</span>
+    <span class="n">FUN</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]))</span>
+    <span class="n">FUN</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]))</span>
+
+<span class="n">BASES</span> <span class="o">=</span> <span class="p">[</span><span class="n">tensap</span><span class="o">.</span><span class="n">UserDefinedFunctionalBasis</span><span class="p">(</span><span class="n">FUN</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">random_variables</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                           <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">PS</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">DIM</span><span class="p">)]</span>
+<span class="n">BASES</span> <span class="o">=</span> <span class="n">tensap</span><span class="o">.</span><span class="n">FunctionalBases</span><span class="p">(</span><span class="n">BASES</span><span class="p">)</span>
+
+<span class="c1"># %% Loss function: cross-entropy custom loss function</span>
+<span class="n">LOSS</span> <span class="o">=</span> <span class="n">tensap</span><span class="o">.</span><span class="n">CustomLossFunction</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">sigmoid_cross_entropy_with_logits</span><span class="p">(</span>
+            <span class="n">logits</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">y_true</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">error_function</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Return the error associated with a set of predictions using a sample, equal</span>
+<span class="sd">    to the number of misclassifications divided by the number of samples.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    y_pred : numpy.ndarray</span>
+<span class="sd">    The predictions.</span>
+<span class="sd">    sample : list</span>
+<span class="sd">    The sample used to compute the error. sample[0] contains the inputs,</span>
+<span class="sd">    and sample[1] the corresponding outputs.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">    The error.</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">y_pred</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> \
+        <span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="n">LOSS</span><span class="o">.</span><span class="n">error_function</span> <span class="o">=</span> <span class="n">error_function</span>
+
+<span class="c1"># %% Learning in tree-based tensor format</span>
+<span class="n">TREE</span> <span class="o">=</span> <span class="n">tensap</span><span class="o">.</span><span class="n">DimensionTree</span><span class="o">.</span><span class="n">balanced</span><span class="p">(</span><span class="n">DIM</span><span class="p">)</span>
+<span class="n">IS_ACTIVE_NODE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">TREE</span><span class="o">.</span><span class="n">nb_nodes</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">SOLVER</span> <span class="o">=</span> <span class="n">tensap</span><span class="o">.</span><span class="n">TreeBasedTensorLearning</span><span class="p">(</span><span class="n">TREE</span><span class="p">,</span> <span class="n">IS_ACTIVE_NODE</span><span class="p">,</span> <span class="n">LOSS</span><span class="p">)</span>
+
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">tolerance</span><span class="p">[</span><span class="s1">&#39;on_stagnation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-10</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">initialization_type</span> <span class="o">=</span> <span class="s1">&#39;random&#39;</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">bases</span> <span class="o">=</span> <span class="n">BASES</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">training_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">X_TRAIN</span><span class="p">,</span> <span class="n">Y_TRAIN</span><span class="p">]</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">test_error</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">test_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">X_TEST</span><span class="p">,</span> <span class="n">Y_TEST</span><span class="p">]</span>
+
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">rank_adaptation</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">rank_adaptation_options</span><span class="p">[</span><span class="s1">&#39;max_iterations&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">model_selection</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">alternating_minimization_parameters</span><span class="p">[</span><span class="s1">&#39;display&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">alternating_minimization_parameters</span><span class="p">[</span><span class="s1">&#39;max_iterations&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">alternating_minimization_parameters</span><span class="p">[</span><span class="s1">&#39;stagnation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-10</span>
+
+<span class="c1"># Options dedicated to the LinearModelCustomLoss object</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">linear_model_learning</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;max_iterations&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">linear_model_learning</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;stagnation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-10</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">linear_model_learning</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e3</span>
+
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">rank_adaptation_options</span><span class="p">[</span><span class="s1">&#39;early_stopping&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">SOLVER</span><span class="o">.</span><span class="n">rank_adaptation_options</span><span class="p">[</span><span class="s1">&#39;early_stopping_factor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">T0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">F</span><span class="p">,</span> <span class="n">OUTPUT</span> <span class="o">=</span> <span class="n">SOLVER</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">T1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T1</span><span class="o">-</span><span class="n">T0</span><span class="p">)</span>
+
+<span class="c1"># %% Display of the results</span>
+<span class="n">F_X_TEST</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="n">X_TEST</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">Y_TEST_NP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Y_TEST</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Accuracy = </span><span class="si">%2.5e</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">F_X_TEST</span> <span class="o">-</span> <span class="n">Y_TEST_NP</span><span class="p">)</span> <span class="o">/</span>
+                                <span class="n">Y_TEST_NP</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">IMAGES_AND_PREDICTIONS</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">DIGITS</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="n">TEST</span><span class="p">],</span> <span class="n">F_X_TEST</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">19</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">IMAGES_AND_PREDICTIONS</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+               <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pred.: </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">IMAGES_AND_PREDICTIONS</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Classification report:</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span>
+      <span class="o">%</span> <span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">Y_TEST_NP</span><span class="p">,</span> <span class="n">F_X_TEST</span><span class="p">)))</span>
+<span class="n">MATRIX</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">Y_TEST_NP</span><span class="p">,</span> <span class="n">F_X_TEST</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">MATRIX</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confusion Matrix&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confusion matrix:</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">MATRIX</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dimension</span> <span class="mi">4</span>
+
+<span class="n">The</span> <span class="n">implemented</span> <span class="n">learning</span> <span class="n">algorithms</span> <span class="n">are</span> <span class="n">designed</span> <span class="k">for</span> <span class="n">orthonormal</span> <span class="n">bases</span><span class="o">.</span> <span class="n">These</span> <span class="n">algorithms</span> <span class="n">work</span> <span class="k">with</span> <span class="n">non</span><span class="o">-</span><span class="n">orthonormal</span> <span class="n">bases</span><span class="p">,</span> <span class="n">but</span> <span class="n">without</span> <span class="n">some</span> <span class="n">guarantees</span> <span class="n">on</span> <span class="n">their</span> <span class="n">results</span><span class="o">.</span>
+
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">144</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">9.38889e-01</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">320</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">8.44444e-01</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">498</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">7.00000e-01</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">718</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">5.61111e-01</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">885</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">1.22222e-01</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">1257</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">5.55556e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">1568</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">2.22222e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">7</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">1773</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">3.33333e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">8</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">2163</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">2.22222e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">9</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">2337</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">2.22222e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">2801</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">1.66667e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">3212</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">2.22222e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">3903</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">1.66667e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">13</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">4684</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">1.66667e-02</span>
+
+<span class="n">Rank</span> <span class="n">adaptation</span><span class="p">,</span> <span class="n">iteration</span> <span class="mi">14</span><span class="p">:</span>
+    <span class="n">Enriched</span> <span class="n">nodes</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+    <span class="n">Storage</span> <span class="n">complexity</span> <span class="o">=</span> <span class="mi">4834</span>
+    <span class="n">Test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">1.11111e-02</span>
+
+<span class="n">Model</span> <span class="n">selection</span> <span class="n">using</span> <span class="n">the</span> <span class="n">test</span> <span class="n">error</span><span class="p">:</span> <span class="n">model</span> <span class="c1">#14 selected</span>
+<span class="n">Ranks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">test</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">1.11111e-02</span>
+<span class="mf">615.6790609359741</span>
+
+<span class="n">Accuracy</span> <span class="o">=</span> <span class="mf">9.88889e-01</span>
+
+<span class="n">Classification</span> <span class="n">report</span><span class="p">:</span>
+              <span class="n">precision</span>    <span class="n">recall</span>  <span class="n">f1</span><span class="o">-</span><span class="n">score</span>   <span class="n">support</span>
+
+           <span class="mi">0</span>       <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>        <span class="mi">23</span>
+           <span class="mi">1</span>       <span class="mf">1.00</span>      <span class="mf">0.96</span>      <span class="mf">0.98</span>        <span class="mi">23</span>
+           <span class="mi">2</span>       <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>        <span class="mi">19</span>
+           <span class="mi">3</span>       <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>        <span class="mi">18</span>
+           <span class="mi">4</span>       <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>        <span class="mi">22</span>
+           <span class="mi">5</span>       <span class="mf">0.93</span>      <span class="mf">1.00</span>      <span class="mf">0.96</span>        <span class="mi">13</span>
+           <span class="mi">6</span>       <span class="mf">1.00</span>      <span class="mf">0.94</span>      <span class="mf">0.97</span>        <span class="mi">17</span>
+           <span class="mi">7</span>       <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>        <span class="mi">15</span>
+           <span class="mi">8</span>       <span class="mf">0.95</span>      <span class="mf">1.00</span>      <span class="mf">0.97</span>        <span class="mi">18</span>
+           <span class="mi">9</span>       <span class="mf">1.00</span>      <span class="mf">1.00</span>      <span class="mf">1.00</span>        <span class="mi">12</span>
+
+    <span class="n">accuracy</span>                           <span class="mf">0.99</span>       <span class="mi">180</span>
+   <span class="n">macro</span> <span class="n">avg</span>       <span class="mf">0.99</span>      <span class="mf">0.99</span>      <span class="mf">0.99</span>       <span class="mi">180</span>
+<span class="n">weighted</span> <span class="n">avg</span>       <span class="mf">0.99</span>      <span class="mf">0.99</span>      <span class="mf">0.99</span>       <span class="mi">180</span>
+
+
+<span class="n">Confusion</span> <span class="n">matrix</span><span class="p">:</span>
+<span class="p">[[</span><span class="mi">23</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span> <span class="mi">22</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span> <span class="mi">19</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span> <span class="mi">18</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span> <span class="mi">22</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span> <span class="mi">13</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">1</span> <span class="mi">16</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span> <span class="mi">15</span>  <span class="mi">0</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span> <span class="mi">18</span>  <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">0</span> <span class="mi">12</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tensap</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to tensap’s documentation!</a></li>
+      <li>Next: <a href="bibliography.html" title="next chapter">Bibliography</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, A. Nouy, E. Grelier.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/intro.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
