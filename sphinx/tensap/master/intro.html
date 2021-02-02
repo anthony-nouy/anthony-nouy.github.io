@@ -6,13 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction &#8212; tensap 1.1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -68,7 +67,7 @@ The entries of <span class="math notranslate nohighlight">\(X\)</span> are <span
 <span class="math notranslate nohighlight">\(\nu\)</span>-th mode of the tensor.</p>
 <p>We present in this section how to create a <strong>FullTensor</strong> using tensap,
 and several possible operations with such an object. For an introduction
-to tensor calculus, we refer to the monograph <a class="reference internal" href="bibliography.html#hackbusch2019tensor" id="id1"><span>[hackbusch2019tensor]</span></a>.</p>
+to tensor calculus, we refer to the monograph <a class="reference internal" href="bibliography.html#hackbusch2019" id="id1"><span>[Hackbusch2019]</span></a>.</p>
 <p>For examples of use, see the tutorial file
 <code class="docutils literal notranslate"><span class="pre">tutorials\tensor_algebra\tutorial_FullTensor.py</span></code>.</p>
 <div class="section" id="creating-a-fulltensor">
@@ -304,8 +303,8 @@ the result of <strong>tensor_matrix_product</strong>, with a lower cost.</p>
 formats of tensors in <span class="math notranslate nohighlight">\(\mathbb{R}^{N_1\times \ldots \times N_d}.\)</span>
 For a detailed description of methods, see the description of the
 corresponding methods for <strong>FullTensor</strong> in . For an introduction to
-tensor formats, we refer to the monograph <a class="reference internal" href="bibliography.html#hackbusch2019tensor" id="id2"><span>[hackbusch2019tensor]</span></a> and the survey
-<a class="reference internal" href="bibliography.html#nouy-2017-morbook" id="id3"><span>[nouy:2017_morbook]</span></a>.</p>
+tensor formats, we refer to the monograph <a class="reference internal" href="bibliography.html#hackbusch2019" id="id2"><span>[Hackbusch2019]</span></a> and the survey
+<a class="reference internal" href="bibliography.html#nouy2017book" id="id3"><span>[Nouy2017book]</span></a>.</p>
 <div class="section" id="canonicaltensor">
 <h3><strong>CanonicalTensor</strong><a class="headerlink" href="#canonicaltensor" title="Permalink to this headline">¶</a></h3>
 <p>The entries of an order-<span class="math notranslate nohighlight">\(d\)</span> tensor
@@ -659,7 +658,7 @@ for <span class="math notranslate nohighlight">\(\beta \in S(\alpha)\)</span>. T
 <div class="line-block">
 <div class="line">Given a dimension tree <span class="math notranslate nohighlight">\(T\)</span>, a <strong>TreeBasedTensor</strong> <strong>X</strong> is a
 tensor in <em>tree-based format</em> (see
-<a class="reference internal" href="bibliography.html#falco2018sema" id="id4"><span>[Falco2018SEMA]</span></a>, <a class="reference internal" href="bibliography.html#hackbusch2019tensor" id="id5"><span>[hackbusch2019tensor]</span></a>). It represents
+<a class="reference internal" href="bibliography.html#falco2018" id="id4"><span>[Falco2018]</span></a>, <a class="reference internal" href="bibliography.html#hackbusch2019" id="id5"><span>[Hackbusch2019]</span></a>). It represents
 an order <span class="math notranslate nohighlight">\(d\)</span> tensor
 <span class="math notranslate nohighlight">\(X \in {\mathbb{R}}^{N_1 \times \cdots \times N_d}\)</span> in the set
 of tensors with <span class="math notranslate nohighlight">\(\alpha\)</span>-ranks bounded by some integer
@@ -708,7 +707,7 @@ node <span class="math notranslate nohighlight">\(\alpha = \{1,\ldots,\nu\}\)</s
 </div></blockquote>
 <div class="line-block">
 <div class="line">For a more detailed presentation of tree-based formats (possibly
-degenerate) and more examples, see <a class="reference internal" href="bibliography.html#nouy-2017hopca" id="id6"><span>[nouy:2017hopca]</span></a>.</div>
+degenerate) and more examples, see <a class="reference internal" href="bibliography.html#nouy2017book" id="id6"><span>[Nouy2017book]</span></a>.</div>
 <div class="line">If the rank <span class="math notranslate nohighlight">\(r_D\)</span> associated with the root node is different
 from <span class="math notranslate nohighlight">\(1\)</span>, a <strong>TreeBasedTensor</strong> <strong>X</strong> represents a tensor of
 order <span class="math notranslate nohighlight">\(d+1\)</span> with entries <span class="math notranslate nohighlight">\(X_{i_1,\ldots,i_d,k_D}\)</span>,
@@ -827,7 +826,7 @@ random permutations and returns a <strong>TreeBasedTensor</strong> <strong>Y</st
 such that <strong>Y.storage()</strong> is less or equal than <strong>X.storage()</strong>. The
 nodes to permute are drawn according to probability measures favoring
 high decreases of the ranks while maintaining a permutation cost as low
-as possible (see <a class="reference internal" href="bibliography.html#grelier2019learning" id="id7"><span>[grelier2019learning]</span></a>).</p>
+as possible (see <a class="reference internal" href="bibliography.html#grelier2019" id="id7"><span>[Grelier2019]</span></a>).</p>
 <p>The similar method <strong>optimize_leaves_permutations</strong> focuses on the
 permutation of the leaf nodes to try to reduce the storage complexity of
 a <strong>TreeBasedTensor</strong>.</p>
@@ -1152,7 +1151,7 @@ command <strong>f.eval(x)</strong>, and one can obtain its derivatives with
 <h3><strong>Tensorizer</strong> and <strong>TensorizedFunction</strong><a class="headerlink" href="#tensorizer-and-tensorizedfunction" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">For an introduction to tensorization of functions, see
-<a class="reference internal" href="bibliography.html#ali2020approximationwtparti" id="id8"><span>[Ali2020ApproximationWTpartI]</span></a>, <a class="reference internal" href="bibliography.html#ali2020approximationwtpartii" id="id9"><span>[Ali2020ApproximationWTpartII]</span></a>.</div>
+<a class="reference internal" href="bibliography.html#ali2020i" id="id8"><span>[Ali2020I]</span></a>, <a class="reference internal" href="bibliography.html#ali2020ii" id="id9"><span>[Ali2020II]</span></a>, <a class="reference internal" href="bibliography.html#ali2021iii" id="id10"><span>[Ali2021III]</span></a>.</div>
 <div class="line">We consider functions defined on the interval <span class="math notranslate nohighlight">\(I = [0,1)\)</span>. For a
 given <span class="math notranslate nohighlight">\(b \in \{2,3,\ldots, \}\)</span> and <span class="math notranslate nohighlight">\(d\in {\mathbb{N}}\)</span>, an
 element <span class="math notranslate nohighlight">\(x \in I\)</span> can be identified with the tuple
@@ -1245,7 +1244,7 @@ learning functions or tensors.</p>
 <strong>FunctionalTensorPrincipalComponentAnalysis</strong>) implements approximation
 methods for algebraic (resp. functional) tensors based on principal
 component analysis, using an adaptive sampling of the entries of the
-tensor (or the function). See <a class="reference internal" href="bibliography.html#nouy-2017hopca" id="id10"><span>[nouy:2017hopca]</span></a> for a
+tensor (or the function). See <a class="reference internal" href="bibliography.html#nouy2017hopca" id="id11"><span>[Nouy2017hopca]</span></a> for a
 description of the algorithms, and for examples of use, see the tutorial
 files <code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_TensorPrincipalComponentAnalysis.py</span></code>
 and <code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_FunctionalTensorPrincipalComponentAnalysis.py</span></code>.</p>
@@ -1455,8 +1454,8 @@ tensorflow/keras), the learning rate can be provided in
 <div class="section" id="tensorlearning">
 <h3><strong>TensorLearning</strong><a class="headerlink" href="#tensorlearning" title="Permalink to this headline">¶</a></h3>
 <p>The package tensap implements algorithms to perform statistical learning
-with canonical and tree-based tensor formats. See <a class="reference internal" href="bibliography.html#grelier-2018" id="id11"><span>[grelier:2018]</span></a>,
-<a class="reference internal" href="bibliography.html#grelier2019learning" id="id12"><span>[grelier2019learning]</span></a>, <a class="reference internal" href="bibliography.html#arxiv200701165m" id="id13"><span>[2020arXiv200701165M]</span></a> for a detailed presentation
+with canonical and tree-based tensor formats. See <a class="reference internal" href="bibliography.html#grelier2018" id="id12"><span>[Grelier2018]</span></a>,
+<a class="reference internal" href="bibliography.html#grelier2019" id="id13"><span>[Grelier2019]</span></a>, <a class="reference internal" href="bibliography.html#michel2020" id="id14"><span>[Michel2020]</span></a> for a detailed presentation
 of algorithms and related theory.</p>
 <p>For examples, see the tutorial files
 <code class="docutils literal notranslate"><span class="pre">tutorials\approximation\tutorial_tensor_learning_CanonicalTensorLearning.py</span></code>,
@@ -1497,7 +1496,7 @@ maps <span class="math notranslate nohighlight">\(\phi^\nu_i\)</span>.</p>
 <strong>s.test_data</strong> to compute a test error.</p>
 <div class="section" id="rank-adaptation">
 <h4>Rank adaptation.<a class="headerlink" href="#rank-adaptation" title="Permalink to this headline">¶</a></h4>
-<p>(See <a class="reference internal" href="bibliography.html#grelier-2018" id="id14"><span>[grelier:2018]</span></a>) The rank adaptation
+<p>(See <a class="reference internal" href="bibliography.html#grelier2018" id="id15"><span>[Grelier2018]</span></a>) The rank adaptation
 is enabled by setting <strong>s.rank_adaptation</strong> to <strong>True</strong>.</p>
 <p>For tensors in canonical format, the algorithm returns a sequence of
 rank-<span class="math notranslate nohighlight">\(r\)</span> approximations, with
@@ -1513,7 +1512,7 @@ each iteration. The default value of <span class="math notranslate nohighlight">
 </div>
 <div class="section" id="tree-adaptation">
 <h4>Tree adaptation.<a class="headerlink" href="#tree-adaptation" title="Permalink to this headline">¶</a></h4>
-<p>(See <a class="reference internal" href="bibliography.html#grelier-2018" id="id15"><span>[grelier:2018]</span></a>) For tree-based
+<p>(See <a class="reference internal" href="bibliography.html#grelier2018" id="id16"><span>[Grelier2018]</span></a>) For tree-based
 tensor formats, the tree can be adapted at each iteration using the
 algorithm mentioned in Section [sec:TreeBasedTensor], by setting
 <strong>s.tree_adaptation</strong> to <strong>True</strong>. The tolerance for the tree
@@ -1523,7 +1522,7 @@ and the maximal number of tried trees by
 </div>
 <div class="section" id="model-selection">
 <h4>Model selection.<a class="headerlink" href="#model-selection" title="Permalink to this headline">¶</a></h4>
-<p>(See <a class="reference internal" href="bibliography.html#arxiv200701165m" id="id16"><span>[2020arXiv200701165M]</span></a>) At the end of the adaptive
+<p>(See <a class="reference internal" href="bibliography.html#michel2020" id="id17"><span>[Michel2020]</span></a>) At the end of the adaptive
 procedure, a model can be selected by setting <strong>s.model_selection</strong> to
 <strong>True</strong>, using either a test error (specified by
 <strong>s.model_selection_options[’type’] = ’test_error’</strong>) or a
@@ -1886,7 +1885,7 @@ some test samples. We see that, using a training sample of size
       &copy;2020, A. Nouy, E. Grelier.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
