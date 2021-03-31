@@ -12,7 +12,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="tensap.tools package" href="tensap.tools.html" />
@@ -43,7 +42,7 @@
 <p>Module truncator.</p>
 <dl class="py class">
 <dt id="tensap.tensor_algebra.tools.truncator.Truncator">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.tensor_algebra.tools.truncator.</code><code class="sig-name descname">Truncator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">1e-08</span></em>, <em class="sig-param"><span class="n">max_rank</span><span class="o">=</span><span class="default_value">inf</span></em>, <em class="sig-param"><span class="n">thresholding_type</span><span class="o">=</span><span class="default_value">'hard'</span></em>, <em class="sig-param"><span class="n">thresholding_parameter</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.tensor_algebra.tools.truncator.</span></code><code class="sig-name descname"><span class="pre">Truncator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholding_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholding_parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class Truncator.</p>
 <dl class="field-list simple">
@@ -89,7 +88,7 @@
 </table>
 <dl class="py method">
 <dt id="tensap.tensor_algebra.tools.truncator.Truncator.hosvd">
-<code class="sig-name descname">hosvd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tensor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.hosvd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">hosvd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.hosvd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the truncated hosvd of tensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -115,7 +114,7 @@
 
 <dl class="py method">
 <dt id="tensap.tensor_algebra.tools.truncator.Truncator.hsvd">
-<code class="sig-name descname">hsvd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tensor</span></em>, <em class="sig-param"><span class="n">tree</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">is_active_node</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.hsvd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">hsvd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_active_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.hsvd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the truncated svd in tree-based tensor format of tensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -151,7 +150,7 @@ tensor.is_active_node.</p>
 
 <dl class="py method">
 <dt id="tensap.tensor_algebra.tools.truncator.Truncator.svd">
-<code class="sig-name descname">svd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tensor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.svd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">svd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.svd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the truncated svd of an order-2 tensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -178,7 +177,7 @@ tensor.is_active_node.</p>
 
 <dl class="py method">
 <dt id="tensap.tensor_algebra.tools.truncator.Truncator.trunc_svd">
-<code class="sig-name descname">trunc_svd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrix</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">power</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.trunc_svd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">trunc_svd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.trunc_svd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the truncated svd of the matrix x with relative precision
 self.tolerance (or tolerance if provided) in Schatten p-norm (with p
 given by the input power) and maximal rank self.max_rank.</p>
@@ -206,7 +205,7 @@ Frobenius). The default is 2.</p>
 
 <dl class="py method">
 <dt id="tensap.tensor_algebra.tools.truncator.Truncator.truncate">
-<code class="sig-name descname">truncate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tensor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.truncate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">truncate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.truncate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the truncation of the tensor with relative precision
 self.tolerance and maximal rank self.max_rank.</p>
 <dl class="field-list simple">
@@ -236,7 +235,7 @@ self.tolerance and maximal rank self.max_rank.</p>
 
 <dl class="py method">
 <dt id="tensap.tensor_algebra.tools.truncator.Truncator.ttsvd">
-<code class="sig-name descname">ttsvd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tensor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.ttsvd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ttsvd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.tensor_algebra.tools.truncator.Truncator.ttsvd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the truncated svd in tensor-train format of tensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -327,7 +326,7 @@ tree.</p>
       &copy;2020, A. Nouy, E. Grelier.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -12,7 +12,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="tensap.approximation.tensor_approximation.tensor_learning package" href="tensap.approximation.tensor_approximation.tensor_learning.html" />
@@ -43,7 +42,7 @@
 <p>Module functional_tensor_principal_component_analysis.</p>
 <dl class="py class">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.</code><code class="sig-name descname">FunctionalTensorPrincipalComponentAnalysis</code><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.</span></code><code class="sig-name descname"><span class="pre">FunctionalTensorPrincipalComponentAnalysis</span></code><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class FunctionalTensorPrincipalComponentAnalysis: principal component
 analysis of multivariate functions based on
@@ -106,7 +105,7 @@ precision.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.hopca">
-<code class="sig-name descname">hopca</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.hopca" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">hopca</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.hopca" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the set of alpha-principal components of a tensor, for all alpha
 in {0,1,…,d-1}.</p>
 <p>For prescribed precision, set FPCA.max_rank = np.inf and FPCA.tol to
@@ -142,7 +141,7 @@ alpha_principal_components.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tree_based_approximation">
-<code class="sig-name descname">tree_based_approximation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">tree</span></em>, <em class="sig-param"><span class="n">is_active_node</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tree_based_approximation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tree_based_approximation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_active_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tree_based_approximation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Approximation of a function of d variables in tree based tensor format
 based on a Principal Component Analysis.</p>
 <p>For a prescribed precision, set TPCA.max_rank = np.inf and TPCA.tol to
@@ -185,7 +184,7 @@ The default is None, settings all the nodes active.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tt_approximation">
-<code class="sig-name descname">tt_approximation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tt_approximation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tt_approximation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tt_approximation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Approximation of a function of d variables in tensor train format based
 on a Principal Component Analysis.</p>
 <p>For a prescribed precision, set TPCA.max_rank = np.inf and TPCA.tol to
@@ -220,7 +219,7 @@ FunctionalTensorPrincipalComponentAnalysis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tucker_approximation">
-<code class="sig-name descname">tucker_approximation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tucker_approximation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tucker_approximation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.functional_tensor_principal_component_analysis.FunctionalTensorPrincipalComponentAnalysis.tucker_approximation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Approximation of a function of d variables in Tucker format based on a
 Principal Component Analysis.</p>
 <p>For a prescribed precision, set TPCA.max_rank = np.inf and TPCA.tol to
@@ -261,7 +260,7 @@ FunctionalTensorPrincipalComponentAnalysis.</p>
 <p>Module tensor_principal_component_analysis.</p>
 <dl class="py class">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.</code><code class="sig-name descname">TensorPrincipalComponentAnalysis</code><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.</span></code><code class="sig-name descname"><span class="pre">TensorPrincipalComponentAnalysis</span></code><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class TensorPrincipalComponentAnalysis: principal component analysis of an
 algebraic tensor.</p>
@@ -319,7 +318,7 @@ Set max_rank = np.inf to prescribe the precision.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.alpha_principal_components">
-<code class="sig-name descname">alpha_principal_components</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">shape</span></em>, <em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">tol</span></em>, <em class="sig-param"><span class="n">B_alpha</span></em>, <em class="sig-param"><span class="n">I_alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.alpha_principal_components" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">alpha_principal_components</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B_alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">I_alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.alpha_principal_components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the alpha-principal components of a tensor f.</p>
 <p>For alpha in {0,…,d-1}, it evaluates the alpha-principal components
 of a tensor f, meaning the principal components of the matricisations
@@ -368,7 +367,7 @@ indices at which the tensor has been evaluated.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.hopca">
-<code class="sig-name descname">hopca</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.hopca" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">hopca</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.hopca" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the set of alpha-principal components of an algebraic tensor,
 for all alpha in {0,1,…,d-1}.</p>
 <p>For prescribed precision, set TPCA.max_rank = np.inf and TPCA.tol to
@@ -407,7 +406,7 @@ alpha_principal_components.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tree_based_approximation">
-<code class="sig-name descname">tree_based_approximation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">shape</span></em>, <em class="sig-param"><span class="n">tree</span></em>, <em class="sig-param"><span class="n">is_active_node</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tree_based_approximation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tree_based_approximation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_active_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tree_based_approximation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Approximation of a tensor of order d in tree based tensor format based
 on a Principal Component Analysis.</p>
 <p>For a prescribed precision, set TPCA.max_rank = np.inf and TPCA.tol to
@@ -450,7 +449,7 @@ The default is None, settings all the nodes active.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tt_approximation">
-<code class="sig-name descname">tt_approximation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tt_approximation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tt_approximation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tt_approximation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Approximation of a tensor of order d in tensor train format based on a
 Principal Component Analysis.</p>
 <p>For a prescribed precision, set TPCA.max_rank = np.inf and TPCA.tol to
@@ -488,7 +487,7 @@ the tensor.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tucker_approximation">
-<code class="sig-name descname">tucker_approximation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tucker_approximation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tucker_approximation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tensor_approximation.principal_component_analysis.tensor_principal_component_analysis.TensorPrincipalComponentAnalysis.tucker_approximation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Approximation of a tensor of order d in Tucker format based on a
 Principal Component Analysis.</p>
 <p>For a prescribed precision, set TPCA.max_rank = np.inf and TPCA.tol to
@@ -598,7 +597,7 @@ the tensor.</p>
       &copy;2020, A. Nouy, E. Grelier.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
