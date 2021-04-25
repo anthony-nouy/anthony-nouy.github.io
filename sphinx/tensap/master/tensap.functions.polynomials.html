@@ -75,7 +75,7 @@
 <td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
-<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+<td><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
 <td><p>Return the dimension of the output of the polynomials.</p></td>
@@ -139,7 +139,7 @@ normalized (unit variance).</p>
 <td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
-<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+<td><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
 <td><p>Return the dimension of the output of the polynomials.</p></td>
@@ -202,7 +202,7 @@ gaussian measure 1/sqrt(2*pi)*exp(-x^2/2).</p>
 <td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
-<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+<td><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
 <td><p>Return the dimension of the output of the polynomials.</p></td>
@@ -265,7 +265,7 @@ uniform measure 1/2.</p>
 <td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
-<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+<td><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
 <td><p>Return the dimension of the output of the polynomials.</p></td>
@@ -334,7 +334,7 @@ uniform measure 1/2.</p>
 <td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.moment" title="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code></a>(ind[, measure])</p></td>
-<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+<td><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
 <td><p>Return the dimension of the output of the polynomials.</p></td>
@@ -440,20 +440,18 @@ polynomials at the points x.</p>
 <dl class="py method">
 <dt id="tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.moment">
 <code class="sig-name descname"><span class="pre">moment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.OrthonormalPolynomials.moment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the moments of the family of polynomials p_i(X), i in ind,
-of a random variable X, using a gauss integration rule.</p>
+<dd><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p>
+<p>The integral is with respect to a measure mu which is taken as the measure to the polynomials if not provided in input</p>
 <dl class="simple">
 <dt>Assuming ind is a numpy.ndarray:</dt><dd><ul class="simple">
 <li><dl class="simple">
-<dt>if ind.ndim == 1, return the float</dt><dd><p>m = E(p_ind[0](X)…p_ind[-1](X)),</p>
+<dt>if ind.ndim == 1, and ind is of length N,  return the float</dt><dd><p>m = int p_ind[0](x)…p_ind[N-1](x) dmu(x),</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>else if ind.ndim == 2, return the vector</dt><dd><dl class="simple">
-<dt>m = (E(p_ind[j, 0](X)…p_ind[j, -1](X)) :</dt><dd><p>j = 1, …, ind.shape[0]).</p>
-</dd>
-</dl>
+<dt>else if ind.ndim == 2, and ind is N-by-M,</dt><dd><p>return the vector m of length N such that
+m[j] = int p_ind[j, 0](x)…p_ind[j, M-1](x) dmu(x)</p>
 </dd>
 </dl>
 </li>
@@ -463,8 +461,7 @@ of a random variable X, using a gauss integration rule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials for which the moments are to be
-computed.</p>
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Contains the degrees of the considered polynomials.</p>
 </dd>
 <dt><strong>measure</strong><span class="classifier">tensap.Measure, optional</span></dt><dd><p>The measure used for the computation of the moments. The default is
 None, indicating to use self.measure.</p>
@@ -473,7 +470,7 @@ None, indicating to use self.measure.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>The moments of the family of polynomials.</p>
+<dt>numpy.ndarray</dt><dd><p>Contains the integrals of products of polynomials.</p>
 </dd>
 </dl>
 </dd>
@@ -639,7 +636,7 @@ computed.</p>
 <td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.moment" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code></a>(ind, *measure)</p></td>
-<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+<td><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.ndim" title="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
 <td><p>Return the dimension of the output of the polynomials.</p></td>
@@ -770,20 +767,18 @@ None, indicating to use self.measure.</p>
 <dl class="py method">
 <dt id="tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.moment">
 <code class="sig-name descname"><span class="pre">moment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">measure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.orthonormal_polynomials.ShiftedOrthonormalPolynomials.moment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the moments of the family of polynomials p_i(X), i in ind,
-of a random variable X, using a gauss integration rule.</p>
+<dd><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p>
+<p>The integral is with respect to a measure mu which is taken as the measure to the polynomials if not provided in input</p>
 <dl class="simple">
 <dt>Assuming ind is a numpy.ndarray:</dt><dd><ul class="simple">
 <li><dl class="simple">
-<dt>if ind.ndim == 1, return the float</dt><dd><p>m = E(p_ind[0](X)…p_ind[-1](X)),</p>
+<dt>if ind.ndim == 1, and ind is of length N,  return the float</dt><dd><p>m = int p_ind[0](x)…p_ind[N-1](x) dmu(x),</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>else if ind.ndim == 2, return the vector</dt><dd><dl class="simple">
-<dt>m = (E(p_ind[j, 0](X)…p_ind[j, -1](X)) :</dt><dd><p>j = 1, …, ind.shape[0]).</p>
-</dd>
-</dl>
+<dt>else if ind.ndim == 2, and ind is N-by-M,</dt><dd><p>return the vector m of length N such that
+m[j] = int p_ind[j, 0](x)…p_ind[j, M-1](x) dmu(x)</p>
 </dd>
 </dl>
 </li>
@@ -793,8 +788,7 @@ of a random variable X, using a gauss integration rule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials for which the moments are to be
-computed.</p>
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Contains the degrees of the considered polynomials.</p>
 </dd>
 <dt><strong>measure</strong><span class="classifier">tensap.Measure, optional</span></dt><dd><p>The measure used for the computation of the moments. The default is
 None, indicating to use self.measure.</p>
@@ -803,7 +797,7 @@ None, indicating to use self.measure.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>The moments of the family of polynomials.</p>
+<dt>numpy.ndarray</dt><dd><p>Contains the integrals of products of polynomials.</p>
 </dd>
 </dl>
 </dd>
@@ -981,7 +975,7 @@ computed.</p>
 <td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code>(ind[, measure])</p></td>
-<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+<td><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code>()</p></td>
 <td><p>Return the dimension of the output of the polynomials.</p></td>
@@ -1105,7 +1099,7 @@ polynomials of degree specified in ind.</p>
 <td><p>Return the mean of the polynomials of degrees contained in ind, with a Measure given by measure if provided, or to self.measure otherwise.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.moment" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.moment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moment</span></code></a>(ind[, measure])</p></td>
-<td><p>Return the moments of the family of polynomials p_i(X), i in ind, of a random variable X, using a gauss integration rule.</p></td>
+<td><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.ndim" title="tensap.functions.polynomials.polynomials.UnivariatePolynomials.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a>()</p></td>
 <td><p>Return the dimension of the output of the polynomials.</p></td>
@@ -1259,20 +1253,18 @@ None, indicating to use self.measure.</p>
 <dl class="py method">
 <dt id="tensap.functions.polynomials.polynomials.UnivariatePolynomials.moment">
 <code class="sig-name descname"><span class="pre">moment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.functions.polynomials.polynomials.UnivariatePolynomials.moment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the moments of the family of polynomials p_i(X), i in ind,
-of a random variable X, using a gauss integration rule.</p>
+<dd><p>Return the integral of products of polynomials p_i, i in ind, using a gauss integration rule.</p>
+<p>The integral is with respect to a measure mu which is taken as the measure to the polynomials if not provided in input</p>
 <dl class="simple">
 <dt>Assuming ind is a numpy.ndarray:</dt><dd><ul class="simple">
 <li><dl class="simple">
-<dt>if ind.ndim == 1, return the float</dt><dd><p>m = E(p_ind[0](X)…p_ind[-1](X)),</p>
+<dt>if ind.ndim == 1, and ind is of length N,  return the float</dt><dd><p>m = int p_ind[0](x)…p_ind[N-1](x) dmu(x),</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>else if ind.ndim == 2, return the vector</dt><dd><dl class="simple">
-<dt>m = (E(p_ind[j, 0](X)…p_ind[j, -1](X)) :</dt><dd><p>j = 1, …, ind.shape[0]).</p>
-</dd>
-</dl>
+<dt>else if ind.ndim == 2, and ind is N-by-M,</dt><dd><p>return the vector m of length N such that
+m[j] = int p_ind[j, 0](x)…p_ind[j, M-1](x) dmu(x)</p>
 </dd>
 </dl>
 </li>
@@ -1282,8 +1274,7 @@ of a random variable X, using a gauss integration rule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>The degrees of the polynomials for which the moments are to be
-computed.</p>
+<dt><strong>ind</strong><span class="classifier">list or numpy.ndarray</span></dt><dd><p>Contains the degrees of the considered polynomials.</p>
 </dd>
 <dt><strong>measure</strong><span class="classifier">tensap.Measure, optional</span></dt><dd><p>The measure used for the computation of the moments. The default is
 None, indicating to use self.measure.</p>
@@ -1292,7 +1283,7 @@ None, indicating to use self.measure.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>The moments of the family of polynomials.</p>
+<dt>numpy.ndarray</dt><dd><p>Contains the integrals of products of polynomials.</p>
 </dd>
 </dl>
 </dd>
