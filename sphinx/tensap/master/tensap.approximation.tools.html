@@ -12,7 +12,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="tensap.functions package" href="tensap.functions.html" />
@@ -43,7 +42,7 @@
 <p>Module model_selection.</p>
 <dl class="py class">
 <dt id="tensap.approximation.tools.model_selection.ModelSelection">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.tools.model_selection.</code><code class="sig-name descname">ModelSelection</code><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.tools.model_selection.</span></code><code class="sig-name descname"><span class="pre">ModelSelection</span></code><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class ModelSelection.</p>
 <dl class="field-list simple">
@@ -89,7 +88,7 @@ data[‘empirical_risk’] the associated empirical risk values.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.tools.model_selection.ModelSelection.complexity">
-<em class="property">static </em><code class="sig-name descname">complexity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">complexity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the complexity associated to the input argument’s type.</p>
 <p>See also complexity_functional_basis_array,
 complexity_tree_based_tensor.</p>
@@ -121,7 +120,7 @@ complexity_functional_basis_array and complexity_tree_based_tensor.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tools.model_selection.ModelSelection.complexity_functional_basis_array">
-<em class="property">static </em><code class="sig-name descname">complexity_functional_basis_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">fun</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity_functional_basis_array" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">complexity_functional_basis_array</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity_functional_basis_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the complexity associated with a FunctionalBasisArray.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -144,7 +143,7 @@ complexity. The default is ‘storage’.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tools.model_selection.ModelSelection.complexity_tree_based_tensor">
-<em class="property">static </em><code class="sig-name descname">complexity_tree_based_tensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">fun</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">c_type</span><span class="o">=</span><span class="default_value">'standard'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity_tree_based_tensor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">complexity_tree_based_tensor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.complexity_tree_based_tensor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the complexity associated with the TreeBasedTensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -178,7 +177,7 @@ or ‘sparse_leaves_storage’ for instance.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tools.model_selection.ModelSelection.lambda_path">
-<code class="sig-name descname">lambda_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.lambda_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">lambda_path</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.lambda_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the path of possible values of lambda and associated arguments
 of the minimum of the penalized risk.</p>
 <dl class="field-list simple">
@@ -196,7 +195,7 @@ associated with the path of possible values of lambda.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tools.model_selection.ModelSelection.m_lambda">
-<code class="sig-name descname">m_lambda</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lbda</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.m_lambda" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">m_lambda</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lbda</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.m_lambda" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the argument of the minimum of the penalized risk for given
 values of the penalization factor lbda.</p>
 <dl class="field-list simple">
@@ -218,7 +217,7 @@ the penalization factor.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.tools.model_selection.ModelSelection.slope_heuristic">
-<code class="sig-name descname">slope_heuristic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lambda_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">m_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.slope_heuristic" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">slope_heuristic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.tools.model_selection.ModelSelection.slope_heuristic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply the slope heuristic to the path of possible values of lambda to
 compute its optimal value lambda_hat and associated argument of the
 minimum of the penalized risk m_hat.</p>
@@ -323,7 +322,7 @@ associated with the path of possible values of lambda.</p>
       &copy;2020, A. Nouy, E. Grelier.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

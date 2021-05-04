@@ -12,7 +12,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="tensap.approximation.integration package" href="tensap.approximation.integration.html" />
@@ -43,7 +42,7 @@
 <p>Module full_tensor_product_functional_basis.</p>
 <dl class="py class">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.bases.full_tensor_product_functional_basis.</code><code class="sig-name descname">FullTensorProductFunctionalBasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bases</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.bases.full_tensor_product_functional_basis.</span></code><code class="sig-name descname"><span class="pre">FullTensorProductFunctionalBasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bases</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tensap.approximation.bases.functional_basis.FunctionalBasis" title="tensap.approximation.bases.functional_basis.FunctionalBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.bases.functional_basis.FunctionalBasis</span></code></a></p>
 <p>Class FullTensorProductFunctionalBasis.</p>
 <dl class="field-list simple">
@@ -154,7 +153,7 @@
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.cardinal">
-<code class="sig-name descname">cardinal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">cardinal</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -168,7 +167,7 @@
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.conditional_expectation">
-<code class="sig-name descname">conditional_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.conditional_expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">conditional_expectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.conditional_expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the conditional expectation of self with respect to
 the random variables dims (a subset of range(d)). The expectation
 with respect to other variables (in the complementary set of
@@ -198,7 +197,7 @@ expectation. The default is None, indicating to use the</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.domain">
-<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">domain</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the domain of the set of basis functions, which is the support
 of the associated measure.</p>
 <dl class="field-list simple">
@@ -213,7 +212,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the evaluation of the basis functions at the points x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -233,7 +232,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.gram_matrix">
-<code class="sig-name descname">gram_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.gram_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">gram_matrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.gram_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the gram matrix of each basis of self, or of a selection of
 them if dims is provided.</p>
 <dl class="field-list simple">
@@ -255,7 +254,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.interpolation_points">
-<code class="sig-name descname">interpolation_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.interpolation_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">interpolation_points</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.interpolation_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the interpolation points for the basis.</p>
 <p>See also FunctionalBasis.magic_points.</p>
 <dl class="field-list simple">
@@ -276,7 +275,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.keep_bases">
-<code class="sig-name descname">keep_bases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.keep_bases" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">keep_bases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.keep_bases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Keep only the bases of self of index ind.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -296,12 +295,12 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.keep_mapping">
-<code class="sig-name descname">keep_mapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.keep_mapping" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">keep_mapping</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.keep_mapping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.length">
-<code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.length" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">length</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of bases in self.bases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -315,7 +314,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.mean">
-<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean of the basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -329,7 +328,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.ndim">
-<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ndim</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the dimension n for f defined in R^n.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -343,12 +342,12 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.optimal_sampling_measure">
-<code class="sig-name descname">optimal_sampling_measure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.optimal_sampling_measure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">optimal_sampling_measure</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.optimal_sampling_measure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.orthonormalize">
-<code class="sig-name descname">orthonormalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.orthonormalize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">orthonormalize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.orthonormalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orthonormalize the basis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -362,7 +361,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.projection">
-<code class="sig-name descname">projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">I</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.projection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">projection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">I</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.projection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the projection of the function fun on the basis functions of
 self.</p>
 <dl class="field-list simple">
@@ -395,7 +394,7 @@ tensap.FullTensorProductIntegrationRule.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.remove_bases">
-<code class="sig-name descname">remove_bases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.remove_bases" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">remove_bases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.remove_bases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove bases of self of index ind.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -415,12 +414,12 @@ tensap.FullTensorProductIntegrationRule.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.remove_mapping">
-<code class="sig-name descname">remove_mapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.remove_mapping" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">remove_mapping</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.remove_mapping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.tensor_product_interpolation">
-<code class="sig-name descname">tensor_product_interpolation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">grid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.tensor_product_interpolation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tensor_product_interpolation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.tensor_product_interpolation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the interpolation of function fun on a product grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -456,7 +455,7 @@ a tensap.Tensor.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.transpose">
-<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">perm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.transpose" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">transpose</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">perm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.full_tensor_product_functional_basis.FullTensorProductFunctionalBasis.transpose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return self with the basis permutation perm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -482,7 +481,7 @@ a tensap.Tensor.</p>
 <p>Module functional_bases.</p>
 <dl class="py class">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.bases.functional_bases.</code><code class="sig-name descname">FunctionalBases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bases</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.bases.functional_bases.</span></code><code class="sig-name descname"><span class="pre">FunctionalBases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class FunctionalBases.</p>
 <dl class="field-list simple">
@@ -581,7 +580,7 @@ basis of bases.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.adaptation_path">
-<code class="sig-name descname">adaptation_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.adaptation_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">adaptation_path</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.adaptation_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the adaptationPath for each basis in self.</p>
 <p>See also tensap.FunctionalBasis.adaptation_path.</p>
 <dl class="field-list simple">
@@ -596,7 +595,7 @@ basis of bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.cardinals">
-<code class="sig-name descname">cardinals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.cardinals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">cardinals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.cardinals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of functions in each basis of self, or in basis ind
 if provided.</p>
 <dl class="field-list simple">
@@ -618,7 +617,7 @@ if provided.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.derivative">
-<code class="sig-name descname">derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.derivative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the n-derivative of the basis functions of self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -639,7 +638,7 @@ self.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.domain">
-<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">domain</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the domain of each basis of self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -653,7 +652,7 @@ self.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.duplicate">
-<em class="property">static </em><code class="sig-name descname">duplicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span></em>, <em class="sig-param"><span class="n">dim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.duplicate" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">duplicate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.duplicate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a FunctionalBases with bases created with a duplication of
 basis d times.</p>
 <dl class="field-list simple">
@@ -676,7 +675,7 @@ basis d times.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nargout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes evaluations of the basis functions of self at points x
 in dimensions dims if provided, in all the dimensions if not.</p>
 <dl class="field-list simple">
@@ -705,7 +704,7 @@ indicating to return only the evaluations of the basis functions.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.eval_derivative">
-<code class="sig-name descname">eval_derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.eval_derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval_derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nargout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.eval_derivative" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><p>Compute evaluations of the n-derivative of the basis functions of
 self at points x in each dimension in dims if provided, in all the
@@ -740,7 +739,7 @@ the basis functions.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.get_random_vector">
-<code class="sig-name descname">get_random_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.get_random_vector" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_random_vector</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.get_random_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the random vector associated with self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -754,7 +753,7 @@ the basis functions.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.gram_matrix">
-<code class="sig-name descname">gram_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.gram_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">gram_matrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.gram_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the gram matrix of each basis of self, or of a selection of
 them if dims is provided.</p>
 <dl class="field-list simple">
@@ -776,7 +775,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.interpolation_points">
-<code class="sig-name descname">interpolation_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.interpolation_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">interpolation_points</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.interpolation_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the interpolation points for the bases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -796,7 +795,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.keep_bases">
-<code class="sig-name descname">keep_bases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.keep_bases" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">keep_bases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.keep_bases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Keep only the bases of self of index ind.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -816,7 +815,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.kron">
-<code class="sig-name descname">kron</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.kron" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kron</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.kron" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the bases obtained by the Kronecker product of two bases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -836,7 +835,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.length">
-<code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.length" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">length</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of bases in self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -850,7 +849,7 @@ The default is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.magic_points">
-<code class="sig-name descname">magic_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">J</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.magic_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">magic_points</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.magic_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide the magic points associated with the functional bases selected
 in a given set of points x.</p>
 <dl class="field-list simple">
@@ -876,7 +875,7 @@ tensap.magic_indices(F[:, J], self.cardinal(), ‘left’)[0]</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.mean">
-<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the mean of self in the dimensions in dims according to
 the RandomVector measure if provided, or to the standard RandomVector
 associated with each basis if not.</p>
@@ -902,7 +901,7 @@ The default is None, indicating to use the self.measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.ndim">
-<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.ndim" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ndim</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.ndim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the dimension of each basis of self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -916,7 +915,7 @@ The default is None, indicating to use the self.measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.one">
-<code class="sig-name descname">one</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.one" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">one</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.one" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the coefficients associated with the FunctionalBases so that it
 returns one.</p>
 <dl class="field-list simple">
@@ -938,7 +937,7 @@ is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.orthonormalize">
-<code class="sig-name descname">orthonormalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.orthonormalize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">orthonormalize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.orthonormalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orthonormalize the basis functions of self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -952,7 +951,7 @@ is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.random">
-<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.random" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">random</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.random" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute random evaluations of the bases in self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -974,7 +973,7 @@ is None, indicating all the bases.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.random_dims">
-<code class="sig-name descname">random_dims</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nargout</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.random_dims" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">random_dims</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nargout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.random_dims" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the bases in dimensions dims of the bases of self
 using n points drawn randomly according to measure if provided, or to
 self.measure.marginal(dims) otherwise.</p>
@@ -1004,7 +1003,7 @@ self.measure.marginal(dims).</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.remove_bases">
-<code class="sig-name descname">remove_bases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.remove_bases" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">remove_bases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.remove_bases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove bases of self of index ind.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1024,7 +1023,7 @@ self.measure.marginal(dims).</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.storage">
-<code class="sig-name descname">storage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.storage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">storage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.storage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the storage requirement of the FunctionalBases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1038,7 +1037,7 @@ self.measure.marginal(dims).</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.tensor_product_interpolation">
-<code class="sig-name descname">tensor_product_interpolation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.tensor_product_interpolation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tensor_product_interpolation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.tensor_product_interpolation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate a function on a product grid.</p>
 <p>See also
 tensap.FullTensorProductFunctionalBasis.tensorProductInterpolation.</p>
@@ -1061,7 +1060,7 @@ tensap.FullTensorProductFunctionalBasis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_bases.FunctionalBases.transpose">
-<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">perm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.transpose" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">transpose</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">perm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_bases.FunctionalBases.transpose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return self with the basis permutation perm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1087,7 +1086,7 @@ tensap.FullTensorProductFunctionalBasis.</p>
 <p>Module functional_basis.</p>
 <dl class="py class">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.bases.functional_basis.</code><code class="sig-name descname">FunctionalBasis</code><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.bases.functional_basis.</span></code><code class="sig-name descname"><span class="pre">FunctionalBasis</span></code><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class FunctionalBasis.</p>
 <dl class="field-list simple">
@@ -1177,7 +1176,7 @@ measure.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.adaptation_path">
-<code class="sig-name descname">adaptation_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.adaptation_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">adaptation_path</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.adaptation_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the adaptation path of the functional basis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1193,7 +1192,7 @@ column P[:,i] corresponds to a sparsity pattern.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.cardinal">
-<em class="property">abstract </em><code class="sig-name descname">cardinal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">cardinal</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1207,12 +1206,12 @@ column P[:,i] corresponds to a sparsity pattern.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.christoffel">
-<code class="sig-name descname">christoffel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.christoffel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">christoffel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.christoffel" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.conditional_expectation">
-<em class="property">static </em><code class="sig-name descname">conditional_expectation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.conditional_expectation" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">conditional_expectation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.conditional_expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the conditional expectation of self with respect to
 the random variables dims (a subset of range(d)). The expectation
 with respect to other variables (in the complementary set of
@@ -1242,7 +1241,7 @@ expectation. The default is None, indicating to use the</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.domain">
-<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">domain</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the domain of the set of basis functions, which is the support
 of the associated measure.</p>
 <dl class="field-list simple">
@@ -1257,7 +1256,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.eval">
-<em class="property">abstract </em><code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the evaluation of the basis functions at the points x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1277,7 +1276,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.expectation">
-<code class="sig-name descname">expectation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">expectation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the expectation of the basis functions. Equivalent to
 self.mean().</p>
 <dl class="field-list simple">
@@ -1292,7 +1291,7 @@ self.mean().</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.interpolate">
-<code class="sig-name descname">interpolate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.interpolate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">interpolate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.interpolate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide an interpolation on a functional basis of a function (or values
 of the function) y associated with a set of n interpolation points x.</p>
 <dl class="field-list simple">
@@ -1316,7 +1315,7 @@ deduce them from the basis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.interpolation_points">
-<code class="sig-name descname">interpolation_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.interpolation_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">interpolation_points</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.interpolation_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the interpolation points for the basis.</p>
 <p>See also FunctionalBasis.magic_points.</p>
 <dl class="field-list simple">
@@ -1337,7 +1336,7 @@ deduce them from the basis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.kron">
-<em class="property">static </em><code class="sig-name descname">kron</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.kron" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">kron</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.kron" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the Kronecker product of two bases. For two functional bases
 f_i, i = 1, …, n and g_j, j = 1, …, m, return a functional basis
 h_k, k = 1, …, nm.</p>
@@ -1353,7 +1352,7 @@ h_k, k = 1, …, nm.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.magic_points">
-<code class="sig-name descname">magic_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">J</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.magic_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">magic_points</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.magic_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide the magic points associated with a functional basis f selected
 in a given set of points x.</p>
 <p>The method uses magicIndices(F,numel(f)) on the matrix F of evaluations
@@ -1384,7 +1383,7 @@ tensap.magic_indices(F[:, J], self.cardinal(), ‘left’)[0]</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.mean">
-<em class="property">static </em><code class="sig-name descname">mean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean of the basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1398,7 +1397,7 @@ tensap.magic_indices(F[:, J], self.cardinal(), ‘left’)[0]</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.ndim">
-<em class="property">abstract </em><code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">ndim</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the dimension n for f defined in R^n.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1412,12 +1411,12 @@ tensap.magic_indices(F[:, J], self.cardinal(), ‘left’)[0]</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.optimal_sampling_measure">
-<code class="sig-name descname">optimal_sampling_measure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.optimal_sampling_measure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">optimal_sampling_measure</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.optimal_sampling_measure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.orthonormalize">
-<code class="sig-name descname">orthonormalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.orthonormalize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">orthonormalize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.orthonormalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orthonormalize the basis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1431,7 +1430,7 @@ tensap.magic_indices(F[:, J], self.cardinal(), ‘left’)[0]</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.plot">
-<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indices</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">10000</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.plot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the functions of the basis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1455,7 +1454,7 @@ indicating all the functions.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.projection">
-<code class="sig-name descname">projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="n">G</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.projection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">projection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">G</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.projection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the projection of the function fun onto the functional basis
 using the integration rule G.</p>
 <dl class="field-list simple">
@@ -1479,7 +1478,7 @@ the integration rule G.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.random">
-<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.random" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">random</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.random" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the basis using n points drawn randomly according to measure
 if provided, or to self.measure otherwise.</p>
 <dl class="field-list simple">
@@ -1505,7 +1504,7 @@ points. The default is None, indicating to use self.measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis.FunctionalBasis.storage">
-<em class="property">static </em><code class="sig-name descname">storage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.storage" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">storage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis.FunctionalBasis.storage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the storage requirement of the FunctionalBasis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1525,7 +1524,7 @@ points. The default is None, indicating to use self.measure.</p>
 <p>Module functional_basis_array.</p>
 <dl class="py class">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.bases.functional_basis_array.</code><code class="sig-name descname">FunctionalBasisArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shape</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.bases.functional_basis_array.</span></code><code class="sig-name descname"><span class="pre">FunctionalBasisArray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="tensap.functions.html#tensap.functions.function.Function" title="tensap.functions.function.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.functions.function.Function</span></code></a></p>
 <p>Class FunctionalBasisArray.</p>
 <dl class="field-list simple">
@@ -1645,7 +1644,7 @@ R^(shape[0] x shape[1] x …). The default is 1.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.conditional_expectation">
-<code class="sig-name descname">conditional_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.conditional_expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">conditional_expectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.conditional_expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the conditional expectation of self with respect to
 the random variables dims (a subset of range(d)). The expectation
 with respect to other variables (in the complementary set of
@@ -1674,7 +1673,7 @@ of the underlying basis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.derivative">
-<code class="sig-name descname">derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.derivative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the n-derivative of the function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1694,7 +1693,7 @@ of the underlying basis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.dot">
-<code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">dim</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.dot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">dot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.dot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the dot product between the arrays self.data and g.data
 treated as collections of vectors. The function calculates
 the dot product of corresponding vectors along the first
@@ -1720,7 +1719,7 @@ is None, indicating all the dimensions.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.dot_product_expectation">
-<code class="sig-name descname">dot_product_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">dims</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.dot_product_expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">dot_product_expectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.dot_product_expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the expectation of self(X)g(X), where X is the probability
 measure associated with the underlying basis, or measure if provided.</p>
 <p>For vector-valued functions of X, dims specifies the dimensions of
@@ -1756,7 +1755,7 @@ measure associated with the underlying basis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the function at the points x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1776,7 +1775,7 @@ measure associated with the underlying basis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval_derivative">
-<code class="sig-name descname">eval_derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval_derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval_derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval_derivative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the n-derivative of the function at points x in R^d, with n a
 multi-index of size d.</p>
 <dl class="field-list simple">
@@ -1806,7 +1805,7 @@ orders for each dimension.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval_with_bases_evals">
-<code class="sig-name descname">eval_with_bases_evals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">H</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval_with_bases_evals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval_with_bases_evals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">H</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.eval_with_bases_evals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the evaluations of the function using the evaluations of the
 basis H.</p>
 <dl class="field-list simple">
@@ -1827,7 +1826,7 @@ basis H.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.expectation">
-<code class="sig-name descname">expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">expectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the expectation of the function, according to the measure
 associated with the tensap.ProbabilityMeasure measure if provided, or
 to the standard tensap.ProbabilityMeasure associated with each
@@ -1852,7 +1851,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.get_coefficients">
-<code class="sig-name descname">get_coefficients</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.get_coefficients" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_coefficients</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.get_coefficients" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the coefficients of the object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1866,7 +1865,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.get_random_vector">
-<code class="sig-name descname">get_random_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.get_random_vector" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_random_vector</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.get_random_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the random vector associated with the basis functions of the
 object.</p>
 <dl class="field-list simple">
@@ -1882,7 +1881,7 @@ object.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.is_random">
-<em class="property">static </em><code class="sig-name descname">is_random</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.is_random" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">is_random</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.is_random" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine if the object is random.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1896,7 +1895,7 @@ object.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.matdiv">
-<code class="sig-name descname">matdiv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.matdiv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">matdiv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.matdiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the matrix multiplication of self.data with the inverse of v.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1916,7 +1915,7 @@ object.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.matmul">
-<code class="sig-name descname">matmul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.matmul" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">matmul</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.matmul" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the matrix multiplication of self.data with v.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1936,7 +1935,7 @@ object.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.mean">
-<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the expectation of the function, according to the measure
 associated with the tensap.ProbabilityMeasure measure if provided, or
 to the standard tensap.ProbabilityMeasure associated with each
@@ -1961,7 +1960,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.norm">
-<code class="sig-name descname">norm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span><span class="o">=</span><span class="default_value">'fro'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.norm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">norm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fro'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.norm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the p-norm of the array self.data.</p>
 <p>See also numpy.linalg.norm.</p>
 <dl class="field-list simple">
@@ -1982,7 +1981,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.norm_expectation">
-<code class="sig-name descname">norm_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.norm_expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">norm_expectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.norm_expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the L^2 norm of self(measure). If measure is not provided, use
 the probability measure associated with the underlying basis of self.</p>
 <dl class="field-list simple">
@@ -2003,7 +2002,7 @@ the probability measure associated with the underlying basis of self.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.projection">
-<code class="sig-name descname">projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span></em>, <em class="sig-param"><span class="n">indices</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.projection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">projection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.projection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Projection of the object on a functional basis using multi-indices
 indices if provided, or the multi-indices associated with
 the functional basis if not.</p>
@@ -2029,7 +2028,7 @@ indicating to use basis.indices.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.random">
-<code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.random" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">random</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.random" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute evaluations of the function at an array of points of size n,
 drawn randomly according to the tensap.ProbabilityMeasure measure if
 provided, or to the standard tensap.ProbabilityMeasure associated with
@@ -2058,7 +2057,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.sparse_storage">
-<code class="sig-name descname">sparse_storage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.sparse_storage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">sparse_storage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.sparse_storage" title="Permalink to this definition">¶</a></dt>
 <dd><p>The storage complexity of the object, taking into account the sparsity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2073,7 +2072,7 @@ sparsity.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.std">
-<code class="sig-name descname">std</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.std" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">std</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.std" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the standard deviation of the function, according to the
 measure associated with the tensap.ProbabilityMeasure measure if
 provided, or to the standard tensap.ProbabilityMeasure associated with
@@ -2098,7 +2097,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.storage">
-<code class="sig-name descname">storage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.storage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">storage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.storage" title="Permalink to this definition">¶</a></dt>
 <dd><p>The storage complexity of the object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2112,7 +2111,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.sub_functional_basis">
-<code class="sig-name descname">sub_functional_basis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.sub_functional_basis" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">sub_functional_basis</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.sub_functional_basis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the FunctionalBasisArray into a tensap.SubFunctionalbasis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2126,7 +2125,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.variance">
-<code class="sig-name descname">variance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.variance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">variance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.variance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the variance of the function, according to the measure
 associated with the tensap.ProbabilityMeasure measure if provided, or
 to the standard tensap.ProbabilityMeasure associated with each
@@ -2151,7 +2150,7 @@ tensap.ProbabilityMeasure associated with each polynomial.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.variance_conditional_expectation">
-<code class="sig-name descname">variance_conditional_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.variance_conditional_expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">variance_conditional_expectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.functional_basis_array.FunctionalBasisArray.variance_conditional_expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the variance of the conditional expectation of the function in
 dimensions in alpha.</p>
 <dl class="field-list simple">
@@ -2179,7 +2178,7 @@ of the function if computed.</p>
 <p>Module polynomial_functional_basis.</p>
 <dl class="py class">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.bases.polynomial_functional_basis.</code><code class="sig-name descname">PolynomialFunctionalBasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span></em>, <em class="sig-param"><span class="n">indices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.bases.polynomial_functional_basis.</span></code><code class="sig-name descname"><span class="pre">PolynomialFunctionalBasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tensap.approximation.bases.functional_basis.FunctionalBasis" title="tensap.approximation.bases.functional_basis.FunctionalBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.bases.functional_basis.FunctionalBasis</span></code></a></p>
 <p>Class PolynomialFunctionalBasis.</p>
 <dl class="field-list simple">
@@ -2294,7 +2293,7 @@ respect to measure.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.cardinal">
-<code class="sig-name descname">cardinal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">cardinal</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2308,12 +2307,12 @@ respect to measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.christoffel">
-<code class="sig-name descname">christoffel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.christoffel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">christoffel</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.christoffel" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.derivative">
-<code class="sig-name descname">derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.derivative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the k-th order derivative of the functions of the basis
 projected on itself.</p>
 <dl class="field-list simple">
@@ -2344,7 +2343,7 @@ on itself.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.domain">
-<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">domain</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the domain of the set of basis functions, which is the support
 of the associated measure.</p>
 <dl class="field-list simple">
@@ -2359,7 +2358,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the polynomials of self.basis of degrees in self.indices at
 points x.</p>
 <dl class="field-list simple">
@@ -2381,7 +2380,7 @@ self.indices at points x.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.eval_derivative">
-<code class="sig-name descname">eval_derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.eval_derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval_derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.eval_derivative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the k-th order derivative of the functions of the basis at the
 points x.</p>
 <dl class="field-list simple">
@@ -2406,7 +2405,7 @@ self.basis of degrees in self.indices at points x.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.gradient">
-<code class="sig-name descname">gradient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.gradient" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">gradient</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.gradient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the first order derivative of the functions of the basis
 projected on itself.</p>
 <dl class="field-list simple">
@@ -2431,7 +2430,7 @@ indicating to use self.measure if it is a tensap.RandomVariable.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.gram_matrix">
-<code class="sig-name descname">gram_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.gram_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">gram_matrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.gram_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the Gram matrix of the basis. The Gram matrix is the matrix of
 the dot products between each possible couple of basis functions. The
 dot product in the dimension i is computed according to measure if
@@ -2461,7 +2460,7 @@ default is None, indicating to use self.measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.hessian">
-<code class="sig-name descname">hessian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.hessian" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">hessian</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.hessian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the second order derivative of the functions of the basis
 projected on itself.</p>
 <dl class="field-list simple">
@@ -2486,7 +2485,7 @@ indicating to use self.measure if it is a tensap.RandomVariable.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.kron">
-<code class="sig-name descname">kron</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">q</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.kron" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kron</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.kron" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the Kronecker product of two bases. For two functional bases
 f_i, i = 1, …, n and g_j, j = 1, …, m, return a functional basis
 h_k, k = 1, …, nm.</p>
@@ -2502,7 +2501,7 @@ h_k, k = 1, …, nm.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.mean">
-<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the expectation of the basis functions, accorging to measure if
 provided, and to self.measure ortherwise.</p>
 <dl class="field-list simple">
@@ -2524,7 +2523,7 @@ None, indicating to use self.measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.ndim">
-<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ndim</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the dimension n for f defined in R^n.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2538,7 +2537,7 @@ None, indicating to use self.measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.one">
-<code class="sig-name descname">one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.one" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">one</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.one" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the coefficients associated with the basis so that it returns
 one.</p>
 <dl class="field-list simple">
@@ -2553,12 +2552,12 @@ one.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.optimal_sampling_measure">
-<code class="sig-name descname">optimal_sampling_measure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.optimal_sampling_measure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">optimal_sampling_measure</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.optimal_sampling_measure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.random_variable">
-<code class="sig-name descname">random_variable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.random_variable" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">random_variable</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.polynomial_functional_basis.PolynomialFunctionalBasis.random_variable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the tensap.RandomVariable associated with self if it exists.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2579,7 +2578,7 @@ otherwise.</p>
 <p>Module sparse_tensor_product_functional_basis.</p>
 <dl class="py class">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.bases.sparse_tensor_product_functional_basis.</code><code class="sig-name descname">SparseTensorProductFunctionalBasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bases</span></em>, <em class="sig-param"><span class="n">indices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.bases.sparse_tensor_product_functional_basis.</span></code><code class="sig-name descname"><span class="pre">SparseTensorProductFunctionalBasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tensap.approximation.bases.functional_basis.FunctionalBasis" title="tensap.approximation.bases.functional_basis.FunctionalBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.bases.functional_basis.FunctionalBasis</span></code></a></p>
 <p>Class SparseTensorProductFunctionalBasis.</p>
 <dl class="field-list simple">
@@ -2707,7 +2706,7 @@ otherwise.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.adaptation_path">
-<code class="sig-name descname">adaptation_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.adaptation_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">adaptation_path</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.adaptation_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an adaptation path associated with increasing p-norm of
 multi-indices.</p>
 <dl class="field-list simple">
@@ -2728,7 +2727,7 @@ multi-indices.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.cardinal">
-<code class="sig-name descname">cardinal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">cardinal</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2742,7 +2741,7 @@ multi-indices.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.conditional_expectation">
-<code class="sig-name descname">conditional_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dims</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.conditional_expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">conditional_expectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.conditional_expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the conditional expectation of self with respect to
 the random variables dims (a subset of range(d)). The expectation
 with respect to other variables (in the complementary set of
@@ -2772,12 +2771,12 @@ expectation. The default is None, indicating to use the</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.derivative">
-<code class="sig-name descname">derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.derivative" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.domain">
-<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">domain</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the domain of the set of basis functions, which is the support
 of the associated measure.</p>
 <dl class="field-list simple">
@@ -2792,7 +2791,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the evaluation of the basis functions at the points x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2812,17 +2811,17 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval_derivative">
-<code class="sig-name descname">eval_derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval_derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval_derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval_derivative" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval_with_functional_bases_evals">
-<code class="sig-name descname">eval_with_functional_bases_evals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Hx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval_with_functional_bases_evals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval_with_functional_bases_evals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Hx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.eval_with_functional_bases_evals" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.get_random_vector">
-<code class="sig-name descname">get_random_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.get_random_vector" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_random_vector</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.get_random_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the random vector associated with the basis functions of self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2836,7 +2835,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.gram_matrix">
-<code class="sig-name descname">gram_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.gram_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">gram_matrix</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.gram_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the gram matrix of the basis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2850,7 +2849,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.keep_bases">
-<code class="sig-name descname">keep_bases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.keep_bases" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">keep_bases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.keep_bases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Keep only the bases of self of index ind.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2870,12 +2869,12 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.keep_mapping">
-<code class="sig-name descname">keep_mapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.keep_mapping" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">keep_mapping</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.keep_mapping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.length">
-<code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.length" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">length</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of bases in self.bases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2889,7 +2888,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.mean">
-<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean of the basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2903,7 +2902,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.ndim">
-<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ndim</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the dimension n for f defined in R^n.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2917,7 +2916,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.plot_multi_indices">
-<code class="sig-name descname">plot_multi_indices</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.plot_multi_indices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">plot_multi_indices</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.plot_multi_indices" title="Permalink to this definition">¶</a></dt>
 <dd><p>PLot the multi-index set of the object.</p>
 <p>See also tensap.MultiIndices.plot.</p>
 <dl class="field-list simple">
@@ -2937,7 +2936,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.remove_bases">
-<code class="sig-name descname">remove_bases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.remove_bases" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">remove_bases</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.remove_bases" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove bases of self of index ind.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2957,12 +2956,12 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.remove_mapping">
-<code class="sig-name descname">remove_mapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ind</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.remove_mapping" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">remove_mapping</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.remove_mapping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.tensor_product_interpolation">
-<code class="sig-name descname">tensor_product_interpolation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fun</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.tensor_product_interpolation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tensor_product_interpolation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.tensor_product_interpolation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the interpolation of function fun on a sparse grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2997,7 +2996,7 @@ a tensap.Tensor.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.transpose">
-<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">perm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.transpose" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">transpose</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">perm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sparse_tensor_product_functional_basis.SparseTensorProductFunctionalBasis.transpose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return self with the basis permutation perm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3023,7 +3022,7 @@ a tensap.Tensor.</p>
 <p>Module sub_functional_basis.</p>
 <dl class="py class">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.bases.sub_functional_basis.</code><code class="sig-name descname">SubFunctionalBasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">underlying_basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.bases.sub_functional_basis.</span></code><code class="sig-name descname"><span class="pre">SubFunctionalBasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">underlying_basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tensap.approximation.bases.functional_basis.FunctionalBasis" title="tensap.approximation.bases.functional_basis.FunctionalBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.bases.functional_basis.FunctionalBasis</span></code></a></p>
 <p>Class SubFunctionalBasis.</p>
 <dl class="field-list simple">
@@ -3120,7 +3119,7 @@ generated by underlying_basis.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.cardinal">
-<code class="sig-name descname">cardinal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">cardinal</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -3134,7 +3133,7 @@ generated by underlying_basis.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.derivative">
-<code class="sig-name descname">derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.derivative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the k-th order derivative of the functions of the basis
 projected on itself.</p>
 <dl class="field-list simple">
@@ -3156,7 +3155,7 @@ on itself.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.domain">
-<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">domain</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the domain of the set of basis functions, which is the support
 of the associated measure.</p>
 <dl class="field-list simple">
@@ -3171,7 +3170,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">indices</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the evaluation of the basis functions at the points x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3191,7 +3190,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.eval_derivative">
-<code class="sig-name descname">eval_derivative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.eval_derivative" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval_derivative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.eval_derivative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the k-th order derivative of the functions of the basis at the
 points x.</p>
 <dl class="field-list simple">
@@ -3216,7 +3215,7 @@ self.basis of degrees in self.indices at points x.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.mean">
-<code class="sig-name descname">mean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean of the basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -3230,7 +3229,7 @@ self.basis of degrees in self.indices at points x.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.ndim">
-<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ndim</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the dimension n for f defined in R^n.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -3244,7 +3243,7 @@ self.basis of degrees in self.indices at points x.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.orthonormalize">
-<code class="sig-name descname">orthonormalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.orthonormalize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">orthonormalize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.orthonormalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orthonormalize the SubFunctionalBasis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -3258,7 +3257,7 @@ self.basis of degrees in self.indices at points x.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.storage">
-<code class="sig-name descname">storage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.storage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">storage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.sub_functional_basis.SubFunctionalBasis.storage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the storage requirement of the FunctionalBasis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -3278,7 +3277,7 @@ self.basis of degrees in self.indices at points x.</p>
 <p>Module user_defined_functional_basis.</p>
 <dl class="py class">
 <dt id="tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis">
-<em class="property">class </em><code class="sig-prename descclassname">tensap.approximation.bases.user_defined_functional_basis.</code><code class="sig-name descname">UserDefinedFunctionalBasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h_fun</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">measure</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_dim</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tensap.approximation.bases.user_defined_functional_basis.</span></code><code class="sig-name descname"><span class="pre">UserDefinedFunctionalBasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h_fun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tensap.approximation.bases.functional_basis.FunctionalBasis" title="tensap.approximation.bases.functional_basis.FunctionalBasis"><code class="xref py py-class docutils literal notranslate"><span class="pre">tensap.approximation.bases.functional_basis.FunctionalBasis</span></code></a></p>
 <p>Class UserDefinedFunctionalBasis.</p>
 <p>The basis is not L2-orthonormal a priori, hence the is_orthonormal
@@ -3373,7 +3372,7 @@ expectation.</p>
 </table>
 <dl class="py method">
 <dt id="tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.cardinal">
-<code class="sig-name descname">cardinal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">cardinal</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.cardinal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of basis functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -3387,7 +3386,7 @@ expectation.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.domain">
-<code class="sig-name descname">domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">domain</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.domain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the domain of the set of basis functions, which is the support
 of the associated measure.</p>
 <dl class="field-list simple">
@@ -3402,7 +3401,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.eval">
-<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the evaluation of the basis functions at the points x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3422,7 +3421,7 @@ of the associated measure.</p>
 
 <dl class="py method">
 <dt id="tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.ndim">
-<code class="sig-name descname">ndim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ndim</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tensap.approximation.bases.user_defined_functional_basis.UserDefinedFunctionalBasis.ndim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the dimension n for f defined in R^n.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -3506,7 +3505,7 @@ of the associated measure.</p>
       &copy;2020, A. Nouy, E. Grelier.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
